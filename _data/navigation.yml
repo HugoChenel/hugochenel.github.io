@@ -1,7 +1,6 @@
 # main links
-
 main:
   - title: "Home"
-	url: /
+    url: /
   - title: "PhD"
-	url: /PhD/
+    url: /phd/

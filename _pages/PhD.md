@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "PhD"
-permalink: /PhD/
+permalink: /phd/
 ---
 
 

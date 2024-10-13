@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "Hugo Chenel"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD candidate | Machine learning & Cancer research"
+  bio              : "PhD candidate"
   location         : "Toulouse, France"
   email            :
   links:

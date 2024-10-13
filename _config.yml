@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "Hugo Chenel"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/profile_pic.JPG" # path of avatar image
   bio              : "PhD candidate"
   location         : "Toulouse, France"
   email            :

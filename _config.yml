@@ -10,7 +10,7 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-theme                  : "minimal-mistakes-jekyll"
+# theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "aqua" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
@@ -21,7 +21,7 @@ title                    : "Performance & Longevity Lab"
 title_separator          : "-"
 subtitle                 : Exploring the science of peak performance and lifespan
 name                     : "Hugo Chenel"
-description              : "An amazing website."
+description              : "PhD cancer network peak performance longevity lifespan health strength AI athlete biohack rejuvenation anti-aging science sport nootropic supplement stack fitness tech"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"

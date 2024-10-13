@@ -145,13 +145,13 @@ footer:
       icon: "fab fa-fw fa-instagram"
       url: https://www.instagram.com/
     - label: "Linkedin"
-      icon: ""fa-brands fa-linkedin-in""
+      icon: "fa-brands fa-linkedin-in"
       url: https://www.linkedin.com/in/hugo-chenel-8497681ba/
     - label: "Linkedin"
       icon: "fa-brands fa-linkedin"
       url: https://www.linkedin.com/in/hugo-chenel-8497681ba/
     - label: "Linktree"
-      icon: ""fa-regular fa-link""
+      icon: "fa-regular fa-link"
       url: https://linktr.ee/HugoChenel
     #- label: "Facebook"
     #  icon: "fab fa-fw fa-facebook-square"
@@ -165,7 +165,7 @@ footer:
     #- label: "Bitbucket"
     #  icon: "fab fa-fw fa-bitbucket"
       # url:
-
+# Find logo here : https://fontawesome.com/v6/search?q=email&o=r&f=classic
 
 # Reading Files
 include:

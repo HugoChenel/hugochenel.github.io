@@ -141,9 +141,9 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
+    - label: "Instagram"
+      icon: "fa-brands fa-square-instagram"
+      url: https://www.instagram.com/
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
@@ -158,7 +158,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: https://www.instagram.com/
 
 
 # Reading Files

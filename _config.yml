@@ -115,9 +115,9 @@ analytics:
 author:
   name             : "Hugo Chenel"
   avatar           : "/assets/images/profile_pic.JPG" # path of avatar image
-  bio              : "PhD candidate"
+  bio              : "PhD candidate in STEM"
   location         : "Toulouse, France"
-  email            :
+  email            : "hugo.chenel@inserm.fr"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

@@ -1,11 +1,12 @@
 <!-- CSS Styling -->
 <style>
     .hero {
+        display: block; /* Ensure it's a block-level element */
         text-align: center; /* Centers the text */
         padding: 40px; /* Padding to give space around the content */
         margin: 0 auto; /* Ensures it's centered horizontally if it's a block-level element */
+        width: 100%; /* Ensure full width (or set specific width if needed) */
     }
-
     
     .hero h1 {
         font-size: 2em; /* Reduced font size */

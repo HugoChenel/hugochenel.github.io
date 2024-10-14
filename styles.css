@@ -1,12 +1,23 @@
 <!-- CSS Styling -->
 <style>
 
+    /* Apply Flexbox centering to the parent container */
+    body, html {
+        height: 100%; /* Full height of the viewport */
+        margin: 0; /* Reset default margins */
+        display: flex; /* Use Flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+
+    /* Style the .hero section */
     .hero {
-        text-align: center; /* Centers the text inside the hero */
-        margin: 0 auto; /* Centers the hero block itself horizontally */
-        padding: 50px; /* Add space around the content */
-        background-color: #f5f5f5; /* Background color */
-        max-width: 800px; /* Set a max width to control the size */
+        text-align: center; /* Center the text inside */
+        padding: 50px;
+        background-color: #f5f5f5;
+        max-width: 800px; /* Set a maximum width */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        border-radius: 10px; /* Optional rounded corners */
     }
 
     

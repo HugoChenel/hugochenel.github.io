@@ -138,7 +138,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
     - label: "Linkedin"
-      icon: "fa-brands fa-linkedin-in"
+      icon: "fa-brands fa-linkedin"
       url: "https://www.linkedin.com/in/hugo-chenel-8497681ba/"
     - label: "Linktree"
       icon: "fa-solid fa-link"
@@ -148,7 +148,7 @@ author:
 footer:
   links:
     - label: "Instagram"
-      icon: "fa-brands fa-square-instagram"
+      icon: "fab fa-fw fa-instagram"
       url: https://www.instagram.com/
     - label: "Linkedin"
       icon: "fa-brands fa-linkedin"

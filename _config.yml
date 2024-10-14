@@ -137,18 +137,24 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
+    - label: "Linkedin"
+      icon: "fa-brands fa-linkedin-in"
+      url: "https://www.linkedin.com/in/hugo-chenel-8497681ba/"
+    - label: "Linktree"
+      icon: "fa-solid fa-link"
+      url: "https://linktr.ee/HugoChenel"
 
 # Site Footer
 footer:
   links:
     - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+      icon: "fa-brands fa-square-instagram"
       url: https://www.instagram.com/
     - label: "Linkedin"
       icon: "fa-brands fa-linkedin"
       url: https://www.linkedin.com/in/hugo-chenel-8497681ba/
     - label: "Linktree"
-      icon: "fa-solid fa-link"
+      icon: "fa-solid fa-link" 
       url: https://linktr.ee/HugoChenel
     #- label: "Facebook"
     #  icon: "fab fa-fw fa-facebook-square"

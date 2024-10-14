@@ -12,12 +12,14 @@ author_profile: true
 <!-- Main Sections -->
 <section class="main-content">
     <!-- Section 1: Network theory, AI and cancer research -->
-    <div class="section" id="research">
-        <h2>Network theory, AI and cancer research</h2>
-        <p>
-            I’m a PhD candidate involved in <strong>network theory</strong> and <strong>machine learning</strong> to advance cancer research. I explore approaches to better characterize tumor biology and potentially improve therapeutic strategies through AI-driven insights.
-        </p>
-    </div>
+    <a href="/_pages/PhD.md" class="clickable-box">
+        <div class="section" id="research">
+            <h2>Network theory, AI and cancer research</h2>
+            <p>
+                I’m a PhD candidate involved in <strong>network theory</strong> and <strong>machine learning</strong> to advance cancer research. I explore approaches to better characterize tumor biology and potentially improve therapeutic strategies through AI-driven insights.
+            </p>
+        </div>
+    </a>
 
     <!-- Section 2: Biohacking and health optimization -->
     <div class="section" id="biohacking">
@@ -129,4 +131,22 @@ author_profile: true
         margin-top: 20px;
         color: #666;
     }
+
+    /* Style for the clickable box */
+.clickable-box {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block;
+}
+
+.clickable-box .section {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.clickable-box:hover .section {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow effect */
+}
+
 </style>

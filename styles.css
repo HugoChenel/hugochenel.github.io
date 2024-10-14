@@ -1,10 +1,14 @@
 <!-- CSS Styling -->
 <style>
     .hero {
-        text-align: center; /* Centers the text */
+        display: block; /* Ensure .hero is a block element */
+        max-width: 1200px; /* Set a maximum width to center the container */
+        margin: 0 auto; /* Centers the container horizontally */
+        text-align: center; /* Centers the text inside */
         padding: 40px; /* Padding to give space around the content */
-        background-color: #e3d3dc;
+        background-color: #e3d3dc; /* Optional background color */
     }
+
     
     .hero h1 {
         font-size: 2em; /* Reduced font size */

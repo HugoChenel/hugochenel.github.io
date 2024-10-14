@@ -13,7 +13,7 @@
     /* Style the .hero section */
     .hero {
         text-align: center; /* Center the text inside */
-        padding: 50px;
+        padding: 40px;
         background-color: #ebe4e4;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
         border-radius: 10px; /* Optional rounded corners */
@@ -60,7 +60,7 @@
 
     .additional-content {
         padding: 30px;
-        background-color: ##ebe4e4; /* Softer, lighter pastel background */
+        background-color: #ebe4e4; /* Softer, lighter pastel background */
         text-align: center;
     }
 

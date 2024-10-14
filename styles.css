@@ -3,7 +3,7 @@
     .hero {
         text-align: center; /* Centers the text */
         padding: 40px; /* Padding to give space around the content */
-        margin: 0 auto; /* Ensures it's centered horizontally if it's a block-level element */
+        background-color: #e3d3dc;
     }
     
     .hero h1 {

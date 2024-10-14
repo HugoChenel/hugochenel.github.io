@@ -17,9 +17,9 @@ minimal_mistakes_skin    : "aqua" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Performance & Longevity Lab"
+title                    : "Science in motion"
 title_separator          : "-"
-subtitle                 : Exploring the science of peak performance and lifespan
+subtitle                 : Performance & Longevity
 name                     : "Hugo Chenel"
 description              : "PhD cancer network peak performance longevity lifespan health strength AI athlete biohack rejuvenation anti-aging science sport nootropic supplement stack fitness tech"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -136,7 +136,7 @@ author:
       # url: "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://instagram.com/"
 
 # Site Footer
 footer:

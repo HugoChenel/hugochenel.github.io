@@ -117,10 +117,10 @@ author:
   avatar           : "/assets/images/profile_pic.JPG" # path of avatar image
   bio              : "PhD candidate in STEM"
   location         : "Toulouse, France"
-  email            : ""
+  # email            : ""
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fa-regular fa-envelope"
       url: "mailto:hugo.chenel@inserm.fr"
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -140,7 +140,7 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
-    - label: "Linkedin"
+    - label: " Linkedin"
       icon: "fa-brands fa-linkedin-in"
       url: "https://www.linkedin.com/in/hugo-chenel-8497681ba/"
 

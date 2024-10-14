@@ -104,25 +104,5 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow effect */
     }
 
-    /* Ensure all icons are the same size and aligned vertically */
-    .author-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px; /* Spacing between each icon/label */
-    }
-
-    .author-links a {
-        display: flex;
-        align-items: center;
-        text-decoration: none; /* Remove underline */
-        color: inherit; /* Inherit the text color */
-    }
-
-    .author-links i {
-        font-size: 1.5em; /* Adjust the size of the icons */
-        margin-right: 10px; /* Space between icon and text */
-        vertical-align: middle; /* Align icons to the middle */
-    }
-
 
 </style>

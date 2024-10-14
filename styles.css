@@ -1,10 +1,11 @@
 <!-- CSS Styling -->
 <style>
     .hero {
-        text-align: center;
-        padding: 40px;
-        background-color: #e3d3dc; /* Subtle pastel red background */
+        text-align: center; /* Centers the text */
+        padding: 40px; /* Padding to give space around the content */
+        margin: 0 auto; /* Ensures it's centered horizontally if it's a block-level element */
     }
+
     
     .hero h1 {
         font-size: 2em; /* Reduced font size */
@@ -39,8 +40,8 @@
     }
 
     .section p {
-        font-size: 0.7em; /* Reduced font size */
-        color: #666;
+        font-size: 0.9em; /* Reduced font size */
+        color: #242222;
         line-height: 1.5em;
     }
 

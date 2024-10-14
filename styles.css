@@ -73,21 +73,21 @@
         color: #666;
     }
 
-    /* Style for the clickable box */
-.clickable-box {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color */
-    display: block;
-}
+        /* Style for the clickable box */
+    .clickable-box {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit text color */
+        display: block;
+    }
 
-.clickable-box .section {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effect */
-}
+    .clickable-box .section {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effect */
+    }
 
-/* Hover effect */
-.clickable-box:hover .section {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow effect */
-}
+    /* Hover effect */
+    .clickable-box:hover .section {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow effect */
+    }
 
 </style>

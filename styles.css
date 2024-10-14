@@ -14,8 +14,8 @@
     .hero {
         text-align: center; /* Center the text inside */
         padding: 50px;
-        background-color: #e3d3dc;
-        max-width: 800px; /* Set a maximum width */
+        background-color: #ebe4e4;
+        max-width: 1000px; /* Set a maximum width */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
         border-radius: 10px; /* Optional rounded corners */
     }
@@ -41,8 +41,9 @@
     }
 
     .section {
-        background-color: #d7e9f7; /* Light grey background for content sections */
+        background-color: #e4eff7; /* Light blue background for content sections */
         padding: 15px;
+        max-width: 900px; /* Increase max-width to control box size */
         border-radius: 8px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
@@ -61,7 +62,7 @@
 
     .additional-content {
         padding: 30px;
-        background-color: #e3d3dc; /* Softer, lighter pastel background */
+        background-color: ##ebe4e4; /* Softer, lighter pastel background */
         text-align: center;
     }
 

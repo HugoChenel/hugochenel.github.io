@@ -13,7 +13,7 @@
     .hero h1 {
         font-size: 2em; /* Reduced font size */
         margin-bottom: 10px;
-        color: #faebeb;
+        color: #333;
     }
 
     .hero p {
@@ -44,7 +44,7 @@
 
     .section p {
         font-size: 0.9em; /* Reduced font size */
-        color: #242222;
+        color: #c99999;
         line-height: 1.5em;
     }
 

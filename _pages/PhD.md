@@ -4,8 +4,6 @@ title: "PhD"
 permalink: /phd/
 ---
 
-<font size="2">
-
 Intro ...
   
 # Publications
@@ -38,7 +36,6 @@ Best oral presentation at *Computational Systems Biology of Cancer 7th edition, 
 
 Diagram
 
-</font>
 
 
 

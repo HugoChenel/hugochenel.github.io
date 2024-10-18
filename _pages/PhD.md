@@ -12,8 +12,6 @@ header:
       url: "https://github.com"
 ---
 
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-
 
 Intro ... 
   

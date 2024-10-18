@@ -2,6 +2,7 @@
 layout: single
 title: "PhD"
 permalink: /phd/
+classes: wide
 ---
 
 Intro ...

@@ -3,7 +3,6 @@ layout: single
 title: "PhD"
 permalink: /phd/
 classes: wide
-excerpt: "This post should [...]"
 header:
   image: /assets/images/Banner_PhD.png
 ---

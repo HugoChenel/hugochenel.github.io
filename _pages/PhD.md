@@ -6,9 +6,6 @@ classes: wide
 excerpt: "This post should [...]"
 header:
   image: /assets/images/Banner_PhD.png
-    actions:
-    - label: "Download"
-      url: "https://github.com"
 ---
 
 

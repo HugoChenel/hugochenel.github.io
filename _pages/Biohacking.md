@@ -2,6 +2,7 @@
 layout: single
 title: "Biohacking"
 permalink: /biohacking/
+classes: wide
 ---
 
 # Protocol

@@ -2,6 +2,7 @@
 layout: single
 title: "Sport"
 permalink: /sport/
+classes: wide
 ---
 
 # Training

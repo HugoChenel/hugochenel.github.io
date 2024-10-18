@@ -3,9 +3,11 @@ layout: single
 title: "PhD"
 permalink: /phd/
 classes: wide
+header:
+  image: /assets/images/Banner_PhD.png
 ---
 
-Intro ...
+Intro ... 
   
 # Publications
 

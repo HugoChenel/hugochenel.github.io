@@ -49,7 +49,7 @@ You can access my PhD thesis on *Machine learning models of tumor progression ba
 
 # Experiences
 
-![TEST](/assets/images/Education_Timeline.pdf)
+![TEST](/assets/images/Education_Timeline.png)
 
 
 

@@ -50,8 +50,7 @@ You can access my PhD thesis on *Machine learning models of tumor progression ba
 # Experiences
 
 # Background
-
-![Education](/assets/images/Education_timeline.png){: style="width:100%; height:auto; border: 2px solid #ccc;"}
+![Education](/assets/images/Education_timeline.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 4px 4px 15px rgba(0,0,0,0.2); border-radius: 10px;"}
 
 
 

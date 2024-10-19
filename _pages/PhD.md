@@ -49,18 +49,7 @@ You can access my PhD thesis on *Machine learning models of tumor progression ba
 
 # Experiences
 
-```mermaid
-%% Define a timeline diagram for professional experience
-timeline
-    title Career Path
-    2020 : xxx
-    2021 : yyy
-    2022 : zzz
-
-# Education
-
-Diagram
-
+![TEST](/assets/images/Education_Timeline.pdf)
 
 
 

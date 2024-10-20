@@ -1,6 +1,5 @@
 ---
 layout: single
-author_profile: true
 title: "Sport"
 permalink: /sport/
 classes: wide

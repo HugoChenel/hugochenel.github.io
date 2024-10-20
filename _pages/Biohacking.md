@@ -1,6 +1,5 @@
 ---
 layout: single
-author_profile: true
 title: "Biohacking"
 permalink: /biohacking/
 classes: wide

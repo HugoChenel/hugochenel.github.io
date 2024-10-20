@@ -1,6 +1,5 @@
 ---
 layout: single
-author_profile: true
 title: "PhD"
 permalink: /phd/
 classes: wide

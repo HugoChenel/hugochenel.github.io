@@ -15,36 +15,28 @@ docs:
       - title: "Publications"
         url: /phd/#publications
       - title: "Conferences"
-        url: /docs/structure/
+        url: /phd/#conferences
       - title: "Thesis"
-        url: /docs/installation/
+        url: /phd/#thesis
       - title: "Experiences"
-        url: /docs/upgrading/
+        url: /phd/#experiences
       - title: "Background"
-        url: /docs/upgrading/
+        url: /phd/#background
 
-  - title: Customization
+  - title: Biohacking
     children:
-      - title: "Configuration"
-        url: /docs/configuration/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
+      - title: "Protocol"
+        url: /biohacking/#protocol
+      - title: "Biomarkers"
+        url: /biohacking/#biomarkers
 
-  - title: Content
+  - title: Sport
     children:
-      - title: "Working with Posts"
-        url: /docs/posts/
-      - title: "Working with Pages"
-        url: /docs/pages/
-      - title: "Working with Collections"
-        url: /docs/collections/
-      - title: "Helpers"
-        url: /docs/helpers/
-      - title: "Utility Classes"
-        url: /docs/utility-classes/
+      - title: "Training"
+        url: /sport/#training
+      - title: "Athletic performance"
+        url: /sport/#athletic-performance
+      - title: "Recovery"
+        url: /sport/#recovery
+        
+        

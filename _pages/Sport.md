@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: splash
 title: "Sport"
 permalink: /sport/
 classes: wide
@@ -39,7 +39,7 @@ sidebar:
 
 - **Strava Profile**: [View Strava Stats](https://www.strava.com/athletes/125862142)
 
-## Recovery
+# Recovery
 
 - **Whoop Profile**: [View Whoop Stats](#)
 Tools like the **Whoop** is used to monitor my sleep quality and various recovery markers.

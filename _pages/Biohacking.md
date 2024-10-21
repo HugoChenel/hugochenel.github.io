@@ -3,8 +3,6 @@ layout: single
 title: "Biohacking"
 permalink: /biohacking/
 classes: wide
-sidebar:
-  nav: "docs"
 ---
 
 # Protocol

@@ -3,8 +3,6 @@ layout: single
 title: "PhD"
 permalink: /phd/
 classes: wide
-sidebar:
-  nav: "docs"
 header:
   image: /assets/images/Banner_PhD.png
 ---

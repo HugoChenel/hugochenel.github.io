@@ -334,3 +334,12 @@ defaults:
       related: true
       # show_date: true
 
+defaults:
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "docs"
+

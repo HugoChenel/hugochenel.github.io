@@ -332,9 +332,7 @@ defaults:
       # comments: true
       share: false
       related: true
-      # show_date: true
-
-defaults:
+      # show_date: true   
   # _docs
   - scope:
       path: ""

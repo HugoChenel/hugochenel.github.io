@@ -333,11 +333,4 @@ defaults:
       share: false
       related: true
       # show_date: true   
-  # _docs
-  - scope:
-      path: ""
-      type: docs
-    values:
-      sidebar:
-        nav: "docs"
 

@@ -3,8 +3,6 @@ layout: single
 title: "Sport"
 permalink: /sport/
 classes: wide
-sidebar:
-  nav: "docs"
 ---
 
 # Training

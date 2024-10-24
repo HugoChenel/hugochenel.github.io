@@ -25,9 +25,64 @@ Intro ...
   Your browser does not support the audio element.
 </audio>
 
+
+
+
+
+
+<div style="margin-bottom: 30px; padding: 15px; background-color: #f9f9f9; border-radius: 8px;">
+  <strong>Multilayer network approaches to omics data integration in Digital Twins for cancer research</strong><br>*2024*<br>
+
+  <a href="https://arxiv.org/abs/2410.07252" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
+    <span style="margin-right: 8px;">🔗</span> Link to Preprint
+  </a>
+  
+  <audio controls style="margin-top: 10px;">
+    <source src="/assets/audio/DT_review.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<div style="margin-bottom: 30px; padding: 15px; background-color: #f9f9f9; border-radius: 8px;">
+  <strong>Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling</strong><br>*2023*<br>
+
+  <a href="https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
+    <span style="margin-right: 8px;">🔗</span> Link to Book chapter
+  </a>
+</div>
+
+
+
+
+
+
+<div style="margin-bottom: 30px;">
+  <strong>Multilayer network approaches to omics data integration in Digital Twins for cancer research</strong><br>*2024*<br>
+
+  <a href="https://arxiv.org/abs/2410.07252" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
+    <span style="margin-right: 8px;">🔗</span> Link to Preprint
+  </a>
+  
+  <audio controls style="margin-top: 10px;">
+    <source src="/assets/audio/DT_review.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<hr style="border: 1px solid #ddd; margin: 20px 0;">
+
+<div style="margin-bottom: 30px;">
+  <strong>Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling</strong><br>*2023*<br>
+
+  <a href="https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
+    <span style="margin-right: 8px;">🔗</span> Link to Book chapter
+  </a>
+</div>
+
+
 **Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling**<br>*2023*<br>
 
-<a href="[https://arxiv.org/abs/2410.07252](https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf)" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
+<a href="https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">🔗</span> Link to Book chapter
 </a>
 

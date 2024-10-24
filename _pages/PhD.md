@@ -19,12 +19,7 @@ Intro ...
 <a href="https://arxiv.org/abs/2410.07252" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">🔗</span> Link to Preprint
 </a>
-<style>
-a:hover {
-  background-color: #0056b3;
-}
-</style>
-<br>
+
 <audio controls>
   <source src="/assets/audio/DT_review.wav" type="audio/wav">
   Your browser does not support the audio element.

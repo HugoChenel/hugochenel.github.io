@@ -14,8 +14,13 @@ Intro ...
   
 # Publications
 
-- **Multilayer network approaches to omics data integration in Digital Twins for cancer research**<br>*2024*<br>[Link to Preprint](https://arxiv.org/abs/2410.07252)<br>[Podcast](/assets/audio/DT_review.wav)
-- **Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling**<br>*2023*<br>[Link to Book chapter](https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf)
+- **Multilayer network approaches to omics data integration in Digital Twins for cancer research**<br>*2024*<br>[Link to Preprint](https://arxiv.org/abs/2410.07252)<br>
+  <audio controls>
+    <source src="/assets/audio/DT_review.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+  - **Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling**<br>*2023*<br>[Link to Book chapter](https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf)
 
 # Conferences
 

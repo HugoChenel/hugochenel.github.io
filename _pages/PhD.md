@@ -61,8 +61,13 @@ Best oral presentation at *Computational Systems Biology of Cancer 7th edition, 
 
 # Thesis
 
-You can access my PhD thesis on *Machine learning models of tumor progression based on multi-omics and clinical data* here:  
-📄 **[PhD Thesis](https://theses.fr/s385051)**
+You can access my PhD thesis on *Machine learning models of tumor progression based on multi-omics and clinical data* here:
+
+<div style="text-align: center;">
+  <a href="https://theses.fr/s385051" style="padding: 50px 80px; background-color: #b3604b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; display: inline-block;">
+    <span style="margin-right: 8px;">📄</span> PhD Thesis
+  </a>
+</div>
 
 # Experiences
 

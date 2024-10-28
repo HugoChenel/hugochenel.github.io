@@ -102,7 +102,28 @@
     .clickable-box:hover .section {
         transform: translateY(-5px); /* Slight lift on hover */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow effect */
-    }
+    } 
 
 
 </style>
+
+
+.phd-thesis-button {
+  display: inline-block;
+  padding: 20px 30px;
+  background-color: #ffcccc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: background-color 0.3s ease;
+}
+
+.phd-thesis-button:hover {
+  background-color: #ff9999; /* Slightly darker on hover */
+}
+
+.phd-thesis-button span {
+  margin-right: 8px;
+}

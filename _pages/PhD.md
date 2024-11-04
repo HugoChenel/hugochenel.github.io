@@ -5,8 +5,8 @@ permalink: /phd/
 classes: wide
 sidebar:
   nav: "docs"
-header:
-  image: /assets/images/Banner_PhD.png
+#header:
+  #image: /assets/images/Banner_PhD.png
 ---
 
 

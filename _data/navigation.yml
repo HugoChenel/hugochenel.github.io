@@ -25,10 +25,17 @@ docs:
 
   - title: Biohacking
     children:
-      - title: "Protocol"
-        url: /biohacking/#protocol
+      - title: "First principles"
+        url: /biohacking/#first-principles
+      - title: "Master the basics"
+        url: /biohacking/#master-the-basics
+      - title: "Advanced protocol"
+        url: /biohacking/#advanced-protocol
       - title: "Biomarkers"
         url: /biohacking/#biomarkers
+      - title: "Health tests"
+        url: /biohacking/#health-tests
+        
 
   - title: Sport
     children:

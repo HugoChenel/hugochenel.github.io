@@ -57,7 +57,7 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   - **Pull-ups**: 27 rep
   - **Weighted pull-ups (1RM)**: 35 kg 
   - **Dips**: 52 rep
-  - **Weighted dips**: 55 kg
+  - **Weighted dips (1RM)**: 55 kg
   - **Muscle-ups**: 16 rep 
   
   - **Broad jump**: 3m02
@@ -78,17 +78,6 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   <span style="margin-right: 8px;">🏋🏼</span> CrossFit Games profile
 </a>
 
-
-
-## Hyrox
-
-![Hyrox](/assets/images/Hyrox_competition.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); border-radius: 5px;"}
-
-**2024/12 Hyrox Marseille**
-<a href="https://hyroxfrance.com/fr/event/hyrox-marseille/" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
-  <span style="margin-right: 8px;"></span> Open men — 1:30
-</a>
-
 ## Running
 
 - **Personal bests**:
@@ -103,6 +92,15 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   <span style="margin-right: 8px;">👟</span> Strava profile
 </a>
 
+## Hyrox
+
+![Hyrox](/assets/images/Hyrox_competition.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); border-radius: 5px;"}
+
+- **2024/12 Hyrox Marseille**
+<a href="https://hyroxfrance.com/fr/event/hyrox-marseille/" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+  <span style="margin-right: 8px;"></span>Time — 1:30
+</a>
+
 <br>
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
@@ -113,11 +111,11 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 | Day       | Focus                                             | Exercises                                                                | 
 |-----------|---------------------------------------------------|--------------------------------------------------------------------------|
-| Monday    | **Strength**<br>Chest<br>houlders<br>Triceps<br> **Push**	    | Bench Press, Military overhead press, Dips <br> Lateral/front dumbell raises, Push-ups, Rope climbing	| 
-| Tuesday   | **Strength**<br>Back<br>Biceps<br> **Pull**					| Barbell row / T-row, Pull-ups, Muscle-ups, Pull-down<br>Chin-ups, Curl  | 
+| Monday    | **Strength - Push**<br>Chest<br>Shoulders<br>Triceps	   	    | Bench Press, Military overhead press, Dips <br> Lateral/front dumbell raises, Push-ups, Rope climbing	| 
+| Tuesday   | **Strength - Pull**<br>Back<br>Biceps							| Barbell row / T-row, Pull-ups, Muscle-ups, Pull-down<br>Chin-ups, Curl  | 
 | Wednesday | **Zone 2 training**					            			| Long run (60-90 minutes)									             | 
 | Thursday  | **Explosive power**			    				    		| Power clean, Clean and jerk, Snatch      								 | 
-| Friday    | **Strength**<br>Legs<br>Core stability               			| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
+| Friday    | **Strength - Legs**<br> **Core stability**               			| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
 | Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope)                   | 
 | Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Ice bath                   |
 
@@ -125,9 +123,27 @@ Sets x Reps<br>
 Intensity<br>                                    
 Rest<br>   
 Sometimes hammer, barbell, ...<br>
-Farmer’s Carry<br>
+Farmer’s Carry - Grip stength<br>
+Daily flexibility<br>
 Plyometry and isometry
 
+
+<hr style="border: 1px solid #ddd; margin: 30px 0;">
+
+# Body profile
+
+**Physical attributes**<br>
+*Height*: 182 cm / 6 ft<br>
+*Weight*: 70 kg / 155 lbs<br>
+*Body type*: Ectomorph
+
+**Physiological metrics**<br>
+*Testosterone*: 850 ng/dl<br>
+*Estrogen*: 20 pg/ml<br>
+*VO2 max*:  65 ml/kg/min<br>
+*Lactate threshold*: 81% of VO2 max<br>
+*Body fat percentage*: 7-9%<br>
+*T-score*:
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 

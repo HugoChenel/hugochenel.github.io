@@ -296,10 +296,14 @@ PEMF
 
 ## 7 - Traps to avoid
 
+<hr style="border: 1px solid #ddd; margin: 30px 0;">
+
 # Biomarkers
 
 ## Rejuvenation Olympics
 
-# Genetic test
+<hr style="border: 1px solid #ddd; margin: 30px 0;">
 
-## Nebula Genomics
+# Health tests
+
+## Genetic test - Nebula Genomics

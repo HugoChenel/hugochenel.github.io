@@ -11,7 +11,9 @@ header:
 
 
 Intro in progress 
-  
+
+<hr style="border: 2px solid #ddd; margin: 30px 0;">
+
 # Publications
 
 **Multilayer network approaches to omics data integration in Digital Twins for cancer research**<br>*2024*<br>
@@ -25,7 +27,7 @@ Intro in progress
   Your browser does not support the audio element.
 </audio>
 
-<hr style="border: 1px solid #ddd; margin: 20px 0;">
+<hr style="border: 1px dashed #ddd; margin: 20px 0;">
 
 **Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling**<br>*2023*<br>
 
@@ -33,9 +35,11 @@ Intro in progress
   <span style="margin-right: 8px;">🔗</span> Link to Book chapter
 </a>
 
+<hr style="border: 2px solid #ddd; margin: 30px 0;">
+
 # Conferences
 
-Here is a list of the conferences I’ve presented at:
+Here are the conferences where I had the opportunity to present my research work.
 
 ### Talk
 
@@ -57,7 +61,13 @@ Here is a list of the conferences I’ve presented at:
 
 ### Awards
 
-Best oral presentation at *Computational Systems Biology of Cancer 7th edition, Institut Curie*, *2024*
+| Date       | Event                        | Location        | Prize                       |
+|------------|------------------------------|-----------------|-----------------------------|
+| 30 September – 04 October 2024 | Computational Systems Biology of Cancer 7th edition, Institut Curie | Paris, France | Best oral presentation |
+
+<br>
+
+<hr style="border: 2px solid #ddd; margin: 30px 0;">
 
 # Thesis
 
@@ -69,7 +79,11 @@ You can access my PhD thesis on *Machine learning models of tumor progression ba
   </a>
 </div>
 
+<hr style="border: 2px solid #ddd; margin: 30px 0;">
+
 # Experiences
+
+<hr style="border: 2px solid #ddd; margin: 30px 0;">
 
 # Background
 ![Education](/assets/images/Education_timeline.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 4px 4px 15px rgba(0,0,0,0.2); border-radius: 10px;"}

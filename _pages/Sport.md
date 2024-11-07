@@ -14,10 +14,10 @@ What follows is an overview of my training components and results. Each one play
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
-# Training foundations
+# Foundations
 
 1 - **Strength and power training**<br>
-Strength and power development are one of the most important parts of my training, especially through weightlifting and resistance training. I use a mix of compound movements from powerlifting (bench, military press, squat, lunge) or gymnastics (pull-up, dip, muscle-up, chin-up), and high-velocity exercises (plyometrics, olympic lifts) to build a powerful foundation.
+Strength and power development are one of the most important parts of my training, especially through weightlifting and resistance training. I use a mix of compound movements from powerlifting (bench, military press, squat) or gymnastics (pull-up, dip, muscle-up, chin-up), and high-velocity exercises (plyometrics, olympic lifts) to build a powerful foundation.
 
 2 - **HIIT and anaerobic capacity**<br>
 Mixing steady-state endurance work with high-intensity interval training is ideal to improve VO2 max and lactate threshold, thus transforming your anaerobic capacity. It can be in various forms, from sprint intervals to crossfit WOD.
@@ -54,7 +54,7 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 ## Weightlifting, Gymnastics & CrossFit
 
 - **Personal records**:
-  - **Pull-ups**: 27 rep
+  - **Pull-ups (strict)**: 27 rep
   - **Weighted pull-ups (1RM)**: 35 kg 
   - **Dips**: 52 rep
   - **Weighted dips (1RM)**: 55 kg
@@ -85,7 +85,7 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   - **800m**: 2:32
   - **1600m**: 5:32
   - **3200m**: 11:38
-  - **5K**: 19:22
+  - **5K**: 19:04
 
 <br>
 <a href="https://www.strava.com/athletes/125862142" style="padding: 20px 100px; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
@@ -117,7 +117,9 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 | Thursday  | **Explosive power**			    				    		| Power clean, Clean and jerk, Snatch      								 | 
 | Friday    | **Strength - Legs**<br> **Core stability**               			| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
 | Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope)                   | 
-| Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Ice bath                   |
+| Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Isolation tank                |
+
+## Details and practices
 
 Sets x Reps<br>                                  
 Intensity<br>                                    

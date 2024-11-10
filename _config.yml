@@ -21,7 +21,7 @@ title                    : "Science in motion"
 title_separator          : "-"
 subtitle                 : Performance & Longevity
 name                     : "Hugo Chenel"
-description              : "PhD cancer network peak performance longevity lifespan health strength AI athlete biohack rejuvenation anti-aging science sport nootropic supplement stack fitness tech"
+description              : "PhD cancer network peak performance longevity lifespan health strength AI athlete biohack rejuvenation anti-aging science sport athleticism nootropic supplement stack fitness tech"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -237,7 +237,7 @@ sass:
 # Outputting
 permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
+  
 
 # Pagination with jekyll-paginate
 paginate: 5 # amount of posts to show
@@ -249,10 +249,11 @@ paginate_path: /page:num/
 pagination:
   # Set enabled to true to use paginate v2
   # enabled: true
+  enabled: true
   debug: false
   collection: 'posts'
-  per_page: 10
-  permalink: '/page/:num/'
+  per_page: 5
+  permalink: 'blog/page/:num/'
   title: ':title - page :num'
   limit: 0
   sort_field: 'date'
@@ -318,7 +319,6 @@ compress_html:
   ignore:
     envs: development
 
-
 # Defaults
 defaults:
   # _pages
@@ -327,10 +327,10 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: false
+      # author_profile: false
       read_time: false
       # comments: true
-      share: false
+      # share: false
       related: true
-      # show_date: true   
+      # show_date: true
 

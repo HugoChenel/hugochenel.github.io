@@ -5,7 +5,9 @@ permalink: /phd/
 classes: wide
 sidebar:
   nav: "docs"
-#header:
+header:
+  overlay_color: "#4199e0"
+  overlay_filter: "0.4"
   #image: /assets/images/Banner_PhD.png
 ---
 

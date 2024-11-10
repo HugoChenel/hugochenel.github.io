@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Sport"
-permalink: /sport/
+title: "Athleticism"
+permalink: /athleticism/
 classes: wide
 sidebar:
   nav: "docs"

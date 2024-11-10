@@ -5,6 +5,9 @@ permalink: /biohacking/
 classes: wide
 sidebar:
   nav: "docs"
+header:
+  overlay_color: "#4199e0"
+  overlay_filter: "0.4"
 ---
 
 

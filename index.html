@@ -1,8 +1,31 @@
 ---
-layout: home
-author_profile: true
+layout: single
 classes: wide
+author_profile: true
+feature_row:    
+  - image_path: /assets/images/index/PhD.png
+    alt: "Cancer and AI"
+    title: "Cancer and AI"
+    excerpt: "I’m a PhD candidate involved in network theory and machine learning to advance cancer research. I explore approaches to better characterize tumor biology and potentially improve therapeutic strategies through AI-driven insights."
+    url: /phd/
+    btn_label: "Discover more about Scientific research"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/index/Biohacking.png
+    alt: "Biohacking"
+    title: "Biohacking"
+    excerpt: "Through advanced biohacking protocols, I’ve achieved top 1% biomarker levels. I continuously experiment, test, and adapt methods to optimize both physical and mental performance. I’ll be sharing detailed biohacking strategies and biomarker values."
+    url: /biohacking/
+    btn_label: "Learn more about Biohacking"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/index/Athleticism.png
+    alt: "Athleticism"
+    title: "Athleticism"
+    excerpt: "I integrate weightlifting and cardio into a comprehensive training routine, supported by biohacking principles to enhance recovery and performance. You can follow my workout plans, recovery techniques, personal stats and event participation."
+    url: /athleticism/
+    btn_label: "Learn more about Athleticism"
+    btn_class: "btn--primary"
 ---
+
 
 <!-- Link to external CSS file -->
 <link rel="stylesheet" href="/styles.css">
@@ -11,10 +34,15 @@ classes: wide
     <h1>Welcome to my journey</h1>
     <p>Dive into my content to discover my work in the three following areas</p>
 </div>
- 
-<!-- Main Sections -->
+
+<br>
+
+<br>
+
+{% include feature_row %}
+
+<!--
 <section class="main-content">
-    <!-- Section 1: Cancer and AI -->
     <a href="/phd/" class="clickable-box">
         <div class="section" id="research">
             <h2>Cancer and AI</h2>
@@ -24,7 +52,6 @@ classes: wide
         </div>
     </a>
 
-    <!-- Section 2: Biohacking -->
     <a href="/biohacking/" class="clickable-box">
         <div class="section" id="biohacking">
             <h2>Biohacking</h2>
@@ -34,7 +61,6 @@ classes: wide
         </div>
     </a>
     
-    <!-- Section 3: Athletic performance -->
     <a href="/sport/" class="clickable-box">
         <div class="section" id="athletic-performance">
             <h2>Athletic performance</h2>
@@ -44,6 +70,7 @@ classes: wide
         </div>
     </a>
 </section>
+-->
 
 <!-- Additional Content -->
 <section class="additional-content">

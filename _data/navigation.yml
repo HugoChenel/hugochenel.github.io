@@ -6,8 +6,10 @@ main:
     url: /phd/
   - title: "Biohacking"
     url: /biohacking/
-  - title: "Sport"
-    url: /sport/
+  - title: "Athleticism"
+    url: /athleticism/
+  - title: "Blog"
+    url: /blog/    
 
 docs:
   - title: PhD
@@ -37,7 +39,7 @@ docs:
         url: /biohacking/#health-tests
         
 
-  - title: Sport
+  - title: Athleticism
     children:
       - title: "Foundations"
         url: /sport/#foundations
@@ -49,5 +51,13 @@ docs:
         url: /sport/#body-profile
       - title: "Recovery"
         url: /sport/#recovery
+       
+       
+  #- title: Blog
+    #children:
+      #- title: "Mind & Consciousness"
+        #url: /blog/#mind-&-consciousness
+      #- title: "Finance & Tech"
+        #url: /blog/#Finance-&-Tech
         
         

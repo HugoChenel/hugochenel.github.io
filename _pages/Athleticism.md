@@ -111,12 +111,12 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 | Day       | Focus                                             | Exercises                                                                | 
 |-----------|---------------------------------------------------|--------------------------------------------------------------------------|
-| Monday    | **Strength - Push**<br>Chest<br>Shoulders<br>Triceps	   	    | Bench Press, Military overhead press, Dips <br> Lateral/front dumbell raises, Push-ups, Rope climbing	| 
+| Monday    | **Strength - Push**<br>Chest<br>Shoulders<br>Triceps	   	    | Bench Press, Military overhead press, Dips, Standing shoulder press <br> Lateral/front dumbell raises, Push-ups, Rope climbing	| 
 | Tuesday   | **Strength - Pull**<br>Back<br>Biceps							| Barbell row / T-row, Pull-ups, Muscle-ups, Pull-down<br>Chin-ups, Curl  | 
-| Wednesday | **Zone 2 training**					            			| Long run (60-90 minutes)									             | 
+| Wednesday | **Cardio (Zone 2)**					            			| Long run (60-120 minutes)									             | 
 | Thursday  | **Explosive power**			    				    		| Power clean, Clean and jerk, Snatch      								 | 
 | Friday    | **Strength - Legs**<br> **Core stability**               			| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
-| Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope)                   | 
+| Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope, sled push/pull)                   | 
 | Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Isolation tank                |
 
 ## Details and practices
@@ -128,6 +128,8 @@ Sometimes hammer, barbell, ...<br>
 Farmer’s Carry - Grip stength<br>
 Daily flexibility<br>
 Plyometry and isometry
+
+## Tools
 
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">

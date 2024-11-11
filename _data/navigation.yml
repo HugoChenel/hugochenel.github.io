@@ -42,15 +42,15 @@ docs:
   - title: Athleticism
     children:
       - title: "Foundations"
-        url: /sport/#foundations
+        url: /athleticism/#foundations
       - title: "Benchmark"
-        url: /sport/#benchmark
+        url: /athleticism/#benchmark
       - title: "Training"
-        url: /sport/#training
+        url: /athleticism/#training
       - title: "Body profile"
-        url: /sport/#body-profile
+        url: /athleticism/#body-profile
       - title: "Recovery"
-        url: /sport/#recovery
+        url: /athleticism/#recovery
        
        
   #- title: Blog

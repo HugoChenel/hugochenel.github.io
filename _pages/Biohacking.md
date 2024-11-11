@@ -258,7 +258,8 @@ Magnesium L-Threonate°<br>
 Maca°°<br>
 Black ginger°°<br>
 Spermidine°°<br>
-NR or NMN°°
+NR or NMN°°<br>
+coQ10°°
 
 **12:00 AM - During meal**<br>
 Tongkat Ali°°<br>
@@ -289,11 +290,15 @@ To prevent the body from becoming too accustomed to these compounds, which can r
 Under construction ...
 
 Breathing (WHM, Buteyko, ...)<br>
-Hot and cold (cold shower, sauna)
+Hydrogen ... water<br>
+Hot and cold (cold shower, sauna)<br>
 LLLT/RLT<br>
+tDCS<br>
 nootropics (saffron, C3G, nicotine)<br>
 psychedelics<br>
-PEMF
+PEMF<br>
+Stem cell injections<br>
+Hyperbaric chambers
 
 ## 6 - Relationships and social connections : …
 

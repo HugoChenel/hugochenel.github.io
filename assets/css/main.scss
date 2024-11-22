@@ -7,3 +7,59 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/*
+/* Apply font size only to paragraphs and list items, excluding page titles */
+body p,
+body ul,
+body li, //body ol
+ {
+  font-size: 18px !important; /* Apply consistent font size */
+  line-height: 1.6; /* Improve readability */
+}
+
+/* Explicitly exclude some text like page titles from being affected */
+.page-title, 
+.site-title,
+ {
+  font-size: inherit !important; /* Retain original size for titles */
+}
+
+/* Style navigation links */
+.main-nav a,
+nav ul li a {
+  font-size: 20px !important; /* Consistent font size */
+  color: #000;                /* Neutral black color */
+}
+
+
+/* Style navigation subtitles */
+.nav__sub-title {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.25rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-size: 1em;             /* Maintain default size unless needed */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e8f1fb;
+}
+
+
+/*
+html {
+  font-size: 16px;
+
+  @include breakpoint($medium) {
+    font-size: 18px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 20px;
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 22px; // All text (initially : 22px)
+  }
+}
+*/

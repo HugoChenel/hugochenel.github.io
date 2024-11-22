@@ -47,6 +47,15 @@ Below is an overview of my publications showcasing my contributions to the field
 
 <hr style="border: 2px solid #ddd; margin: 30px 0;">
 
+# Tutorials
+
+**Single cell series**<br>
+![Singlecell](/assets/images/PhD/Single_cell.png){: style="width:100%; height:auto; border: 2px solid #ccc; border-radius: 10px;"}
+
+1 - Preprocessing scRNA-seq data with Seurat
+
+<hr style="border: 2px solid #ddd; margin: 30px 0;">
+
 # Conferences
 
 ### Talk
@@ -60,6 +69,7 @@ Below is an overview of my publications showcasing my contributions to the field
 
 | Date       | Event                        | Location        | Title                       | Details |
 |------------|------------------------------|-----------------|-----------------------------|---------|
+| 20 November – 22 November 2024 | The 20th Annual Meeting of the Canceropole GSO | Perpignan, France | Time series analysis of cellular interactions through gene regulatory network inference | [GSO](https://www.canceropole-gso.org/page/manifestations/journees-gso/20th-annual-meeting-perpignan-2024/848-overview.html) |
 | 30 September – 04 October 2024 | Computational Systems Biology of Cancer 7th edition, Institut Curie | Paris, France | Time series analysis of cellular interactions through gene regulatory network inference | [Curie](https://training.institut-curie.org/courses/sysbiocancer2024) |
 | 25 June – 28 June 2024 | Journées Ouvertes en Biologie, Informatique et Mathématiques (JOBIM) | Toulouse, France | Time series analysis of cellular interactions through gene regulatory network inference | [JOBIM](https://jobim2024.sciencesconf.org/) |
 | 26 November – 01 December 2023 | Computational models of life: From molecular biology to digital twins - EMBO Workshop | Sant Feliu de Guíxols, Spain | Deciphering cellular interactions through gene regulatory network inference | [EMBO](https://meetings.embo.org/event/23-comp-models-life) |
@@ -75,7 +85,7 @@ Below is an overview of my publications showcasing my contributions to the field
 
 <br>
 
-<hr style="border: 2px solid #ddd; margin: 30px 0;">
+<hr style="border: 1px solid #ddd; margin: 30px 0;">
 
 # Thesis
 
@@ -130,10 +140,5 @@ Taught mathematics to high school students in the Scientific stream, specificall
 
 <br>
 
-![Education](/assets/images/Education_timeline.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 4px 4px 15px rgba(0,0,0,0); border-radius: 10px;"}
-
-
-
-
-
+![Education](/assets/images/PhD/Education_timeline.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 4px 4px 15px rgba(0,0,0,0); border-radius: 10px;"}
 

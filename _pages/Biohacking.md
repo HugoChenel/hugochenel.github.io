@@ -32,9 +32,9 @@ Removing these zombie cells through protocols such as fasting, exercise or using
 <br>
 Autophagy is the process of clearing out damaged cellular components, while apoptosis is the controlled death of old or/and damaged cells. Both are essential for maintaining cellular health.
 <br>
-Strategies like intermittent fasting and supplements like spermidine can trigger autophagy and help the body to clean out cellular “junk”. This rejuvenates cells and helps keep tissues functioning optimally.
+Strategies like intermittent fasting and supplements like spermidine can trigger autophagy and help the body to clean out cellular “junk”. This rejuvenates cells and helps keep tissues functioning optimally. Also, Nrf2 activation (via compounds like sulforaphane) promotes the production of detoxifying enzymes that help eliminate toxins or harmful byproducts that accumulate over time, to preserve the integrity of various cellular components.
 
-**Decline in stem cell activity**
+**Stem cell function**
 <br>
 Stem cells are responsible for repairing and regenerating tissues. With age, stem cell numbers and activity decrease, meaning our body repairs damage more slowly.
 <br>
@@ -44,7 +44,7 @@ Fasting and specific diets (like Fasting-mimicking diet from Dr. Valter Longo) c
 <br>
 Our DNA is like our body’s instruction manual, but over time, it gets damaged from various events like pollution, UV radiation or even natural metabolic processes. This damage accumulates, causing cells to function less effectively.
 <br>
-Supporting DNA repair by protecting your genetic blueprint is a key element to stop or reverse aging. Boosting NAD+ with compounds like NMN, NR or apigenin can help. 
+Maintaining DNA stability and supporting DNA repair mechanisms by protecting your genetic blueprint is a key element to stop or reverse aging. Boosting NAD+ with compounds like NMN, NR or apigenin can help. 
 <br>
 *Measure NAD+ levels using a basic test to eventually supplement yourself.*
 
@@ -76,6 +76,12 @@ Exercise, a clean diet, caloric restriction and supplements like resveratrol (fo
 <br>
 *Estimate your biological age based on DNA methylation patterns using DunedinPACE.*
 
+**Nutrient sensing and metabolism**
+<br>
+Nutrient-sensing pathways, including insulin/IGF-1 signaling, mTOR and AMPK, are vital regulators of metabolism and play a significant role in the aging process. These pathways detect and respond to nutrient availability, adjusting cellular and metabolic activities accordingly.
+<br>
+By modulating these pathways through dietary interventions (calorie restriction, fasting, low-protein diet, ketogenic diet, high-fiber diet) or pharmacological methods (berberine, curcumin, resveratrol), it's possible to slow down age-related cellular damage.
+
 **Chronic inflammation or “inflammaging”**
 <br>
 Bodies develop low-level, chronic inflammation, often without us even realizing it. This type of “silent inflammation” speeds up aging and is linked to most major diseases. Acute inflammation is beneficial, chronic inflammation is detrimental.
@@ -86,9 +92,9 @@ Combat inflammation through anti-inflammatory foods (like fatty fish rich in EPA
 
 **Oxidative stress and free radicals**
 <br>
-Free radicals are molecules that can damage cells and they’re a natural byproduct of metabolism. However, when free radicals accumulate faster than your body can handle, they cause oxidative stress, leading to dysfunction.
+Free radicals are molecules that can damage cells and they’re a natural byproduct of metabolism. However, when free radicals accumulate faster than your body can handle, they cause oxidative stress, leading to dysfunction. 
 <br>
-Polyphenols from colorful fruits and vegetables help neutralize free radicals. Glutathione, vitamin C and alpha-lipoic acid are powerful choices for their antioxidant effects.
+Beta-alanine, by increasing carnosine levels, contributes to anti-aging processes primarily through its role as an acid buffer against lactic acid build-up in cells, particularly in muscle tissue. Also, polyphenols from colorful fruits and vegetables help neutralize free radicals. Glutathione, vitamin C and alpha-lipoic acid are powerful choices for their antioxidant effects.
 
 **Circadian rhythm disruption**
 <br>
@@ -150,21 +156,17 @@ These basics form a solid health and performance foundation by applying the 80/2
 - **Avoid stimulants before bed**: Cut out stimulants (caffeine, alcohol, …) in the hours leading up to bed to prevent disrupted sleep cycles.
 - **Sleep supporting supplements** : Magnesium glycinate (helps with relaxation and muscle recovery), apigenin (promotes calmness), CBD (assists with stress management).
 
+4 hrs of restorative (Deep and REM)
+
 ## 2 - Diet
 
 In optimizing my diet, I focus on nutrient-dense, anti-inflammatory foods to support energy, cellular health and longevity. I also be careful that I'm not allergic to any of the food included in the diet. Overall, eat any type of **whole food plant based diet** (something like the Mediterranean diet or Blue Zone related diet is convenient for most people). Here’s a look at my food choices and meal structure to help guide your own diet protocol.
 
-### Overview
-Total calories: ~2500 <br>
-Fats: ~40% <br>
-Protein: ~30% <br>
-Carbohydrates: ~30%
+![overview](/assets/images/Biohacking/overview.png){: style="width:50%; height:auto; display:block; margin:auto;"}
 
 ### Daily food routine
 **8:00 AM - Fasting**
-<br>
-I maintain a fasting state (15h from 9pm to 12am) to extend metabolic rest, supporting autophagy (a cellular repair process essential for removing damaged cells). During this period, I take select supplements that aid cellular resilience and metabolic efficiency without stimulating insulin or glucose responses, preserving the fasting benefits. This approach promotes mitochondrial health for peak performance throughout the day.
-<br>
+![fasting](/assets/images/Biohacking/fasting.png){: style="width:100%; height:auto; display:block; margin:auto; border-radius:20px;"}
 
 **12:00 AM - Lunch**
 <br>
@@ -173,7 +175,7 @@ My breakfast centers around a nutrient-dense but light meal to provide sustained
 - 1-2 avocados
 - Vegetables like arugula or cucumber
 - Radishes or carrots (or Broccoli / Cauliflower)
-- Fermented foods like olives, kimchi or cabbage
+- Fermented foods like olives, pickles, kimchi or cabbage
 - Extra virgin olive oil
 - Fenugreek
 <br>
@@ -204,6 +206,9 @@ A combination of carbs with meat/fish, as a carb back-loading strategy (restrict
 
 To support healthy blood sugar levels and reduce the impact of carb rich meals, it’s interesting to include compounds known to control blood sugar spikes (cinnamon, berberine, C3G, ACV, fenugreek and bitter melon). They greatly help regulate glucose absorption and reduce insulin spikes, ultimately improving metabolic health when taken with carb heavy meals.
 
+### Water intake
+I drink **molecular hydrogen (H₂) water**, which is infused with hydrogen gas to deliver specific health benefits beyond basic hydration. Molecular hydrogen acts as a therapeutic antioxidant and offers several unique advantages. It neutralizes harmful free radicals like hydroxyl radicals without disrupting essential redox signaling. Molecular hydrogen also acts as a regulator of the body’s natural antioxidant systems. It upregulates the production of enzymes like glutathione peroxidase, superoxide dismutase (SOD) and catalase, which are critical for combating oxidative stress at the cellular level.
+
 ### Foods and drinks I avoid
 I steer clear of anything that could trigger inflammatory response or has been proved to have negative impact on my health based on my biomarkers, including:
 - **Oils & fats**: Avoid hydrogenated oils, canola, corn, soybean oils and PUFA. Trans fats are literally poison, they are incorporated into cell membrane phospholipids and change their function. These oils are highly processed (oxidize easily) and can promote inflammation.
@@ -215,8 +220,6 @@ I steer clear of anything that could trigger inflammatory response or has been p
 - **Coffee**: While coffee has antioxidants, it can also overstimulate the nervous system and affect cortisol levels in those who are sensitive like me. Reducing coffee helps maintain balanced energy levels and reduces stress on the adrenal system.
 
 *Note: This is a guide, not a rulebook. The above plan is based on my genetic needs and specific to my biomarker feedback. Always personalize your diet to align with your own biomarkers.*
-
-<hr style="border: 1px solid #ddd; margin: 30px 0;">
 
 ## 3 - Exercise
 
@@ -243,7 +246,11 @@ Pushing the body too hard without enough rest can actually slow down progress bu
 Rest days are just as important as workout days; they‘re good for muscle and nervous system. Recovery lets muscles repair and the nervous system reset. By giving your body the downtime it needs, you’ll come back stronger, but it’s highly dependent on your lifestyle and eventual biohacking protocol. In my case, I take 1 rest day per week (sometimes 0) because I don't need more. Always consult some metrics or biomarkers to assess whether a workout will be beneficial or not (you can adapt the intensity and duration). Before training, I always use a *CNS tap test* to check the state of my nervous system and I consult my *HRV* on my Whoop. Listen to your body, and remember that smart training includes knowing when to step back.
 
 ### Diet strategy : carb backloading
-If you’re doing intense exercise, especially later in the day, try carb backloading: consuming carbs primarily after your workout. This strategy can help replenish glycogen in muscles, improve recovery and optimize insulin sensitivity while keeping blood sugar levels steady throughout the day. It has completely changed the way I train, for the better!
+If you’re doing intense exercise, especially later in the day, try carb backloading: consuming carbs primarily after your workout. This strategy can help replenish glycogen stores, improve recovery and optimize insulin sensitivity while keeping blood sugar levels steady throughout the day. It has completely changed the way I train, for the better!
+
+### Hydratation : replenishing what you lose
+Electrolytes are essential for hydration, especially after sweating during long cardio sessions or sauna use. To keep my electrolyte balance, I use *Quinton marine plasma*, a natural seawater solution packed with minerals and trace elements. Electrolytes like sodium, potassium, magnesium and calcium are essential for muscle function, nerve signaling and maintaining fluid balance.<br>
+I turn to *Quinton hypertonic* when I’ve been sweating heavily. It’s my go-to for quickly replacing lost electrolytes, keeping me hydrated and supporting recovery. Quinton not only replaces lost electrolytes but also provides a host of trace elements. Simple, effective, it’s an essential part of my routine to avoid fatigue.
 
 ## 4 - Supplements and nootropics
 
@@ -259,7 +266,7 @@ Maca°°<br>
 Black ginger°°<br>
 Spermidine°°<br>
 NR or NMN°°<br>
-coQ10°°
+CoQ10°°
 
 **12:00 AM - During meal**<br>
 Tongkat Ali°°<br>
@@ -290,14 +297,15 @@ To prevent the body from becoming too accustomed to these compounds, which can r
 Under construction ...
 
 Breathing (WHM, Buteyko, ...)<br>
-Hydrogen ... water<br>
 Hot and cold (cold shower, sauna)<br>
 LLLT/RLT<br>
 tDCS<br>
 nootropics (saffron, C3G, nicotine)<br>
+Stem cell injections<br>
 psychedelics<br>
 PEMF<br>
-Stem cell injections<br>
+Sensory deprivation<br>
+Grounding
 Hyperbaric chambers
 
 ## 6 - Relationships and social connections : …
@@ -307,6 +315,24 @@ Hyperbaric chambers
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
 # Biomarkers
+
+| Category | Markers | Typical values/ranges | My current values |
+|----------|---------|----------------------|--------------|
+| General health<br>markers | - Complete blood count<br>- Liver function tests (ALAT, ASAT)<br>- Kidney function tests<br>(Creatinine, CysC)<br>- Thyroid function (TSH, T4, T3)<br>- Electrolytes<br>- Albumin<br>- Lymphocyte percent<br>- Mean Cell Volume (MCV)<br>- Red Cell Distribution Width (RDW)<br>- Vitamins (D, B9, B12)<br>- Minerals<br>(Iron, Ferritin, Copper, Zinc)<br>- Heavy metals | `Hemoglobin: 13.5-17.5 g/dL (men)`<br>`ALAT: 7-56 U/L`<br>`ASAT: 10-40 U/L`<br>`Creat.: 0.7-1.3 mg/dL (men)`<br>`TSH: 0.4-4.0 mIU/L`<br>`Albumin: 3.5-5.5 g/dL`<br>`Lymphocyte %: 20-40%`<br>`MCV: 80-100 fL`<br>`RDW: 11.5-14.5%`<br>`Vitamin D: 30-80 ng/mL`<br>`Vitamin B12: >500 pg/mL`<br>`Iron: 60-170 µg/dL`<br>`Ferritin: 24-336 ng/mL` | `Hemoglobin: `<br>`ALAT: 11 U/L`<br>`ASAT: 24 U/L`<br>`Creat.: 1.13 mg/dL`<br>`TSH: 1.02 mIU/L`<br>`Albumin: `<br>`Lymphocyte %: `<br>`MCV: `<br>`RDW: `<br>`Vit. D: 37 ng/mL`<br>`Vit. B12: 729 pg/mL`<br>`Iron: `<br>`Ferritin: 55 ng/mL` |
+| Metabolic<br>markers | - Fasting glucose (Glc)<br>- Glycated hemoglobin (HbA1c)<br>- Insulin-like growth factor-1 (IGF-1)<br>- CGM | `Glc: 70-95 mg/dL`<br>`HbA1c: <5%`<br>`IGF-1: 100-300 ng/mL`<br>`CGM: Stable levels` | `Glc: 83 mg/dL`<br>`HbA1c: `<br>`IGF-1: `<br>`CGM: ` |
+| Cardiovascular<br>markers | - Blood pressure<br>- Lipid profile (cholesterol, triglycerides)<br>- apoB<br>- Triglycerides/HDL ratio | `BP: 100-120/60-80 mmHg`<br>`Total cholesterol: <200 mg/dL`<br>`LDL: <70 mg/dL`<br>`HDL: >75 mg/dL`<br>`Triglycerides: <75 mg/dL`<br>`apoB: <60 mg/dL`<br>`Triglycerides/HDL: <1` | `BP: `<br>`Total cholesterol: `<br>`LDL: 106 mg/dL`<br>`HDL: 50 mg/dL`<br>`Triglycerides: 46 mg/dL`<br>`apoB: `<br>`Triglycerides/HDL: 0.92` |
+| Inflammatory<br>markers | - Interleukins (IL-6, IL-8, IL-15, IL-1β)<br>- High-sensitivity C-reactive protein (hs-CRP)<br>- Tumor Necrosis Factor alpha (TNFα) | `IL-6: <5 pg/mL`<br>`hs-CRP: <1 mg/L`<br>`TNFα: <8.1 pg/mL` | `IL-6: `<br>`hs-CRP: `<br>`TNFα: ` |
+| Oxidative stress<br>markers | - Homocysteine | `Homocysteine: <6 µmol/L` | `Homocysteine: ` |
+| DNA-related<br>markers | - Telomere length<br>- DNA methylation patterns (epigenetic clocks)<br>- DNA damage markers | `Telomere length: 5-12 kb`<br>`Epigenetic age: Varies`<br>`DNA damage: Varies` | `Telomere length: `<br>`Epigenetic age: `<br>`DNA damage: ` |
+| Functional<br>markers | - Grip strength<br>- Walking speed<br>- Sitting-rising test score | `Grip strength: >26 kg (men), >16 kg (women)`<br>`Walking speed: >0.8 m/s`<br>`Sitting-rising test: >8 out of 10` | `Grip strength: `<br>`Walking speed: `<br>`Sitting-rising test: ` |
+| Body<br>composition | - Body Mass Index (BMI)<br>- Muscle mass index<br>- Bone density | `BMI: 18.5-24.9 kg/m²`<br>`Muscle mass index: >7.26 kg/m² (men), >5.45 kg/m² (women)`<br>`Bone density T-score: >-1.0` | `BMI: `<br>`Muscle mass index: `<br>`Bone density T-score: ` |
+| Cognitive<br>function | - Montreal Cognitive Assessment<br>- β-amyloid levels | `MoCA score: ≥26 out of 30`<br>`β-amyloid: Low levels` | `MoCA score: `<br>`β-amyloid: ` |
+| Hormonal<br>markers | - Testosterone<br>- Free testosterone<br>- FSH<br>- LH<br>- Prolactin<br>- DHT<br>- Estrogen<br>- Cortisol<br>- DHEA-S | `Testosterone: >1000 ng/dL`<br>`Free testosterone: 26.2-46.6 pg/mL`<br>`FSH: 1.4-18.1 mIU/mL`<br>`LH: 1.5-9.3 mIU/mL`<br>`Prolactin: <10 ng/mL`<br>`DHT: 0.25-1.6 ng/mL`<br>`Estrogen: 10-40 pg/mL`<br>`Cortisol: <15 µg/dL`<br>`DHEA-S: 80-560 µg/dL (men), 35-430 µg/dL (women)` | `Testosterone: 439 ng/dL`<br>`Free testosterone: 12.3 pg/mL`<br>`FSH: 3.5 mIU/mL`<br>`LH: 3.3 mIU/mL`<br>`Prolactin: `<br>`DHT: 0.42 ng/mL`<br>`Estrogen: 25 pg/mL`<br>`Cortisol: `<br>`DHEA-S: ` |
+| Mitochondrial<br>function | - NAD+ levels | `NAD+: High levels` | `NAD+: ` |
+| Cellular<br>senescence<br>markers | - p16INK4a expression<br>- Senescence-Associated β-Galactosidase (SA-β-Gal) | `p16INK4a: Low expression`<br>`SA-β-Gal: Low levels` | `p16INK4a: `<br>`SA-β-Gal: ` |
+| Reproductive<br>health | - Sperm count<br>- Sperm mobility<br>- PSA | `Sperm count: >15M/ml`<br>`Sperm mobility: >40%`<br>`PSA: <1 ng/mL` | `Sperm count: `<br>`Sperm mobility: `<br>`PSA: ` |
+| Aging rate | - DunedinPACE | `DunedinPACE: <0.8` | `DunedinPACE: ` |
+| Advanced<br>diagnostics | - AI Coronary artery scan<br>- GRAIL cancer detection test<br>- Full body MRI (Prenuvo)<br>- Pineal calcification | `Coronary artery scan: Clear`<br>`GRAIL: Negative`<br>`Full body MRI: No abnormalities`<br>`Pineal calcification: <40%` | `Coronary artery scan: `<br>`GRAIL: `<br>`Full body MRI: `<br>`Pineal calcification: ` |
 
 ## Rejuvenation Olympics
 

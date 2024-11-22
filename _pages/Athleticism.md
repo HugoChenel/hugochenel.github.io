@@ -5,12 +5,15 @@ permalink: /athleticism/
 classes: wide
 sidebar:
   nav: "docs"
+header:
+  overlay_color: "#4199e0"
+  overlay_filter: "0.4"
 ---
 
 
 In developing my training philosophy, I was influenced by some of the most respected names in athletic performance and human optimization: *Ben Greenfield*, *Dr. Andy Galpin*, *Mark Bell*, *Dr. Peter Attia*, *Dr. Andrew Huberman*, *Ben Patrick*, and *Dr. Kelly Starrett*. Their different visions have shaped my training programs, progressively orienting myself toward **weightlifting**, **gymnastics**, **CrossFit** and **running**, participating in endurance events like *Hyrox*. I try to fully develop myself as a hybrid athlete across strength, endurance and explosiveness. All my **personal records** and **competition results** are tracked, serving as benchmarks to evaluate my progress. Regular assessments help fine-tune my approach. 
 
-What follows is an overview of my training components and results. Each one plays a specific role in improving strength, power or endurance, supporting a long-term vision of peak athletic performance.
+What follows is an overview of my benchmark, fitness competition results and training components. Each one of these components plays a specific role in improving strength, power or endurance, supporting a long-term vision of peak athletic performance.
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
@@ -49,9 +52,26 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
+# Body profile
+
+**Physical attributes**<br>
+*Height*: 182 cm / 6 ft<br>
+*Weight*: 70 kg / 155 lbs<br>
+*Body type*: Ectomorph
+
+**Physiological metrics**<br>
+*Testosterone*: 850 ng/dl<br>
+*Estrogen*: 20 pg/ml<br>
+*VO2 max*:  65 ml/kg/min<br>
+*Lactate threshold*: 81% of VO2 max<br>
+*Body fat percentage*: 7-9%<br>
+*T-score*:
+
+<hr style="border: 1px solid #ddd; margin: 30px 0;">
+
 # Benchmark
 
-## Weightlifting, Gymnastics & CrossFit
+## Weightlifting & Gymnastics
 
 - **Personal records**:
   - **Pull-ups (strict)**: 27 rep
@@ -73,8 +93,11 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   - **Snatch**: 65 kg
   - **Dead hang**: 2:13
 
-<br>
-<a href="https://games.crossfit.com/athlete/2736016?_ga=2.228485213.17242764.1714655221-419983903.1702560745" style="padding: 20px 100px; background-color: #4573a3; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+
+## CrossFit
+
+<a href="https://games.crossfit.com/athlete/2736016?_ga=2.228485213.17242764.1714655221-419983903.1702560745" 
+   style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #4573a3; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">🏋🏼</span> CrossFit Games profile
 </a>
 
@@ -87,10 +110,11 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   - **3200m**: 11:38
   - **5K**: 19:04
 
-<br>
-<a href="https://www.strava.com/athletes/125862142" style="padding: 20px 100px; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+<a href="https://www.strava.com/athletes/125862142" 
+   style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">👟</span> Strava profile
 </a>
+
 
 ## Hyrox
 
@@ -116,44 +140,70 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 | Wednesday | **Cardio (Zone 2)**					            			| Long run (60-120 minutes)									             | 
 | Thursday  | **Explosive power**			    				    		| Power clean, Clean and jerk, Snatch      								 | 
 | Friday    | **Strength - Legs**<br> **Core stability**               			| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
-| Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope, sled push/pull)                   | 
+| Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope, sled push/pull, assault bike)                   | 
 | Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Isolation tank                |
 
 ## Details and practices
 
-Sets x Reps<br>                                  
-Intensity<br>                                    
-Rest<br>   
-Sometimes hammer, barbell, ...<br>
-Farmer’s Carry - Grip stength<br>
-Daily flexibility<br>
-Plyometry and isometry
+**Sets and Reps**<br>
+I frequently change or adjust sets and reps based on goals: low reps (1-4) with heavy weights for strength, moderate reps (8-12) for hypertrophy, and high reps (16+) with lighter weights for endurance. I also often incorporate pyramidal training. In the end, to improve physical conditioning, the most important is not sets, reps or weight but the total volume.
+
+**Intensity levels and rest intervals**<br>
+Intensity in my training varies to prevent overtraining (based on Whoop stats) and guide progressive overload without exhaustion.
+
+**Equipment**<br>
+Incorporating barbells, dumbbells, kettlebells and even a sledgehammer keeps workouts dynamic and challenges muscles differently with slightly different hands position for example.
+
+**Training hours**<br>
+I prefer to train in the early evening because it aligns perfectly with my body's natural rhythms. By late afternoon, my body temperature reaches its peak (enhancing muscle function), which I found allows me to lift heavier weights more effectively. Also, hormonal balances, particularly higher testosterone levels relative to cortisol, are more favorable during this time, promoting even better strength gains.
+
+**Grip strength focus**<br>
+Regular farmer’s carries and dead hanging are performed to boost grip strength and functional fitness relevant to most activities.
+
+**Headstand**<br>
+I include headstand practice into my routine to enhance balance, core strength and shoulder stability. Headstands do wonders for body awareness and proprioception, which contributes to better control during complex movements.
+
+**Flexibility routine**<br>
+I perform dynamic stretches before workouts and static stretches outside of training to maintain flexibility and mobility.
+
+**Plyometrics and isometrics**<br>
+These 2 types of exercise are done every week: plyometric exercises like box jumps to build explosive power, while isometric holds like planks are integrated to enhance muscle control but also essential for tendon/ligament strength.
+
+**Unilateral movements**<br>
+Training one side of the body at a time isn’t just about fixing imbalances, it’s about building a stronger, more stable foundation. Exercises like Bulgarian split squats strengthen stabilizers, a must have in your training.
+
+**Barefoot training**<br>
+I try to incorporate barefoot training when I can to strengthen the intrinsic muscles of the feet, which is key to greatly impact the balance and enhance proprioception. Training without shoes allows for a more natural range of motion, promoting better alignment during exercises.
+
+**Nasal breathing most of the time (especially during zone 2 cardio)**<br>
+Practicing nasal breathing during low-intensity cardio is great to improve oxygen efficiency and increase CO₂ tolerance.
+
+**Timing matters**<br>
+Scheduling some practices like cold showers, sauna sessions, high-dose antioxidant supplementation or static stretching away from training sessions is really crucial because these activities can interfere with the body's natural recovery and adaptation processes following exercise. Immediately after training, our body undergoes specific inflammatory and hormonal responses essential for muscle repair and growth. Engaging in these practices too close to your workouts will blunt beneficial inflammation but also divert energy needed for recovery. The effectiveness of the training is thus reduced, so maintain sufficient time between exercise and these activities.
 
 ## Tools
 
+**Rebounding**<br>
+Number one exercise to boost lymphatic flow is a trampoline workout. In addition, it slightly improves balance and coordination. The gentle bouncing stimulates the lymphatic system, ideal to promote detoxification. This low-impact activity should be used by people having knee or ankle pain because it will strengthen stabilizer muscles.
 
-<hr style="border: 1px solid #ddd; margin: 30px 0;">
+**Occlusion training**<br>
+I sometimes use light weights with Blood Flow Restriction (BFR) bands to maximize muscle growth and recovery. Great for low-impact, high-reward sessions. BFR bands are placed to the arms or legs, restricting blood flow back from the muscle, which amplifies the pump and signals muscle growth. The best part? It’s joint-friendly and perfect for high-rep burnout sets.
 
-# Body profile
-
-**Physical attributes**<br>
-*Height*: 182 cm / 6 ft<br>
-*Weight*: 70 kg / 155 lbs<br>
-*Body type*: Ectomorph
-
-**Physiological metrics**<br>
-*Testosterone*: 850 ng/dl<br>
-*Estrogen*: 20 pg/ml<br>
-*VO2 max*:  65 ml/kg/min<br>
-*Lactate threshold*: 81% of VO2 max<br>
-*Body fat percentage*: 7-9%<br>
-*T-score*:
+**Electrical Muscle Stimulation (EMS)**<br>
+Powerful tool I use outside of my training hours. By sending low-level electrical impulses to targeted muscles, EMS helps to recover and even build strength. Whether it’s for rehab or working on weaknesses, EMS adds an edge by recruiting fibers we might miss during traditional training. It’s a tech-driven boost for performance and recovery.
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
 # Recovery
 
-- **Whoop profile**: [View Whoop Stats](#)
-Tools like the **Whoop** is used to monitor my sleep quality and various recovery markers.
-- **Resting heart rate**: 37 < RHR < 42
-- **Heart rate Variability**: 105 < HRV < 135
+[Whoop profile](#)<br>
+Tools like the **Whoop** is used to monitor various markers such as HRV, RHR, sleep quality and strain to tailor recovery strategies.
+- **Resting heart rate**: *37 < RHR < 42*<br>
+	A low RHR reflects great cardiovascular health. If it spikes above normal, it’s my body’s way of telling me to ease up.
+- **Heart rate Variability**: *105 < HRV < 135*<br>
+	High HRV means I’m ready to tackle intense sessions. When it dips, I prioritize lighter activity or active recovery.
+	
+**CNS Tap Test**<br>
+My average result on the CNS tap test is **100 taps in 10 seconds**. If my performance **drops by 10% or more** (below 90 taps), it’s a clear sign that my central nervous system might not be fully recovered. This probably indicates exhaustion, suggesting me to adjust my training intensity.
+
+Tracking these metrics helps me find the perfect balance between effort and recovery, ensuring I stay on top of my game without risking overtraining. For a detailed breakdown of my recovery strategies, check out the [Biohacking page](https://hugochenel.github.io/biohacking/#advanced-protocol).

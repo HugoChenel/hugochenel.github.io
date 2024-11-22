@@ -16,6 +16,8 @@ docs:
     children:
       - title: "Publications"
         url: /phd/#publications
+      - title: "Tutorials"
+        url: /phd/#tutorials
       - title: "Conferences"
         url: /phd/#conferences
       - title: "Thesis"
@@ -43,12 +45,12 @@ docs:
     children:
       - title: "Foundations"
         url: /athleticism/#foundations
+      - title: "Body profile"
+        url: /athleticism/#body-profile
       - title: "Benchmark"
         url: /athleticism/#benchmark
       - title: "Training"
         url: /athleticism/#training
-      - title: "Body profile"
-        url: /athleticism/#body-profile
       - title: "Recovery"
         url: /athleticism/#recovery
        

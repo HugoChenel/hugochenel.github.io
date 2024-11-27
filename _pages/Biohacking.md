@@ -56,6 +56,12 @@ Some lifestyle choices like regular exercise, stress reduction and restful sleep
 <br>
 *Use a test to track your cellular age based on your telomere length like TeloYears.*
 
+**Angiogenesis and nitric oxide** 
+<br>
+Angiogenesis is the process of forming new blood vessels, an essential step to deliver oxygen/nutrients to tissues. Nitric oxide (NO), a molecule produced naturally in the body, plays a role by regulating angiogenesis, improving blood flow everywhere in the body.
+<br> 
+Boosting NO levels can be achieved via aerobic exercise, consumption of nitrate-rich foods like beetroot and leafy greens, and supplements such as L-citrulline or L-arginine, acting as precursors for NO production.
+
 **Mitochondrial dysfunction**
 <br>
 Mitochondria are the powerhouses of the cells, generating the energy you need to live. As we age, mitochondria become less efficient, leading to fatigue, muscle weakness and way slower recovery.
@@ -78,7 +84,7 @@ Exercise, a clean diet, caloric restriction and supplements like resveratrol (fo
 
 **Nutrient sensing and metabolism**
 <br>
-Nutrient-sensing pathways, including insulin/IGF-1 signaling, mTOR and AMPK, are vital regulators of metabolism and play a significant role in the aging process. These pathways detect and respond to nutrient availability, adjusting cellular and metabolic activities accordingly.
+Nutrient-sensing pathways, including insulin/IGF-1 signaling, mTOR (should be balanced: low during fasting, elevated in growth phases) and AMPK (high : optimal activation in fasting/exercise states), are vital regulators of metabolism and play a significant role in the aging process. These pathways detect and respond to nutrient availability, adjusting cellular and metabolic activities accordingly.
 <br>
 By modulating these pathways through dietary interventions (calorie restriction, fasting, low-protein diet, ketogenic diet, high-fiber diet) or pharmacological methods (berberine, curcumin, resveratrol), it's possible to slow down age-related cellular damage.
 
@@ -156,7 +162,12 @@ These basics form a solid health and performance foundation by applying the 80/2
 - **Avoid stimulants before bed**: Cut out stimulants (caffeine, alcohol, …) in the hours leading up to bed to prevent disrupted sleep cycles.
 - **Sleep supporting supplements** : Magnesium glycinate (helps with relaxation and muscle recovery), apigenin (promotes calmness), CBD (assists with stress management).
 
-4 hrs of restorative (Deep and REM)
+I set clear daily sleep targets. Using the WHOOP tracker, I seek measurable outcomes that reflect high-quality/restorative sleep. My goals are:
+- **Deep sleep: >20% or at least 2h per night** to support physical recovery and cellular repair.
+- **REM sleep: >25% or at least 1h30 per night** to enhance cognitive performance (memory and mood).
+- **Sleep efficiency: over 90%**, ensuring that the time I spend in bed is maximized for restorative sleep cycles.
+
+You should check these metrics to stay in tune with your body’s needs while continually refining your sleep protocol.
 
 ## 2 - Diet
 
@@ -281,12 +292,13 @@ Beta-ecdysterone°°
 **11:00 PM - Before bed**<br>
 Magnesium glycinate°<br>
 Apigenin°°<br>
-White jelly mushroom°°<br>
+Tart cherry extract°°<br>
 CBD°°
+White jelly mushroom°°<br>
 
-° basic stack containing essential nutrients most people need and support general wellness. 
+° *basic stack containing essential nutrients most people need and support general wellness.*
 <br>
-°° advanced stack which targets specific processes (hormonal support, cellular health, muscle performance and mental clarity).
+°° *advanced stack which targets specific processes (hormonal support, cellular health, muscle performance and mental clarity).*
 
 ### Cycling strategy: 5 days on – 2 days off
 <br>

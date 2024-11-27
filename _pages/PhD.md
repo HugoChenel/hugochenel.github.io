@@ -20,7 +20,7 @@ Specifically, my PhD project is centered on:<br>
 - **Multilayer network inference**: Experienced in various network inference method and tools to find complex relationships within the data.
 - **Virtual compound screening**: Leveraging these insights to conduct virtual screenings of potential drug candidates on in-silico molecularly and clinically realistic cohorts.
 
-Below is an overview of my publications showcasing my contributions to the field, the conferences where I had the opportunity to present my research work, my PhD thesis, as well as my academic/industry experiences and education.
+Below is an overview of my publications and scientific tutorials showcasing my contributions to the field, the conferences where I had the opportunity to present my research work, my PhD thesis, as well as my academic/industry experiences and education.
 
 <hr style="border: 2px solid #ddd; margin: 30px 0;">
 
@@ -49,10 +49,20 @@ Below is an overview of my publications showcasing my contributions to the field
 
 # Tutorials
 
-**Single cell series**<br>
-![Singlecell](/assets/images/PhD/Single_cell.png){: style="width:100%; height:auto; border: 2px solid #ccc; border-radius: 10px;"}
+<div style="text-align: center; margin-top: -50px; margin-bottom: 20px;">
+  <h2 style="display: inline-block; font-size: 1.5em; font-weight: bold; color: #333; background: linear-gradient(to right, #f9f9f9, #eaeaea); padding: 12px 24px; border-radius: 12px; border: 1px solid #ccc; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    Single cell series
+  </h2>
+</div>
 
-1 - Preprocessing scRNA-seq data with Seurat
+<div style="position: relative; text-align: center; width: 100%;">
+  <a href="https://hugochenel.github.io/tags/science-tech/" target="_blank" style="text-decoration: none; color: inherit; outline: none;">
+    <img src="/assets/images/PhD/Single_cell.png" alt="Singlecell" style="width:100%; height:auto; border: 2px solid #ccc; border-radius: 10px;">
+    <span style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.8); width: 80%; text-align: center;">
+      Preprocessing scRNA-seq data<br>with Seurat
+    </span>
+  </a>
+</div>
 
 <hr style="border: 2px solid #ddd; margin: 30px 0;">
 

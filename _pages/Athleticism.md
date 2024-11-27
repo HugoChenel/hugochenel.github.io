@@ -198,9 +198,9 @@ Powerful tool I use outside of my training hours. By sending low-level electrica
 
 [Whoop profile](#)<br>
 Tools like the **Whoop** is used to monitor various markers such as HRV, RHR, sleep quality and strain to tailor recovery strategies.
-- **Resting heart rate**: *37 < RHR < 42*<br>
+- **Resting Heart Rate (bpm)**: *37 < RHR < 42*<br>
 	A low RHR reflects great cardiovascular health. If it spikes above normal, it’s my body’s way of telling me to ease up.
-- **Heart rate Variability**: *105 < HRV < 135*<br>
+- **Heart Rate Variability (ms)**: *105 < HRV < 135*<br>
 	High HRV means I’m ready to tackle intense sessions. When it dips, I prioritize lighter activity or active recovery.
 	
 **CNS Tap Test**<br>

@@ -11,7 +11,8 @@ excerpt: "Teaching & life lessons."
 header:
   overlay_color: "#93b874"
   overlay_filter: "0.2"
-share: true
+show_date: true
+read_time: true
 ---
 
 # Free fall

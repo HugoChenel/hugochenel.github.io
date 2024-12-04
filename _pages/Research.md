@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "PhD"
-permalink: /phd/
+title: "Scientific research"
+permalink: /research/
 classes: wide
 sidebar:
   nav: "docs"
@@ -56,7 +56,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 </div>
 
 <div style="position: relative; text-align: center; width: 100%;">
-  <a href="https://hugochenel.github.io/tags/science-tech/" target="_blank" style="text-decoration: none; color: inherit; outline: none;">
+  <a href="https://hugochenel.github.io/blog/preprocessing-scrna-seq-data/" target="_blank" style="text-decoration: none; color: inherit; outline: none;">
     <img src="/assets/images/PhD/Single_cell.png" alt="Singlecell" style="width:100%; height:auto; border: 2px solid #ccc; border-radius: 10px;">
     <span style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.8); width: 80%; text-align: center;">
       Preprocessing scRNA-seq data<br>with Seurat
@@ -79,11 +79,11 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 | Date       | Event                        | Location        | Title                       | Details |
 |------------|------------------------------|-----------------|-----------------------------|---------|
-| 20 November – 22 November 2024 | The 20th Annual Meeting of the Canceropole GSO | Perpignan, France | Time series analysis of cellular interactions through gene regulatory network inference | [GSO](https://www.canceropole-gso.org/page/manifestations/journees-gso/20th-annual-meeting-perpignan-2024/848-overview.html) |
+| 20 November – 22 November 2024 | The 20th Annual Meeting of the Canceropole GSO | Perpignan, France | Time series analysis of cellular interactions through gene regulatory network inference | [GSO](https://kgso.fr/events/20th-annual-meeting-perpignan-2024) |
 | 30 September – 04 October 2024 | Computational Systems Biology of Cancer 7th edition, Institut Curie | Paris, France | Time series analysis of cellular interactions through gene regulatory network inference | [Curie](https://training.institut-curie.org/courses/sysbiocancer2024) |
 | 25 June – 28 June 2024 | Journées Ouvertes en Biologie, Informatique et Mathématiques (JOBIM) | Toulouse, France | Time series analysis of cellular interactions through gene regulatory network inference | [JOBIM](https://jobim2024.sciencesconf.org/) |
 | 26 November – 01 December 2023 | Computational models of life: From molecular biology to digital twins - EMBO Workshop | Sant Feliu de Guíxols, Spain | Deciphering cellular interactions through gene regulatory network inference | [EMBO](https://meetings.embo.org/event/23-comp-models-life) |
-| 22 November – 24 November 2023 | The 19th Annual Meeting of the Canceropole GSO | Arcachon, France | Dissecting cellular communication through gene regulatory network inference | [GSO](https://www.canceropole-gso.org/page/manifestations/journees-gso/19th-annual-meeting-arcachon-2023/783-overview.html) |
+| 22 November – 24 November 2023 | The 19th Annual Meeting of the Canceropole GSO | Arcachon, France | Dissecting cellular communication through gene regulatory network inference | [GSO](https://kgso.fr/events/19th-annual-meeting-arcachon-2023) |
 | October 5th 2023 | 1st edition Young Scientist Cancer Congress (YS2C) | Toulouse, France | Dissecting cellular communication through gene regulatory network inference | [YS2C](https://www.crct-inserm.fr/en/ys2c_gso/) |
 | 23 July – 27 July 2023 | 22nd Annual European Conference on Computational Biology (ISMB/ECCB) | Lyon, France | Dissecting cellular communication through gene regulatory network inference | [ISMB/ECCB](https://www.iscb.org/ismbeccb2023) |
 

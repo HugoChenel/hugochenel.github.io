@@ -11,6 +11,8 @@ excerpt: "The fundamentals of money: its history, purpose and evolving role in s
 header:
   overlay_color: "#93b874"
   overlay_filter: "0.2"
+show_date: true
+read_time: true
 ---
 
   

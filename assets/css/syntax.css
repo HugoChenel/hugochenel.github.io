@@ -1,0 +1,161 @@
+/* Import Fira Code from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+/* Code Block Container */
+.highlight {
+    background-color: #2d2d2d; /* Softer dark background */
+    color: #d0d0d0; /* Light gray text */
+    padding: 20px; /* Increased padding */
+    border-radius: 8px; /* Rounded corners */
+    overflow: auto; /* Scroll if content overflows */
+    font-family: 'Fira Code', 'Source Code Pro', Consolas, 'Courier New', monospace; /* Monospaced font */
+    font-size: 14px; /* Comfortable font size */
+    line-height: 1.6; /* Adequate line spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* For line numbers if needed */
+    /* counter-reset: linenumber; */ /* Removed */
+}
+
+/* Table Styling within Code Blocks */
+.highlight table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.highlight table td {
+    padding: 8px; /* Increased padding */
+    border: 1px solid #444; /* Subtle borders */
+}
+
+/* Remove margin from <pre> within tables */
+.highlight table pre {
+    margin: 0;
+}
+
+/* General token styles */
+.highlight, .highlight .w {
+    color: #d0d0d0;
+    background-color: #2d2d2d;
+}
+
+/* Error tokens */
+.highlight .err {
+    color: #1e1e1e;
+    background-color: #f48771;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+/* Comment tokens */
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+    color: #6a9955;
+    font-style: italic;
+}
+
+/* Preprocessor tokens */
+.highlight .cp {
+    color: #c586c0;
+}
+
+/* Namespace tokens */
+.highlight .nt {
+    color: #4ec9b0;
+}
+
+/* Operator tokens */
+.highlight .o, .highlight .ow {
+    color: #d4d4d4;
+}
+
+/* Punctuation tokens */
+.highlight .p, .highlight .pi {
+    color: #d4d4d4;
+}
+
+/* Global identifiers */
+.highlight .gi {
+    color: #b5cea8;
+}
+
+/* Deleted code */
+.highlight .gd {
+    color: #f44747;
+}
+
+/* Heading tokens */
+.highlight .gh {
+    color: #569cd6;
+    background-color: #2d2d2d;
+    font-weight: bold;
+}
+
+/* Keyword tokens */
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+    color: #c586c0;
+    font-weight: bold;
+}
+
+/* Constant tokens */
+.highlight .kc, .highlight .kt, .highlight .kd {
+    color: #b5cea8;
+    font-weight: bold;
+}
+
+/* String tokens */
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+    color: #ce9178;
+}
+
+/* Regex tokens */
+.highlight .sr {
+    color: #d16969;
+}
+
+/* Symbol identifier */
+.highlight .si, .highlight .se {
+    color: #dcdcaa;
+}
+
+/* Namespace or variable name */
+.highlight .nn, .highlight .nc, .highlight .no {
+    color: #4ec9b0;
+}
+
+/* Attribute name */
+.highlight .na {
+    color: #4ec9b0;
+}
+
+/* Number tokens */
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+    color: #b5cea8;
+}
+
+/* Symbol string */
+.highlight .ss {
+    color: #ce9178;
+}
+
+/* Remove line numbers and related styles */
+.highlight pre {
+    padding-left: 0; /* Reset padding */
+    /* position: relative; */ /* Optional: Remove if no longer needed */
+}
+
+/* Responsive Design */
+.highlight {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    .highlight {
+        padding: 12px;
+    }
+    
+    /* Remove line numbers positioning if previously added */
+    .highlight pre::before {
+        /* left: 5px;
+        width: 25px;
+        padding-right: 5px; */
+    }
+}

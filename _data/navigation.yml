@@ -2,8 +2,8 @@
 main:
   - title: "Home"
     url: /
-  - title: "PhD"
-    url: /phd/
+  - title: "Research"
+    url: /research/
   - title: "Biohacking"
     url: /biohacking/
   - title: "Athleticism"
@@ -12,20 +12,20 @@ main:
     url: /blog/    
 
 docs:
-  - title: PhD
+  - title: Research
     children:
       - title: "Publications"
-        url: /phd/#publications
+        url: /research/#publications
       - title: "Tutorials"
-        url: /phd/#tutorials
+        url: /research/#tutorials
       - title: "Conferences"
-        url: /phd/#conferences
+        url: /research/#conferences
       - title: "Thesis"
-        url: /phd/#thesis
+        url: /research/#thesis
       - title: "Experiences"
-        url: /phd/#experiences
+        url: /research/#experiences
       - title: "Background"
-        url: /phd/#background
+        url: /research/#background
 
   - title: Biohacking
     children:
@@ -60,6 +60,38 @@ docs:
       #- title: "Mind & Consciousness"
         #url: /blog/#mind-&-consciousness
       #- title: "Finance & Tech"
-        #url: /blog/#Finance-&-Tech
-        
-        
+        #url: /blog/#Finance-&-Tech       
+
+posts:
+  - title: "Single cell series"
+    children:
+      
+      - title: ""
+        url: /blog/preprocessing-scrna-seq-data/   
+      - title: "1.1 - Preprocessing<br>scRNAseq with Seurat"
+        url: /blog/preprocessing-scrna-seq-data/
+      
+      - title: ""
+        url: /blog/preprocessing-scrna-seq-data/       
+      - title: "1.2 - Preprocessing<br>scRNAseq with Scanpy"
+        url: /tags/science-tech/
+      
+      - title: ""
+        url: /blog/preprocessing-scrna-seq-data/      
+      - title: "2 - Inferring gene<br>regulatory networks"
+        url: /tags/science-tech/
+      
+      - title: ""
+        url: /blog/preprocessing-scrna-seq-data/ 
+      - title: "3 - Mapping cell-cell<br>communication"
+        url: /tags/science-tech/
+      
+      - title: ""
+        url: /blog/preprocessing-scrna-seq-data/ 
+      - title: "4 - Pseudotime analysis<br>and RNA velocity"
+        url: /tags/science-tech/
+      
+      - title: ""
+        url: /blog/preprocessing-scrna-seq-data/ 
+      - title: "5 - Multi-omics<br>integration"
+        url: /tags/science-tech/

@@ -12,16 +12,16 @@ permalink: /blog/preprocessing-scrna-seq-data/
 header:
   overlay_color: "#93b874"
   overlay_filter: "0.005"
+show_date: true
+pagination: false
+show_taxonomy: false
+read_time: true
 toc: true
 toc_sticky: true
 toc_label: "Table of contents"
 toc_icon: "cog"
-show_date: true
-read_time: true
 sidebar:
   nav: "posts"
-pagination:
-  enabled: false
 ---
 
 # Preprocessing scRNA-seq data with Seurat

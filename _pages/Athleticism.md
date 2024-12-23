@@ -60,12 +60,24 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 *Body type*: Ectomorph
 
 **Physiological metrics**<br>
-*Testosterone*: 850 ng/dl<br>
-*Estrogen*: 20 pg/ml<br>
+
+**1) Cardiovascular**<br>
 *VO2 max*:  65 ml/kg/min<br>
 *Lactate threshold*: 81% of VO2 max<br>
+*Resting heart rate*: between 37 and 42 bpm<br>
+*Heart rate variability*: between 105 and 135 ms
+
+**2) Muscular and skeletal**<br>
+*Lean muscle mass percentage*: ⌛%<br>
 *Body fat percentage*: 7-9%<br>
-*T-score*:
+*T-score*: ⌛<br>
+*Grip strength*: 70kg
+
+**3) Hormonal**<br>
+*Testosterone*: 850 ng/dl<br>
+*Free testosterone*: ⌛ pg/ml<br>
+*Estrogen*: 20 pg/ml
+
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
@@ -94,12 +106,40 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   - **Dead hang**: 2:13
 
 
+## Hyrox
+
+![Hyrox](/assets/images/Athleticism/Hyrox_competition.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); border-radius: 5px;"}
+
+- **2024/12 HYROX Marseille**
+<a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=JGDMS4JI225C4D&lang=EN_CAP&event=H_JGDMS4JI917&page=39&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_JGDMS4JI917" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+  <span style="margin-right: 8px;"></span>Time — 01:22:37 (+5min penalty)
+</a>
+
+- **2025/04 HYROX Sharjah**
+<a href="https://hyroxfrance.com/fr/event/20234/" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+  <span style="margin-right: 8px;"></span>Time — ?
+</a> 
+
 ## CrossFit
 
-<a href="https://games.crossfit.com/athlete/2736016?_ga=2.228485213.17242764.1714655221-419983903.1702560745" 
+<a href="https://games.crossfit.com/athlete/2736016?_ga=2.228485213.17242764.1714655221-419983903.1702560745" target="_blank"
    style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #4573a3; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">🏋🏼</span> CrossFit Games profile
 </a>
+
+## Red Bull 400
+
+<div style="text-align:center;">
+  <img src="/assets/images/Athleticism/Logo-Red-Bull-400.png" alt="RedBull400" width="300" style="height:auto;">
+</div>
+
+The **Red Bull 400** is known as the world's toughest 400-meter race, where participants sprint up a ski jumping hill at a nearly vertical incline. It challenges endurance, strength (explosive leg power) and cardiovascular capacity like no other.
+
+- Courchevel, France<br>2025<br>
+**Time : ?**
+
+Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red-bull-400-courchevel){:target="_blank"}.
+
 
 ## Running
 
@@ -110,19 +150,9 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   - **3200m**: 11:38
   - **5K**: 19:04
 
-<a href="https://www.strava.com/athletes/125862142" 
+<a href="https://www.strava.com/athletes/125862142" target="_blank"
    style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">👟</span> Strava profile
-</a>
-
-
-## Hyrox
-
-![Hyrox](/assets/images/Hyrox_competition.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); border-radius: 5px;"}
-
-- **2024/12 Hyrox Marseille**
-<a href="https://hyroxfrance.com/fr/event/hyrox-marseille/" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
-  <span style="margin-right: 8px;"></span>Time — 1:30
 </a>
 
 <br>
@@ -137,10 +167,10 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 |-----------|---------------------------------------------------|--------------------------------------------------------------------------|
 | Monday    | **Strength - Push**<br>Chest<br>Shoulders<br>Triceps	   	    | Bench Press, Military overhead press, Dips, Standing shoulder press <br> Lateral/front dumbell raises, Push-ups, Rope climbing	| 
 | Tuesday   | **Strength - Pull**<br>Back<br>Biceps							| Barbell row / T-row, Pull-ups, Muscle-ups, Pull-down<br>Chin-ups, Curl  | 
-| Wednesday | **Cardio (Zone 2)**					            			| Long run (60-120 minutes)									             | 
+| Wednesday | **Cardio (Zone 2)**					            			| Long run or cycling (60-120 minutes)									             | 
 | Thursday  | **Explosive power**			    				    		| Power clean, Clean and jerk, Snatch      								 | 
-| Friday    | **Strength - Legs**<br> **Core stability**               			| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
-| Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope, sled push/pull, assault bike)                   | 
+| Friday    | **Strength - Legs**<br> **Core stability**               		| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
+| Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope, sled push/pull, wall ball, assault bike)                   | 
 | Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Isolation tank                |
 
 ## Details and practices
@@ -196,7 +226,7 @@ Powerful tool I use outside of my training hours. By sending low-level electrica
 
 # Recovery
 
-[Whoop profile](#)<br>
+[Whoop profile](https://www.whoop.com/fr/en/difference/)<br>
 Tools like the **Whoop** is used to monitor various markers such as HRV, RHR, sleep quality and strain to tailor recovery strategies.
 - **Resting Heart Rate (bpm)**: *37 < RHR < 42*<br>
 	A low RHR reflects great cardiovascular health. If it spikes above normal, it’s my body’s way of telling me to ease up.

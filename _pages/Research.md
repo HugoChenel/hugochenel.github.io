@@ -55,6 +55,17 @@ Below is an overview of my publications and scientific tutorials showcasing my c
   </h2>
 </div>
 
+<div style="position: relative; text-align: center; width: 100%;">
+  <a href="https://hugochenel.github.io/blog/bulk-rna-seq-analysis/" style="text-decoration: none; color: inherit; outline: none;">
+    <img src="/assets/images/PhD/Bulk.png" alt="Bulk" style="width:100%; height:300px; border: 2px solid #ccc; border-radius: 10px;">
+    <span style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.8); width: 80%; text-align: center;">
+       Bulk RNA-seq analysis with DESeq2
+    </span>
+  </a>
+</div>
+
+<hr style="border: 1px solid #ddd; margin: 20px 0;">
+
 <div style="text-align: center; margin-top: -50px; margin-bottom: 20px;">
   <h2 style="display: inline-block; font-size: 1.5em; font-weight: bold; color: #333; background: linear-gradient(to right, #f9f9f9, #eaeaea); padding: 12px 24px; border-radius: 12px; border: 1px solid #ccc; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
     Single cell series
@@ -63,7 +74,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 <div style="position: relative; text-align: center; width: 100%;">
   <a href="https://hugochenel.github.io/blog/preprocessing-scrna-seq-data/" style="text-decoration: none; color: inherit; outline: none;">
-    <img src="/assets/images/PhD/Single_cell.png" alt="Singlecell" style="width:100%; height:auto; border: 2px solid #ccc; border-radius: 10px;">
+    <img src="/assets/images/PhD/Single_cell.png" alt="Singlecell" style="width:100%; height:300px; border: 2px solid #ccc; border-radius: 10px;">
     <span style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.8); width: 80%; text-align: center;">
       Preprocessing scRNA-seq data<br>with Seurat
     </span>
@@ -71,6 +82,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 </div>
 
 <hr style="border: 2px solid #ddd; margin: 30px 0;">
+
 
 # Conferences
 
@@ -85,6 +97,8 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 | Date       | Event                        | Location        | Title                       | Details |
 |------------|------------------------------|-----------------|-----------------------------|---------|
+| 31 March – 4 April 2025 | Qlife Quantitative Biology Spring School "Cell Dynamics in Developmental Systems", ENS | Paris, France | Time series analysis of cellular interactions through gene regulatory network inference | [QLIFE](https://www.edu.bio.ens.psl.eu/spip.php?article291&lang=fr){:target="_blank"} |
+| 2 February – 7 February 2025 | Toulouse Onco Week (TOW) | Toulouse, France | Time series analysis of cellular interactions through gene regulatory network inference | [TOW](https://www.toulouse-onco-week.org/index.php?langue=en&acces=&idUser=&emailUser=){:target="_blank"} |
 | 20 November – 22 November 2024 | The 20th Annual Meeting of the Canceropole GSO | Perpignan, France | Time series analysis of cellular interactions through gene regulatory network inference | [GSO](https://kgso.fr/events/20th-annual-meeting-perpignan-2024){:target="_blank"} |
 | 30 September – 04 October 2024 | Computational Systems Biology of Cancer 7th edition, Institut Curie | Paris, France | Time series analysis of cellular interactions through gene regulatory network inference | [Curie](https://training.institut-curie.org/courses/sysbiocancer2024){:target="_blank"} |
 | 25 June – 28 June 2024 | Journées Ouvertes en Biologie, Informatique et Mathématiques (JOBIM) | Toulouse, France | Time series analysis of cellular interactions through gene regulatory network inference | [JOBIM](https://jobim2024.sciencesconf.org/){:target="_blank"} |

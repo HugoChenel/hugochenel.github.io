@@ -11,7 +11,7 @@ header:
 ---
 
 
-In developing my training philosophy, I was influenced by some of the most respected names in athletic performance and human optimization: *Ben Greenfield*, *Dr. Andy Galpin*, *Mark Bell*, *Dr. Peter Attia*, *Dr. Andrew Huberman*, *Ben Patrick*, and *Dr. Kelly Starrett*. Their different visions have shaped my training programs, progressively orienting myself toward **weightlifting**, **gymnastics**, **CrossFit** and **running**, participating in endurance events like *Hyrox*. I try to fully develop myself as a hybrid athlete across strength, endurance and explosiveness. All my **personal records** and **competition results** are tracked, serving as benchmarks to evaluate my progress. Regular assessments help fine-tune my approach. 
+In developing my training philosophy, I was influenced by some of the most respected names in athletic performance and human optimization: *Ben Greenfield*, *Dr. Andy Galpin*, *Mark Bell*, *Dr. Peter Attia*, *Dr. Andrew Huberman*, *Ben Patrick*, *Dr. Kelly Starrett* and *Pavel Tsatsouline*. Their different visions have shaped my training programs, progressively orienting myself toward **weightlifting**, **gymnastics**, **CrossFit** and **running**, participating in endurance events like *Hyrox*. I try to fully develop myself as a hybrid athlete across strength, endurance and explosiveness. All my **personal records** and **competition results** are tracked, serving as benchmarks to evaluate my progress. Regular assessments help fine-tune my approach. 
 
 What follows is an overview of my benchmark, fitness competition results and training components. Each one of these components plays a specific role in improving strength, power or endurance, supporting a long-term vision of peak athletic performance.
 
@@ -61,17 +61,19 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 **Physiological metrics**<br>
 
-**1) Cardiovascular**<br>
-*VO2 max*:  65 ml/kg/min<br>
+**1) Cardiovascular and respiratory**<br>
+*VO2 max*:  62 ml/kg/min<br>
 *Lactate threshold*: 81% of VO2 max<br>
-*Resting heart rate*: between 37 and 42 bpm<br>
-*Heart rate variability*: between 105 and 135 ms
+*Resting heart rate*: between 39 and 44 bpm<br>
+*Heart rate variability*: between 95 and 115 ms
+*Breath holding time (static apnea)*: 4min34
 
 **2) Muscular and skeletal**<br>
 *Lean muscle mass percentage*: ⌛%<br>
-*Body fat percentage*: 7-9%<br>
+*Body fat percentage*: 8-9%<br>
 *T-score*: ⌛<br>
-*Grip strength*: 70kg
+*Grip strength*: 72kg<br>
+*Grip endurance (dead hang)*: 2min13
 
 **3) Hormonal**<br>
 *Testosterone*: 850 ng/dl<br>
@@ -87,22 +89,27 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 - **Personal records**:
   - **Pull-ups (strict)**: 27 rep
-  - **Weighted pull-ups (1RM)**: 35 kg 
+  - **Weighted pull-up (1RM)**: 45 kg 
   - **Dips**: 52 rep
-  - **Weighted dips (1RM)**: 55 kg
+  - **Weighted dip (1RM)**: 70 kg
   - **Muscle-ups**: 16 rep 
-  
+  - **Weighted muscle-up (1RM)**: 15 kg
+    
   - **Broad jump**: 3m02
-  - **Standing vertical jump**: 1m30
-  - **Vertical jump**: 1m45
+  - **Vertical jump (box jump)**: 1m45
   
-  - **Bench press**: 102.5 kg
-  - **Military press (strict)**: 65 kg
-  - **Back squat**: 100 kg
-  - **Pistol squat**: 27 rep
-  
+  - SBD
+	- **Bench press**: 102.5 kg
+	- **Back squat**: 110 kg
+	- **Deadlift**: 160 kg
+
   - **Clean and jerk**: 85 kg
   - **Snatch**: 65 kg
+  
+  - **Military press (strict)**: 65 kg
+  - **Pistol squat (single right & left leg )**: 27 rep & 22 reps
+  - **Weighted pistol squat (1RM)**: 20 kg
+  - **Plank**: 12:18  
   - **Dead hang**: 2:13
 
 
@@ -165,12 +172,12 @@ Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red
 
 | Day       | Focus                                             | Exercises                                                                | 
 |-----------|---------------------------------------------------|--------------------------------------------------------------------------|
-| Monday    | **Strength - Push**<br>Chest<br>Shoulders<br>Triceps	   	    | Bench Press, Military overhead press, Dips, Standing shoulder press <br> Lateral/front dumbell raises, Push-ups, Rope climbing	| 
+| Monday    | **Strength - Push**<br>Chest<br>Shoulders<br>Triceps	   	    | Bench Press, Military overhead press, Dips, Standing shoulder press <br> Lateral/front dumbell raises, Tricep extensions, Push-ups, Rope climbing	| 
 | Tuesday   | **Strength - Pull**<br>Back<br>Biceps							| Barbell row / T-row, Pull-ups, Muscle-ups, Pull-down<br>Chin-ups, Curl  | 
 | Wednesday | **Cardio (Zone 2)**					            			| Long run or cycling (60-120 minutes)									             | 
-| Thursday  | **Explosive power**			    				    		| Power clean, Clean and jerk, Snatch      								 | 
-| Friday    | **Strength - Legs**<br> **Core stability**               		| Back/front/pistol/split ATG squat, Lunges, Step-ups, Tibialis raises <br> Nordic hamstring curl, Planks, Leg raises | 
-| Saturday  | **HIIT (zone 5)**												| Crossfit WOD (Box jumps, sprints, rowing, jump rope, sled push/pull, wall ball, assault bike)                   | 
+| Thursday  | **Explosive power**			    				    		| Power clean, Thruster, Clean and jerk, Snatch      								 | 
+| Friday    | **Strength - Legs**<br> **Core stability**               		| Back/front/pistol/split ATG squat, Lunges, Tibialis raises, ATG calf raises, Step-ups <br> Nordic hamstring curl, Planks, Hollow body hold, Leg raises, Backward sled drag | 
+| Saturday  | **HIIT (zone 5)**												| Crossfit WOD <br> Rowing, jump rope, assault bike, sprints <br> Box jumps, kettlebell swings, sled push/pull, wall ball <br> Norwegian 4x4 protocol              | 
 | Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Isolation tank                |
 
 ## Details and practices
@@ -190,8 +197,8 @@ I prefer to train in the early evening because it aligns perfectly with my body'
 **Grip strength focus**<br>
 Regular farmer’s carries and dead hanging are performed to boost grip strength and functional fitness relevant to most activities.
 
-**Headstand**<br>
-I include headstand practice into my routine to enhance balance, core strength and shoulder stability. Headstands do wonders for body awareness and proprioception, which contributes to better control during complex movements.
+**Handstand**<br>
+I include handstand practice into my routine to enhance balance, core strength and shoulder stability. Handstands do wonders for body awareness and proprioception, which contributes to better control during complex movements.
 
 **Flexibility routine**<br>
 I perform dynamic stretches before workouts and static stretches outside of training to maintain flexibility and mobility.
@@ -228,9 +235,9 @@ Powerful tool I use outside of my training hours. By sending low-level electrica
 
 [Whoop profile](https://www.whoop.com/fr/en/difference/)<br>
 Tools like the **Whoop** is used to monitor various markers such as HRV, RHR, sleep quality and strain to tailor recovery strategies.
-- **Resting Heart Rate (bpm)**: *37 < RHR < 42*<br>
+- **Resting Heart Rate (bpm)**: *39 < RHR < 44*<br>
 	A low RHR reflects great cardiovascular health. If it spikes above normal, it’s my body’s way of telling me to ease up.
-- **Heart Rate Variability (ms)**: *105 < HRV < 135*<br>
+- **Heart Rate Variability (ms)**: *95 < HRV < 115*<br>
 	High HRV means I’m ready to tackle intense sessions. When it dips, I prioritize lighter activity or active recovery.
 	
 **CNS Tap Test**<br>

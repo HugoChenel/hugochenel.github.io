@@ -193,17 +193,24 @@ My breakfast centers around a nutrient-dense but light meal to provide sustained
 
 **5:00 PM - Snack**
 <br>
-Mid-morning or afternoon, nutrient-rich snack of mixed nuts to support healthy fats and minerals. My go-to mix includes:
-- Few brazil nuts (rich in selenium, crucial for thyroid function)
+Mid-morning or afternoon, nutrient-rich snack of mixed nuts and carbs. Until this point in the day, I have maintained a state of ketosis, supporting stable energy levels, which is optimal for cognitive work during the day. This snack marks the first introduction of carbs, necessary to fuel intense or anaerobic training sessions later in the day. My go-to mix includes:
+- A few brazil nuts
 - Macadamia nuts
 - Pistachios
 - Walnuts
 - Blanched almonds
 <br>
+⚠️ *Brazil nuts are extremely high in selenium. While selenium is essential for thyroid health, excessive intake can lead to selenium toxicity. Limit your intake to 1–2 Brazil nuts per day to stay within safe selenium levels.*<br>
+<br>
+Optional carb sources:
+- Blueberries
+- Bananas
+- Grapes
+<br>
 
 **8:00 AM - Dinner**
 <br>
-A combination of carbs with meat/fish, as a carb back-loading strategy (restricting carbs intake throughout the day to as low as 30 grams and consuming all carbs at dinner, post training).
+A combination of carbs with meat/fish, as a carb back-loading strategy (restricting carbs intake throughout the day to as low as 30 grams and consuming all carbs at dinner, post training). Reintroducing carbs in the evening after a day of fasting and ketosis replenishes glycogen stores, and offers the advantage of improving sleep onset/depth because carbs stimulate serotonin and melatonin production.
 - 300g sweet potatoes or 250g millet
 - 50g cooked chickpeas or 50g kidney beans
 - Grass-fed beef or wild caught salmon
@@ -216,6 +223,9 @@ A combination of carbs with meat/fish, as a carb back-loading strategy (restrict
 *Note that beans and lentils are soaked or sprouted to remove anti-nutrients such as lectins, phytates and glucosinolates.*
 
 To support healthy blood sugar levels and reduce the impact of carb rich meals, it’s interesting to include compounds known to control blood sugar spikes (cinnamon, berberine, C3G, ACV, fenugreek and bitter melon). They greatly help regulate glucose absorption and reduce insulin spikes, ultimately improving metabolic health when taken with carb heavy meals.
+
+### Ketosis
+I maintain a ketosis state for most of the day by fasting in the morning and having a low-carb lunch, which keeps my energy levels stable (supporting mental clarity and eradicating brain fog). To further enhance cognitive function during the workday, I supplement with exogenous ketones, aiming to maintain ketone levels of 1 to 2.5 mmol/L. This metabolic state is ideal to power through my most productive hours without energy crashes. In the early evening, as I prepare for my training session, I reintroduce carbs strategically to replenish glycogen for intense workouts. This daily ketosis routine not only fuels my focus but also enhances fat metabolism, supports recovery and promotes long-term metabolic flexibility.
 
 ### Water intake
 I drink **molecular hydrogen (H₂) water**, which is infused with hydrogen gas to deliver specific health benefits beyond basic hydration. Molecular hydrogen acts as a therapeutic antioxidant and offers several unique advantages. It neutralizes harmful free radicals like hydroxyl radicals without disrupting essential redox signaling. Molecular hydrogen also acts as a regulator of the body’s natural antioxidant systems. It upregulates the production of enzymes like glutathione peroxidase, superoxide dismutase (SOD) and catalase, which are critical for combating oxidative stress at the cellular level.
@@ -270,35 +280,35 @@ Some compounds can provide an extra layer of support by targeting specific biolo
 ### Daily supplementation routine
 
 **8:00 AM - Upon waking**<br>
-Fish oil rich in EPA and DHA°<br>
-Vitamin D3 + K2°<br>
-Magnesium L-Threonate°<br>
-Maca°°<br>
-Black ginger°°<br>
-Spermidine°°<br>
-NR or NMN°°<br>
-CoQ10°°
+Fish oil rich in EPA and DHA\*<br>
+Vitamin D3 + K2\*<br>
+Magnesium L-Threonate\*<br>
+Maca\*\*<br>
+Black ginger\*\*<br>
+Spermidine\*\*<br>
+NR or NMN\*\*<br>
+CoQ10\*\*
 
 **12:00 AM - During meal**<br>
-Tongkat Ali°°<br>
-Horny goat weed°°<br>
-Cistanche°°
+Tongkat Ali\*\*<br>
+Horny goat weed\*\*<br>
+Cistanche\*\*
 
 **6:00 PM - Pre-workout**<br>
-L-citrulline° (or/and Arginine°° or/and AAKG°°)<br>
-Beta-alanine°°<br>
-Beta-ecdysterone°°
+L-citrulline\* (or/and Arginine\*\* or/and AAKG\*\*)<br>
+Beta-alanine\*\*<br>
+Beta-ecdysterone\*\*
 
 **11:00 PM - Before bed**<br>
-Magnesium glycinate°<br>
-Apigenin°°<br>
-Tart cherry extract°°<br>
-CBD°°
-White jelly mushroom°°<br>
+Magnesium glycinate\*<br>
+Apigenin\*\*<br>
+Tart cherry extract\*\*<br>
+CBD\*\*<br>
+White jelly mushroom\*\*<br>
 
-° *basic stack containing essential nutrients most people need and support general wellness.*
+\*  *basic stack containing essential nutrients most people need and support general wellness.*
 <br>
-°° *advanced stack which targets specific processes (hormonal support, cellular health, muscle performance and mental clarity).*
+\** *advanced stack which targets specific processes (hormonal support, cellular health, muscle performance and mental clarity).*
 
 ### Cycling strategy: 5 days on – 2 days off
 <br>
@@ -312,13 +322,13 @@ Breathing (WHM, Buteyko, ...)<br>
 Hot and cold (cold shower, sauna)<br>
 LLLT/RLT<br>
 tDCS<br>
+Hyperbaric chambers<br>
 nootropics (saffron, C3G, nicotine)<br>
 Stem cell injections<br>
 psychedelics<br>
 PEMF<br>
 Sensory deprivation<br>
-Grounding
-Hyperbaric chambers
+Grounding<br>
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
@@ -327,15 +337,15 @@ Hyperbaric chambers
 | Category & Markers | Type | Normal values | Optimal values | My current values |
 |----------|----------|----------|----------|----------|
 | **General health markers**<br>- Complete blood count<br>- Liver function<br>(ALAT, ASAT)<br>- Kidney function<br>(Creatinine, CysC)<br>- Thyroid function<br>(TSH, T4, T3)<br>- Electrolytes<br>- Albumin<br>- Lymphocyte percent<br>- Red blood cells<br>(MCV, RDW)<br>- Vitamins (D, B9, B12)<br>- Minerals<br>(Iron/Ferritin)<br>(Copper/Zinc)<br>- Heavy metals | `Hemoglobin (g/dL)`<br>`ALAT (U/L)`<br>`ASAT (U/L)`<br>`Creatinine (mg/dL)`<br>`TSH (mIU/L)`<br>`Albumin (g/dL)`<br>`Lymphocyte %`<br>`MCV (fL)`<br>`RDW %`<br>`Vit. D (ng/mL)`<br>`Vit. B12 (pg/mL)`<br>`Iron (µg/dL)`<br>`Ferritin (ng/mL)` | `13.5-17.5 g/dL`<br>`7-56 U/L`<br>`10-40 U/L`<br>`0.8-1.3 mg/dL`<br>`1.0-4.0 mIU/L`<br>`3.5-5.5 g/dL`<br>`20-40%`<br>`80-100 fL`<br>`11.5-14.5%`<br>`20-30 ng/mL`<br>`200-900 pg/mL`<br>`60-170 µg/dL`<br>`24-336 ng/mL` | `14.5-16.5 g/dL`<br>`7-30 U/L`<br>`7-30 U/L`<br>`0.6-1.1 mg/dL`<br>`0.4-2.0 mIU/L`<br>`4.0-5.0 g/dL`<br>`30-40%`<br>`85-90 fL`<br>`11.5-13.0%`<br>`40-80 ng/mL`<br>`500-900 pg/mL`<br>`100-130 µg/dL`<br>`50-150 ng/mL` | `⌛ g/dL`<br>`11 U/L`<br>`24 U/L`<br>`1.13 mg/dL`<br>`1.02 mIU/L`<br>`⌛ g/dL`<br>`⌛%`<br>`⌛ fL`<br>`⌛%`<br>`37 ng/mL`<br>`729 pg/mL`<br>`⌛ µg/dL`<br>`55 ng/mL` |
-| **Metabolic markers**<br>- Fasting glucose (Glc)<br>- HbA1c<br>- IGF-1<br>- CGM | `Glc (mg/dL)`<br>`HbA1c %`<br>`IGF-1 (ng/mL)`<br>`CGM` | `90-99 mg/dL`<br>`5.4-5.7%`<br>`100-300 ng/mL`<br>`Fluctuate levels` | `70-90 mg/dL`<br>`<5%`<br>`200-300 ng/mL`<br>`Stable levels` | `83 mg/dL`<br>`⌛%`<br>`⌛ ng/ml`<br>`⌛` |
-| **Cardiovascular markers**<br>- Blood pressure<br>- Full lipid profile<br>- apoB<br>- Triglycerides/HDL ratio | `BP (mmHg)`<br>`Tot. chol. (mg/dL)`<br>`LDL (mg/dL)`<br>`HDL (mg/dL)`<br>`Trigly (mg/dL)`<br>`apoB (mg/dL)`<br>`Trigly/HDL (ratio)` | `120/80 mmHg`<br>`<200 mg/dL`<br>`100-130 mg/dL`<br>`40-60 mg/dL`<br>`<150 mg/dL`<br>`<130 mg/dL`<br>`2-3` | `110/70 mmHg`<br>`<180 mg/dL`<br>`<70 mg/dL`<br>`>75 mg/dL`<br>`<75 mg/dL`<br>`<60 mg/dL`<br>`<1` | `120/70 mmHg`<br>`157 mg/dL`<br>`86 mg/dL`<br>`61 mg/dL`<br>`48 mg/dL`<br>`⌛ mg/dL`<br>`0.79` |
+| **Metabolic markers**<br>- Fasting glucose (Glc)<br>- HbA1c<br>- IGF-1<br>- CGM<br>- Ketones | `Glc (mg/dL)`<br>`HbA1c %`<br>`IGF-1 (ng/mL)`<br>`CGM`<br>`Ketones (mmol/L)` | `90-99 mg/dL`<br>`5.4-5.7%`<br>`100-300 ng/mL`<br>`Fluctuate levels`<br>`0.1–0.3 mmol/L` | `70-90 mg/dL`<br>`<5%`<br>`200-300 ng/mL`<br>`Stable levels`<br>`0.5–2.5 mmol/L` | `83 mg/dL`<br>`⌛%`<br>`⌛ ng/ml`<br>`⌛`<br>`⌛ mmol/L` |
+| **Cardiovascular markers**<br>- Blood pressure<br>- Full lipid profile<br>- apoB<br>- Triglycerides/HDL ratio<br>- Omega-3 index<br>- Lipoprotein(a) | `BP (mmHg)`<br>`Tot. chol. (mg/dL)`<br>`LDL (mg/dL)`<br>`HDL (mg/dL)`<br>`Trigly (mg/dL)`<br>`apoB (mg/dL)`<br>`Trigly/HDL (ratio)`<br>`Omega-3 index (%)`<br>`Lp(a) (mg/dL)` | `120/80 mmHg`<br>`<200 mg/dL`<br>`100-130 mg/dL`<br>`40-60 mg/dL`<br>`<150 mg/dL`<br>`<130 mg/dL`<br>`2-3`<br>`8-12%`<br>`<50 mg/dL` | `110/70 mmHg`<br>`<180 mg/dL`<br>`<70 mg/dL`<br>`>75 mg/dL`<br>`<75 mg/dL`<br>`<60 mg/dL`<br>`<1`<br>`>12%`<br>`<10 mg/dL` | `120/70 mmHg`<br>`157 mg/dL`<br>`86 mg/dL`<br>`61 mg/dL`<br>`48 mg/dL`<br>`⌛ mg/dL`<br>`0.79`<br>`⌛%`<br>`⌛ mg/dL` |
 | **Inflammatory markers**<br>- Interleukins<br>(IL-6, IL-8, IL-15, IL-1β)<br>- CRP<br>- hs-CRP<br>- TNFα | `IL-6 (pg/mL)`<br>`CRP (mg/L)`<br>`hs-CRP (mg/L)`<br>`TNFα (pg/mL)` | `<5 pg/mL`<br>`<10 mg/L`<br>`1.0-3.0 mg/L`<br>`<8.1 pg/mL` | `<1.5 pg/mL`<br>`<1 mg/L`<br>`<0.5 mg/L`<br>`<2-3 pg/mL` | `⌛ pg/mL`<br>`4 mg/L`<br>`⌛ mg/L`<br>`⌛ pg/mL` |
-| **Oxidative stress markers**<br>- Homocysteine | `Hcy (µmol/L)` | `10-15 µmol/L` | `<6 µmol/L` | `⌛ µmol/L` |
+| **Oxidative stress markers**<br>- Homocysteine<br>- Glutathione | `Hcy (µmol/L)`<br>`Plasma GSH (µmol/L)` | `10-15 µmol/L`<br>`1.5–3.0 µmol/L` | `<6 µmol/L`<br>`3.5-5.0 µmol/L` | `⌛ µmol/L`<br>`⌛ µmol/L` |
 | **DNA-related markers**<br>- Telomere length<br>- DNA methylation patterns<br>(epigenetic clocks) | `TL (kb)`<br>`Epigen. age (yo)` | `5-8 kb`<br>`= chronol. age` | `8-12 kb`<br>`< chronol. age` | `⌛ kb`<br>`⌛ years old` |
-| **Functional markers**<br>- Grip strength<br>- Walking speed<br>- Sitting-rising test score | `Grip strength (kg)`<br>`Walking speed (m/s)`<br>`Sitting-rising test` | `>26 kg`<br>`1.0-1.2 m/s`<br>`6-8 out of 10` | `>50 kg`<br>`1.4-1.6 m/s`<br>`9-10 out of 10` | `70 kg`<br>`>1.6 m/s`<br>`10 out of 10` |
+| **Functional markers**<br>- Grip strength<br>- Walking speed<br>- Sitting-rising test score | `Grip strength (kg)`<br>`Walking speed (m/s)`<br>`Sitting-rising test` | `>26 kg`<br>`1.0-1.2 m/s`<br>`6-8 out of 10` | `>50 kg`<br>`1.4-1.6 m/s`<br>`9-10 out of 10` | `72 kg`<br>`>1.6 m/s`<br>`10 out of 10` |
 | **Body composition**<br>- Body Mass Index (BMI)<br>- Muscle mass index<br>- Bone density | `BMI (kg/m²)`<br>`SMI (kg/m²)`<br>`BMD (T-score)` | `18-27 kg/m²`<br>`7-8 kg/m²`<br>`-1.0 to +0.5` | `20-24 kg/m²`<br>`>10-12 kg/m²`<br>`>+1.0` | `21 kg/m²`<br>`⌛ kg/m²`<br>`⌛` |
-| **Cognitive function**<br>- IQ<br>- BDNF<br>- β-amyloid<br>-Tau protein<br>-NfL | `IQ`<br>`BDNF (ng/mL)`<br>`β-amyloid levels`<br>`Tau protein (pg/mL)`<br>`NfL (pg/mL)` | `90-120`<br>`12.5-25 ng/mL`<br>`Medium - Elevated`<br>` <300 pg/mL`<br>`<10 pg/mL` | `>132`<br>`>25 ng/mL`<br>`Low`<br>`<200 pg/mL`<br>`<5 pg/mL` | [`>132`](https://drive.google.com/file/d/1WGBiCjuJBc1Khgl-MY2pXpNp1mz4kD_T/preview){:target="_blank"}<br>`⌛ ng/mL`<br>`⌛`<br>`⌛ pg/mL`<br>`⌛ pg/mL` |
-| **Hormonal markers**<br>- Testosterone<br>- Free testosterone<br>- FSH<br>- LH<br>- Prolactin<br>- DHT<br>- Estrogen<br>- Cortisol<br>- DHEA-S | `Testo (ng/dL)`<br>`Free testo (pg/mL)`<br>`FSH (mIU/mL)`<br>`LH (mIU/mL)`<br>`Prolactin (ng/mL)`<br>`DHT (ng/mL)`<br>`Estrogen (pg/mL)`<br>`Cortisol (µg/dL)`<br>`DHEA-S (µg/dL)` |  `300-900 ng/dL`<br>`5-20 pg/mL`<br>`2-18 mIU/mL`<br>`1.5-9.3 mIU/mL`<br>`4-15 ng/mL`<br>`0.25-1.6 ng/mL`<br>`10-40 pg/mL`<br>`6-23 µg/dL`<br>`80-500 µg/dL` |  `800-1200 ng/dL`<br>`20-45 pg/mL`<br>`2-8 mIU/mL`<br>`3-7 mIU/mL`<br>`<10 ng/mL`<br>`0.5-1 ng/mL`<br>`20-30 pg/mL`<br>`6-15 µg/dL`<br>`300-500 µg/dL` | `850 ng/dL`<br>`12.3 pg/mL`<br>`3.5 mIU/mL`<br>`3.3 mIU/mL`<br>`⌛ ng/mL`<br>`0.42 ng/mL`<br>`20 pg/mL`<br>`⌛ µg/dL`<br>`⌛ µg/dL` |
+| **Cognitive function**<br>- IQ<br>- Human benchmark<br>- BDNF<br>- NGF<br>- β-amyloid<br>-Tau protein<br>-NfL | `IQ`<br>`Percentile (th)`<br>`Plasma BDNF (ng/mL)`<br>`Plasma NGF (pg/mL)`<br>`β-amyloid levels`<br>`Tau protein (pg/mL)`<br>`NfL (pg/mL)` | `90-120`<br>`50th`<br>`1-10 ng/mL`<br>`5-10 pg/mL`<br>`Medium - Elevated`<br>` <300 pg/mL`<br>`<10 pg/mL` | `>132`<br>`98th`<br>`>10 ng/mL`<br>`>10 pg/mL`<br>`Low`<br>`<200 pg/mL`<br>`<5 pg/mL` | [`>132`](https://drive.google.com/file/d/1WGBiCjuJBc1Khgl-MY2pXpNp1mz4kD_T/preview){:target="_blank"}<br>[`95th`](Human benchmark profile){:target="_blank"}<br>`⌛ ng/mL`<br>`⌛ pg/mL`<br>`⌛`<br>`⌛ pg/mL`<br>`⌛ pg/mL` |
+| **Hormonal markers**<br>- Testosterone<br>- Free testosterone<br>- FSH<br>- LH<br>- Prolactin<br>- DHT<br>- Estrogen<br>- Cortisol<br>- DHEA-S | `Testo (ng/dL)`<br>`Free testo (pg/mL)`<br>`FSH (mIU/mL)`<br>`LH (mIU/mL)`<br>`Prolactin (ng/mL)`<br>`DHT (ng/mL)`<br>`Estrogen (pg/mL)`<br>`Cortisol (µg/dL)`<br>`DHEA-S (µg/dL)` |  `300-900 ng/dL`<br>`5-20 pg/mL`<br>`2-18 mIU/mL`<br>`1.5-9.3 mIU/mL`<br>`4-15 ng/mL`<br>`0.25-1.6 ng/mL`<br>`10-40 pg/mL`<br>`6-23 µg/dL`<br>`80-500 µg/dL` |  `800-1200 ng/dL`<br>`20-45 pg/mL`<br>`2-8 mIU/mL`<br>`3-7 mIU/mL`<br>`<10 ng/mL`<br>`0.5-1 ng/mL`<br>`20-30 pg/mL`<br>`6-15 µg/dL`<br>`300-640 µg/dL` | `850 ng/dL`<br>`12.3 pg/mL`<br>`3.5 mIU/mL`<br>`3.3 mIU/mL`<br>`⌛ ng/mL`<br>`0.42 ng/mL`<br>`20 pg/mL`<br>`⌛ µg/dL`<br>`⌛ µg/dL` |
 | **Reproductive health**<br>- Sperm count<br>- Sperm mobility<br>- PSA | `Sperm count (M/ml)`<br>`Sperm mobility %`<br>`PSA (ng/mL)` | `15-200 M/ml`<br>`>40%`<br>`0-4 ng/mL` | `>40 M/ml`<br>`>60%`<br>`<1 ng/mL` | `⌛ M/ml`<br>`⌛%`<br>`⌛ ng/mL` |
 | **Mitochondrial function**<br>- NAD+ | `NAD+ levels (µM)` | `20–50 µM` | `60–100 µM` | `⌛ µM` |
 | **Aging rate** | `DunedinPACE` | `1.0 or higher ` | `<0.8` | `⌛` |
@@ -349,7 +359,7 @@ Hyperbaric chambers
 
 ## Genetic test - Nebula Genomics
 
-| Category             | Gene                                     									| Harmful variant                                 									| Common variant                                       									| Optimal variant                                   									| Impact                                                                                                                                          						|
+| Category             | Gene                                     									| Worst variant                                 								| Common variant                                       									| Optimal variant                                   									| Impact                                                                                                                                          						|
 |:---------------------|:---------------------------------------------------------------------------|:------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cardiovascular       | VEGF<br>NOS3<br>AGT<br>EDN1                    							| `AA`<br> `TT`<br> `TT`<br> `CC`                              			        | `AG`<br> `TG`<br> `TC`<br> `CT`                                      				    | `GG`<br> `GG`<br> `CC`<br> `TT`                               				        | Blood vessel formation<br> Blood flow<br> Cardiovascular efficiency<br> Arterial function<br>                                                        			        |
 | Cognition            | **FOXP2**<br> **COMT**<br> **BDNF**<br> **DRD2**<br> **APOE**<br>CLOCK    	| `AA`<br> `Met/Met`<br> `Met/Met`<br> `AA`<br> `E4/E4`<br> `TT`      	   	    | `GA`<br> `Val/Met`<br> `Val/Met`<br> `AG`<br> `E3/E4`<br> `TC`              	        | `GG`<br> `Val/Val`<br> `Val/Val`<br> `GG`<br> `E3/E3`<br> `CC`                        | Speech and learning<br> Cognitive performance<br> Neuroplasticity<br> Dopamine sensitivity<br> Neurodegenerative risk<br> Circadian rhythm 							|

@@ -21,7 +21,7 @@ toc_sticky: true
 toc_label: "Table of contents"
 toc_icon: "cog"
 sidebar:
-  nav: "posts"
+  nav: "sc_seurat"
 ---
 
 # Preprocessing scRNA-seq data with Seurat

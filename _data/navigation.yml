@@ -62,7 +62,8 @@ docs:
       #- title: "Finance & Tech"
         #url: /blog/#Finance-&-Tech       
 
-posts:
+  
+sc_seurat:
   - title: "Single cell series"
     children:
       
@@ -95,3 +96,13 @@ posts:
         url: /blog/preprocessing-scrna-seq-data/ 
       - title: "5 - Multi-omics<br>integration"
         url: /tags/science-tech/
+ 
+bulk:
+  - title: "Bulk basics"
+    children:
+      
+      - title: ""
+        url: /blog/bulk-rna-seq-analysis/ 
+      - title: "Advanced bulk RNA-seq analysis in R: A complete DESeq2 workflow"
+        url: /blog/bulk-rna-seq-analysis
+ 

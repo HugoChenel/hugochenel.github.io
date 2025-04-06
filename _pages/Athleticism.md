@@ -65,7 +65,7 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 *VO2 max*:  62 ml/kg/min<br>
 *Lactate threshold*: 81% of VO2 max<br>
 *Resting heart rate*: between 39 and 44 bpm<br>
-*Heart rate variability*: between 95 and 115 ms
+*Heart rate variability*: between 95 and 115 ms<br>
 *Breath holding time (static apnea)*: 4min34
 
 **2) Muscular and skeletal**<br>
@@ -77,7 +77,7 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 **3) Hormonal**<br>
 *Testosterone*: 850 ng/dl<br>
-*Free testosterone*: ⌛ pg/ml<br>
+*Free testosterone*: 26.2 pg/ml<br>
 *Estrogen*: 20 pg/ml
 
 
@@ -117,12 +117,12 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 ![Hyrox](/assets/images/Athleticism/Hyrox_competition.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); border-radius: 5px;"}
 
-- **2024/12 HYROX Marseille**
+- **2024/12 HYROX Marseille, France**
 <a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=JGDMS4JI225C4D&lang=EN_CAP&event=H_JGDMS4JI917&page=39&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_JGDMS4JI917" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;"></span>Time — 01:22:37 (+5min penalty)
 </a>
 
-- **2025/04 HYROX Sharjah**
+- **2025/04 HYROX Sharjah, UAE**
 <a href="https://hyroxfrance.com/fr/event/20234/" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;"></span>Time — ?
 </a> 
@@ -155,14 +155,17 @@ Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red
   - **800m**: 2:32
   - **1600m**: 5:32
   - **3200m**: 11:38
-  - **5K**: 19:04
+  - **5K**: 19:06
 
 <a href="https://www.strava.com/athletes/125862142" target="_blank"
    style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">👟</span> Strava profile
 </a>
 
-<br>
+- **Official races (3K & 5K)**
+  - [Corrida pédestre de Toulouse 2024](https://resultat.chrono-start.fr/race/3179/ranking?export=pdf){:target="_blank"}<br>Position ► 44/821
+  - [La Ronde du Printemps 2025](https://resultat.chrono-start.fr/race/3932/ranking?export=pdf){:target="_blank"}<br>Position ► 24/205
+
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 
@@ -233,7 +236,7 @@ Powerful tool I use outside of my training hours. By sending low-level electrica
 
 # Recovery
 
-[Whoop profile](https://www.whoop.com/fr/en/difference/)<br>
+[Whoop profile](https://www.whoop.com/fr/en/difference/){:target="_blank"}<br>
 Tools like the **Whoop** is used to monitor various markers such as HRV, RHR, sleep quality and strain to tailor recovery strategies.
 - **Resting Heart Rate (bpm)**: *39 < RHR < 44*<br>
 	A low RHR reflects great cardiovascular health. If it spikes above normal, it’s my body’s way of telling me to ease up.

@@ -11,7 +11,7 @@ header:
 ---
 
 
-In developing my training philosophy, I was influenced by some of the most respected names in athletic performance and human optimization: *Ben Greenfield*, *Dr. Andy Galpin*, *Mark Bell*, *Dr. Peter Attia*, *Dr. Andrew Huberman*, *Ben Patrick*, *Dr. Kelly Starrett* and *Pavel Tsatsouline*. Their different visions have shaped my training programs, progressively orienting myself toward **weightlifting**, **gymnastics**, **CrossFit** and **running**, participating in endurance events like *Hyrox*. I try to fully develop myself as a hybrid athlete across strength, endurance and explosiveness. All my **personal records** and **competition results** are tracked, serving as benchmarks to evaluate my progress. Regular assessments help fine-tune my approach. 
+In developing my training philosophy, I was influenced by some of the most respected names in athletic performance and human optimization: *Ben Greenfield*, *Dr. Andy Galpin*, *Mark Bell*, *Dr. Peter Attia*, *Dr. Andrew Huberman*, *Ben Patrick*, *Dr. Kelly Starrett* and *Pavel Tsatsouline*. Their different visions have shaped my training programs, progressively orienting myself toward **weightlifting**, **gymnastics**, and **running**, participating in **Hyrox** and **CrossFit** events. I try to fully develop myself as a hybrid athlete across strength, endurance and explosiveness. All my **personal records** and **competition results** are tracked, serving as benchmarks to evaluate my progress. Regular assessments help fine-tune my approach. 
 
 What follows is an overview of my benchmark, fitness competition results and training components. Each one of these components plays a specific role in improving strength, power or endurance, supporting a long-term vision of peak athletic performance.
 
@@ -70,7 +70,7 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 **2) Muscular and skeletal**<br>
 *Lean muscle mass percentage*: ⌛%<br>
-*Body fat percentage*: 8-9%<br>
+*Body fat percentage*: 8.5-9.5%<br>
 *T-score*: ⌛<br>
 *Grip strength*: 72kg<br>
 *Grip endurance (dead hang)*: 2min13
@@ -117,15 +117,17 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 ![Hyrox](/assets/images/Athleticism/Hyrox_competition.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); border-radius: 5px;"}
 
-- **2024/12 HYROX Marseille, France**
+👉 [Check out all my Hyrox races and stats here!](https://www.hyresult.com/athlete/hugo-chenel?tab=races){:target="_blank"}
+
+- **2025/04 HYROX Sharjah, UAE**<br>
+<a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=LR3MS4JI2E5443&lang=EN_CAP&event=H_LR3MS4JIA65&page=5&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JIA65" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+  <span style="margin-right: 8px;"></span>Time — 01:14:49
+</a> 
+
+- **2024/12 HYROX Marseille, France**<br>
 <a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=JGDMS4JI225C4D&lang=EN_CAP&event=H_JGDMS4JI917&page=39&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_JGDMS4JI917" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;"></span>Time — 01:22:37 (+5min penalty)
 </a>
-
-- **2025/04 HYROX Sharjah, UAE**
-<a href="https://hyroxfrance.com/fr/event/20234/" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
-  <span style="margin-right: 8px;"></span>Time — ?
-</a> 
 
 ## CrossFit
 
@@ -145,7 +147,7 @@ The **Red Bull 400** is known as the world's toughest 400-meter race, where part
 - Courchevel, France<br>2025<br>
 **Time : ?**
 
-Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red-bull-400-courchevel){:target="_blank"}.
+Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red-bull-400){:target="_blank"}.
 
 
 ## Running
@@ -157,14 +159,16 @@ Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red
   - **3200m**: 11:38
   - **5K**: 19:06
 
+- **VMA @ 19.3 km/h**
+
 <a href="https://www.strava.com/athletes/125862142" target="_blank"
    style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">👟</span> Strava profile
 </a>
 
 - **Official races (3K & 5K)**
-  - [Corrida pédestre de Toulouse 2024](https://resultat.chrono-start.fr/race/3179/ranking?export=pdf){:target="_blank"}<br>Position ► 44/821
   - [La Ronde du Printemps 2025](https://resultat.chrono-start.fr/race/3932/ranking?export=pdf){:target="_blank"}<br>Position ► 24/205
+  - [Corrida pédestre de Toulouse 2024](https://resultat.chrono-start.fr/race/3179/ranking?export=pdf){:target="_blank"}<br>Position ► 44/821
 
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
@@ -180,7 +184,7 @@ Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red
 | Wednesday | **Cardio (Zone 2)**					            			| Long run or cycling (60-120 minutes)									             | 
 | Thursday  | **Explosive power**			    				    		| Power clean, Thruster, Clean and jerk, Snatch      								 | 
 | Friday    | **Strength - Legs**<br> **Core stability**               		| Back/front/pistol/split ATG squat, Lunges, Tibialis raises, ATG calf raises, Step-ups <br> Nordic hamstring curl, Planks, Hollow body hold, Leg raises, Backward sled drag | 
-| Saturday  | **HIIT (zone 5)**												| Crossfit WOD <br> Rowing, jump rope, assault bike, sprints <br> Box jumps, kettlebell swings, sled push/pull, wall ball <br> Norwegian 4x4 protocol              | 
+| Saturday  | **HIIT (zone 5)**												| Crossfit WOD <br> Rowing, jump rope, assault bike, sprints <br> Box jumps, kettlebell swings, sled push/pull, wall ball <br> VMA intervals, Norwegian 4x4 protocol, Threshold training             | 
 | Sunday    | Recovery<br>								        			| Sauna, Cold plunge or Isolation tank                |
 
 ## Details and practices

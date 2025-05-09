@@ -173,7 +173,8 @@ You should check these metrics to stay in tune with your body’s needs while co
 
 In optimizing my diet, I focus on nutrient-dense, anti-inflammatory foods to support energy, cellular health and longevity. I also be careful that I'm not allergic to any of the food included in the diet. Overall, eat any type of **whole food plant based diet** (something like the Mediterranean diet or Blue Zone related diet is convenient for most people). Here’s a look at my food choices and meal structure to help guide your own diet protocol.
 
-![overview](/assets/images/Biohacking/overview.png){: style="width:50%; height:auto; display:block; margin:auto;"}
+
+![overview](/assets/images/Biohacking/overview.png){: style="width:100%; max-width:600px; height:auto; display:block; margin:auto;"}
 
 ### Daily food routine
 **8:00 AM - Fasting**

@@ -142,6 +142,8 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   <img src="/assets/images/Athleticism/Logo-Red-Bull-400.png" alt="RedBull400" width="300" style="height:auto;">
 </div>
 
+![Hyrox](/assets/images/Athleticism/Logo-Red-Bull-400.png){: style="width:100%; max-width:300px; height:auto; display:block; margin:auto;"}
+
 The **Red Bull 400** is known as the world's toughest 400-meter race, where participants sprint up a ski jumping hill at a nearly vertical incline. It challenges endurance, strength (explosive leg power) and cardiovascular capacity like no other.
 
 - Courchevel, France<br>2025<br>

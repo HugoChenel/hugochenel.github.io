@@ -210,7 +210,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 <details open>
 <summary><strong>🎓 Education</strong></summary>
 
-<div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 10px;">
+<div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 10px; font-size: 0.95em;">
 
 <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
   <strong>PhD candidate in Computational Oncology</strong><br>
@@ -271,68 +271,68 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 ---
 
 <details open>
-<summary><strong>💻 Technical Skills</strong></summary>
+<summary><strong>💻 Technical skills</strong></summary>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 10px; font-size: 0.95em;">
 
 <!-- Programming -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Languages</strong><br>R, Python, Bash
+  <strong>Languages</strong><span style="font-size: 0.9em;"><br>R, Python, Bash</span>
 </div>
 
 <!-- Bulk RNAseq -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Bulk RNAseq</strong><br>FastQC, MultiQC, Cutadapt, Trimmomatic, STAR, BWA, Bowtie, Salmon, DESeq2, edgeR
+  <strong>Bulk RNAseq</strong><span style="font-size: 0.9em;"><br>FastQC, MultiQC, Cutadapt, Trimmomatic, STAR, BWA, Bowtie, Salmon, DESeq2, edgeR</span>
 </div>
 
 <!-- scRNAseq -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>scRNAseq</strong><br>Cell Ranger, Seurat, Harmony, SingleR, Monocle, Survival analysis
+  <strong>scRNAseq</strong><span style="font-size: 0.9em;"><br>Cell Ranger, Seurat, Harmony, SingleR, Monocle, Survival analysis</span>
 </div>
 
 <!-- Dimensionality & DEG -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Exploratory analysis</strong><br>PCA, t-SNE, Hierarchical clustering, Differential expression
+  <strong>Exploratory analysis</strong><span style="font-size: 0.9em;"><br>PCA, t-SNE, Hierarchical clustering, Differential expression</span>
 </div>
 
 <!-- Network Inference -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Network inference</strong><br>GENIE3, ARACNE
+  <strong>Network inference</strong><span style="font-size: 0.9em;"><br>GENIE3, ARACNE</span>
 </div>
 
 <!-- Network Analysis -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Network analysis</strong><br>STRING, TCGA, iGraph, CINNA, Cytoscape, Gephi, WGCNA, MCODE
+  <strong>Network analysis</strong><span style="font-size: 0.9em;"><br>STRING, TCGA, iGraph, CINNA, Cytoscape, Gephi, WGCNA, MCODE</span>
 </div>
 
 <!-- Enrichment -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Functional enrichment</strong><br>GSEA (MSigDB), ToppGene, Enrichr, clueGO, g:Profiler
+  <strong>Functional enrichment</strong><span style="font-size: 0.9em;"><br>GSEA (MSigDB), ToppGene, Enrichr, clueGO, g:Profiler</span>
 </div>
 
 <!-- Spatial Transcriptomics -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Spatial transcriptomics</strong><br>MERFISH, STARmap
+  <strong>Spatial transcriptomics</strong><span style="font-size: 0.9em;"><br>MERFISH, STARmap</span>
 </div>
 
 <!-- Multi-omics -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Multi-omics integration</strong><br>MultiAssayExperiment, MixOmics, DIABLO, OmicsIntegrator, iMOKA, IGV
+  <strong>Multi-omics integration</strong><span style="font-size: 0.9em;"><br>MultiAssayExperiment, MixOmics, DIABLO, OmicsIntegrator, iMOKA, IGV</span>
 </div>
 
 <!-- Statistics -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Statistical tests</strong><br>t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-Square, Pearson, Spearman
+  <strong>Statistical tests</strong><span style="font-size: 0.9em;"><br>t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-Square, Pearson, Spearman</span>
 </div>
 
 <!-- Machine Learning -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>ML models</strong><br>Regression, scikit-learn, XGBoost, LightGBM
+  <strong>ML models</strong><span style="font-size: 0.9em;"><br>Regression, scikit-learn, XGBoost, LightGBM</span>
 </div>
 
 <!-- Visualization -->
 <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
-  <strong>Visualization</strong><br>ggplot2, plotly, ComplexHeatmap, Cytoscape, OmicsNet
+  <strong>Visualization</strong><span style="font-size: 0.9em;"><br>ggplot2, plotly, ComplexHeatmap, Cytoscape, OmicsNet</span>
 </div>
 
 </div>
@@ -345,16 +345,16 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 10px;">
 
-<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇫🇷 <strong>French</strong><br>Native<br>C2<br>
-<span style="font-size: 0.85em;">Certificat Voltaire<br>802/1000 (Niveau Affaires)</span>
+<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇫🇷 <strong>French</strong>
+<span style="font-size: 0.9em;"><br>Native · C2<br>Certificat Voltaire<br>802/1000 – Niveau Affaires</span>
 </div>
 
-<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇬🇧 <strong>English</strong><br>Professional<br>B2<br>
-<span style="font-size: 0.85em;">TOEIC<br>895/990</span>
+<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇬🇧 <strong>English</strong>
+<span style="font-size: 0.9em;"><br>Professional · B2<br>TOEIC<br>895/990</span>
 </div>
 
-
-<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇪🇸 <strong>Spanish</strong><br>Basic<br>A2<br>
+<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇪🇸 <strong>Spanish</strong>
+<span style="font-size: 0.9em;"><br>Basic · A2<br></span>
 </div>
 
 </div>

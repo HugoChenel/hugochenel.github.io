@@ -513,3 +513,75 @@ write.csv(normCounts, "Normalized_counts.csv")
 <hr style="border: 2px solid #ddd; margin: 50px 0;">
 
 This tutorial has walked through a **reproducible RNA-seq analysis pipeline** using R and Bioconductor, **from raw count data through differential expression and functional enrichment**. The combination of rigorous statistical modeling and informative visualizations can help you drive biological interpretation. You’re now equipped to extract meaningful insights from **bulk transcriptomic datasets**. As next steps, consider integrating complementary data types (such as methylation or proteomics) or exploring single-cell RNA-seq for higher resolution.
+
+<hr style="border: 2px solid #ddd; margin: 50px 0;">
+
+# Session info
+
+```r
+# Display session info for reproducibility
+sessionInfo()
+```
+
+	R version 4.3.3 (2024-02-29)
+	Platform: x86_64-pc-linux-gnu (64-bit)
+	Running under: Ubuntu 20.04.6 LTS
+
+	Matrix products: default
+	BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0 
+	LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+
+	locale:
+	[1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=fr_FR.UTF-8        LC_COLLATE=en_US.UTF-8     LC_MONETARY=fr_FR.UTF-8   
+	[6] LC_MESSAGES=en_US.UTF-8    LC_PAPER=fr_FR.UTF-8       LC_NAME=C                  LC_ADDRESS=C               LC_TELEPHONE=C            
+	[11] LC_MEASUREMENT=fr_FR.UTF-8 LC_IDENTIFICATION=C       
+
+	time zone: Europe/Paris
+	tzcode source: system (glibc)
+
+	attached base packages:
+	[1] stats4    stats     graphics  grDevices utils     datasets  methods   base     
+
+	other attached packages:
+	[1] pheatmap_1.0.12             ggplot2_3.4.4               org.Hs.eg.db_3.17.0         AnnotationDbi_1.64.0       
+	[5] clusterProfiler_4.8.3       apeglm_1.22.1               sva_3.50.0                  BiocParallel_1.34.2        
+	[9] genefilter_1.84.0           mgcv_1.9-1                  nlme_3.1-164                DESeq2_1.40.2              
+	[13] SummarizedExperiment_1.30.2 Biobase_2.60.0              GenomicRanges_1.52.1        GenomeInfoDb_1.36.4        
+	[17] IRanges_2.34.1              S4Vectors_0.38.2            BiocGenerics_0.46.0         MatrixGenerics_1.14.0      
+	[21] matrixStats_1.2.0           TCGAbiolinks_2.28.4         tximport_1.28.0            
+
+	loaded via a namespace (and not attached):
+	[1] RColorBrewer_1.1-3          rstudioapi_0.15.0           jsonlite_1.8.8              magrittr_2.0.3             
+	[5] farver_2.1.1                rmarkdown_2.25              fs_1.6.3                    zlibbioc_1.46.0            
+	[9] vctrs_0.6.5                 memoise_2.0.1               RCurl_1.98-1.14             ggtree_3.8.2               
+	[13] htmltools_0.5.7             S4Arrays_1.2.0              progress_1.2.3              curl_5.2.0                 
+	[17] decoupleR_2.6.0             gridGraphics_0.5-1          SparseArray_1.2.0           plyr_1.8.9                 
+	[21] cachem_1.0.8                igraph_2.0.1.1              lifecycle_1.0.4             pkgconfig_2.0.3            
+	[25] gson_0.1.0                  Matrix_1.6-5                R6_2.5.1                    fastmap_1.1.1              
+	[29] GenomeInfoDbData_1.2.10     aplot_0.2.2                 digest_0.6.34               numDeriv_2016.8-1.1        
+	[33] enrichplot_1.20.3           colorspace_2.1-0            patchwork_1.2.0             RSQLite_2.3.5              
+	[37] filelock_1.0.3              fansi_1.0.6                 polyclip_1.10-6             httr_1.4.7                 
+	[41] abind_1.4-5                 compiler_4.3.3              withr_3.0.0                 bit64_4.0.5                
+	[45] downloader_0.4              viridis_0.6.5               DBI_1.2.1                   ggforce_0.4.1              
+	[49] biomaRt_2.58.0              MASS_7.3-60.0.1             rappdirs_0.3.3              DelayedArray_0.28.0        
+	[53] HDO.db_0.99.1               tools_4.3.3                 scatterpie_0.2.1            ape_5.7-1                  
+	[57] glue_1.7.0                  GOSemSim_2.26.1             shadowtext_0.1.3            grid_4.3.3                 
+	[61] reshape2_1.4.4              fgsea_1.26.0                generics_0.1.3              gtable_0.3.4               
+	[65] tzdb_0.4.0                  tidyr_1.3.1                 data.table_1.15.0           hms_1.1.3                  
+	[69] tidygraph_1.3.1             xml2_1.3.6                  utf8_1.2.4                  XVector_0.40.0             
+	[73] ggrepel_0.9.5               pillar_1.9.0                stringr_1.5.1               yulab.utils_0.1.4          
+	[77] emdbook_1.3.13              limma_3.58.0                splines_4.3.3               tweenr_2.0.2               
+	[81] dplyr_1.1.4                 treeio_1.24.3               BiocFileCache_2.10.0        lattice_0.22-5             
+	[85] survival_3.5-8              bit_4.0.5                   annotate_1.80.0             tidyselect_1.2.0           
+	[89] GO.db_3.17.0                locfit_1.5-9.8              Biostrings_2.70.0           knitr_1.45                 
+	[93] gridExtra_2.3               edgeR_4.0.0                 xfun_0.41                   graphlayouts_1.1.0         
+	[97] statmod_1.5.0               stringi_1.8.3               lazyeval_0.2.2              ggfun_0.1.4                
+	[101] yaml_2.3.8                  TCGAbiolinksGUI.data_1.20.0 evaluate_0.23               codetools_0.2-19           
+	[105] bbmle_1.0.25.1              ggraph_2.1.0                tibble_3.2.1                qvalue_2.32.0              
+	[109] ggplotify_0.1.2             cli_3.6.2                   xtable_1.8-4                munsell_0.5.0              
+	[113] Rcpp_1.0.12                 dbplyr_2.4.0                coda_0.19-4.1               png_0.1-8                  
+	[117] bdsmatrix_1.3-7             XML_3.99-0.16.1             parallel_4.3.3              readr_2.1.5                
+	[121] blob_1.2.4                  prettyunits_1.2.0           DOSE_3.26.2                 bitops_1.0-7               
+	[125] tidytree_0.4.6              viridisLite_0.4.2           mvtnorm_1.2-4               scales_1.3.0               
+	[129] purrr_1.0.2                 crayon_1.5.2                rlang_1.1.3                 cowplot_1.1.3              
+	[133] fastmatch_1.1-4             KEGGREST_1.42.0             rvest_1.0.4 

@@ -26,7 +26,20 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 # Publications
 
-**Multilayer network approaches to omics data integration in Digital Twins for cancer research**<br>*2024*<br>
+**Time-series RNA-Seq and data-driven network inference unveil dynamics of cell activation, survival and crosstalk in Chronic Lymphocytic Leukaemia in vitro models**<br>*2025*
+
+<a href="https://www.biorxiv.org/content/10.1101/2025.04.20.649300v1.abstract" target="_blank" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
+  <span style="margin-right: 8px;">🔗</span> Link to Preprint
+</a>
+
+<audio controls>
+  <source src="/assets/audio/CLL_NetworkInference_paper.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<hr style="border: 1px dashed #ddd; margin: 20px 0;">
+
+**Multilayer network approaches to omics data integration in Digital Twins for cancer research**<br>*2024*
 
 <a href="https://arxiv.org/abs/2410.07252" target="_blank" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">🔗</span> Link to Preprint
@@ -39,7 +52,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 <hr style="border: 1px dashed #ddd; margin: 20px 0;">
 
-**Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling**<br>*2023*<br>
+**Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling**<br>*2023*
 
 <a href="https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf" target="_blank" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;">🔗</span> Link to Book chapter
@@ -131,44 +144,220 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 ## Academia
 
-- **PhD student (CIFRE thesis)**, *Centre de Recherches en Cancérologie de Toulouse (CRCT)*<br>
-2023 - today<br>
-Toulouse, France<br>
-<br>
-Thesis project : *'Machine learning models of tumor progression based on multi-omics and clinical data'*.
-The research is conducted at UMR1037 – CRCT under the co-supervision of Dr. Vera Pancaldi and Dr. Andrei Zinovyev
+<div style="display: grid; grid-template-columns: 1fr; gap: 16px; font-size: 0.95em;">
 
-- **Engineer in computational biology**, *Centre de Recherches en Cancérologie de Toulouse (CRCT)*<br>
-2022 - 2023<br>
-Toulouse, France<br>
-<br>
-Working on the inference of gene regulatory networks in the tumour microenvironment from RNAseq time course data in Vera Pancaldi Lab.
+<!-- CRCT PhD -->
+<div style="border-left: 4px solid #28a745; padding-left: 16px;">
+  <strong>PhD Student (CIFRE)</strong> at <em>Toulouse Cancer Research Center (CRCT)</em>  
+  <br><span style="color: #777;">Toulouse, France — 2023–Present</span>
+  <br><span style="font-size: 0.85em;">
+  Thesis project: <em>Machine learning models of tumor progression based on multi-omics and clinical data.</em><br>
+  The research is conducted at UMR1037 – CRCT under the co-supervision of Dr. Vera Pancaldi and Dr. Andrei Zinovyev
+  </span>
+</div>
+
+<!-- CRCT Engineer -->
+<div style="border-left: 4px solid #ffc107; padding-left: 16px;">
+  <strong>Computational Biology Engineer</strong> at <em>Toulouse Cancer Research Center (CRCT)</em>  
+  <br><span style="color: #777;">Toulouse, France — 2022–2023</span>
+  <br><span style="font-size: 0.85em;">
+  Built and applied gene regulatory network inference tools to time-course RNA-seq data in the tumor microenvironment.
+  </span>
+</div>
+
+</div>
 
 ## Industry
 
-- **Research engineer**, *Evotec*<br>
-2023 - today<br>
-Toulouse, France<br>
-<br>
-While conducting my PhD at CRCT, I am employed by Evotec as a research associate in the In Silico R&D Data Science department. Evotec fund my PhD research.
+<div style="display: grid; grid-template-columns: 1fr; gap: 16px; font-size: 0.95em;">
 
-- **Data scientist**, *Vaiomer*<br>
-2021<br>
-Toulouse, France<br>
-<br>
-Research and implementation of new analysis strategies for targeted metagenomic data on the 16S rRNA gene, particularly for projects with specific data characteristics (over-representation of zeros) or a specific experimental design, such as paired samples or time series.
+<!-- Evotec -->
+<div style="border-left: 4px solid #007bff; padding-left: 16px;">
+  <strong>Research Engineer</strong> at <em>Evotec</em>  
+  <br><span style="color: #777;">Toulouse, France — 2023–Present</span>
+  <br><span style="font-size: 0.85em;">
+  While conducting my PhD at CRCT, I am employed by Evotec as a research associate in the In Silico R&D Data Science department. Evotec fund my PhD research.
+  </span>
+</div>
 
-- **Mathematics teacher**, *Acadomia*<br>
-2020-2021<br>
-Toulouse, France<br>
-<br>
-Taught mathematics to high school students in the Scientific stream, specifically core topics like algebra, calculus and geometry. 
+<!-- Vaiomer -->
+<div style="border-left: 4px solid #6f42c1; padding-left: 16px;">
+  <strong>Data Scientist</strong> at <em>Vaiomer</em>  
+  <br><span style="color: #777;">Toulouse, France — 2021</span>
+  <br><span style="font-size: 0.85em;">
+  Research and implementation of new analysis strategies for targeted metagenomic data on the 16S rRNA gene, particularly for projects with specific data characteristics (over-representation of zeros) or a specific experimental design, such as paired samples or time series.
+  </span>
+</div>
+
+<!-- Acadomia -->
+<div style="border-left: 4px solid #dc3545; padding-left: 16px;">
+  <strong>Mathematics Teacher</strong> at <em>Acadomia</em>  
+  <br><span style="color: #777;">Toulouse, France — 2020–2021</span>
+  <br><span style="font-size: 0.85em;">
+  Taught mathematics (algebra, calculus, geometry) to high school students in the scientific stream.
+  </span>
+</div>
+
+</div>
 
 <hr style="border: 2px solid #ddd; margin: 30px 0;">
 
+
 # Background
 
-<br>
+---
 
-![Education](/assets/images/PhD/Education_timeline.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 4px 4px 15px rgba(0,0,0,0); border-radius: 10px;"}
+<details open>
+<summary><strong>🎓 Education</strong></summary>
+
+<div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 10px;">
+
+<div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
+  <strong>PhD candidate in Computational Oncology</strong><br>
+  <em>University of Toulouse</em> | 2026<br>
+  <span style="font-size: 0.85em;">Thesis title: <em>Machine learning models of tumor progression based on multi-omics and clinical data</em> </span><br>
+  <span style="font-size: 0.85em;">Co-supervisors: Dr. Vera Pancaldi and Dr. Andrei Zinovyev</span><br>
+  <span style="font-size: 0.85em;">Committee members: Dr. Manlio De Domenico and Dr. Manuel Diaz-Munoz</span><br>
+  <span style="font-size: 0.85em;">CIFRE funding</span><br>
+  <span style="font-size: 0.85em;">CARe labelling</span><br>
+  <span style="font-size: 0.85em;">Leader of COMET (Student Scientific Committee from Toulouse Cancer Research Center)</span><br>
+  <span style="font-size: 0.85em;">Representative of doctoral students, Doctoral school BSB (Biology, Health and Biotechnology)</span>
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
+  <strong>MSc in Bioinformatics</strong><br>
+  <em>Paul Sabatier University</em> | 2022<br>
+  <span style="font-size: 0.85em;">Graph processing</span><br>
+  <span style="font-size: 0.85em;">Data mining</span><br>
+  <span style="font-size: 0.85em;">Deep learning - Neural networks</span><br>
+  <span style="font-size: 0.85em;">Machine learning</span><br>
+  <span style="font-size: 0.85em;">Post-genomic data processing (NGS)</span><br>
+  <span style="font-size: 0.85em;">Integration of heterogeneous data</span><br>
+  <span style="font-size: 0.85em;">In silico annotation of genomic sequences - hidden Markov model</span><br>
+  <span style="font-size: 0.85em;">Systems biology</span><br>
+  <span style="font-size: 0.85em;">Multivariate data analysis</span><br>
+  <span style="font-size: 0.85em;">Advanced linear modeling</span>
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
+  <strong>The Institute for Higher National Defence Studies (126th IHEDN-Youth cycle)</strong><br>
+  <em>ISAE Supaero</em> | 2021<br>
+  <span style="font-size: 0.85em;">Geopolitics</span><br>
+  <span style="font-size: 0.85em;">International relations</span><br>
+  <span style="font-size: 0.85em;">Multilateralism</span><br>
+  <span style="font-size: 0.85em;">Defence and security (cybersecurity and space defence)</span><br>
+  <span style="font-size: 0.85em;">Economic intelligence</span>
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
+  <strong>BSc in Biochemestry, Molecular biology and Microbiology</strong><br>
+  <em>Paul Sabatier University</em> | 2020<br>
+  <span style="font-size: 0.85em;">Microbial cell structure and function, microbial genetics and related pathologies</span><br>
+  <span style="font-size: 0.85em;">Function, composition and structure of lipids, proteins and carbohydrates</span><br>
+  <span style="font-size: 0.85em;">Genomics and genetics, including eukaryotic and prokaryotic, and DNA repair</span>
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
+  <strong>BSc in Mathematics</strong><br>
+  <em>Paul Sabatier University</em> | 2018<br>
+  <span style="font-size: 0.85em;">Mathematical analysis: differentiation, integration and series</span><br>
+  <span style="font-size: 0.85em;">Algebra</span><br>
+  <span style="font-size: 0.85em;">Statistics and probability</span>
+</div>
+
+</div>
+</details>
+
+---
+
+<details open>
+<summary><strong>💻 Technical Skills</strong></summary>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 10px; font-size: 0.95em;">
+
+<!-- Programming -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Languages</strong><br>R, Python, Bash
+</div>
+
+<!-- Bulk RNAseq -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Bulk RNAseq</strong><br>FastQC, MultiQC, Cutadapt, Trimmomatic, STAR, BWA, Bowtie, Salmon, DESeq2, edgeR
+</div>
+
+<!-- scRNAseq -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>scRNAseq</strong><br>Cell Ranger, Seurat, Harmony, SingleR, Monocle, Survival analysis
+</div>
+
+<!-- Dimensionality & DEG -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Exploratory analysis</strong><br>PCA, t-SNE, Hierarchical clustering, Differential expression
+</div>
+
+<!-- Network Inference -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Network inference</strong><br>GENIE3, ARACNE
+</div>
+
+<!-- Network Analysis -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Network analysis</strong><br>STRING, TCGA, iGraph, CINNA, Cytoscape, Gephi, WGCNA, MCODE
+</div>
+
+<!-- Enrichment -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Functional enrichment</strong><br>GSEA (MSigDB), ToppGene, Enrichr, clueGO, g:Profiler
+</div>
+
+<!-- Spatial Transcriptomics -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Spatial transcriptomics</strong><br>MERFISH, STARmap
+</div>
+
+<!-- Multi-omics -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Multi-omics integration</strong><br>MultiAssayExperiment, MixOmics, DIABLO, OmicsIntegrator, iMOKA, IGV
+</div>
+
+<!-- Statistics -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Statistical tests</strong><br>t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-Square, Pearson, Spearman
+</div>
+
+<!-- Machine Learning -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>ML models</strong><br>Regression, scikit-learn, XGBoost, LightGBM
+</div>
+
+<!-- Visualization -->
+<div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+  <strong>Visualization</strong><br>ggplot2, plotly, ComplexHeatmap, Cytoscape, OmicsNet
+</div>
+
+</div>
+</details>
+
+---
+
+<details open>
+<summary><strong>🌍 Languages</strong></summary>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 10px;">
+
+<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇫🇷 <strong>French</strong><br>Native<br>C2<br>
+<span style="font-size: 0.85em;">Certificat Voltaire<br>802/1000 (Niveau Affaires)</span>
+</div>
+
+<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇬🇧 <strong>English</strong><br>Professional<br>B2<br>
+<span style="font-size: 0.85em;">TOEIC<br>895/990</span>
+</div>
+
+
+<div style="background: #f0f0f0; padding: 10px; border-radius: 6px;">🇪🇸 <strong>Spanish</strong><br>Basic<br>A2<br>
+</div>
+
+</div>
+</details>
+
 

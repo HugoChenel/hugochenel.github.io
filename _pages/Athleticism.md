@@ -117,30 +117,44 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 ![Hyrox](/assets/images/Athleticism/Hyrox_competition.png){: style="width:100%; height:auto; border: 4px solid #ccc; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); border-radius: 5px;"}
 
-👉 [Check out all my Hyrox races and stats here!](https://www.hyresult.com/athlete/hugo-chenel?tab=races){:target="_blank"}
+<a href="https://www.hyresult.com/athlete/hugo-chenel?tab=races" target="_blank"
+   style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 50px; font-weight: bold;">
+  👉🏼 Check out all my Hyrox races and stats here!
+</a>
 
 - **2025/04 HYROX Sharjah, UAE**<br>
-<a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=LR3MS4JI2E5443&lang=EN_CAP&event=H_LR3MS4JIA65&page=5&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JIA65" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+<a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=LR3MS4JI2E5443&lang=EN_CAP&event=H_LR3MS4JIA65&page=5&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JIA65" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;"></span>Time — 01:14:49
 </a> 
 
 - **2024/12 HYROX Marseille, France**<br>
-<a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=JGDMS4JI225C4D&lang=EN_CAP&event=H_JGDMS4JI917&page=39&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_JGDMS4JI917" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
+<a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=JGDMS4JI225C4D&lang=EN_CAP&event=H_JGDMS4JI917&page=39&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_JGDMS4JI917" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;"></span>Time — 01:22:37 (+5min penalty)
 </a>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+  <div style="flex: 0 1 48%;">
+    <img src="/assets/images/Athleticism/Hyrox1.JPG" alt="Hyrox 1" style="width: 100%; height: auto;" />
+  </div>
+  <div style="flex: 0 1 48%;">
+    <img src="/assets/images/Athleticism/Hyrox2.jpg" alt="Hyrox 2" style="width: 100%; height: auto;" />
+  </div>
+</div>
 
 ## CrossFit
 
 <a href="https://games.crossfit.com/athlete/2736016?_ga=2.228485213.17242764.1714655221-419983903.1702560745" target="_blank"
-   style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #4573a3; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">
-  <span style="margin-right: 8px;">🏋🏼</span> CrossFit Games profile
+   style="display: block; width: 100%; text-align: center; padding: 25px 0; background-color: #4573a3; color: white; text-decoration: none; border-radius: 10px; font-weight: bold;">
+  CrossFit Games profile
+</a>
+
+<a href="https://games.crossfit.com/leaderboard/open/2025?view=0&division=1&region=&country=FR&region_search_display=France&scaled=0&sort=0&athlete=2736016" target="_blank"
+   style="display: block; width: 100%; margin-top: 16px; padding: 10px; background-color: #f4f4f4; color: #333; text-decoration: none; border-radius: 4px; border: 1px solid #ccc;">
+  <strong>CrossFit Open 2025</strong><br>
+  Level 5 &middot; 44–54% &middot; Intermediate
 </a>
 
 ## Red Bull 400
-
-<div style="text-align:center;">
-  <img src="/assets/images/Athleticism/Logo-Red-Bull-400.png" alt="RedBull400" width="300" style="height:auto;">
-</div>
 
 ![Hyrox](/assets/images/Athleticism/Logo-Red-Bull-400.png){: style="width:100%; max-width:300px; height:auto; display:block; margin:auto;"}
 

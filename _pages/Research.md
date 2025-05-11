@@ -26,6 +26,10 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 # Publications
 
+📚 Browse my peer-reviewed publications and collaborations on [Google Scholar](https://scholar.google.com/citations?user=ENlSzNUAAAAJ&hl=fr&oi=ao){:target="_blank"}.
+
+<hr style="border: 1px dashed #ddd; margin: 20px 0;">
+
 **Time-series RNA-Seq and data-driven network inference unveil dynamics of cell activation, survival and crosstalk in Chronic Lymphocytic Leukaemia in vitro models**<br>*2025*
 
 <a href="https://www.biorxiv.org/content/10.1101/2025.04.20.649300v1.abstract" target="_blank" style="padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">
@@ -33,7 +37,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 </a>
 
 <audio controls>
-  <source src="/assets/audio/CLL_NetworkInference_paper.wav" type="audio/wav">
+  <source src="/assets/audio/CLL_net_paper.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
@@ -89,13 +93,12 @@ Below is an overview of my publications and scientific tutorials showcasing my c
   <a href="https://hugochenel.github.io/blog/preprocessing-scrna-seq-data/" style="text-decoration: none; color: inherit; outline: none;">
     <img src="/assets/images/PhD/Single_cell.png" alt="Singlecell" style="width:100%; height:300px; border: 2px solid #ccc; border-radius: 10px;">
     <span style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.8); width: 80%; text-align: center;">
-      Preprocessing scRNA-seq data<br>with Seurat
+      Preprocessing scRNA-seq data with Seurat
     </span>
   </a>
 </div>
 
 <hr style="border: 2px solid #ddd; margin: 30px 0;">
-
 
 # Conferences
 
@@ -128,13 +131,40 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 <br>
 
-<hr style="border: 1px solid #ddd; margin: 30px 0;">
+<hr style="border: 2px solid #ddd; margin: 30px 0;">
 
 # Thesis
 
-<div style="text-align: center;">
-  <a href="https://theses.fr/s385051" target="_blank" style="padding: 50px 80px; background-color: #b3604b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; display: inline-block;">
-    <span style="margin-right: 8px;">📄</span> PhD Thesis<br>Machine learning models of tumor progression<br>based on multi-omics and clinical data
+<div style="width: 100%; padding: 0; margin: 0;">
+  <a href="https://theses.fr/s385051" target="_blank"
+     style="display: block; width: 100%; padding: 40px 20px;
+            background: linear-gradient(135deg, #b3604b, #a54a35);
+            color: white; text-decoration: none;
+            border-radius: 0; font-weight: normal;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(6px); text-align: center;">
+    
+    <div style="font-size: 1.2rem; letter-spacing: 0.05em; opacity: 2; margin-bottom: 10px;">
+      📄 PhD Thesis
+    </div>
+
+    <div style="font-size: 1.2rem; font-weight: 700; line-height: 1.4; margin-bottom: 10px;">
+      Machine learning models of tumor progression based on multi-omics and clinical data
+    </div>
+    
+  </a>
+</div>
+
+<!-- PDF Download Button -->
+<div style="text-align: center; margin-top: 20px;">
+  <a href="/assets/images/PhD/hugo-chenel-thesis.pdf" target="_blank"
+     style="display: inline-block; padding: 12px 24px;
+            background-color: #444; color: white;
+            border-radius: 8px; text-decoration: none;
+            font-weight: 600; font-size: 0.8rem;
+            transition: background-color 0.3s ease;">
+    ⬇️ Download Thesis PDF
   </a>
 </div>
 
@@ -149,7 +179,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 <!-- CRCT PhD -->
 <div style="border-left: 4px solid #28a745; padding-left: 16px;">
   <strong>PhD Student (CIFRE)</strong> at <em>Toulouse Cancer Research Center (CRCT)</em>  
-  <br><span style="color: #777;">Toulouse, France — 2023–Present</span>
+  <br><span style="color: #777;">Toulouse, France — 2023-Present</span>
   <br><span style="font-size: 0.85em;">
   Thesis project: <em>Machine learning models of tumor progression based on multi-omics and clinical data.</em><br>
   The research is conducted at UMR1037 – CRCT under the co-supervision of Dr. Vera Pancaldi and Dr. Andrei Zinovyev
@@ -159,7 +189,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 <!-- CRCT Engineer -->
 <div style="border-left: 4px solid #ffc107; padding-left: 16px;">
   <strong>Computational Biology Engineer</strong> at <em>Toulouse Cancer Research Center (CRCT)</em>  
-  <br><span style="color: #777;">Toulouse, France — 2022–2023</span>
+  <br><span style="color: #777;">Toulouse, France — 2022-2023</span>
   <br><span style="font-size: 0.85em;">
   Built and applied gene regulatory network inference tools to time-course RNA-seq data in the tumor microenvironment.
   </span>
@@ -174,7 +204,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 <!-- Evotec -->
 <div style="border-left: 4px solid #007bff; padding-left: 16px;">
   <strong>Research Engineer</strong> at <em>Evotec</em>  
-  <br><span style="color: #777;">Toulouse, France — 2023–Present</span>
+  <br><span style="color: #777;">Toulouse, France — 2023-Present</span>
   <br><span style="font-size: 0.85em;">
   While conducting my PhD at CRCT, I am employed by Evotec as a research associate in the In Silico R&D Data Science department. Evotec fund my PhD research.
   </span>
@@ -192,7 +222,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 <!-- Acadomia -->
 <div style="border-left: 4px solid #dc3545; padding-left: 16px;">
   <strong>Mathematics Teacher</strong> at <em>Acadomia</em>  
-  <br><span style="color: #777;">Toulouse, France — 2020–2021</span>
+  <br><span style="color: #777;">Toulouse, France — 2020-2021</span>
   <br><span style="font-size: 0.85em;">
   Taught mathematics (algebra, calculus, geometry) to high school students in the scientific stream.
   </span>
@@ -359,5 +389,4 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 </div>
 </details>
-
 

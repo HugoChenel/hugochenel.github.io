@@ -207,6 +207,7 @@ Optional carb sources:
 - Blueberries
 - Bananas
 - Grapes
+- Beets
 <br>
 
 **8:00 AM - Dinner**
@@ -286,9 +287,7 @@ Vitamin D3 + K2\*<br>
 Magnesium L-Threonate\*<br>
 Maca\*\*<br>
 Black ginger\*\*<br>
-Spermidine\*\*<br>
-NR or NMN\*\*<br>
-CoQ10\*\*
+NR/NMN\*\* or CoQ10\*\*
 
 **12:00 AM - During meal**<br>
 Tongkat Ali\*\*<br>
@@ -304,12 +303,15 @@ Beta-ecdysterone\*\*
 Magnesium glycinate\*<br>
 Apigenin\*\*<br>
 Tart cherry extract\*\*<br>
-CBD\*\*<br>
+Spermidine\*\*<br>
 White jelly mushroom\*\*<br>
+CBD\*\*<br>
 
 \*  *basic stack containing essential nutrients most people need and support general wellness.*
 <br>
 \** *advanced stack which targets specific processes (hormonal support, cellular health, muscle performance and mental clarity).*
+
+⚠️ If taken too late, NAD+ boosters might interfere with circadian rhythm; NR or NMN supplements should be taken early in the morning (on empty stomach for better absorption)
 
 ### Cycling strategy: 5 days on – 2 days off
 <br>
@@ -324,7 +326,7 @@ Hot and cold (cold shower, sauna)<br>
 LLLT/RLT<br>
 tDCS<br>
 Hyperbaric chambers<br>
-nootropics (saffron, C3G, nicotine)<br>
+nootropics (saffron, C3G, nicotine, kanna)<br>
 Stem cell injections<br>
 psychedelics<br>
 PEMF<br>

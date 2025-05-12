@@ -74,7 +74,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 <div style="position: relative; text-align: center; width: 100%;">
   <a href="https://hugochenel.github.io/blog/bulk-rna-seq-analysis/" style="text-decoration: none; color: inherit; outline: none;">
-    <img src="/assets/images/PhD/Bulk.png" alt="Bulk" style="width:100%; height:300px; border: 2px solid #ccc; border-radius: 10px;">
+    <img src="/assets/images/PhD/Bulk.png" alt="Bulk" style="width:100%; height:auto; border: 2px solid #ccc; border-radius: 10px;">
     <span style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.8); width: 80%; text-align: center;">
        Bulk RNA-seq analysis with DESeq2
     </span>
@@ -91,7 +91,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 <div style="position: relative; text-align: center; width: 100%;">
   <a href="https://hugochenel.github.io/blog/preprocessing-scrna-seq-data/" style="text-decoration: none; color: inherit; outline: none;">
-    <img src="/assets/images/PhD/Single_cell.png" alt="Singlecell" style="width:100%; height:300px; border: 2px solid #ccc; border-radius: 10px;">
+    <img src="/assets/images/PhD/Single_cell.png" alt="Singlecell" style="width:100%; height:auto; border: 2px solid #ccc; border-radius: 10px;">
     <span style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.5em; font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.8); width: 80%; text-align: center;">
       Preprocessing scRNA-seq data with Seurat
     </span>

@@ -538,6 +538,8 @@ qplot(
 )
 ```
 
+<img src="/assets/images/blog/Preprocessing-scRNA-seq-data-with-Seurat/8_histo_mito.png" alt="histo_mito" style="width:100%; height:auto; border: 1px solid #ccc; border-radius: 2px;">
+
 - The majority of cells display low to moderate mitochondrial content.
 - A small fraction of cells shows elevated levels, which likely represents compromised or apoptotic cells.
 

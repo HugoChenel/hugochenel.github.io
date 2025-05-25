@@ -26,17 +26,65 @@ feature_row:
     btn_class: "btn--primary btn--large"
 ---
 
-
 <!-- Link to external CSS file-->
 <link rel="stylesheet" href="/styles.css">
 
-<div class="hero" style="background: linear-gradient(to top, #CFCACA, #EBE4E4); padding: 50px 20px; text-align: center; border-radius: 10px;">
-    <h1 style="font-size: 2.5rem; font-weight: bold; color: #333; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); margin-bottom: 20px;">
-        Welcome to my journey
-    </h1>
+<div class="hero" style="
+    background: linear-gradient(to top, #CFCACA, #EBE4E4);
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 4px solid #007acc; 
+    box-shadow: 0 0 12px rgba(0, 122, 204, 0.25); /* subtle glow */
+">
+  <h1 style="
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2px;
+  ">
+    Scientist. Biohacker. Athlete.
+  </h1>
 </div>
 
 <br>
+
+<h1 id="dynamic-title" style="
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+">
+  Explore <span id="rotating-word">Cancer Research</span>.
+</h1>
+
+<script>
+  const words = [
+    "Cancer Research",  // Always starts with this
+    "Machine Learning",
+    "Network Biology",
+    "Biohacking Strategies",
+    "Rejuvenation Protocols",
+    "Biomarker Optimization",
+    "Conditioning Metrics",
+    "Training Systems",
+    "Athletic Events"
+  ];
+
+  let i = 1; // Start from 1 to rotate away from "Cancer Research" initially
+  const rotatingWord = document.getElementById("rotating-word");
+
+  setInterval(() => {
+    rotatingWord.textContent = words[i];
+    i = (i + 1) % words.length;
+  }, 1800);
+</script>
+
+<style>
+  h1 .header-link { display: none; }
+</style>
 
 <br>
 
@@ -109,4 +157,35 @@ feature_row:
     <p style="font-size: 1rem !important; line-height: 1.6;">
         Whether you're here for groundbreaking science, self-optimization or athletic performance, you'll find valuable content to enhance your understanding and take your own journey to the next level.
     </p>
+</section>
+
+
+<section style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 100px; padding-bottom: 20px;">
+  
+  <!-- Donate Button -->
+  <a href="https://commerce.coinbase.com/checkout/b45feb67-7ea3-41bb-b78b-d27f5dbb3550" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+    <button style="
+      background-color: #f7931a;
+      color: #ffffff;
+      border: none;
+      padding: 50px 80px;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(247, 147, 26, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 30px;
+    "
+    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 25px rgba(247, 147, 26, 0.7)';"
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(247, 147, 26, 0.5)';">
+      Contribute via ₿itcoin & Crypto
+    </button>
+  </a>
+
+  <!-- QR Code Below the Button -->
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://commerce.coinbase.com/checkout/b45feb67-7ea3-41bb-b78b-d27f5dbb3550" 
+       alt="Donate with Bitcoin QR Code" 
+       style="border: 4px solid #f7931a; border-radius: 8px;" />
+
 </section>

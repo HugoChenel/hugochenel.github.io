@@ -175,7 +175,7 @@ Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red
   - **3200m**: 11:38
   - **5K**: 19:06
 
-- **VMA @ 19.3 km/h**
+- **VMA @ 19.1 km/h**
 
 <a href="https://www.strava.com/athletes/125862142" target="_blank"
    style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">

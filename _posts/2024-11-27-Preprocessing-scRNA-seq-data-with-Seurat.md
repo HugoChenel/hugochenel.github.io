@@ -7,8 +7,8 @@ title: "Preprocessing scRNA-seq data with Seurat"
 date: 2024-11-27
 categories: []
 tags: [Science & Tech]
-excerpt: "Tutorial - Single cell series 1.1"
-permalink: /blog/preprocessing-scrna-seq-data/
+excerpt: "Tutorial - Single cell series 1"
+permalink: /blog/preprocessing-scrna-seq-data-with-Seurat/
 header:
   overlay_color: "#93b874"
   overlay_filter: "0.005"

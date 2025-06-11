@@ -7,7 +7,7 @@ title: "Skydiving"
 date: 2024-11-08
 categories: blog
 tags: [Adventures & Extreme sports]
-excerpt: "Teaching & life lessons."
+excerpt: "PAC - Aérodrome de Castelnau-Magnoac - Pilatus PC-6 Porter B2-H2 & ATR 72-500"
 header:
   overlay_color: "#93b874"
   overlay_filter: "0.2"

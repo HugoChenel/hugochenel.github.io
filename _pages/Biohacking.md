@@ -318,19 +318,36 @@ To prevent the body from becoming too accustomed to these compounds, which can r
 
 ## 5 - More advanced biohacks
 
-Under construction ...
+**Cognitive health**<br>
+tDCS (transcranial direct current stimulation)<br>
+Nootropics (saffron, C3G, nicotine, kanna, ...)<br>
+tVNS (vagus nerve stimulation)<br>
+EEG meditation devices (Muse)<br>
 
-Breathing (WHM, Buteyko, ...)<br>
-Hot and cold (cold shower, sauna)<br>
-LLLT/RLT<br>
-tDCS<br>
-Hyperbaric chambers<br>
-nootropics (saffron, C3G, nicotine, kanna)<br>
-Stem cell injections<br>
-psychedelics<br>
-PEMF<br>
-Sensory deprivation<br>
-Grounding<br>
+**Body and mind**<br>
+Breathwork (Wim Hof method, Buteyko, Holotropic breathwork)<br>
+Cold exposure (Cryotherapy, cold showers, ice baths)<br>
+Heat exposure (Sauna, infrared sauna)<br>
+[Sensory deprivation](https://hugochenel.github.io/blog/Sensory-deprivation/){:target="_blank"}<br>
+Vipassana meditation retreats / Darkness retreats<br>
+Psychedelics (psilocybin, LSD, DMT – legal context dependent)<br>
+Microdosing protocols (Fadiman)<br>
+
+**Cellular/Mitochondrial optimization**<br>
+Red light therapy (LLLT / RLT)<br>
+[Hyperbaric oxygen therapy (HBOT)](https://hugochenel.github.io/blog/What-is-HBOT/){:target="_blank"}<br>
+3–5 day water fasts<br>
+Ozone therapy<br>
+Exosome or stem cell injections<br>
+Methylene blue (low dose)<br>
+Peptides (BPC-157, TB-500)<br>
+
+**Environmental modulation**<br>
+Structured / hydrogen-rich water<br>
+PEMF (pulsed electromagnetic field therapy)<br>
+Blue light blockers<br>
+Grounding or earthing (barefoot, conductive mats)<br>
+EMF mitigation tools<br>
 
 <hr style="border: 1px solid #ddd; margin: 30px 0;">
 

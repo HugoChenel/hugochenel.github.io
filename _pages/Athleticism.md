@@ -56,7 +56,7 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 **Physical attributes**<br>
 *Height*: 182 cm / 6 ft<br>
-*Weight*: 70 kg / 155 lbs<br>
+*Weight*: 72 kg / 159 lbs<br>
 *Body type*: Ectomorph
 
 **Physiological metrics**<br>
@@ -122,12 +122,12 @@ I promote personalized and data-driven approaches using tools like wearables (HR
   👉🏼 Check out all my Hyrox races and stats here!
 </a>
 
-- **2025/04 HYROX Sharjah, UAE**<br>
+- **2025/04 HYROX Sharjah, UAE 🇦🇪**<br>
 <a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=LR3MS4JI2E5443&lang=EN_CAP&event=H_LR3MS4JIA65&page=5&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JIA65" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;"></span>Time — 01:14:49
 </a> 
 
-- **2024/12 HYROX Marseille, France**<br>
+- **2024/12 HYROX Marseille, France 🇫🇷**<br>
 <a href="https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=JGDMS4JI225C4D&lang=EN_CAP&event=H_JGDMS4JI917&page=39&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_JGDMS4JI917" target="_blank" style="padding: 5px 20px; background-color: #f5cf5f; color: black; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease;">
   <span style="margin-right: 8px;"></span>Time — 01:22:37 (+5min penalty)
 </a>
@@ -156,12 +156,13 @@ I promote personalized and data-driven approaches using tools like wearables (HR
 
 ## Red Bull 400
 
-![Hyrox](/assets/images/Athleticism/Logo-Red-Bull-400.png){: style="width:100%; max-width:300px; height:auto; display:block; margin:auto;"}
+![Hyrox](/assets/images/Athleticism/RedBull400.webp){: style="width:100%; max-width:400px; height:auto; display:block; margin:auto;"}
 
-The **Red Bull 400** is known as the world's toughest 400-meter race, where participants sprint up a ski jumping hill at a nearly vertical incline. It challenges endurance, strength (explosive leg power) and cardiovascular capacity like no other.
+The **Red Bull 400** is known as the world's toughest 400-meter race, where participants sprint up a ski jumping hill at a nearly vertical incline. It challenges endurance, strength (explosive leg power) and cardiovascular capacity in such a unique way.
 
 - Courchevel, France<br>2025<br>
-**Time : ?**
+**Time : 05:22**<br>
+Stage : Semi-Final
 
 Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red-bull-400){:target="_blank"}.
 
@@ -175,7 +176,7 @@ Check out more about the [Red Bull 400](https://www.redbull.com/fr-fr/events/red
   - **3200m**: 11:38
   - **5K**: 19:06
 
-- **VMA @ 19.1 km/h**
+- **VMA @ 18.2 km/h**
 
 <a href="https://www.strava.com/athletes/125862142" target="_blank"
    style="display: block; width: 100%; text-align: center; padding: 20px 0; background-color: #e67410; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background-color 0.3s ease;">

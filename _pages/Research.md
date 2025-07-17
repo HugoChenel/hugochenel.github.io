@@ -113,6 +113,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 | Date       | Event                        | Location        | Title                       | Details |
 |------------|------------------------------|-----------------|-----------------------------|---------|
+| 05 July – 11 July 2025 | 15th Summer School on Medicines (SSM15) | Montreal, Canada | Temporal dynamics of cellular interactions: Insights from gene regulatory network analysis | [SSM15](https://summerschoolonmedicines7.wordpress.com/){:target="_blank"} |
 | 30 September – 04 October 2024 | Computational Systems Biology of Cancer 7th edition, Institut Curie | Paris, France | Time series analysis of cellular interactions through gene regulatory network inference | [Curie](https://training.institut-curie.org/courses/sysbiocancer2024){:target="_blank"} |
 | 26 November – 01 December 2023 | Computational models of life: From molecular biology to digital twins - EMBO Workshop | Sant Feliu de Guíxols, Spain | Deciphering cellular interactions through gene regulatory network inference | [EMBO](https://meetings.embo.org/event/23-comp-models-life){:target="_blank"} |
 
@@ -120,6 +121,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 
 | Date       | Event                        | Location        | Title                       | Details |
 |------------|------------------------------|-----------------|-----------------------------|---------|
+| 20 July – 24 July 2025 | 24th Annual European Conference on Computational Biology (ISMB/ECCB) | Liverpool, UK | Temporal dynamics of cellular interactions: Insights from gene regulatory network analysis | [ECCB](https://www.iscb.org/ismbeccb2025/home){:target="_blank"} |
 | 2 June – 6 June 2025 | NetSci: International School and Conference on Network Science | Maastricht, Netherlands | Integrating topological data analysis with time series gene expression in cellular systems | [NetSci](https://netsci2025.github.io/){:target="_blank"} |
 | 31 March – 4 April 2025 | Qlife Quantitative Biology Spring School "Cell Dynamics in Developmental Systems", ENS | Paris, France | Integrating topological data analysis with time series gene expression in cellular systems | [QLIFE](https://www.edu.bio.ens.psl.eu/spip.php?article291&lang=fr){:target="_blank"} |
 | 2 February – 7 February 2025 | Toulouse Onco Week (TOW) | Toulouse, France | Integrating topological data analysis with time series gene expression in cellular systems | [TOW](https://www.toulouse-onco-week.org/index.php?langue=en&acces=&idUser=&emailUser=){:target="_blank"} |
@@ -129,7 +131,7 @@ Below is an overview of my publications and scientific tutorials showcasing my c
 | 26 November – 01 December 2023 | Computational models of life: From molecular biology to digital twins - EMBO Workshop | Sant Feliu de Guíxols, Spain | Deciphering cellular interactions through gene regulatory network inference | [EMBO](https://meetings.embo.org/event/23-comp-models-life){:target="_blank"} |
 | 22 November – 24 November 2023 | The 19th Annual Meeting of the Canceropole GSO | Arcachon, France | Dissecting cellular communication through gene regulatory network inference | [GSO](https://kgso.fr/events/19th-annual-meeting-arcachon-2023){:target="_blank"} |
 | October 5th 2023 | 1st edition Young Scientist Cancer Congress (YS2C) | Toulouse, France | Dissecting cellular communication through gene regulatory network inference | [YS2C](https://www.crct-inserm.fr/en/ys2c_gso/){:target="_blank"} |
-| 23 July – 27 July 2023 | 22nd Annual European Conference on Computational Biology (ISMB/ECCB) | Lyon, France | Dissecting cellular communication through gene regulatory network inference | [ISMB/ECCB](https://www.iscb.org/ismbeccb2023){:target="_blank"} |
+| 23 July – 27 July 2023 | 22nd Annual European Conference on Computational Biology (ISMB/ECCB) | Lyon, France | Dissecting cellular communication through gene regulatory network inference | [ECCB](https://www.iscb.org/ismbeccb2023){:target="_blank"} |
 
 ### Awards
 

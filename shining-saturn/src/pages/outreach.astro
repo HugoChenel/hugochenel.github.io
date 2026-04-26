@@ -1,0 +1,574 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const missionItems = [
+  {
+    num: "01",
+    label: "Prévention",
+    body: "40% des cancers peuvent être évités grâce à une meilleure information",
+  },
+  {
+    num: "02",
+    label: "Accompagnement",
+    body: "Soutenir les malades et leurs proches au quotidien",
+  },
+  {
+    num: "03",
+    label: "Recherche",
+    body: "Améliorer les traitements et combattre le cancer",
+  },
+];
+---
+
+<Layout
+  title="Outreach — Hugo Chenel"
+  description="Apparitions médias, interventions publiques et engagements autour de la science, la recherche contre le cancer, du sport et de la santé."
+>
+
+  <!-- ── Page header ── -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Outreach</p>
+      <h1 class="page-title">Outreach</h1>
+      <p class="page-lead">
+        Retrouvez mes apparitions dans les médias, mes interventions publiques
+        et mes engagements autour de la science, la recherche contre le cancer,
+        du sport et de la santé.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── 1. Apparitions Médias ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Apparitions Médias</h2>
+      </div>
+
+      <div class="media-row">
+        <div class="media-year">
+          <span class="year">2026</span>
+        </div>
+
+        <div class="media-entries">
+          <article class="media-entry">
+            <div class="media-entry-meta">
+              <img
+                src="/assets/images/outreach/la-gazette-du-labratoire.png"
+                alt="La Gazette du Laboratoire"
+                class="source-logo"
+              />
+              <div class="source-badge" aria-label="La Gazette du Laboratoire logo">
+                La Gazette du Laboratoire
+              </div>
+            </div>
+            <a
+              href="https://www.gazettelabo.fr/podcast/?ep=22"
+              class="media-entry-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="media-entry-link-text">
+                Un parcours scientifique inspirant entre recherche et sport
+              </span>
+              <span class="media-entry-arrow">&rarr;</span>
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <div class="media-row">
+        <div class="media-year">
+          <span class="year">2025</span>
+        </div>
+
+        <div class="media-entries">
+          <article class="media-entry">
+            <div class="media-entry-meta">
+              <img
+                src="/assets/images/outreach/la-gazette-du-labratoire.png"
+                alt="La Gazette du Laboratoire"
+                class="source-logo"
+              />
+              <div class="source-badge" aria-label="La Gazette du Laboratoire logo">
+                La Gazette du Laboratoire
+              </div>
+            </div>
+            <a
+              href="https://www.gazettelabo.fr/afrique/breves/18012Innovations-immuno-oncology.html"
+              class="media-entry-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="media-entry-link-text">
+                Innovations in immuno-oncology : from data to therapeutic insights<br />
+                Workshop – October 16th, 2025 – IUCT-Oncopole, Toulouse
+              </span>
+              <span class="media-entry-arrow">&rarr;</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. Affiliations & Leadership ── -->
+  <section class="section section--accent">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Affiliations &amp; Leadership</h2>
+      </div>
+
+      <!-- Ambassador block -->
+      <div class="ambassador-block">
+
+        <!-- Top: logo + identity + badge -->
+        <div class="ambassador-card">
+          <div class="ambassador-card-left">
+            <div class="org-logo-slot" aria-label="La Ligue contre le Cancer 31 logo">
+              <img
+                src="/assets/images/outreach/La_ligue.png"
+                alt="La Ligue contre le Cancer 31"
+                class="org-logo-img"
+              />
+            </div>
+          </div>
+
+          <div class="ambassador-card-right">
+            <span class="ambassador-role-badge">Ambassadeur</span>
+            <h2 class="ambassador-org">La Ligue contre le Cancer 31</h2>
+            <p class="ambassador-desc">
+              Je suis fier d'être ambassadeur de La Ligue contre le Cancer de
+              Haute-Garonne, où je m'engage à unir la recherche scientifique et le
+              sport pour sensibiliser à la prévention et soutenir la lutte contre
+              le cancer.
+            </p>
+            <a
+              href="https://liguecancer31.fr/scientifique-et-athlete/"
+              class="ambassador-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="ambassador-cta-text">Scientifique &amp; Athlète : Unir la recherche et le sport contre le cancer</span>
+              <span class="ambassador-cta-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mission -->
+        <div class="mission-block">
+          <p class="mission-eyebrow">Mission</p>
+          <div class="mission-grid">
+            {missionItems.map((item) => (
+              <div class="mission-item">
+                <span class="mission-num">{item.num}</span>
+                <h3 class="mission-label">{item.label}</h3>
+                <p class="mission-body">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Page hero ── */
+  .page-hero {
+    padding: 6rem 0 5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.75rem;
+  }
+
+  .page-lead {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 600px;
+  }
+
+  /* ── Sections ── */
+  .section {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section--accent {
+    background: var(--accent-light);
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+
+  /* ── Media section ── */
+  .media-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 3rem;
+    align-items: start;
+  }
+
+  .media-year {
+    padding-top: 0.2rem;
+  }
+
+  .year {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .media-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .media-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .media-entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .source-logo {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  :global([data-theme="dark"]) .source-logo {
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
+  }
+
+  .source-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius);
+  }
+
+  .media-entry-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .media-entry-link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .media-entry-link:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .media-entry-link-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .media-entry-arrow {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    color: var(--accent);
+  }
+
+  /* ── Ambassador block ── */
+  .ambassador-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .ambassador-card {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 1.75rem;
+    align-items: start;
+    padding: 3rem 3rem 3rem 0;
+    border: 1px solid var(--border);
+  }
+
+  .ambassador-card-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .org-logo-slot {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .org-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  :global([data-theme="dark"]) .org-logo-img {
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
+  }
+
+  .ambassador-card-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .ambassador-role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    padding: 0.3rem 0.85rem;
+    border-radius: var(--radius);
+    width: fit-content;
+  }
+
+  .ambassador-org {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .ambassador-desc {
+    font-size: 0.975rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 560px;
+  }
+
+  .ambassador-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.1rem 1.5rem;
+    background: var(--text);
+    color: var(--bg);
+    border: 1px solid var(--text);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .ambassador-cta:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .ambassador-cta-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .ambassador-cta-arrow {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .ambassador-cta:hover .ambassador-cta-arrow {
+    transform: translateX(4px);
+  }
+
+  /* ── Mission ── */
+  .mission-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+  }
+
+  .mission-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .mission-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem 1.75rem 1.5rem 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .mission-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .mission-item:not(:first-child) {
+    padding-left: 1.75rem;
+  }
+
+  .mission-num {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+    font-style: italic;
+  }
+
+  .mission-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .mission-body {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .media-row {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .mission-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mission-item {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+
+    .mission-item:last-child {
+      border-bottom: none;
+    }
+
+    .mission-item:not(:first-child) {
+      padding-left: 0;
+    }
+
+    .ambassador-card {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .ambassador-card-left {
+      justify-content: flex-start;
+    }
+
+  }
+
+  @media (max-width: 640px) {
+    .page-hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .mission-block {
+      padding: 1.5rem;
+    }
+  }
+</style>

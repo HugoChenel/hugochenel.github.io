@@ -1,0 +1,2150 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const topics = [
+  {
+    title: "Sleep",
+    description:
+      "Light exposure, bedroom temperature (≤18°C), nasal breathing, air quality, and a targeted supplement stack. Deep sleep >20%, REM >25%, efficiency >90%.",
+  },
+  {
+    title: "Diet & Nutrition",
+    description:
+      "~30% protein / 30% carbs / 40% fats. Carb backloading, intermittent fasting, ketosis during the day. Whole foods, anti-inflammatory, zero processed.",
+  },
+  {
+    title: "Supplementation",
+    description:
+      "Structured daily stack timed around meals and training: fish oil, D3+K2, Mg L-Threonate, NAD+ precursors, adaptogens, and a pre-bed recovery protocol.",
+  },
+  {
+    title: "Monitoring & Biomarkers",
+    description:
+      "Daily HRV/RHR via Whoop, CNS tap test, yearly bloodwork across hormonal, metabolic, cardiovascular and inflammatory panels. Data-driven adjustments.",
+  },
+];
+
+const basics = [
+  {
+    title: "Sleep",
+    description:
+      "Quality sleep is non-negotiable, forming the base for physical and cognitive performance. Prioritizing early morning sunlight, managing evening light exposure and creating a cool, dark sleep environment significantly enhances sleep quality. These simple adjustments stabilize the circadian rhythm, deepen sleep stages and improve recovery. Most people need 7–9 hours per night, but it depends on genetics and lifestyle. Quantity AND quality matter. Sleep amplifies the effectiveness of every other health intervention.",
+  },
+  {
+    title: "Diet",
+    description:
+      "Diet is a high-impact area where small changes yield substantial results. A nutrient-dense approach of ~30% protein, ~30% carbs and ~40% fats supports stable energy, muscle maintenance and cognitive clarity. Avoiding processed foods, refined sugars and trans fats eliminates inflammatory triggers. Including vegetables, legumes, meats and nuts covers all nutritional needs. Combined with intermittent fasting, a consistent clean diet delivers profound improvements across health and performance.",
+  },
+  {
+    title: "Exercise",
+    description:
+      "Rather than excessive gym hours, efficient workouts bring maximum results with minimal time investment. A mix of weightlifting/bodyweight exercises, cardio and flexibility work in shorter, consistent sessions maintains muscle mass, supports cardiovascular health and enhances mobility. Constant low-intensity physical activity throughout the day is equally essential; a sedentary lifestyle is catastrophic for shape and health.",
+  },
+];
+
+const firstPrinciples = [
+  {
+    name: "Cellular senescence",
+    body: "As we age, some cells stop dividing and become senescent. Think of them as zombie cells — alive but no longer functional, and releasing harmful chemicals that affect surrounding cells. Removing these zombie cells through protocols such as fasting, exercise or using senolytic compounds (like quercetin and fisetin found in onion) can help keep tissues healthier.",
+    note: "Fasting, exercise and senolytic compounds (quercetin, fisetin) to clear senescent cells.",
+  },
+  {
+    name: "Autophagy & apoptosis",
+    body: "Autophagy is the process of clearing out damaged cellular components, while apoptosis is the controlled death of old or damaged cells. Both are essential for maintaining cellular health. Strategies like intermittent fasting and supplements like spermidine can trigger autophagy and help the body clean out cellular \"junk\". Nrf2 activation (via compounds like sulforaphane) promotes the production of detoxifying enzymes that help eliminate toxins or harmful byproducts that accumulate over time.",
+    note: "Intermittent fasting, spermidine and Nrf2 activation (sulforaphane) to maintain cellular health.",
+  },
+  {
+    name: "Stem cell function",
+    body: "Stem cells are responsible for repairing and regenerating tissues. With age, stem cell numbers and activity decrease, meaning our body repairs damage more slowly. Fasting and specific diets (like the Fasting-mimicking diet from Dr. Valter Longo) can help stimulate stem cell production. Advanced therapies like stem cell injections are available in most places, but fasting is a more accessible option to boost stem cell activity.",
+    note: "Fasting and fasting-mimicking diets to stimulate stem cell production.",
+  },
+  {
+    name: "DNA damage & repair",
+    body: "Our DNA is like our body's instruction manual, but over time it gets damaged from events like pollution, UV radiation or natural metabolic processes. This damage accumulates, causing cells to function less effectively. Maintaining DNA stability and supporting DNA repair mechanisms is a key element to stop or reverse aging. Boosting NAD+ with compounds like NMN, NR or apigenin can help. Measure NAD+ levels using a basic test to eventually supplement yourself.",
+    note: "NAD+ support via NMN/NR/apigenin. Track NAD+ levels periodically.",
+  },
+  {
+    name: "Telomere shortening",
+    body: "Telomeres are protective caps at the ends of your chromosomes. Every time a cell divides, telomeres get a little shorter, and when they're too short, the cell can no longer divide. Shorter telomeres are linked to aging and disease. Lifestyle choices like regular exercise, stress reduction and restful sleep have been shown to slow down telomere shortening. TA-65, a compound derived from astragalus root, has been shown to activate telomerase, the enzyme responsible for adding length to telomeres. Use a test like TeloYears to track your cellular age based on telomere length.",
+    note: "Exercise, stress reduction, sleep. TA-65 (astragalus-derived) to activate telomerase.",
+  },
+  {
+    name: "Nitric oxide & angiogenesis",
+    body: "Angiogenesis is the process of forming new blood vessels, an essential step to deliver oxygen and nutrients to tissues. Nitric oxide (NO), a molecule produced naturally in the body, plays a role by regulating angiogenesis and improving blood flow everywhere in the body. Boosting NO levels can be achieved via aerobic exercise, consumption of nitrate-rich foods like beetroot and leafy greens, and supplements such as L-citrulline or L-arginine, which act as precursors for NO production.",
+    note: "Aerobic exercise, nitrate-rich foods (beetroot), L-citrulline and L-arginine supplementation.",
+  },
+  {
+    name: "Mitochondrial dysfunction",
+    body: "Mitochondria are the powerhouses of the cells, generating the energy you need to live. As we age, mitochondria become less efficient, leading to fatigue, muscle weakness and slower recovery. Supporting mitochondrial health with exercise is really important. The best types of exercise for this are HIIT and resistance training, which encourage the body to produce new mitochondria. Supplements like CoQ10 and PQQ have also been shown to support mitochondrial function.",
+    note: "HIIT and resistance training. CoQ10 and PQQ supplementation.",
+  },
+  {
+    name: "Loss of proteostasis",
+    body: "Over time, proteins in cells can become misfolded or damaged, disrupting cell function. In a youthful and well functioning body, these misfolded proteins are broken down and recycled, but aging slows down this cleaning process, leading to cellular clutter. Fasting and caloric restriction trigger autophagy, where cells clean up damaged proteins. Incorporating periodic fasting or intermittent fasting can help maintain cellular health.",
+    note: "Fasting and caloric restriction trigger autophagy to clear misfolded proteins and reduce cellular clutter.",
+  },
+  {
+    name: "Epigenetic changes",
+    body: "Epigenetics involves changes in the way genes are expressed without changing the DNA itself. Age-related epigenetic changes can activate \"bad\" genes and turn off \"good\" ones, leading to aging. Exercise, a clean diet, caloric restriction and supplements like resveratrol (found in grapes and red wine) can help maintain youthful gene expression, keeping cells functioning optimally. Estimate your biological age based on DNA methylation patterns using DunedinPACE.",
+    note: "Exercise, clean diet, resveratrol. Track biological age via DunedinPACE.",
+  },
+  {
+    name: "Nutrient sensing & metabolism",
+    body: "Nutrient-sensing pathways, including insulin/IGF-1 signaling, mTOR (should be balanced: low during fasting, elevated in growth phases) and AMPK (optimal activation in fasting/exercise states), are vital regulators of metabolism and play a significant role in the aging process. These pathways detect and respond to nutrient availability, adjusting cellular and metabolic activities accordingly. By modulating these pathways through dietary interventions (calorie restriction, fasting, low-protein diet, ketogenic diet, high-fiber diet) or pharmacological methods (berberine, curcumin, resveratrol), it's possible to slow down age-related cellular damage.",
+    note: "Modulate insulin/IGF-1, mTOR and AMPK via calorie restriction, fasting, ketogenic diet, and compounds like berberine and curcumin.",
+  },
+  {
+    name: "Chronic inflammation",
+    body: "Bodies develop low-level, chronic inflammation, often without us even realizing it. This type of \"silent inflammation\" speeds up aging and is linked to most major diseases. Acute inflammation is beneficial; chronic inflammation is detrimental. Combat inflammation through anti-inflammatory foods (fatty fish rich in EPA/DHA, leafy green vegetables and spices), regular exercise and optimal sleep. Omega-3 supplements and curcumin are particularly anti-inflammatory. Measure your level of CRP (C-reactive protein) to evaluate the inflammation in your body.",
+    note: "Anti-inflammatory diet (EPA/DHA, leafy greens, spices), optimal sleep. Measure CRP.",
+  },
+  {
+    name: "Glycation & AGEs",
+    body: "Glycation is when sugar molecules bind to proteins or fats, forming harmful compounds called AGEs (Advanced Glycation End-products) that lead to rigid, less elastic tissues. Reducing sugar intake, more particularly high-glycemic foods, and increasing intake of antioxidant-rich foods is the best strategy to reduce AGEs. Antioxidants also have the capacity to break down AGEs, protecting the cells. Measure blood glucose and HbA1c, which correspond to long-term blood sugar.",
+    note: "Reduce high-glycemic foods. Track HbA1c and fasting glucose.",
+  },
+  {
+    name: "Hormone decline",
+    body: "Hormones like testosterone, estrogen, growth hormone and melatonin naturally fluctuate with age, impacting everything from muscle mass to mood to sleep quality. Balancing the key hormones is a necessity for vitality. Hormone replacement therapy (HRT) under medical supervision is a possibility, but you can also support your hormones naturally with resistance training, proper nutrition and supplements like Tongkat ali and Horny goat weed. Check your hormone levels (testosterone, estrogen, prolactin) during your yearly blood test.",
+    note: "Resistance training, proper nutrition, Tongkat ali and Horny goat weed. Yearly hormone panel.",
+  },
+  {
+    name: "Oxidative stress & free radicals",
+    body: "Free radicals are molecules that can damage cells (a natural byproduct of metabolism). When free radicals accumulate faster than your body can handle, they cause oxidative stress leading to dysfunction. Beta-alanine, by increasing carnosine levels, contributes to anti-aging processes primarily through its role as an acid buffer against lactic acid build-up in cells, particularly in muscle tissue. Polyphenols from colorful fruits and vegetables help neutralize free radicals. Glutathione, vitamin C and alpha-lipoic acid are powerful choices for their antioxidant effects.",
+    note: "Polyphenols, glutathione, vitamin C and alpha-lipoic acid. Beta-alanine raises carnosine, buffering oxidative damage in muscle tissue.",
+  },
+  {
+    name: "Circadian rhythm disruption",
+    body: "Your circadian rhythm is your internal clock. It controls sleep, energy and even hormone production. Disrupting this rhythm (through irregular sleep schedules, blue light exposure at night, etc.) accelerates aging. Maintaining a regular sleep-wake cycle, getting morning sunlight and avoiding blue light before bed can help keep the circadian rhythm in sync, supporting better overall health. Use a sleep tracker (Whoop or Oura) to monitor sleep.",
+    note: "Regular sleep/wake cycle, morning sunlight, blue light avoidance in the evening.",
+  },
+  {
+    name: "Impaired intercellular communication",
+    body: "Cells communicate less effectively with time, which can result in uncoordinated responses to damage and contribute to immune system decline. Hormesis (small, controlled stresses induced from exercise, cold/heat exposure, plant toxins or fasting) can reset cell communication. Additionally, anti-inflammatory practices reduce noise in cellular signals.",
+    note: "Hormesis via exercise, cold/heat, fasting to reset cell signaling. Anti-inflammatory practices reduce noise in cellular signals.",
+  },
+];
+
+const sleepProtocol = [
+  {
+    label: "Light exposure",
+    detail: "Morning sunlight on skin and eyes to regulate the circadian rhythm. No blue light in the evening; red light only, blue-light-blocking glasses, and screen filters on all devices.",
+  },
+  {
+    label: "Temperature",
+    detail: "Bedroom no higher than 18°C. Sleep without a blanket or with lighter bedding to stay cool.",
+  },
+  {
+    label: "Nasal breathing",
+    detail: "Avoid mouth breathing during sleep. Consider mouth taping or a nasal breathing device to ensure proper oxygenation throughout the night.",
+  },
+  {
+    label: "Air quality",
+    detail: "HEPA air filter and NASA-recommended plants to enhance air quality and remove pollutants.",
+  },
+  {
+    label: "Silence & darkness",
+    detail: "Totally dark, quiet room. No noise, no light. A hard mattress and grounding sheet improve comfort and recovery.",
+  },
+  {
+    label: "Stimulants",
+    detail: "Cut out caffeine, alcohol and other stimulants in the hours leading up to bed to prevent disrupted sleep cycles.",
+  },
+  {
+    label: "Sleep supplements",
+    detail: "Magnesium glycinate (relaxation and muscle recovery), apigenin (calmness), CBD (stress management).",
+  },
+];
+
+const sleepTargets = [
+  { metric: "Deep sleep", target: ">20% or at least 1h30 per night", purpose: "Physical recovery and cellular repair" },
+  { metric: "REM sleep", target: ">25% or at least 2h per night", purpose: "Cognitive performance, memory and mood" },
+  { metric: "Sleep efficiency", target: ">90%", purpose: "Time in bed maximized for restorative cycles" },
+];
+
+const meals = [
+  {
+    time: "08:00 — Fasting",
+    note: "No food. Maintain ketosis and allow overnight autophagy to continue.",
+    items: [],
+  },
+  {
+    time: "12:00 — Lunch",
+    note: "Nutrient-dense, low-carb meal to provide sustained energy without a sugar crash.",
+    items: [
+      "150g lentils",
+      "1–2 avocados",
+      "Arugula or cucumber",
+      "Radishes, carrots, broccoli or cauliflower",
+      "Fermented foods (olives, pickles, kimchi or cabbage)",
+      "Extra virgin olive oil",
+      "Fenugreek",
+    ],
+  },
+  {
+    time: "17:00 — Snack",
+    note: "Nutrient-rich mix of nuts and optional carbs. First carbs of the day, needed to fuel intense training sessions.",
+    items: [
+      "A few Brazil nuts (max 1–2/day because extremely high in selenium)",
+      "Macadamia nuts",
+      "Pistachios",
+      "Walnuts",
+      "Blanched almonds",
+      "Optional carbs: blueberries, bananas, grapes, beets",
+    ],
+  },
+  {
+    time: "20:00 — Dinner",
+    note: "Carb backloading strategy: reintroducing carbs post-training replenishes glycogen and improves sleep onset via serotonin and melatonin production.",
+    items: [
+      "300g sweet potatoes or 250g millet",
+      "50g cooked chickpeas or 50g kidney beans",
+      "Grass-fed beef or wild-caught salmon",
+      "Feta or parmesan",
+      "Extra virgin olive oil",
+      "Onion or garlic",
+      "Spices (cinnamon, ginger, parsley)",
+      "Apple cider vinegar",
+    ],
+  },
+];
+
+const foodsToAvoid = [
+  { category: "Oils & fats", detail: "Hydrogenated oils, canola, corn, soybean oils and PUFAs. Trans fats are incorporated into cell membrane phospholipids and disrupt function." },
+  { category: "Processed & fried foods", detail: "No junk food, fried items or highly processed snacks." },
+  { category: "Sugars & sweeteners", detail: "Refined sugars, gluten, high-fructose corn syrup, aspartame, sucralose. Refined carbs: bread, pasta, wheat, oats and high-carb processed grains. Excluding these foods helps maintain stable blood sugar." },
+  { category: "Anti-nutrients", detail: "Foods high in lectins, phytic acid and oxalates. Always soak beans and lentils. Depending on genetics, be careful with nightshades and histamines. They can reduce the body’s absorption of essential minerals and may irritate the gut lining." },
+  { category: "Estrogenic foods", detail: "Soy and flax: they mimic or elevate estrogen. Eliminating these foods can help improve hormonal balance, especially for those sensitive to hormone fluctuations." },
+  { category: "Alcohol", detail: "Disrupts sleep architecture, strains the liver and causes gut inflammation. Limit to once per week maximum, in small quantities." },
+  { category: "Coffee", detail: "Can overstimulate the nervous system and elevate cortisol in sensitive individuals. Reducing intake maintains balanced energy and reduces adrenal load." },
+];
+
+const exerciseWeekly = [
+  { label: "Strength (3–5 days/week)", detail: "Compound movements (bench press, military press, squats, clean and jerk) and bodyweight exercises (dips, pull-ups, muscle-ups) engaging multiple muscle groups." },
+  { label: "Zone 2 cardio (2 days/week)", detail: "120 minutes per week at moderate intensity (can comfortably hold a conversation). Long light jogging or cycling sessions. Essential for aerobic base." },
+  { label: "Zone 5 cardio (2 days/week)", detail: "90 minutes per week of high-intensity effort. HIIT or CrossFit WODs centered around box jumps, jump rope and rowing. Stimulates growth hormone and improve cardiovascular fitness" },
+  { label: "Flexibility & mobility (5 days/week)", detail: "Stretching, yoga and joint mobility work: the foundation for functional strength, joint health and posture." },
+];
+
+const exercisePractices = [
+  {
+    label: "Daily movement",
+    detail: null,
+    subItems: [
+      { sublabel: "10k – 20k daily steps", subdesc: "Intense exercise is no substitute for low-intensity activity throughout the day. Regular movement all day long is key to vitality. Aim for 10k steps as a bare minimum to keep your body active and your energy levels up, or 20k steps to keep a body fat level below 10%." },
+      { sublabel: "Post-meal movement", subdesc: "Take a few minutes walk after each meal. This helps manage blood sugar, aids digestion and prevents that post-meal slump in most people." },
+      { sublabel: "Frequent breaks", subdesc: "Depending on your job, you can be more or less seated for extended periods, so get up and move every 30–60 minutes. Walk and stretch to reset your posture and improve circulation. If you have a sedentary lifestyle, you can opt for a treadmill desk." },
+    ],
+  },
+  {
+    label: "Single most important exercise for health",
+    detail: "Trampoline workouts, or rebounding, are an effective way to boost health and fitness. Unlike most high-impact exercises like running, jumping on a trampoline is easy on the joints because the trampoline absorbs shock, which protects knees, hips and spine. The added bonus is the up-and-down motion, doing wonders for the lymphatic system, helping flush out toxins and support immunity. Not only does trampoline exercise get the heart pumping for a great cardio workout, it also strengthens muscles and bones (confirmed by t-score from DEXA scan). This makes it a fantastic option to improve bone density, balance and coordination. 10 minutes of rebounding are integrated in my daily routine.",
+    subItems: null,
+  },
+  {
+    label: "The trap of overtraining",
+    detail: "Pushing the body too hard without enough rest can actually slow down progress and not only this: it will probably weaken the immune system and lead to injuries. Overtraining causes fatigue to build up over time, making it harder to recover between sessions, reducing performance and increasing the risk of burnout. Rest days are as important as training days. Before each session, perform a CNS tap test and check HRV on Whoop to decide intensity and duration. Take at least 1 rest day per week.",
+    subItems: null,
+  },
+  { label: "Carb backloading", detail: "For intense training later in the day: consume carbs primarily after the workout to replenish glycogen, improve recovery and optimize insulin sensitivity while keeping blood sugar stable all day." },
+  { label: "Quinton hydration", detail: "Quinton marine plasma to replace lost electrolytes after heavy sweating. Quinton hypertonic for fast replenishment post-training or sauna. Provides sodium, potassium, magnesium, calcium and trace elements." },
+  { label: "Occlusion training", detail: "Light weights with Blood Flow Restriction (BFR) bands to maximize muscle growth and recovery. BFR bands placed on arms or legs restrict blood flow back from the muscle, amplifying the pump and signaling muscle growth. Joint-friendly and ideal for high-rep burnout sets." },
+  { label: "EMS", detail: "Electrical Muscle Stimulation applied outside of training hours. Low-level electrical impulses to targeted muscles assist recovery and can build strength. Useful for rehab or addressing weaknesses by recruiting fibres missed during traditional training." },
+];
+
+const supplementStack = [
+  {
+    time: "08:00 — Upon waking",
+    items: [
+      { name: "Fish oil (EPA/DHA)", tier: "basic" },
+      { name: "Vitamin D3 + K2", tier: "basic" },
+      { name: "Magnesium L-Threonate", tier: "basic" },
+      { name: "Maca", tier: "advanced" },
+      { name: "Black ginger", tier: "advanced" },
+      { name: "NAC", tier: "advanced" },
+      { name: "NR/NMN or CoQ10", tier: "advanced" },
+    ],
+  },
+  {
+    time: "12:00 — During lunch",
+    items: [
+      { name: "Tongkat Ali", tier: "advanced" },
+      { name: "Horny goat weed", tier: "advanced" },
+      { name: "Cistanche", tier: "advanced" },
+    ],
+  },
+  {
+    time: "18:00 — Pre-workout",
+    items: [
+      { name: "L-citrulline (or/and Arginine or/and AAKG)", tier: "basic" },
+      { name: "Beta-alanine", tier: "advanced" },
+      { name: "Beta-ecdysterone", tier: "advanced" },
+    ],
+  },
+  {
+    time: "23:00 — Before bed",
+    items: [
+      { name: "Magnesium glycinate", tier: "basic" },
+      { name: "Apigenin", tier: "advanced" },
+      { name: "Tart cherry extract", tier: "advanced" },
+      { name: "Spermidine", tier: "advanced" },
+      { name: "White jelly mushroom", tier: "advanced" },
+      { name: "CBD", tier: "advanced" },
+    ],
+  },
+];
+
+const advancedBiohacks = [
+  {
+    category: "Cognitive",
+    items: ["tDCS (transcranial direct current stimulation)", "Nootropics (saffron, C3G, ginkgo biloba, kanna)", "Pharmaceuticals (occasional use: modafinil [Rx], nicotine, caffeine, racetams, tadalafil [Rx])", "tVNS (vagus nerve stimulation)", "EEG meditation (Muse)"],
+  },
+  {
+    category: "Body & Mind",
+    items: ["Breathwork (Wim Hof, Buteyko, Holotropic)", "Cold exposure (cryotherapy, ice baths)", "Heat exposure (sauna, infrared)", { text: "Sensory deprivation (float tank)", href: "/blog/Sensory-deprivation" }, "Vipassana / darkness retreats", "Psychedelics (psilocybin, LSD, DMT; legal context dependent)", "Microdosing protocols (Fadiman)"],
+  },
+  {
+    category: "Cellular & Mitochondrial",
+    items: ["Red light therapy (LLLT/RLT)", { text: "Hyperbaric oxygen therapy (HBOT)", href: "/blog/What-is-HBOT" }, "3–5 day water fasts", "Ozone therapy", "Exosome or stem cell injections", "Methylene blue (low dose)", "Peptides (BPC-157, TB-500)"],
+  },
+  {
+    category: "Environmental",
+    items: ["Structured / hydrogen-rich water", "PEMF therapy", "Blue light blockers", "Grounding / earthing (barefoot, conductive mats)", "EMF mitigation tools"],
+  },
+];
+
+const biomarkers = [
+  { category: "General health", markers: [
+    { label: "Hemoglobin", normal: "13.5–17.5 g/dL", optimal: "14.5–16.5 g/dL", value: "—" },
+    { label: "ALAT", normal: "7–56 U/L", optimal: "7–30 U/L", value: "11 U/L" },
+    { label: "ASAT", normal: "10–40 U/L", optimal: "7–30 U/L", value: "24 U/L" },
+    { label: "Creatinine", normal: "0.8–1.3 mg/dL", optimal: "0.6–1.1 mg/dL", value: "1.13 mg/dL" },
+    { label: "TSH", normal: "1.0–4.0 mIU/L", optimal: "0.4–2.0 mIU/L", value: "1.02 mIU/L" },
+    { label: "Albumin", normal: "3.5–5.5 g/dL", optimal: "4.0–5.0 g/dL", value: "—" },
+    { label: "Lymphocyte %", normal: "20–40%", optimal: "30–40%", value: "—" },
+    { label: "MCV", normal: "80–100 fL", optimal: "85–90 fL", value: "—" },
+    { label: "RDW", normal: "11.5–14.5%", optimal: "11.5–13.0%", value: "—" },
+    { label: "Vitamin D", normal: "20–30 ng/mL", optimal: "40–80 ng/mL", value: "65 ng/mL" },
+    { label: "Vitamin B12", normal: "200–900 pg/mL", optimal: "500–900 pg/mL", value: "729 pg/mL" },
+    { label: "Iron", normal: "60–170 µg/dL", optimal: "100–130 µg/dL", value: "—" },
+    { label: "Ferritin", normal: "24–336 ng/mL", optimal: "50–150 ng/mL", value: "55 ng/mL" },
+  ]},
+  { category: "Metabolic", markers: [
+    { label: "Fasting glucose", normal: "90–99 mg/dL", optimal: "70–90 mg/dL", value: "83 mg/dL" },
+    { label: "HbA1c", normal: "5.4–5.7%", optimal: "<5%", value: "—" },
+    { label: "IGF-1", normal: "100–300 ng/mL", optimal: "200–300 ng/mL", value: "—" },
+    { label: "Ketones", normal: "0.1–0.3 mmol/L", optimal: "0.5–2.5 mmol/L", value: "—" },
+  ]},
+  { category: "Cardiovascular", markers: [
+    { label: "Blood pressure", normal: "120/80 mmHg", optimal: "110/70 mmHg", value: "120/70 mmHg" },
+    { label: "Total cholesterol", normal: "<200 mg/dL", optimal: "<180 mg/dL", value: "157 mg/dL" },
+    { label: "LDL", normal: "100–130 mg/dL", optimal: "<70 mg/dL", value: "86 mg/dL" },
+    { label: "HDL", normal: "40–60 mg/dL", optimal: ">75 mg/dL", value: "61 mg/dL" },
+    { label: "Triglycerides", normal: "<150 mg/dL", optimal: "<75 mg/dL", value: "48 mg/dL" },
+    { label: "apoB", normal: "<130 mg/dL", optimal: "<60 mg/dL", value: "—" },
+    { label: "Trig/HDL ratio", normal: "2–3", optimal: "<1", value: "0.79" },
+    { label: "Omega-3 Index", normal: "8–12%", optimal: ">12%", value: "—" },
+    { label: "Lipoprotein(a)", normal: "<50 mg/dL", optimal: "<10 mg/dL", value: "—" },
+  ]},
+  { category: "Inflammatory", markers: [
+    { label: "CRP", normal: "<10 mg/L", optimal: "<1 mg/L", value: "4 mg/L" },
+    { label: "hs-CRP", normal: "1.0–3.0 mg/L", optimal: "<0.5 mg/L", value: "—" },
+    { label: "IL-6", normal: "<5 pg/mL", optimal: "<1.5 pg/mL", value: "—" },
+    { label: "TNFα", normal: "<8.1 pg/mL", optimal: "<2–3 pg/mL", value: "—" },
+  ]},
+  { category: "Hormonal", markers: [
+    { label: "Testosterone", normal: "300–900 ng/dL", optimal: "800–1200 ng/dL", value: "862 ng/dL" },
+    { label: "Free testosterone", normal: "5–20 pg/mL", optimal: "20–45 pg/mL", value: "26.2 pg/mL" },
+    { label: "Estrogen", normal: "10–40 pg/mL", optimal: "20–30 pg/mL", value: "20 pg/mL" },
+    { label: "DHT", normal: "0.25–1.6 ng/mL", optimal: "0.5–1 ng/mL", value: "0.42 ng/mL" },
+    { label: "FSH", normal: "2–18 mIU/mL", optimal: "2–8 mIU/mL", value: "3.5 mIU/mL" },
+    { label: "LH", normal: "1.5–9.3 mIU/mL", optimal: "3–7 mIU/mL", value: "3.3 mIU/mL" },
+    { label: "Prolactin", normal: "4–15 ng/mL", optimal: "<10 ng/mL", value: "—" },
+    { label: "Cortisol", normal: "6–23 µg/dL", optimal: "6–15 µg/dL", value: "—" },
+    { label: "DHEA-S", normal: "80–500 µg/dL", optimal: "300–640 µg/dL", value: "—" },
+  ]},
+  { category: "Oxidative stress", markers: [
+    { label: "Homocysteine", normal: "10–15 µmol/L", optimal: "<6 µmol/L", value: "—" },
+    { label: "Plasma glutathione", normal: "1.5–3.0 µmol/L", optimal: "3.5–5.0 µmol/L", value: "—" },
+  ]},
+  { category: "DNA & aging", markers: [
+    { label: "DunedinPACE (epigenetic age)", normal: "1.0 or higher", optimal: "<0.8", value: "0.82" },
+    { label: "Telomere length", normal: "5–8 kb", optimal: "8–12 kb", value: "—" },
+    { label: "NAD+", normal: "20–50 µM", optimal: "60–100 µM", value: "—" },
+  ]},
+  { category: "Functional", markers: [
+    { label: "Grip strength", normal: ">26 kg", optimal: ">50 kg", value: "72 kg" },
+    { label: "Walking speed", normal: "1.0–1.2 m/s", optimal: "1.4–1.6 m/s", value: ">1.6 m/s" },
+    { label: "Sitting-rising test", normal: "6–8 / 10", optimal: "9–10 / 10", value: "10/10" },
+  ]},
+  { category: "Body composition", markers: [
+    { label: "BMI", normal: "18–27 kg/m²", optimal: "20–24 kg/m²", value: "21 kg/m²" },
+    { label: "SMI (Skeletal Muscle Index)", normal: "7–8 kg/m²", optimal: ">10–12 kg/m²", value: "—" },
+    { label: "BMD T-score (Bone Mineral Density)", normal: "−1.0 to +0.5", optimal: ">+1.0", value: "—" },
+  ]},
+  { category: "Cognitive", markers: [
+    { label: "IQ", normal: "90–120", optimal: ">132", value: ">132", href: "/assets/images/biohacking/Mensa.pdf" },
+    { label: "Human benchmark percentile", normal: "50th", optimal: "98th", value: "95th" },
+    { label: "Plasma BDNF", normal: "1–10 ng/mL", optimal: ">10 ng/mL", value: "—" },
+    { label: "Plasma NGF", normal: "5–10 pg/mL", optimal: ">10 pg/mL", value: "—" },
+    { label: "β-amyloid", normal: "Medium–Elevated", optimal: "Low", value: "—" },
+    { label: "Tau protein", normal: "<300 pg/mL", optimal: "<200 pg/mL", value: "—" },
+    { label: "NfL", normal: "<10 pg/mL", optimal: "<5 pg/mL", value: "—" },
+  ]},
+  { category: "Heavy metals", markers: [
+    { label: "Lead (Pb)", normal: "<5 µg/dL", optimal: "<1 µg/dL", value: "—" },
+    { label: "Mercury (Hg)", normal: "<10 µg/L", optimal: "<5 µg/L", value: "—" },
+    { label: "Cadmium (Cd)", normal: "<5 µg/L", optimal: "<1 µg/L", value: "—" },
+    { label: "Arsenic (As)", normal: "<35 µg/L", optimal: "<15 µg/L", value: "—" },
+    { label: "Aluminum (Al)", normal: "<10 µg/L", optimal: "<5 µg/L", value: "—" },
+  ]},
+  { category: "Reproductive health", markers: [
+    { label: "Sperm count", normal: "15–200 M/ml", optimal: ">40 M/ml", value: "—" },
+    { label: "Sperm mobility", normal: ">40%", optimal: ">60%", value: "—" },
+    { label: "PSA", normal: "0–4 ng/mL", optimal: "<1 ng/mL", value: "—" },
+  ]},
+  { category: "Advanced diagnostics", markers: [
+    { label: "Coronary Artery Calcium Score", normal: "100–400", optimal: "0", value: "—" },
+    { label: "Cancer detection (GRAIL Galleri)", normal: "No active cancer", optimal: "No active cancer", value: "—" },
+    { label: "Full body MRI (Prenuvo)", normal: "No major anomaly", optimal: "No major anomaly", value: "—" },
+    { label: "Pineal calcification", normal: "30–60%", optimal: "<20–30%", value: "—" },
+  ]},
+];
+
+const geneticTest = [
+  {
+    category: "Cardiovascular",
+    rows: [
+      { gene: "VEGF", worst: "AA", common: "AG", optimal: "GG", impact: "Blood vessel formation" },
+      { gene: "NOS3", worst: "TT", common: "TG", optimal: "GG", impact: "Blood flow" },
+      { gene: "AGT", worst: "TT", common: "TC", optimal: "CC", impact: "Cardiovascular efficiency" },
+      { gene: "EDN1", worst: "CC", common: "CT", optimal: "TT", impact: "Arterial function" },
+    ],
+  },
+  {
+    category: "Cognition",
+    rows: [
+      { gene: "FOXP2", bold: true, worst: "AA", common: "GA", optimal: "GG", impact: "Speech and learning" },
+      { gene: "COMT", bold: true, worst: "Met/Met", common: "Val/Met", optimal: "Val/Val", impact: "Cognitive performance" },
+      { gene: "BDNF", bold: true, worst: "Met/Met", common: "Val/Met", optimal: "Val/Val", impact: "Neuroplasticity" },
+      { gene: "DRD2", bold: true, worst: "AA", common: "AG", optimal: "GG", impact: "Dopamine sensitivity" },
+      { gene: "APOE", bold: true, worst: "E4/E4", common: "E3/E4", optimal: "E3/E3", impact: "Neurodegenerative risk" },
+      { gene: "CLOCK", worst: "TT", common: "TC", optimal: "CC", impact: "Circadian rhythm" },
+    ],
+  },
+  {
+    category: "Inflammation",
+    rows: [
+      { gene: "CRP", worst: "AA", common: "AG", optimal: "GG", impact: "Cytokine expression" },
+      { gene: "IL-10", worst: "AA", common: "AG", optimal: "GG", impact: "Inflammation" },
+    ],
+  },
+  {
+    category: "Longevity",
+    rows: [
+      { gene: "FOXO3", bold: true, worst: "AA", common: "AG", optimal: "GG", impact: "Lifespan" },
+      { gene: "TERT", bold: true, worst: "Low act.", common: "Medium act.", optimal: "High act.", impact: "Telomere length" },
+      { gene: "PGC-1α", worst: "AA", common: "GA", optimal: "GG", impact: "Mitochondrial biogenesis" },
+      { gene: "SIRT1", bold: true, worst: "AA", common: "AG", optimal: "GG", impact: "Mitochondrial function" },
+      { gene: "MTOR", worst: "High expr.", common: "Low expr.", optimal: "Medium expr.", impact: "Cellular growth" },
+      { gene: "KLOTHO", worst: "Low expr.", common: "Medium expr.", optimal: "High expr.", impact: "Aging resistance" },
+    ],
+  },
+  {
+    category: "Metabolic efficiency",
+    rows: [
+      { gene: "MTHFR", bold: true, worst: "TT", common: "CT", optimal: "CC", impact: "Methylation (homocysteine)" },
+      { gene: "FTO", bold: true, worst: "AA", common: "AT", optimal: "TT", impact: "Obesity risk" },
+      { gene: "PPARα", worst: "CC", common: "CG", optimal: "GG", impact: "Fat metabolism" },
+      { gene: "UCP2", worst: "GG", common: "GA", optimal: "AA", impact: "Energy expenditure" },
+      { gene: "ADRB2", worst: "Gly16Gly", common: "Gly16Arg", optimal: "Arg variant", impact: "Fat burning" },
+      { gene: "FABP2", worst: "GG", common: "GA", optimal: "AA", impact: "Fat absorption" },
+    ],
+  },
+  {
+    category: "Muscle & recovery",
+    rows: [
+      { gene: "IL6", worst: "CC", common: "CG", optimal: "GG", impact: "Inflammation" },
+      { gene: "TNF-α", worst: "AA", common: "AG", optimal: "GG", impact: "Recovery" },
+      { gene: "CK-MM", worst: "AA", common: "AG", optimal: "GG", impact: "Muscle recovery" },
+      { gene: "SOD2", worst: "GG", common: "GA", optimal: "AA", impact: "Antioxidant defense" },
+      { gene: "GSTP1", worst: "GG", common: "GA", optimal: "AA", impact: "Detoxification" },
+    ],
+  },
+  {
+    category: "Strength & power",
+    rows: [
+      { gene: "ACTN3", bold: true, worst: "XX", common: "RX", optimal: "RR", impact: "Explosive strength" },
+      { gene: "ACE", bold: true, worst: "II", common: "ID", optimal: "DD", impact: "Muscle efficiency" },
+      { gene: "PPARGC1A", worst: "Gly482Gly", common: "Gly482Ser", optimal: "Ser variant", impact: "Mitochondrial biogenesis" },
+      { gene: "IGF1", worst: "Low IGF1", common: "Medium IGF1", optimal: "High IGF1", impact: "Muscle growth" },
+      { gene: "MSTN", bold: true, worst: "High expr.", common: "Normal expr.", optimal: "Low expr.", impact: "Muscle mass (myostatin)" },
+      { gene: "COL5A1", worst: "CC", common: "CT", optimal: "TT", impact: "Flexibility" },
+    ],
+  },
+  {
+    category: "Stress resilience",
+    rows: [
+      { gene: "NR3C1", worst: "AA", common: "AG", optimal: "GG", impact: "Cortisol sensitivity" },
+      { gene: "5-HTTLPR", worst: "SS", common: "SL", optimal: "LL", impact: "Emotional regulation" },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Biohacking — Hugo Chenel"
+  description="Systematic health optimization — sleep, diet, supplementation and advanced biohacking protocols."
+>
+  <div class="bio-hero-wrap">
+    <div class="container">
+      <div class="bio-hero">
+        <p class="bio-eyebrow">Biohacking</p>
+        <h1 class="bio-title">Optimizing the<br/>human system</h1>
+        <p class="bio-lead">After years of documentation and experimentation, my biomarkers sit in the top 1% for my age. This is a transparent record of the protocol; not a prescription, but a framework.</p>
+      </div>
+    </div>
+    <div class="bio-stats-bar">
+      <div class="container">
+
+        <div class="bio-stats-section">
+          <span class="bio-stats-category">Longevity &amp; Aging</span>
+          <div class="bio-stats">
+            <div class="bio-stat"><span class="bio-stat-value">0.82</span><span class="bio-stat-label">Pace of aging</span></div>
+            <div class="bio-stat"><span class="bio-stat-value">—</span><span class="bio-stat-label">Telomere length</span></div>
+            <div class="bio-stat"><span class="bio-stat-value">105<span class="bio-stat-unit"> ms</span> / 42<span class="bio-stat-unit"> bpm</span></span><span class="bio-stat-label">HRV &amp; RHR</span></div>
+          </div>
+        </div>
+
+        <div class="bio-stats-section">
+          <span class="bio-stats-category">Blood Markers</span>
+          <div class="bio-stats">
+            <div class="bio-stat"><span class="bio-stat-value">--<span class="bio-stat-unit"> mg/dL</span></span><span class="bio-stat-label">ApoB</span></div>
+            <div class="bio-stat"><span class="bio-stat-value">&lt;5<span class="bio-stat-unit"> %</span></span><span class="bio-stat-label">HbA1c</span></div>
+            <div class="bio-stat"><span class="bio-stat-value">—</span><span class="bio-stat-label">hs-CRP</span></div>
+          </div>
+        </div>
+
+        <div class="bio-stats-section bio-stats-section--last">
+          <span class="bio-stats-category">Performance</span>
+          <div class="bio-stats">
+            <div class="bio-stat"><span class="bio-stat-value">62<span class="bio-stat-unit"> mL/kg/min</span></span><span class="bio-stat-label">VO2max</span></div>
+            <div class="bio-stat"><span class="bio-stat-value">72<span class="bio-stat-unit"> kg</span></span><span class="bio-stat-label">Grip strength</span></div>
+            <div class="bio-stat"><span class="bio-stat-value">862<span class="bio-stat-unit"> ng/dL</span></span><span class="bio-stat-label">Testosterone</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="disclaimer">
+      <p>This is a guide, take what works for you and personalize it. Remember, this protocol is adapted to my genetics and lifestyle, so it might not be ideal for everyone. Above all, perform regular blood tests to understand how any changes influence your biomarkers. Your data will be your best guide.</p>
+    </div>
+
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">00</span>Focus areas</h2>
+      <div class="focus-grid">
+        {topics.map((t, i) => (
+          <div class="focus-card">
+            <span class="focus-num">0{i + 1}</span>
+            <h3 class="focus-title">{t.title}</h3>
+            <p class="focus-desc">{t.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Master the Basics -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">01</span>Master the basics</h2>
+      <p class="section-intro">Following the Pareto principle: 20% of actions lead to 80% of results. Sleep, diet and exercise yield maximum benefits with consistent, long-term impact, without overcomplicating the routine. These basics form a solid foundation that makes room for more advanced practices.</p>
+      <div class="basics-grid">
+        {basics.map((b, i) => (
+          <div class="basic-card">
+            <span class="basic-num">0{i + 1}</span>
+            <h3 class="basic-title">{b.title}</h3>
+            <p class="basic-desc">{b.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- First Principles -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">02</span>First principles</h2>
+      <p class="section-intro">Understanding the core biological processes behind aging is essential. By focusing on these key processes, you can create a biohacking strategy that targets the root causes of aging and not only treat symptoms. These foundational mechanisms can directly influence vitality, performance and longevity. Renowned biohackers and longevity researchers, including <em>Dr. David Sinclair</em>, <em>Dr. Valter Longo</em>, <em>Dr. Rhonda Patrick</em>, <em>Dr. Steven Gundry</em> and <em>Dr. Aubrey de Grey</em>, all emphasize targeting these processes to extend healthspan.</p>
+      <div class="principles-list">
+        {firstPrinciples.map((p) => (
+          <div class="principle-item">
+            <h3 class="principle-name">{p.name}</h3>
+            <div class="principle-content">
+              <p class="principle-body">{p.body}</p>
+              <p class="principle-note">{p.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Advanced Protocol -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">03</span>Advanced protocol</h2>
+
+      <!-- Sleep -->
+      <div class="protocol-block">
+        <div class="protocol-header">
+          <span class="protocol-num">01</span>
+          <h3 class="protocol-title">Sleep</h3>
+        </div>
+        <div class="protocol-list">
+          {sleepProtocol.map((s) => (
+            <div class="protocol-item">
+              <span class="protocol-label">{s.label}</span>
+              <p class="protocol-detail">{s.detail}</p>
+            </div>
+          ))}
+        </div>
+        <div class="targets-block">
+          <p class="targets-intro">Daily Whoop targets:</p>
+          <div class="targets-grid">
+            {sleepTargets.map((t) => (
+              <div class="target-item">
+                <span class="target-metric">{t.metric}</span>
+                <span class="target-value">{t.target}</span>
+                <span class="target-purpose">{t.purpose}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Diet -->
+      <div class="protocol-block">
+        <div class="protocol-header">
+          <span class="protocol-num">02</span>
+          <h3 class="protocol-title">Diet</h3>
+        </div>
+        <p class="protocol-desc">~2500 calories per day adjusted for training volume. Whole food, anti-inflammatory approach: ~30% protein / ~30% carbs / ~40% fats. Beans and lentils are soaked or sprouted to remove anti-nutrients such as lectins, phytates and glucosinolates. Overall, any type of whole food plant based diet (like the Mediterranean diet or Blue Zone related diet) is convenient for most people.</p>
+
+        <div class="meals-grid">
+          {meals.map((m) => (
+            <div class="meal-block">
+              <h4 class="meal-time">{m.time}</h4>
+              {m.note && <p class="meal-note">{m.note}</p>}
+              {m.items.length > 0 && (
+                <ul class="meal-list">
+                  {m.items.map((item) => <li>{item}</li>)}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="diet-subsection">
+          <h4 class="diet-subheading">Ketosis</h4>
+          <p class="diet-text">A state of ketosis is maintained for most of the day by fasting in the morning and having a low-carb lunch. Exogenous ketones are used to maintain ketone levels of 1–2.5 mmol/L during the workday, supporting mental clarity and stable energy. Carbs are reintroduced in the early evening to replenish glycogen for training, then again at dinner for sleep-onset benefits. This daily ketosis routine not only fuels focus but also enhances fat metabolism, supports recovery and promotes long-term metabolic flexibility.</p>
+        </div>
+
+        <div class="diet-subsection">
+          <h4 class="diet-subheading">Molecular hydrogen water</h4>
+          <p class="diet-text">H₂ water infused with hydrogen gas acts as a selective antioxidant, neutralizing harmful hydroxyl radicals without disrupting essential redox signaling. It also upregulates endogenous antioxidant enzymes: glutathione peroxidase, SOD and catalase.</p>
+        </div>
+
+        <div class="diet-subsection">
+          <h4 class="diet-subheading">Blood sugar management</h4>
+          <p class="diet-text">To support healthy blood sugar levels and reduce the impact of carb-rich meals, it is interesting to include compounds known to control blood sugar spikes: cinnamon, berberine, C3G, ACV, fenugreek and bitter melon. They greatly help regulate glucose absorption and reduce insulin spikes, ultimately improving metabolic health when taken with carb-heavy meals.</p>
+        </div>
+
+        <div class="diet-subsection">
+          <h4 class="diet-subheading">Foods to avoid</h4>
+          <div class="avoid-list">
+            {foodsToAvoid.map((f) => (
+              <div class="avoid-item">
+                <span class="avoid-category">{f.category}</span>
+                <p class="avoid-detail">{f.detail}</p>
+              </div>
+            ))}
+          </div>
+          <p class="diet-note">Note: This is a guide, not a rulebook. The above plan is based on my genetic needs and specific to my biomarker feedback. Always personalize your diet to align with your own biomarkers.</p>
+        </div>
+      </div>
+
+      <!-- Exercise -->
+      <div class="protocol-block">
+        <div class="protocol-header">
+          <span class="protocol-num">03</span>
+          <h3 class="protocol-title">Exercise</h3>
+        </div>
+        <p class="protocol-desc">Exercise is one of the most powerful tools we have to improve health and extend lifespan AND healthspan. Few hours a week can make a big difference. Complete routine (strength, hypertrophy, cardio, mobility) in 5–15 hours per week.</p>
+
+        <div class="exercise-grid">
+          {exerciseWeekly.map((e) => (
+            <div class="exercise-item">
+              <span class="exercise-label">{e.label}</span>
+              <p class="exercise-detail">{e.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="exercise-practices">
+          {exercisePractices.map((p) => (
+            <div class="practice-item">
+              <span class="practice-label">{p.label}</span>
+              <div class="practice-content">
+                {p.detail && <p class="practice-detail">{p.detail}</p>}
+                {p.subItems && (
+                  <ul class="practice-subitems">
+                    {p.subItems.map((s) => (
+                      <li class="practice-subitem">
+                        <span class="practice-sublabel">{s.sublabel}</span>
+                        <span class="practice-subdesc">{s.subdesc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Supplement Stack -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">04</span>Daily supplement stack</h2>
+      <p class="section-intro">
+        Some compounds can provide an extra layer of support by targeting specific biological processes. Their high concentration makes them particularly effective but they can also be unsafe, so proceed with caution.
+        <br>
+        <br>
+        Here is my current stack:<br>
+        <strong>Basic stack</strong> — essential nutrients most people need.<br/>
+        Advanced stack — targets specific processes (hormonal support, cellular health, muscle performance, mental clarity).
+      </p>
+      <div class="stack-grid">
+        {supplementStack.map((s) => (
+          <div class="stack-block">
+            <h3 class="stack-time">{s.time}</h3>
+            <ul class="stack-list">
+              {s.items.map((item) => <li class:list={[{ "stack-basic": item.tier === "basic" }]}>{item.name}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="section-intro" style="margin-top: 1.5rem;">Cycling strategy: 5 days on (weekdays) / 2 days off (weekends) → to prevent tolerance and maintain potency by giving the body a regular break.</p>
+      <p class="nad-warning">NAD+ warning — if taken too late, NR or NMN may interfere with circadian rhythm. Take early in the morning on an empty stomach for best absorption.</p>
+    </section>
+
+    <!-- Advanced Biohacks -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">05</span>Advanced biohacks</h2>
+      <div class="hacks-grid">
+        {advancedBiohacks.map((h) => (
+          <div class="hack-block">
+            <h3 class="hack-category">{h.category}</h3>
+            <ul class="hack-list">
+              {h.items.map((item) => (
+                <li>
+                  {typeof item === "string"
+                    ? <span set:html={item.replace(/\[Rx\]/g, '<span class="rx-badge">Rx</span>')} />
+                    : <a href={item.href} class="hack-link" target="_blank" rel="noopener noreferrer">{item.text}</a>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Biomarkers -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">06</span>Current biomarkers</h2>
+      <div class="biomarker-table-wrap">
+        {biomarkers.map((b) => (
+          <div class="biomarker-group">
+            <h3 class="biomarker-category">{b.category}</h3>
+            <div class="biomarker-table">
+              <div class="biomarker-thead">
+                <span>Marker</span>
+                <span>Normal</span>
+                <span>Optimal</span>
+                <span>My value</span>
+              </div>
+              {b.markers.map((m) => (
+                <div class="biomarker-row">
+                  <span class="biomarker-label">{m.label}</span>
+                  <span class="biomarker-normal">{m.normal}</span>
+                  <span class="biomarker-optimal">{m.optimal}</span>
+                  <span class="biomarker-value">
+                    {m.href
+                      ? <a href={m.href} target="_blank" rel="noopener noreferrer" class="biomarker-value-link">{m.value}</a>
+                      : m.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Rejuvenation Olympics -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">07</span>Rejuvenation Olympics</h2>
+      <p class="section-intro">The <a href="https://www.rejuvenationolympics.com/" target="_blank" rel="noopener noreferrer" class="inline-link">Rejuvenation Olympics</a> is a global leaderboard tracking biological age using the DunedinPACE epigenetic clock — a DNA methylation-based test that measures the speed at which someone is aging relative to the population average of 1.0. A score below 1.0 means aging slower than average; below 0.8 places you among the top performers worldwide.</p>
+      <div class="rejo-card">
+        <div class="rejo-score-block">
+          <span class="rejo-score-value">0.82</span>
+          <span class="rejo-score-label">DunedinPACE — Pace of aging</span>
+        </div>
+        <div class="rejo-meta">
+          <div class="rejo-meta-item">
+            <span class="rejo-meta-key">Test</span>
+            <span class="rejo-meta-val">DunedinPACE epigenetic clock</span>
+          </div>
+          <div class="rejo-meta-item">
+            <span class="rejo-meta-key">Population average</span>
+            <span class="rejo-meta-val">1.0</span>
+          </div>
+          <div class="rejo-meta-item">
+            <span class="rejo-meta-key">Optimal threshold</span>
+            <span class="rejo-meta-val">&lt;0.8</span>
+          </div>
+          <div class="rejo-meta-item">
+            <span class="rejo-meta-key">Leaderboard</span>
+            <a href="https://www.rejuvenationolympics.com/dunedin-pace" target="_blank" rel="noopener noreferrer" class="rejo-meta-link">rejuvenationolympics.com →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Genetic test -->
+    <section class="section">
+      <h2 class="section-label"><span class="section-num">08</span>Genetic test — Nebula Genomics</h2>
+      <p class="section-intro">Whole-genome sequencing across 8 categories — identifying variants that inform personalized interventions in longevity, performance and resilience.</p>
+      <div class="genetic-tables">
+        {geneticTest.map((g) => (
+          <div class="genetic-group">
+            <h3 class="genetic-category">{g.category}</h3>
+            <div class="genetic-table">
+              <div class="genetic-thead">
+                <span>Gene</span>
+                <span>Worst</span>
+                <span>Common</span>
+                <span>Optimal</span>
+                <span>Impact</span>
+              </div>
+              {g.rows.map((r) => (
+                <div class="genetic-row">
+                  <span class={`genetic-gene${r.bold ? " genetic-gene--bold" : ""}`}>{r.gene}</span>
+                  <span class="genetic-worst">{r.worst}</span>
+                  <span class="genetic-common">{r.common}</span>
+                  <span class="genetic-optimal">{r.optimal}</span>
+                  <span class="genetic-impact">{r.impact}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Hero ── */
+  .bio-hero-wrap {
+    background: radial-gradient(ellipse 60% 80% at 80% 40%, var(--accent-light) 0%, transparent 70%), var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bio-hero {
+    padding: 5rem 0 3.5rem;
+    max-width: 780px;
+  }
+
+  .bio-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .bio-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .bio-lead {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 600px;
+  }
+
+  /* ── Stats bar ── */
+  .bio-stats-bar {
+    border-top: 1px solid var(--border);
+  }
+
+  .bio-stats-section {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bio-stats-section--last {
+    border-bottom: none;
+  }
+
+  .bio-stats-category {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.3rem 1.5rem;
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bio-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .bio-stat {
+    background: var(--bg);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .bio-stat-value {
+    font-family: var(--font-serif);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .bio-stat-unit {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .bio-stat-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── Focus grid ── */
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .focus-card {
+    background: var(--bg);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: background 0.2s;
+  }
+
+  .focus-card:hover {
+    background: var(--accent-light);
+  }
+
+  .focus-num {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .focus-title {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .focus-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+
+  /* ── Section numbers ── */
+  .section-num {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    opacity: 0.7;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .disclaimer {
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-light);
+    margin: 2rem 0;
+  }
+
+  .disclaimer p {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .section-intro {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Master the Basics */
+  .basics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .basic-card {
+    background: var(--bg);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .basic-card:hover {
+    background: var(--accent-light);
+  }
+
+  .basic-num {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .basic-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.15;
+  }
+
+  .basic-desc {
+    font-size: 0.925rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  /* First Principles */
+  .principles-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .principle-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .principle-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .principle-name {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-transform: uppercase;
+    padding-top: 3px;
+    line-height: 1.4;
+  }
+
+  .principle-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .principle-body {
+    font-size: 0.925rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  .principle-note {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--accent);
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* Advanced Protocol */
+  .protocol-block {
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .protocol-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .protocol-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .protocol-num {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .protocol-title {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .protocol-desc {
+    font-size: 0.925rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .protocol-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .protocol-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .protocol-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .protocol-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    padding-top: 2px;
+  }
+
+  .protocol-detail {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* Sleep targets */
+  .targets-block {
+    margin-top: 2.5rem;
+  }
+
+  .targets-intro {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .targets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .target-item {
+    background: var(--bg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .target-metric {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .target-value {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .target-purpose {
+    font-size: 0.825rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Diet meals */
+  .meals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .meal-block {
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .meal-time {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.85rem 1.5rem;
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+
+  .meal-note {
+    padding: 1rem 1.5rem 0;
+  }
+
+  .meal-list {
+    padding: 0.75rem 1.5rem 1.5rem !important;
+  }
+
+  .meal-note {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    font-style: italic;
+  }
+
+  .meal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0;
+  }
+
+  .meal-list li {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .meal-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+  }
+
+  /* Diet subsections */
+  .diet-subsection {
+    margin-top: 2rem;
+  }
+
+  .diet-subheading {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .diet-text {
+    font-size: 0.925rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  .diet-note {
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-top: 1.25rem;
+  }
+
+  .avoid-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .avoid-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .avoid-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .avoid-category {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    padding-top: 2px;
+  }
+
+  .avoid-detail {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  /* Exercise */
+  .exercise-grid {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .exercise-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exercise-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .exercise-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    padding-top: 2px;
+  }
+
+  .exercise-detail {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .exercise-practices {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .practice-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .practice-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .practice-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+
+  .practice-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .practice-subitems {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    margin-top: 0.25rem;
+  }
+
+  .practice-subitem {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 1.25rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+    transition: background 0.15s;
+  }
+
+  .practice-subitem:last-child {
+    border-bottom: none;
+  }
+
+  .practice-subitem:hover {
+    background: var(--accent-light);
+  }
+
+  .practice-sublabel {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.45;
+    padding-top: 2px;
+    letter-spacing: 0.01em;
+  }
+
+  .practice-subdesc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  .practice-detail {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* Supplement Stack */
+  .nad-warning {
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-muted);
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .stack-block {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stack-time {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--accent-light);
+  }
+
+  .stack-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1.5rem;
+    gap: 0.6rem;
+  }
+
+  .stack-list li {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.45;
+    padding-left: 0.75rem;
+    position: relative;
+  }
+
+  .stack-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .stack-list li.stack-basic {
+    font-weight: 500;
+  }
+
+  /* Advanced Hacks */
+  .hacks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .hack-block {
+    background: var(--bg);
+    padding: 2rem;
+  }
+
+  .hack-category {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hack-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .hack-list li {
+    font-size: 0.925rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .hack-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .rx-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 3px;
+    padding: 1px 5px;
+    vertical-align: middle;
+    margin-left: 2px;
+    opacity: 0.85;
+  }
+
+  /* ── Biomarkers ── */
+  .biomarker-table-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .biomarker-group {
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .biomarker-category {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.7rem 1.25rem;
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .biomarker-category::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .biomarker-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .biomarker-thead,
+  .biomarker-row {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr 1fr;
+    gap: 0;
+  }
+
+  .biomarker-thead {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border);
+  }
+
+  .biomarker-thead span {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.65rem 1.25rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .biomarker-thead span:last-child {
+    border-right: none;
+    color: var(--accent);
+  }
+
+  .biomarker-row {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .biomarker-row:last-child {
+    border-bottom: none;
+  }
+
+  .biomarker-row:nth-child(even) {
+    background: rgba(0,0,0,0.018);
+  }
+
+  html.dark .biomarker-row:nth-child(even) {
+    background: rgba(255,255,255,0.025);
+  }
+
+  .biomarker-row:hover {
+    background: var(--accent-light);
+  }
+
+  .biomarker-row span {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    padding: 0.75rem 1.25rem;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+
+  .biomarker-row span:last-child {
+    border-right: none;
+  }
+
+  .biomarker-label {
+    font-weight: 500 !important;
+    color: var(--text) !important;
+    font-size: 0.875rem !important;
+  }
+
+  .biomarker-value {
+    font-family: var(--font-serif) !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    color: var(--accent) !important;
+    border-left: 2px solid var(--accent) !important;
+  }
+
+  .biomarker-value-link {
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    transition: opacity 0.2s;
+  }
+
+  .biomarker-value-link:hover {
+    opacity: 0.7;
+  }
+
+  .hack-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s;
+  }
+
+  .hack-link:hover {
+    opacity: 0.7;
+  }
+
+  /* ── Rejuvenation Olympics ── */
+  .rejo-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .rejo-score-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 3rem 3.5rem;
+    background: var(--accent-light);
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .rejo-score-value {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .rejo-score-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    max-width: 160px;
+    line-height: 1.5;
+  }
+
+  .rejo-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .rejo-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.5rem 2rem;
+    background: var(--bg);
+  }
+
+  .rejo-meta-key {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .rejo-meta-val {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .rejo-meta-link {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+    width: fit-content;
+  }
+
+  .rejo-meta-link:hover {
+    border-color: var(--accent);
+  }
+
+  .inline-link {
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    transition: opacity 0.2s;
+  }
+
+  .inline-link:hover {
+    opacity: 0.75;
+  }
+
+  @media (max-width: 640px) {
+    .rejo-card {
+      grid-template-columns: 1fr;
+    }
+
+    .rejo-score-block {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .rejo-meta {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── Genetic test ── */
+  .genetic-tables {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .genetic-group {
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .genetic-category {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.7rem 1rem;
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .genetic-category::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .genetic-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .genetic-thead,
+  .genetic-row {
+    display: grid;
+    grid-template-columns: 110px 85px 95px 85px 1fr;
+    gap: 0;
+  }
+
+  .genetic-thead {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border);
+  }
+
+  .genetic-thead span {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.6rem 0.875rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .genetic-thead span:last-child {
+    border-right: none;
+  }
+
+  .genetic-row {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .genetic-row:last-child {
+    border-bottom: none;
+  }
+
+  .genetic-row:nth-child(even) {
+    background: rgba(0,0,0,0.018);
+  }
+
+  html.dark .genetic-row:nth-child(even) {
+    background: rgba(255,255,255,0.025);
+  }
+
+  .genetic-row:hover {
+    background: var(--accent-light);
+  }
+
+  .genetic-row span {
+    font-size: 0.825rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    padding: 0.65rem 0.875rem;
+    border-right: 1px solid var(--border);
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+  }
+
+  .genetic-row span:last-child {
+    border-right: none;
+    font-style: italic;
+    font-size: 0.8rem;
+  }
+
+  .genetic-gene {
+    font-weight: 400 !important;
+    color: var(--text) !important;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.8rem !important;
+    letter-spacing: 0.03em;
+  }
+
+  .genetic-gene--bold {
+    font-weight: 700 !important;
+  }
+
+  .genetic-optimal {
+    font-weight: 500 !important;
+    color: var(--accent) !important;
+    background: rgba(42,92,69,0.08);
+  }
+
+  html.dark .genetic-optimal {
+    background: rgba(82,179,130,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .bio-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .basics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .principle-item {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .stack-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hacks-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .biomarker-thead {
+      display: none;
+    }
+
+    .biomarker-row {
+      grid-template-columns: 1fr;
+      padding: 0.75rem 1rem;
+    }
+
+    .biomarker-row span {
+      border-right: none;
+      padding: 0.15rem 0;
+    }
+
+    .biomarker-row span::before {
+      font-size: 0.65rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .biomarker-normal::before { content: "Normal"; }
+    .biomarker-optimal::before { content: "Optimal"; }
+    .biomarker-value::before { content: "My value"; }
+
+    .genetic-thead {
+      display: none;
+    }
+
+    .genetic-row {
+      grid-template-columns: 1fr;
+      padding: 0.75rem 0.75rem;
+    }
+
+    .genetic-row span {
+      border-right: none;
+      padding: 0.15rem 0;
+    }
+
+    .genetic-row span::before {
+      font-size: 0.65rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .genetic-worst::before { content: "Worst"; }
+    .genetic-common::before { content: "Common"; }
+    .genetic-optimal::before { content: "Optimal"; }
+    .genetic-impact::before { content: "Impact"; }
+
+    .targets-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .meals-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .protocol-item,
+    .avoid-item,
+    .exercise-item,
+    .practice-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bio-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .focus-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stack-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

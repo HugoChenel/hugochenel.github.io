@@ -1,0 +1,1420 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TopicGrid from "../components/TopicGrid.astro";
+
+const heroStats = [
+  { label: "VO₂ max", value: "62 ml/kg/min" },
+  { label: "Hyrox PR", value: "1:14:49" },
+  { label: "5K", value: "19:06" },
+  { label: "Bench press", value: "102.5 kg" },
+  { label: "Dead hang", value: "2:13" },
+  { label: "CF Open", value: "Level 5" },
+];
+
+const heroProfiles = [
+  { label: "Strava", href: "https://www.strava.com/athletes/125862142" },
+  { label: "CrossFit Games", href: "https://games.crossfit.com/athlete/2736016" },
+  { label: "Hyrox results", href: "https://www.hyresult.com/athlete/hugo-chenel?tab=races" },
+];
+
+const topics = [
+  {
+    title: "Strength & Gymnastics",
+    description:
+      "Compound lifts (bench, squat, deadlift, clean & jerk) combined with gymnastics movements (muscle-ups, weighted pull-ups, dips) and Olympic weightlifting.",
+  },
+  {
+    title: "Hyrox & CrossFit",
+    description:
+      "Hybrid fitness competition integrating functional strength with endurance. Also competing in CrossFit and tracking Open results yearly.",
+  },
+  {
+    title: "Endurance & Running",
+    description:
+      "Zone 2 aerobic base building, VMA intervals, and road races from 3K to 5K — backed by VO₂max and lactate threshold data.",
+  },
+  {
+    title: "Recovery & Monitoring",
+    description:
+      "Daily HRV and RHR tracking with Whoop, CNS tap test before sessions, and periodic bloodwork to guide training decisions.",
+  },
+];
+
+const prs = {
+  gymnastics: [
+    { label: "Pull-ups (strict)", value: "27 reps" },
+    { label: "Weighted pull-up (1RM)", value: "45 kg" },
+    { label: "Dips", value: "52 reps" },
+    { label: "Weighted dip (1RM)", value: "70 kg" },
+    { label: "Muscle-ups", value: "16 reps" },
+    { label: "Weighted muscle-up (1RM)", value: "15 kg" },
+    { label: "Dead hang", value: "2:13" },
+    { label: "Plank", value: "12:18" },
+  ],
+  jumps: [
+    { label: "Broad jump", value: "3m02" },
+    { label: "Vertical jump (box)", value: "1m45" },
+    { label: "Pistol squat (right / left)", value: "27 / 22 reps" },
+    { label: "Weighted pistol squat (1RM)", value: "20 kg" },
+  ],
+  lifting: [
+    { label: "Bench press", value: "102.5 kg" },
+    { label: "Back squat", value: "110 kg" },
+    { label: "Deadlift", value: "160 kg" },
+    { label: "Clean and jerk", value: "85 kg" },
+    { label: "Snatch", value: "65 kg" },
+    { label: "Military press (strict)", value: "65 kg" },
+  ],
+  running: [
+    { label: "400m", value: "0:58" },
+    { label: "800m", value: "2:32" },
+    { label: "1600m", value: "5:32" },
+    { label: "3200m", value: "11:38" },
+    { label: "5K", value: "19:06" },
+    { label: "VMA", value: "18.2 km/h" },
+  ],
+};
+
+const competitionGroups = [
+  {
+    group: "Hyrox",
+    image: "/assets/images/athleticism/Hyrox1.jpg",
+    link: { label: "All races", href: "https://www.hyresult.com/athlete/hugo-chenel?tab=races" },
+    races: [
+      { event: "Toulouse, France", flag: "🇫🇷", date: "March 2026", category: "Open Solo", result: "01:07:55", href: "https://results.hyrox.com/season-8/?content=detail&fpid=search&pid=search&idp=LR3MS4JI491135&lang=EN_CAP&event=H_LR3MS4JI134E&pidp=ranking_nav&search%5Bname%5D=Chenel&search%5Bfirstname%5D=Hugo&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JI134E" },
+      { event: "Bordeaux, France", flag: "🇫🇷", date: "November 2025", category: "Open Solo", result: "01:11:47", href: "https://results.hyrox.com/season-8/?content=detail&fpid=search&pid=search&idp=LR3MS4JI4154BA&lang=EN_CAP&event=H_LR3MS4JIFB6&pidp=ranking_nav&search%5Bname%5D=Chenel&search%5Bfirstname%5D=Hugo&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JIFB6" },
+      { event: "Paris, France", flag: "🇫🇷", date: "October 2025", category: "Open Solo", result: "01:12:45", href: "https://results.hyrox.com/season-8/?content=detail&fpid=search&pid=search&idp=LR3MS4JI3F5D7B&lang=EN_CAP&event=H_LR3MS4JID5E&pidp=ranking_nav&search%5Bname%5D=Chenel&search%5Bfirstname%5D=Hugo&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JID5E" },
+      { event: "Sharjah, UAE", flag: "🇦🇪", date: "April 2025", category: "Open Solo", result: "01:14:49", href: "https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=LR3MS4JI2E5443&lang=EN_CAP&event=H_LR3MS4JIA65&page=5&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JIA65" },
+      { event: "Marseille, France", flag: "🇫🇷", date: "December 2024", category: "Open Solo", result: "01:27:37", href: "https://results.hyrox.com/season-7/?content=detail&fpid=list&pid=list&idp=JGDMS4JI225C4D&lang=EN_CAP&event=H_JGDMS4JI917&page=39&pidp=ranking_nav&ranking=time_finish_netto&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_JGDMS4JI917" },
+    ],
+  },
+  {
+    group: "CrossFit",
+    image: "/assets/images/athleticism/Hyrox_competition.png",
+    link: { label: "Games profile", href: "https://games.crossfit.com/athlete/2736016" },
+    races: [
+      { event: "CrossFit Open 2026", date: "2026", result: "Level 8 · 13–23% · Advanced", href: "https://games.crossfit.com/leaderboard/open/2026?view=0&division=1&region=0&athlete=2736016&scaled=0&sort=0" },
+      { event: "CrossFit Open 2025", date: "2025", result: "Level 5 · 44–54% · Intermediate", href: "https://games.crossfit.com/leaderboard/open/2025?view=0&division=1&region=&country=FR&region_search_display=France&scaled=0&sort=0&athlete=2736016" },
+    ],
+  },
+  {
+    group: "Red Bull 400",
+    image: "/assets/images/athleticism/RedBull400.webp",
+    link: null,
+    races: [
+      { event: "Courchevel, France", date: "2025", result: "05:22 · Semi-Final", href: "https://www.redbull.com/fr-fr/events/red-bull-400" },
+    ],
+  },
+  {
+    group: "Races",
+    image: "/assets/images/athleticism/Hyrox2.jpg",
+    link: { label: "Strava", href: "https://www.strava.com/athletes/125862142" },
+    races: [
+      { event: "La Ronde du Printemps", date: "2026", result: "24th / 252", href: "https://resultat.chrono-start.net/static/race/5204/ranking+export=pdf" },
+      { event: "La corrida de Noël de Toulouse", date: "2025", result: "20th / 784", href: "https://www.runningtrail.fr/resultats/2025/La-Corrida-De-Noel-2025-5km.pdf" },
+      { event: "La Boucle Du Confluent", date: "2025", result: "29th / 347", href: "https://resultat.chrono-start.net/static/race/4778/ranking+export=pdf" },
+      { event: "Trail Urbain Aliocema Run", date: "2025", result: "10th / 168", href: "https://resultat.chrono-start.net/static/race/4401/ranking+export=pdf" },
+      { event: "La Ronde du Printemps", date: "2025", result: "24th / 205", href: "https://resultat.chrono-start.fr/race/3932/ranking?export=pdf" },
+      { event: "Corrida pédestre de Toulouse", date: "2024", result: "44th / 821", href: "https://resultat.chrono-start.fr/race/3179/ranking?export=pdf" },
+    ],
+  },
+];
+
+const physiologyCategories = [
+  {
+    category: "Cardiovascular & respiratory",
+    metrics: [
+      { label: "VO₂ max", value: "62 ml/kg/min" },
+      { label: "Lactate threshold", value: "81% of VO₂max" },
+      { label: "Resting heart rate", value: "39–44 bpm" },
+      { label: "Heart rate variability", value: "95–115 ms" },
+      { label: "Breath hold (static apnea)", value: "4:34" },
+    ],
+  },
+  {
+    category: "Muscular & skeletal",
+    metrics: [
+      { label: "Body fat percentage", value: "8.5–9.5%" },
+      { label: "Grip strength", value: "72 kg" },
+      { label: "Grip endurance (dead hang)", value: "2:13" },
+    ],
+  },
+  {
+    category: "Hormonal",
+    metrics: [
+      { label: "Testosterone", value: "850 ng/dL" },
+      { label: "Free testosterone", value: "26.2 pg/ml" },
+      { label: "Estrogen", value: "20 pg/ml" },
+    ],
+  },
+];
+
+const foundations = [
+  { num: "1", title: "Strength & power training", body: "Strength and power development are one of the most important parts of my training, especially through weightlifting and resistance training. I use a mix of compound movements from powerlifting (bench, military press, squat) or gymnastics (pull-up, dip, muscle-up, chin-up), and high-velocity exercises (plyometrics, olympic lifts) to build a powerful foundation." },
+  { num: "2", title: "HIIT & anaerobic capacity", body: "Mixing steady-state endurance work with high-intensity interval training is ideal to improve VO₂ max and lactate threshold, thus transforming your anaerobic capacity. It can be in various forms, from sprint intervals to CrossFit WODs." },
+  { num: "3", title: "Aerobic base & cardio conditioning", body: "I highly value building a strong aerobic base for sustained endurance. I incorporate low-intensity and long-duration aerobic sessions to build an efficient cardiovascular base, which supports various body processes (recovery, fat metabolism) and provides a foundation for higher-intensity efforts." },
+  { num: "4", title: "Periodized training", body: "Cycle through different training focuses such as endurance, strength and power phases to allow for recovery and adaptation. I align training phases with specific athletic goals of the period." },
+  { num: "5", title: "Mobility & movement quality", body: "I highlight the importance of natural functional movement to prevent injuries and improve overall performance. That's why I dedicate time to mobility work to improve range of motion, with or without weight." },
+  { num: "6", title: "Functional training", body: "The incorporation of functional movement patterns ensures that skills are practical and transferable to real-life situations. By incorporating compound lifts, the body is trained as a cohesive unit rather than isolating muscles, which greatly improves coordination, balance and strength. Varying exercise inclination, hand positioning and equipment type (barbells, dumbbells, kettlebells) adds layers of complexity that challenge the body in meaningful ways." },
+  { num: "7", title: "Recovery", body: "Recovery is an essential component to maintain high performance over the long term. Sleep and adequate nutrition are the most important, but I also include frequent cryotherapy and sauna sessions as well as daily breathwork. Evaluating your current state before training is a good idea with CNS tap tests based on reaction time and RHR/HRV monitoring using Whoop, Oura ring or Garmin." },
+  { num: "8", title: "Nutrition", body: "Find an individualized diet that supports your performance rather than jumping on any generic diet. Nutrient timing can be important (carb backloading in my case). Balance macronutrients to match training intensity. Incorporate unprocessed whole foods and consider intermittent fasting or fasted training to enhance metabolic flexibility." },
+  { num: "9", title: "Mental resilience", body: "To face physical challenges easily, I encourage the development of mental toughness with exercises like long-duration endurance challenges, cold/hot exposure or any deliberate discomfort training. Breathwork like the Wim Hof method can also be excellent for pain tolerance." },
+  { num: "10", title: "Biohacking & monitoring", body: "I promote personalized, data-driven approaches using tools like wearables (HR monitors, sleep trackers) and perform frequent bloodwork to make smart training variations based on biomarkers. They can guide personalized adjustments to amplify results and performance." },
+];
+
+const schedule = [
+  { day: "Monday",    split: true,  am: { focus: "Threshold training", detail: "20–30 min continuous tempo" }, pm: { focus: "Strength — Push", detail: "Bench press, military overhead press, dips, standing shoulder press, lateral/front dumbbell raises, tricep extensions, push-ups, rope climbing" } },
+  { day: "Tuesday",   split: true,  am: { focus: "Easy run or cycling (Zone 2)", detail: "60–120 min" }, pm: { focus: "Strength — Pull", detail: "Barbell row / T-row, pull-ups, muscle-ups, pull-down, chin-ups, curl" } },
+  { day: "Wednesday", split: false, focus: "Interval training (Zone 5)", detail: "VMA 10 × 400m, Norwegian 4×4 protocol" },
+  { day: "Thursday",  split: true,  am: { focus: "Easy run or cycling (Zone 2)", detail: "60–120 min" }, pm: { focus: "Explosive power", detail: "Power clean, thruster, clean & jerk, snatch" } },
+  { day: "Friday",    split: true,  am: { focus: "Threshold training", detail: "20–30 min continuous tempo" }, pm: { focus: "Strength — Legs & Core", detail: "Back/front/pistol/split ATG squat, lunges, tibialis raises, ATG calf raises, step-ups, Nordic hamstring curl, planks, hollow body hold, leg raises, backward sled drag" } },
+  { day: "Saturday",  split: false, focus: "HIIT", detail: "CrossFit WOD, rowing, jump rope, assault bike, plyometric box jumps, kettlebell swings, sled push/pull, wall ball, sprints" },
+  { day: "Sunday",    split: false, focus: "Recovery", detail: "Sauna, cold plunge or isolation tank" },
+];
+
+const trainingPractices = [
+  { label: "Sets & reps", detail: "Low reps (1–4) with heavy weights for strength, moderate reps (8–12) for hypertrophy, and high reps (16+) with lighter weights for endurance. Pyramidal training is frequently incorporated. In the end, the most important metric is total volume." },
+  { label: "Intensity & rest intervals", detail: "Intensity varies to prevent overtraining (based on Whoop stats) and guide progressive overload without exhaustion." },
+  { label: "Equipment", detail: "Incorporating barbells, dumbbells, kettlebells and a sledgehammer keeps workouts dynamic and challenges muscles differently — slightly varying hand position for each." },
+  { label: "Training hours", detail: "Early evening — body temperature reaches its peak (enhancing muscle function), and hormonal balance (higher testosterone relative to cortisol) is more favourable, promoting better strength gains." },
+  { label: "Grip strength", detail: "Regular farmer's carries and dead hanging performed to boost grip strength and functional fitness relevant to most activities." },
+  { label: "Handstand", detail: "Handstand practice included to enhance balance, core strength and shoulder stability. Handstands improve body awareness and proprioception, contributing to better control during complex movements." },
+  { label: "Flexibility", detail: "Dynamic stretches before workouts and static stretches outside of training to maintain flexibility and mobility." },
+  { label: "Plyometrics & isometrics", detail: "Plyometric exercises like box jumps to build explosive power; isometric holds like planks to enhance muscle control and tendon/ligament strength." },
+  { label: "Unilateral movements", detail: "Training one side at a time (e.g. Bulgarian split squats) strengthens stabilizers and builds a stronger, more stable foundation." },
+  { label: "Barefoot training", detail: "Barefoot training when possible to strengthen the intrinsic muscles of the feet, improving balance, enhancing proprioception and allowing a more natural range of motion." },
+  { label: "Nasal breathing", detail: "Practicing nasal breathing during low-intensity cardio is great to improve oxygen efficiency and increase CO₂ tolerance." },
+  { label: "Timing", detail: "Cold exposure, sauna, high-dose antioxidant supplementation and static stretching should be scheduled away from training sessions. Immediately post-training, the body undergoes inflammatory and hormonal responses essential for repair and growth — disrupting these too soon reduces training effectiveness." },
+];
+
+const trainingTools = [
+  { label: "Occlusion training", detail: "Light weights with Blood Flow Restriction (BFR) bands to maximize muscle growth and recovery. BFR bands are placed on arms or legs, restricting blood flow back from the muscle, amplifying the pump and signaling muscle growth. Joint-friendly and ideal for high-rep burnout sets." },
+  { label: "EMS", detail: "Electrical Muscle Stimulation applied outside of training hours. By sending low-level electrical impulses to targeted muscles, EMS assists recovery and can build strength. Useful for rehab or working on weaknesses by recruiting fibres missed during traditional training." },
+  { label: "Rebounding", detail: "Trampoline workouts are the number one exercise to boost lymphatic flow, promoting detoxification. The up-and-down motion stimulates the lymphatic system, while the trampoline surface absorbs impact — making it low-stress on joints. Also improves balance, coordination and strengthens stabilizer muscles. 10 minutes integrated into the daily routine." },
+];
+---
+
+<Layout
+  title="Athleticism — Hugo Chenel"
+  description="Hybrid athlete competing in Hyrox, CrossFit and running — backed by systematic training and biomarker tracking."
+>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-left">
+        <p class="page-eyebrow">Athleticism</p>
+        <h1 class="page-title">Hybrid athlete</h1>
+        <p class="page-lead">Training across strength, endurance and explosiveness — competing in Hyrox, CrossFit and road races. Performance informed by physiology, not intuition.</p>
+      </div>
+      <aside class="athlete-card">
+        <p class="athlete-card-label">Performance</p>
+        <div class="athlete-card-stats">
+          {heroStats.map(s => (
+            <div class="athlete-card-row">
+              <span class="athlete-card-key">{s.label}</span>
+              <span class="athlete-card-val">{s.value}</span>
+            </div>
+          ))}
+        </div>
+        <div class="athlete-card-profiles">
+          {heroProfiles.map(p => (
+            <a href={p.href} target="_blank" rel="noopener" class="athlete-card-profile-link">
+              <span>{p.label}</span>
+              <span>&rarr;</span>
+            </a>
+          ))}
+        </div>
+      </aside>
+    </div>
+
+    <TopicGrid topics={topics} />
+
+    <!-- Intro -->
+    <section class="intro-section">
+      <p class="intro-para">In developing my training philosophy, I was influenced by some of the most respected names in athletic performance and human optimization: <em>Ben Greenfield</em>, <em>Dr. Andy Galpin</em>, <em>Mark Bell</em>, <em>Dr. Peter Attia</em>, <em>Dr. Andrew Huberman</em>, <em>Ben Patrick</em>, <em>Dr. Kelly Starrett</em> and <em>Pavel Tsatsouline</em>. Their different visions have shaped my training programs, progressively orienting me toward weightlifting, gymnastics and running, participating in Hyrox and CrossFit events. I try to fully develop myself as a hybrid athlete across strength, endurance and explosiveness. All personal records and competition results are tracked, serving as benchmarks to evaluate progress. Regular assessments help fine-tune my approach. What follows is an overview of my benchmark, fitness competition results and training components. Each one of these components plays a specific role in improving strength, power or endurance, supporting a long-term vision of peak athletic performance.</p>
+    </section>
+
+
+    <!-- Foundations -->
+    <section class="section">
+      <h2 class="section-label">Foundations</h2>
+      <div class="foundations-list">
+        {foundations.map((f) => (
+          <div class="foundation-item">
+            <span class="foundation-num">{f.num}</span>
+            <div>
+              <h3 class="foundation-title">{f.title}</h3>
+              <p class="foundation-body">{f.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Physiological Profile -->
+    <section class="section">
+      <h2 class="section-label">Physiological profile</h2>
+
+      <!-- Physical attributes with unit toggle -->
+      <div class="phys-attrs-wrap">
+        <div class="phys-attrs">
+          <div class="phys-attr">
+            <span class="phys-attr-label">Height</span>
+            <span class="phys-attr-value" data-metric="182 cm" data-imperial="6 ft 0 in">182 cm</span>
+          </div>
+          <div class="phys-attr-sep"></div>
+          <div class="phys-attr">
+            <span class="phys-attr-label">Weight</span>
+            <span class="phys-attr-value" data-metric="72 kg" data-imperial="159 lbs">72 kg</span>
+          </div>
+          <div class="phys-attr-sep"></div>
+          <div class="phys-attr">
+            <span class="phys-attr-label">Body type</span>
+            <span class="phys-attr-value">Ectomorph</span>
+          </div>
+        </div>
+        <button class="unit-toggle" id="unit-toggle">Switch to imperial</button>
+      </div>
+
+      <!-- Categorized metrics -->
+      {physiologyCategories.map((cat) => (
+        <div class="phys-category">
+          <h3 class="phys-cat-title">{cat.category}</h3>
+          <div class="metrics-grid">
+            {cat.metrics.map((m) => (
+              <div class="metric-card">
+                <span class="metric-label">{m.label}</span>
+                <span class="metric-value">{m.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Competition Results -->
+    <section class="section">
+      <h2 class="section-label">Competition results</h2>
+      <div class="comp-groups">
+        {competitionGroups.map((g) => (
+          <div class="comp-group">
+            <div
+              class="comp-group-banner"
+              style={g.image ? `background-image: url('${g.image}')` : undefined}
+            >
+              <div class="comp-group-banner-inner">
+                <h3 class="comp-group-title">{g.group}</h3>
+                {g.link && (
+                  <a href={g.link.href} target="_blank" rel="noopener" class="comp-group-link">{g.link.label} &rarr;</a>
+                )}
+              </div>
+            </div>
+            <div class="results-list">
+              {g.races.map((c) => (
+                <a href={c.href} target="_blank" rel="noopener" class="result-item">
+                  <div class="result-left">
+                    {c.flag ? (
+                      <>
+                        <span class="result-flag">{c.flag}</span>
+                        <div class="result-meta">
+                          <span class="result-event">{c.event}</span>
+                          <div class="result-sub">
+                            <span class="result-date">{c.date}</span>
+                            {c.category && <span class="result-category">{c.category}</span>}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <span class="result-event">{c.event}</span>
+                        <span class="result-date">{c.date}</span>
+                      </>
+                    )}
+                  </div>
+                  <span class="result-value">{c.result}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Personal Records -->
+    <section class="section">
+      <h2 class="section-label">Personal records</h2>
+      <div class="pr-grid">
+        <div class="pr-group">
+          <h3 class="pr-group-title">Gymnastics</h3>
+          {prs.gymnastics.map((r) => (
+            <div class="pr-row">
+              <span class="pr-label">{r.label}</span>
+              <span class="pr-value">{r.value}</span>
+            </div>
+          ))}
+        </div>
+        <div class="pr-group">
+          <h3 class="pr-group-title">Lifting</h3>
+          {prs.lifting.map((r) => (
+            <div class="pr-row">
+              <span class="pr-label">{r.label}</span>
+              <span class="pr-value">{r.value}</span>
+            </div>
+          ))}
+        </div>
+        <div class="pr-group">
+          <h3 class="pr-group-title">Running</h3>
+          {prs.running.map((r) => (
+            <div class="pr-row">
+              <span class="pr-label">{r.label}</span>
+              <span class="pr-value">{r.value}</span>
+            </div>
+          ))}
+        </div>
+        <div class="pr-group">
+          <h3 class="pr-group-title">Power & jumps</h3>
+          {prs.jumps.map((r) => (
+            <div class="pr-row">
+              <span class="pr-label">{r.label}</span>
+              <span class="pr-value">{r.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Schedule -->
+    <section class="section">
+      <h2 class="section-label">Weekly schedule</h2>
+      <div class="schedule-list">
+        {schedule.map((s) => (
+          <div class="schedule-row">
+            <span class="schedule-day">{s.day}</span>
+            {s.split ? (
+              <div class="schedule-slots">
+                <div class="schedule-slot">
+                  <span class="schedule-slot-label">AM</span>
+                  <div class="schedule-right">
+                    {s.am.focus && <span class="schedule-focus">{s.am.focus}</span>}
+                    {s.am.detail && <span class="schedule-detail">{s.am.detail}</span>}
+                  </div>
+                </div>
+                <div class="schedule-slot">
+                  <span class="schedule-slot-label">PM</span>
+                  <div class="schedule-right">
+                    {s.pm.focus && <span class="schedule-focus">{s.pm.focus}</span>}
+                    {s.pm.detail && <span class="schedule-detail">{s.pm.detail}</span>}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div class="schedule-right">
+                {s.focus && <span class="schedule-focus">{s.focus}</span>}
+                {s.detail && <span class="schedule-detail">{s.detail}</span>}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Training practices -->
+    <section class="section">
+      <h2 class="section-label">Training details & practices</h2>
+      <div class="practices-list">
+        {trainingPractices.map((p) => (
+          <div class="practice-row">
+            <span class="practice-label">{p.label}</span>
+            <p class="practice-detail">{p.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Training tools -->
+    <section class="section">
+      <h2 class="section-label">Tools</h2>
+      <div class="tools-grid">
+        {trainingTools.map((t, i) => (
+          <div class="tool-card">
+            <span class="tool-card-num">{String(i + 1).padStart(2, "0")}</span>
+            <h3 class="tool-card-label">{t.label}</h3>
+            <p class="tool-card-detail">{t.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Recovery -->
+    <section class="section">
+      <h2 class="section-label">Recovery monitoring</h2>
+      <div class="recovery-grid">
+
+        <div class="rec-card">
+          <div class="rec-card-header">
+            <span class="rec-source">Whoop</span>
+            <span class="rec-name">Resting Heart Rate</span>
+          </div>
+          <div class="rec-metric">
+            <span class="rec-value">39–44</span>
+            <span class="rec-unit">bpm</span>
+          </div>
+          <div class="rec-threshold">
+            <span class="rec-threshold-label">Alert threshold</span>
+            <span class="rec-threshold-value">&gt; 44 bpm → ease up</span>
+          </div>
+          <p class="rec-desc">A low RHR reflects great cardiovascular health. If it spikes above normal, it's the body's way of indicating to ease up.</p>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-card-header">
+            <span class="rec-source">Whoop</span>
+            <span class="rec-name">Heart Rate Variability</span>
+          </div>
+          <div class="rec-metric">
+            <span class="rec-value">95–115</span>
+            <span class="rec-unit">ms</span>
+          </div>
+          <div class="rec-threshold">
+            <span class="rec-threshold-label">Alert threshold</span>
+            <span class="rec-threshold-value">&lt; 95 ms → active recovery</span>
+          </div>
+          <p class="rec-desc">High HRV means ready to tackle intense sessions. When it dips, prioritize lighter activity or active recovery.</p>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-card-header">
+            <span class="rec-source">CNS</span>
+            <span class="rec-name">Tap Test</span>
+          </div>
+          <div class="rec-metric">
+            <span class="rec-value">100</span>
+            <span class="rec-unit">taps / 10 sec</span>
+          </div>
+          <div class="rec-threshold">
+            <span class="rec-threshold-label">Alert threshold</span>
+            <span class="rec-threshold-value">&lt; 90 taps → adjust intensity</span>
+          </div>
+          <p class="rec-desc">If performance drops by 10% or more, it's a clear sign the central nervous system is not fully recovered.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<script>
+  const btn = document.getElementById('unit-toggle');
+  let isMetric = true;
+  btn?.addEventListener('click', () => {
+    isMetric = !isMetric;
+    document.querySelectorAll<HTMLElement>('[data-metric]').forEach(el => {
+      el.textContent = isMetric ? el.dataset.metric! : el.dataset.imperial!;
+    });
+    if (btn) btn.textContent = isMetric ? 'Switch to imperial' : 'Switch to metric';
+  });
+</script>
+
+<style>
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: var(--tracking-heading, -0.015em);
+    text-transform: none;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 2rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  .section-note {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    margin-top: -1rem;
+  }
+
+  /* ── Physical attributes ── */
+  .phys-attrs-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 1.75rem 2rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background: var(--accent-light);
+  }
+
+  .phys-attrs {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+  }
+
+  .phys-attr {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0 2.5rem;
+  }
+
+  .phys-attr:first-child {
+    padding-left: 0;
+  }
+
+  .phys-attr-sep {
+    width: 1px;
+    height: 40px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  .phys-attr-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .phys-attr-value {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .unit-toggle {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: var(--bg-card);
+    border: 1px solid var(--accent);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+    border-radius: var(--radius);
+  }
+
+  .unit-toggle:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  /* ── Physiology categories ── */
+  .phys-category {
+    margin-bottom: 0;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    overflow: hidden;
+  }
+
+  .phys-category:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .phys-cat-title {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.65rem 1.25rem;
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .phys-cat-title::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+
+  .metric-card {
+    background: var(--bg);
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border-right: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .metric-card:last-child {
+    border-right: none;
+  }
+
+  .metric-card:hover {
+    background: var(--accent-light);
+  }
+
+  .metric-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .metric-value {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  /* ── Competition groups ── */
+  .comp-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .comp-group {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  /* Image banner */
+  .comp-group-banner {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bg-card);
+    overflow: hidden;
+  }
+
+  .comp-group-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 55%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .comp-group-banner-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .comp-group-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .comp-group-link {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.45);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    backdrop-filter: blur(4px);
+  }
+
+  .comp-group-link:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.8);
+    color: #fff;
+  }
+
+  /* Results area below banner */
+  .comp-group > .results-list {
+    padding: 0.5rem 1.5rem 1.25rem;
+  }
+
+  /* Competition Results */
+  .results-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.85rem 0.75rem;
+    margin: 0 -0.75rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .result-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .result-item:hover {
+    background: var(--accent-light);
+  }
+
+  .result-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .result-flag {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .result-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .result-sub {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .result-event {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .result-date {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    background: var(--accent-light);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+
+  .result-category {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .result-value {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--accent);
+    white-space: nowrap;
+    font-weight: 400;
+  }
+
+  /* PRs */
+  .pr-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4rem;
+  }
+
+  .pr-group-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pr-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pr-label {
+    font-size: 0.925rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  .pr-value {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  /* ── Weekly Schedule ── */
+  .schedule-list {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 3px solid var(--border);
+  }
+
+  .schedule-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 0;
+  }
+
+  .schedule-row + .schedule-row {
+    border-top: 3px solid var(--border);
+  }
+
+  .schedule-day {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: var(--accent-light);
+    border-right: 3px solid var(--border);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .schedule-slots {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .schedule-slot {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 0;
+    flex: 1;
+  }
+
+  .schedule-slot + .schedule-slot {
+    border-top: 1px solid var(--border);
+  }
+
+  .schedule-slot-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    opacity: 0.6;
+    border-right: 1px solid var(--border);
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .schedule-row > .schedule-right {
+    padding-left: calc(44px + 1.5rem);
+  }
+
+  .schedule-right {
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    min-height: 52px;
+  }
+
+  .schedule-focus {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .schedule-detail {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── Training practices ── */
+  .practices-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .practice-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: var(--bg);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .practice-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .practice-detail {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* Tools */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .tool-card {
+    border: 2px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .tool-card-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    opacity: 0.5;
+  }
+
+  .tool-card-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .tool-card-detail {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* Recovery monitoring */
+  .recovery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .rec-card {
+    background: var(--bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .rec-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .rec-source {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .rec-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.25;
+  }
+
+  .rec-metric {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rec-value {
+    font-family: var(--font-serif);
+    font-size: clamp(2.25rem, 3.5vw, 3rem);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .rec-unit {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .rec-threshold {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 1.25rem;
+    padding: 0.6rem 0.875rem;
+    background: var(--accent-light);
+    border-left: 2px solid var(--accent);
+  }
+
+  .rec-threshold-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.75;
+  }
+
+  .rec-threshold-value {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .rec-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-top: auto;
+  }
+
+  /* Profile links */
+  .profile-links {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .profile-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .profile-link:hover { color: var(--accent); }
+
+  /* ── Hero ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 268px;
+    gap: 3.5rem;
+    padding: 6rem 0 5rem;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .page-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.75rem;
+  }
+
+  .page-lead {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  /* ── Athlete card ── */
+  .athlete-card {
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    padding: 1.5rem;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .athlete-card-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.1rem;
+  }
+
+  .athlete-card-stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .athlete-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .athlete-card-row:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .athlete-card-key {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .athlete-card-val {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--text);
+    text-align: right;
+  }
+
+  .athlete-card-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1.1rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+  .athlete-card-profile-link {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    padding: 0.35rem 0;
+    transition: color 0.2s;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .athlete-card-profile-link:last-child {
+    border-bottom: none;
+  }
+
+  .athlete-card-profile-link:hover {
+    color: var(--text);
+  }
+
+  /* Intro */
+  .intro-section {
+    padding: 3rem 0 2rem;
+  }
+
+  .intro-para {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  /* Foundations */
+  .foundations-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .foundation-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 1.25rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .foundation-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .foundation-num {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    padding-top: 3px;
+  }
+
+  .foundation-title {
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .foundation-body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .recovery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 4rem 0 3rem;
+    }
+
+    .athlete-card {
+      position: static;
+    }
+
+    .phys-attrs-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .phys-attrs {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .phys-attr {
+      padding: 0;
+    }
+
+    .phys-attr-sep {
+      display: none;
+    }
+
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pr-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .schedule-row {
+      grid-template-columns: 1fr;
+    }
+
+    .schedule-day {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-left {
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .practice-row {
+      grid-template-columns: 1fr;
+    }
+
+    .practice-label {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0 0.5rem;
+    }
+
+    .practice-detail {
+      padding: 0.5rem 0 1rem;
+    }
+
+    .profile-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .foundation-item,
+    .tool-row,
+    .recovery-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+</style>

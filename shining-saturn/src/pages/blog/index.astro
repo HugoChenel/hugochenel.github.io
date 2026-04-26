@@ -1,0 +1,369 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const allPosts = [
+  {
+    category: "Science & Tech",
+    title: "Preprocessing scRNA-seq data with Scanpy",
+    date: "June 2025",
+    href: "/blog/preprocessing-scrna-seq-data-with-Scanpy",
+    excerpt: "Single cell series 2 — a step-by-step tutorial on preprocessing single-cell RNA-seq data using the Scanpy Python toolkit.",
+  },
+  {
+    category: "Health & Fitness",
+    title: "No sight, no sound, no gravity: Inside the world of sensory deprivation",
+    date: "June 2025",
+    href: "/blog/Sensory-deprivation",
+    excerpt: "A float tank quiets the body so the mind can finally be heard. Personal account and review of sensory deprivation therapy.",
+  },
+  {
+    category: "Health & Fitness",
+    title: "What is HBOT and how does oxygen affect the body?",
+    date: "June 2025",
+    href: "/blog/What-is-HBOT",
+    excerpt: "HBOT (Hyperbaric Oxygen Therapy) is a therapeutic approach that uses pressurised oxygen to enhance the body's natural healing processes.",
+  },
+  {
+    category: "Science & Tech",
+    title: "Bulk RNA-seq analysis with DESeq2",
+    date: "March 2025",
+    href: "/blog/bulk-rna-seq-analysis",
+    excerpt: "Tutorial — Bulk basics. A complete guide to differential gene expression analysis from raw counts using DESeq2.",
+  },
+  {
+    category: "Science & Tech",
+    title: "Preprocessing scRNA-seq data with Seurat",
+    date: "November 2024",
+    href: "/blog/preprocessing-scrna-seq-data-with-Seurat",
+    excerpt: "Single cell series 1 — quality control, normalisation, clustering and annotation of single-cell RNA-seq data using Seurat.",
+  },
+  {
+    category: "Adventures",
+    title: "Skydiving",
+    date: "November 2024",
+    href: "/blog/Skydiving",
+    excerpt: "PAC — Aérodrome de Castelnau-Magnoac. Pilatus PC-6 Porter B2-H2 & ATR 72-500. Free fall.",
+  },
+  {
+    category: "Finance",
+    title: "What is money?",
+    date: "November 2024",
+    href: "/blog/What_is_money",
+    excerpt: "The fundamentals of money: its history, purpose and evolving role in society.",
+  },
+];
+
+// All categories from Jekyll (keep empty ones to show scope)
+const categories = [
+  { label: "Science & Tech",          slug: "science-tech" },
+  { label: "Health & Fitness",        slug: "health-fitness" },
+  { label: "Finance",                 slug: "finance" },
+  { label: "Adventures",              slug: "adventures" },
+  { label: "Mind & Consciousness",    slug: "mind-consciousness" },
+  { label: "Aesthetics",              slug: "aesthetics" },
+];
+
+const countFor = (label: string) =>
+  allPosts.filter((p) => p.category === label).length;
+---
+
+<Layout
+  title="Blog — Hugo Chenel"
+  description="Writing on science, sport, biohacking and more."
+>
+  <!-- Hero -->
+  <div class="blog-hero-wrap">
+    <div class="container">
+      <div class="blog-hero">
+        <p class="blog-eyebrow">Writing</p>
+        <h1 class="blog-title">All posts</h1>
+        <p class="blog-lead">Explorations across science, performance, health and beyond — {allPosts.length} posts across {categories.length} categories.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Category filter -->
+    <nav class="category-nav" aria-label="Filter by category">
+      <button class="cat-btn active" data-cat="all">
+        All
+        <span class="cat-count">{allPosts.length}</span>
+      </button>
+      {categories.map((c) => (
+        <button class="cat-btn" data-cat={c.slug}>
+          {c.label}
+          <span class="cat-count">{countFor(c.label)}</span>
+        </button>
+      ))}
+    </nav>
+
+    <!-- No results message -->
+    <p class="no-results" id="no-results" aria-live="polite">No posts in this category yet.</p>
+
+    <!-- Post list -->
+    <ol class="post-list">
+      {allPosts.map((post, i) => (
+        <li
+          class="post-item"
+          data-category={categories.find((c) => c.label === post.category)?.slug ?? ""}
+        >
+          <a href={post.href} class="post-link">
+            <div class="post-index">{String(i + 1).padStart(2, "0")}</div>
+            <div class="post-body">
+              <div class="post-meta">
+                <span class="post-category">{post.category}</span>
+                <span class="post-date">{post.date}</span>
+              </div>
+              <h2 class="post-title">{post.title}</h2>
+              {post.excerpt && <p class="post-excerpt">{post.excerpt}</p>}
+            </div>
+            <span class="post-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".cat-btn");
+  const items   = document.querySelectorAll<HTMLLIElement>(".post-item");
+  const noRes   = document.getElementById("no-results")!;
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cat = btn.dataset.cat!;
+      let visible = 0;
+
+      items.forEach((item) => {
+        const match = cat === "all" || item.dataset.category === cat;
+        item.classList.toggle("hidden", !match);
+        if (match) visible++;
+      });
+
+      noRes.classList.toggle("visible", visible === 0);
+    });
+  });
+</script>
+
+<style>
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Hero ── */
+  .blog-hero-wrap {
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(ellipse 55% 80% at 90% 50%, var(--accent-light) 0%, transparent 68%), var(--bg);
+  }
+
+  .blog-hero {
+    padding: 5rem 0 4rem;
+    max-width: 720px;
+  }
+
+  .blog-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.07;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .blog-lead {
+    font-size: 0.975rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  /* ── Category nav ── */
+  .category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 2.5rem 0 0;
+    border-top: none;
+  }
+
+  .cat-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.775rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+
+  .cat-btn:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+  }
+
+  .cat-btn.active {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--bg);
+  }
+
+  .cat-count {
+    font-size: 0.68rem;
+    font-weight: 400;
+    opacity: 0.65;
+  }
+
+  .cat-btn.active .cat-count {
+    opacity: 0.75;
+  }
+
+  /* ── No results ── */
+  .no-results {
+    display: none;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 3rem 0 2rem;
+  }
+
+  .no-results.visible {
+    display: block;
+  }
+
+  /* ── Post list ── */
+  .post-list {
+    list-style: none;
+    padding-top: 1.5rem;
+    padding-bottom: 6rem;
+  }
+
+  .post-item {
+    border-top: 1px solid var(--border);
+    transition: opacity 0.18s;
+  }
+
+  .post-item:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-item.hidden {
+    display: none;
+  }
+
+  .post-link {
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    padding: 2.25rem 0;
+    transition: background 0.15s;
+  }
+
+  .post-link:hover .post-title {
+    color: var(--accent);
+  }
+
+  .post-link:hover .post-arrow {
+    transform: translateX(4px);
+    color: var(--accent);
+  }
+
+  .post-index {
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    padding-top: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .post-body {
+    min-width: 0;
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 0.6rem;
+  }
+
+  .post-category {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .post-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .post-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    transition: color 0.2s;
+  }
+
+  .post-excerpt {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+  }
+
+  .post-arrow {
+    font-size: 1rem;
+    color: var(--text-muted);
+    padding-top: 0.35rem;
+    flex-shrink: 0;
+    transition: transform 0.2s, color 0.2s;
+    display: block;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .post-link {
+      grid-template-columns: 2rem 1fr;
+    }
+
+    .post-arrow {
+      display: none;
+    }
+
+    .post-title {
+      font-size: 1.15rem;
+    }
+  }
+</style>

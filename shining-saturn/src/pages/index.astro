@@ -1,0 +1,658 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pillars = [
+  {
+    number: "01",
+    title: "Science",
+    description:
+      "Rigorous thinking applied to complex problems. From graph theory to cancer biology — characterizing tumors and uncovering therapeutic strategies through AI-driven insights.",
+    href: "/science",
+  },
+  {
+    number: "02",
+    title: "Biohacking",
+    description:
+      "Optimizing the human system with precision. Sleep, nutrition, recovery, and emerging interventions at the frontier.",
+    href: "/biohacking",
+  },
+  {
+    number: "03",
+    title: "Athleticism",
+    description:
+      "Performance as a laboratory. Training, competition, and the pursuit of physical excellence inform everything else.",
+    href: "/athleticism",
+  },
+];
+
+const featured = [
+  {
+    category: "Science & Tech",
+    title: "Bulk RNA-seq analysis with DESeq2",
+    date: "March 2025",
+    href: "/blog/bulk-rna-seq-analysis",
+  },
+  {
+    category: "Biohacking",
+    title: "What is HBOT and how does oxygen affect the body?",
+    date: "June 2025",
+    href: "/blog/What-is-HBOT",
+  },
+  {
+    category: "Biohacking",
+    title: "No sight, no sound, no gravity: Inside the world of sensory deprivation",
+    date: "June 2025",
+    href: "/blog/Sensory-deprivation",
+  },
+];
+---
+
+<Layout>
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <h1 class="hero-heading">
+            Science.<br />
+            Biohacking.<br />
+            Athleticism.
+          </h1>
+          <p class="hero-sub">
+            Exploring performance and longevity at the intersection of rigorous
+            science and lived experience.
+          </p>
+        </div>
+        <div class="hero-photo-wrap">
+          <img
+            src="/assets/images/profile_pic.JPG"
+            alt="Hugo Chenel"
+            class="hero-photo"
+          />
+        </div>
+      </div>
+
+      <div class="hero-id">
+        <div class="hero-id-top">
+          <p class="hero-name">Hugo Chenel</p>
+          <a href="/about" class="hero-cta">About me &rarr;</a>
+        </div>
+        <div class="hero-roles">
+          <div class="hero-role">
+            <span class="hero-role-title">Scientist</span>
+            <span class="hero-role-desc">PhD candidate in Bioinformatics</span>
+          </div>
+          <div class="hero-role">
+            <span class="hero-role-title">Biohacker</span>
+            <span class="hero-role-desc">Pace of aging 0.82</span>
+          </div>
+          <div class="hero-role">
+            <span class="hero-role-title">Athlete</span>
+            <span class="hero-role-desc">Hyrox Open Solo sub-1h08 · CrossFit Level 8</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <!-- Linktree -->
+        <a href="https://linktr.ee/HugoChenel" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.026 12.002v-1.27h2.183V9.463h-2.183V8.001h-2.05v1.462H8.792v1.269h2.184v1.27l-3.39 3.39 1.45 1.45 2.964-2.964 2.964 2.964 1.45-1.45-3.388-3.388zM12.001 3.502C7.033 3.502 3 7.535 3 12.503s4.033 9.001 9.001 9.001 9.001-4.033 9.001-9.001-4.033-9.001-9.001-9.001z"/>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/hugo-chenel-8497681ba/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ── Intro ── -->
+  <section class="intro">
+    <div class="container intro-inner">
+      <p class="intro-text">
+        I study human performance from first principles — combining scientific
+        literature, systematic self-experimentation, and athletic
+        competition to extract what actually works.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Pillars ── -->
+  <section class="pillars">
+    <div class="container">
+      <div class="pillars-grid">
+        {
+          pillars.map((p) => (
+            <a href={p.href} class="pillar-card">
+              <span class="pillar-number">{p.number}</span>
+              <h2 class="pillar-title">{p.title}</h2>
+              <p class="pillar-desc">{p.description}</p>
+              <span class="pillar-link">Explore &rarr;</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Featured Writing ── -->
+  <section class="writing">
+    <div class="container">
+      <div class="writing-header">
+        <h2 class="section-title">Featured Writing</h2>
+        <a href="/blog" class="view-all">All posts &rarr;</a>
+      </div>
+      <ul class="writing-list">
+        {
+          featured.map((post) => (
+            <li class="writing-item">
+              <a href={post.href} class="writing-link">
+                <div class="writing-meta">
+                  <span class="writing-category">{post.category}</span>
+                  <span class="writing-date">{post.date}</span>
+                </div>
+                <h3 class="writing-title">{post.title}</h3>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Crypto support ── -->
+  <section class="crypto-section">
+    <div class="container crypto-inner">
+      <div class="crypto-text">
+        <p class="crypto-label">Support this work</p>
+        <p class="crypto-sub">If you find value in what I share — science, performance, longevity — you can contribute directly via Bitcoin or crypto.</p>
+      </div>
+      <a href="https://www.coinbase.com/" class="crypto-btn" target="_blank" rel="noopener noreferrer">
+        <svg class="crypto-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.546zM16.7 11.3c.24-1.6-.974-2.458-2.63-3.03l.537-2.155-1.313-.327-.523 2.098c-.345-.086-.7-.167-1.052-.247l.527-2.112-1.312-.327-.537 2.154c-.285-.065-.567-.13-.84-.197l.001-.007-1.812-.452-.35 1.402s.974.223.953.237c.532.132.628.484.612.763l-1.47 5.897c-.111.277-.394.692-.103.692l-.953-.238-.65 1.504 1.71.426.937.237-.543 2.176 1.311.326.538-2.157c.359.097.707.187 1.047.271l-.535 2.146 1.312.326.543-2.173c2.24.424 3.924.252 4.63-1.773.573-1.636-.028-2.578-1.209-3.193.862-.2 1.51-.77 1.682-1.943zm-3.01 4.22c-.407 1.635-3.164.75-4.056.529l.724-2.9c.892.222 3.752.662 3.332 2.371zm.407-4.24c-.373 1.49-2.674.733-3.42.547l.655-2.628c.748.186 3.152.534 2.765 2.081z"/>
+        </svg>
+        Contribute via Bitcoin &amp; crypto
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ── Hero entrance animation ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 9rem 0 7rem;
+    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(ellipse 60% 70% at 18% 55%, var(--accent-light) 0%, transparent 72%),
+      var(--bg);
+    overflow: hidden;
+  }
+
+  .hero-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 0;
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-photo-wrap {
+    flex-shrink: 0;
+    width: 280px;
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  }
+
+  /* Feathered edges */
+  .hero-photo-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      linear-gradient(to bottom, var(--bg) 0%, transparent 20%, transparent 80%, var(--bg) 100%),
+      linear-gradient(to right,  var(--bg) 0%, transparent 15%, transparent 85%, var(--bg) 100%);
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+    transform: scale(2.4);
+    transform-origin: center 65%;
+    filter: grayscale(20%);
+    transition: filter 0.25s ease;
+  }
+
+  :global(html.dark) .hero-photo {
+    filter: grayscale(30%) brightness(0.78) contrast(1.05);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+  }
+
+  .hero-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 10vw, 8.5rem);
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 3rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 460px;
+    line-height: 1.78;
+    margin-bottom: 0;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    font-size: 0.825rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text);
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .hero-cta:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ── Intro ── */
+  .intro {
+    padding: var(--section-gap) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .intro-inner {
+    max-width: 680px;
+  }
+
+  .intro-text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  /* ── Pillars ── */
+  .pillars {
+    padding: var(--section-gap) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .pillar-card {
+    background: var(--bg);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.25s;
+  }
+
+  .pillar-card:hover {
+    background: var(--accent-light);
+  }
+
+  .pillar-number {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .pillar-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .pillar-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .pillar-link {
+    font-size: 0.775rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 0.5rem;
+  }
+
+  /* ── Writing ── */
+  .writing {
+    padding: var(--section-gap) 0;
+  }
+
+  .writing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .view-all {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .view-all:hover {
+    color: var(--text);
+  }
+
+  .writing-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .writing-item {
+    border-top: 1px solid var(--border);
+  }
+
+  .writing-item:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .writing-link {
+    display: block;
+    padding: 2rem 0;
+    transition: opacity 0.2s;
+  }
+
+  .writing-link:hover {
+    opacity: 0.65;
+  }
+
+  .writing-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .writing-category {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .writing-date {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+
+  .writing-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.35;
+  }
+
+  /* ── Hero identity block ── */
+  .hero-id {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+
+  .hero-id-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 1.75rem;
+  }
+
+  .hero-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .hero-roles {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-role {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0 2rem;
+    align-items: baseline;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .hero-role-title {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+
+  .hero-role-desc {
+    font-size: 0.975rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* ── Crypto section ── */
+  .crypto-section {
+    border-top: 1px solid var(--border);
+    padding: 4rem 0;
+  }
+
+  .crypto-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .crypto-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 480px;
+  }
+
+  .crypto-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .crypto-sub {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .crypto-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1.5rem;
+    background: #f7931a;
+    color: #fff;
+    font-size: 0.825rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+
+  .crypto-btn:hover {
+    opacity: 0.85;
+  }
+
+  .crypto-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .crypto-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .crypto-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* ── Social icons ── */
+  .social-links {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-top: 1.75rem;
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+  }
+
+  .social-link {
+    color: var(--text-muted);
+    transition: color 0.2s;
+    line-height: 0;
+  }
+
+  .social-link:hover {
+    color: var(--accent);
+  }
+
+  .social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+    }
+
+    .hero-layout {
+      flex-direction: column-reverse;
+      gap: 2.5rem;
+    }
+
+    .hero-photo-wrap {
+      width: 150px;
+      height: 195px;
+    }
+
+    .hero-role {
+      grid-template-columns: 90px 1fr;
+      gap: 0 1.25rem;
+    }
+
+    .hero-id-top {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pillar-card {
+      padding: 2.5rem 1.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    .hero-photo-wrap,
+    .hero-id,
+    .social-links {
+      animation: none;
+    }
+  }
+</style>

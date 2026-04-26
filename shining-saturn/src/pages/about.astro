@@ -1,0 +1,628 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const roles = ["PhD Candidate in STEM", "Hybrid Athlete", "Biohacker"];
+
+const currently = [
+  { label: "PhD",      value: "Machine learning for genomics · CRCT, Toulouse" },
+  { label: "Engineer", value: "Evotec — multi-omics & clinical data modeling" },
+  { label: "Based in", value: "Toulouse, France" },
+];
+
+const highlightRows = [
+  {
+    category: "Biological age",
+    items: [
+      { value: "0.8",    label: "Pace of aging" },
+      { value: "—",      label: "HRV & RHR" },
+      { value: "Top 1%", label: "Biomarkers for age" },
+    ],
+  },
+  {
+    category: "Blood markers",
+    items: [
+      { value: "—", label: "ApoB" },
+      { value: "—", label: "HbA1c" },
+      { value: "—", label: "hs-CRP" },
+    ],
+  },
+  {
+    category: "Performance",
+    items: [
+      { value: "—",         label: "VO2max" },
+      { value: "72 kg",     label: "Grip strength" },
+      { value: "850 ng/dL", label: "Testosterone" },
+    ],
+  },
+];
+
+const links = [
+  { label: "Google Scholar",       href: "https://scholar.google.com/citations?user=ENlSzNUAAAAJ&hl=fr&oi=ao" },
+  { label: "PhD Thesis — theses.fr", href: "https://theses.fr/s385051" },
+  { label: "Strava",               href: "https://www.strava.com/athletes/125862142" },
+  { label: "CrossFit Games",       href: "https://games.crossfit.com/athlete/2736016" },
+  { label: "Hyrox results",        href: "https://www.hyresult.com/athlete/hugo-chenel?tab=races" },
+];
+
+const pages = [
+  { label: "Science",      href: "/science",     desc: "Research, publications and academic background" },
+  { label: "Biohacking",   href: "/biohacking",  desc: "Health optimisation and longevity protocol" },
+  { label: "Athleticism",  href: "/athleticism", desc: "Training, competition results and personal records" },
+];
+---
+
+<Layout title="About — Hugo Chenel" description="PhD candidate in Machine learning for genomics, hybrid athlete and biohacker based in Toulouse.">
+
+  <!-- Hero -->
+  <div class="about-hero-wrap">
+    <div class="container">
+      <div class="about-hero">
+        <p class="about-eyebrow">About</p>
+        <h1 class="about-name">Hugo Chenel</h1>
+        <div class="role-tags">
+          {roles.map((r) => <span class="role-tag">{r}</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Main two-column layout -->
+    <div class="about-grid">
+
+      <!-- Left: bio -->
+      <div class="bio-col">
+        <p class="bio-text">
+          I'm a PhD candidate at the <a href="https://www.crct-inserm.fr/en/" target="_blank" rel="noopener" class="text-link">Cancer Research Center of Toulouse (CRCT)</a> and research engineer at <a href="https://www.evotec.com/" target="_blank" rel="noopener" class="text-link">Evotec</a>, working on computational models of tumor progression based on multi-omics and clinical data.
+        </p>
+        <p class="bio-text">
+          Outside of the lab, I train as a hybrid athlete — competing in Hyrox, CrossFit and road races — and document everything I do to optimize health, performance and longevity.
+        </p>
+        <p class="bio-text">
+          This site is a transparent record of everything I work on: the research, the training and the self-experimentation. The rest is on the other pages.
+        </p>
+
+        <!-- Page nav -->
+        <div class="page-nav">
+          {pages.map((p) => (
+            <a href={p.href} class="page-nav-item">
+              <span class="page-nav-label">{p.label} →</span>
+              <span class="page-nav-desc">{p.desc}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: cards -->
+      <aside class="aside-col">
+        <!-- Currently -->
+        <div class="aside-card">
+          <h2 class="aside-heading">Currently</h2>
+          <dl class="currently-list">
+            {currently.map((c) => (
+              <>
+                <dt class="curr-label">{c.label}</dt>
+                <dd class="curr-value">{c.value}</dd>
+              </>
+            ))}
+          </dl>
+        </div>
+
+        <!-- Highlights -->
+        <div class="aside-card aside-card--highlights">
+          <h2 class="aside-heading">Highlights</h2>
+
+          <div class="hl-section">
+            <p class="hl-category">Biological age</p>
+            <div class="hl-row">
+              <div class="hl-cell"><span class="hl-val">0.8</span><span class="hl-lbl">Pace of aging</span></div>
+              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">HRV &amp; RHR</span></div>
+              <div class="hl-cell"><span class="hl-val">Top 1%</span><span class="hl-lbl">Biomarkers for age</span></div>
+            </div>
+          </div>
+
+          <div class="hl-section">
+            <p class="hl-category">Blood markers</p>
+            <div class="hl-row">
+              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">ApoB</span></div>
+              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">HbA1c</span></div>
+              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">hs-CRP</span></div>
+            </div>
+          </div>
+
+          <div class="hl-section hl-section--last">
+            <p class="hl-category">Performance</p>
+            <div class="hl-row">
+              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">VO2max</span></div>
+              <div class="hl-cell"><span class="hl-val">72 kg</span><span class="hl-lbl">Grip strength</span></div>
+              <div class="hl-cell"><span class="hl-val">850 ng/dL</span><span class="hl-lbl">Testosterone</span></div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+    </div>
+
+    <!-- Links row -->
+    <section class="links-section">
+      <h2 class="links-heading">Links</h2>
+      <div class="links-row">
+        {links.map((link) => (
+          <a href={link.href} class="link-card" target="_blank" rel="noopener noreferrer">
+            <span class="link-label">{link.label}</span>
+            <span class="link-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-wrap">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <p class="contact-eyebrow">Contact</p>
+          <h2 class="contact-heading">Get in touch</h2>
+          <p class="contact-sub">Whether it's about research, training, collaboration or just a question — feel free to reach out.</p>
+        </div>
+        <form
+          class="contact-form"
+          action="https://formspree.io/hugo1chenel@gmail.com"
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="contact-name">Name</label>
+              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="contact-email">Email</label>
+              <input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea class="form-textarea" id="contact-message" name="message" placeholder="Your message…" rows="5" required></textarea>
+          </div>
+          <button class="form-submit" type="submit">
+            Send message <span class="submit-arrow">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Hero ── */
+  .about-hero-wrap {
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(ellipse 50% 90% at 95% 50%, var(--accent-light) 0%, transparent 65%), var(--bg);
+  }
+
+  .about-hero {
+    padding: 5.5rem 0 4.5rem;
+  }
+
+  .about-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .about-name {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.0;
+    color: var(--text);
+    letter-spacing: -0.015em;
+    margin-bottom: 1.75rem;
+  }
+
+  .role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .role-tag {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.85rem;
+    border-radius: var(--radius);
+  }
+
+  /* ── Main grid ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 5rem;
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  /* ── Bio ── */
+  .bio-text {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  .bio-text:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .text-link {
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .text-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .page-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .page-nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: padding-left 0.2s;
+  }
+
+  .page-nav-item:hover {
+    padding-left: 0.5rem;
+  }
+
+  .page-nav-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .page-nav-item:hover .page-nav-label {
+    color: var(--accent);
+  }
+
+  .page-nav-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  /* ── Aside ── */
+  .aside-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .aside-card {
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+  }
+
+  .aside-heading {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Currently */
+  .currently-list {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 0.6rem 1rem;
+    align-items: baseline;
+  }
+
+  .curr-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 0.1rem;
+  }
+
+  .curr-value {
+    font-size: 0.825rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  /* Highlights */
+  .aside-card--highlights {
+    padding-bottom: 0;
+  }
+
+  .hl-section {
+    margin: 0 -1.75rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .hl-section--last {
+    border-bottom: none;
+  }
+
+  .hl-category {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.4rem 1.25rem;
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hl-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .hl-cell {
+    background: var(--bg);
+    padding: 0.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .hl-val {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .hl-lbl {
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+
+  /* ── Links section ── */
+  .links-section {
+    padding: 4rem 0 6rem;
+  }
+
+  .links-heading {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .link-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid var(--border);
+    font-size: 0.825rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .link-card:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  .link-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+  }
+
+  .link-card:hover .link-arrow {
+    transform: translateX(3px);
+    color: var(--accent);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 840px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .aside-col {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .aside-card {
+      flex: 1 1 280px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .aside-col {
+      flex-direction: column;
+    }
+  }
+
+  /* ── Contact ── */
+  .contact-wrap {
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
+    padding: 6rem 0 7rem;
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .contact-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-sub {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .form-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .form-input,
+  .form-textarea {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+    width: 100%;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-submit {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: opacity 0.2s;
+  }
+
+  .form-submit:hover {
+    opacity: 0.85;
+  }
+
+  .submit-arrow {
+    transition: transform 0.2s;
+  }
+
+  .form-submit:hover .submit-arrow {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 840px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

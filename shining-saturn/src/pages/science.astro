@@ -1,0 +1,1971 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import TopicGrid from "../components/TopicGrid.astro";
+
+const topics = [
+  {
+    title: "Multi-omics integration",
+    description:
+      "Combining transcriptomics, proteomics and clinical data to better explain cancer mechanisms, with a focus on Chronic Lymphocytic Leukaemia.",
+  },
+  {
+    title: "Gene regulatory networks",
+    description:
+      "Multilayer network inference — from time-course RNA-seq data to dynamical models of cellular interactions and tumour microenvironment crosstalk.",
+  },
+  {
+    title: "Digital Twins for cancer",
+    description:
+      "Building in-silico patient cohorts for virtual clinical trials and drug screening, with a personalized and predictive approach to oncology.",
+  },
+  {
+    title: "Computational tutorials",
+    description:
+      "Practical guides on bulk RNA-seq with DESeq2 and single-cell analysis with Seurat and Scanpy — reproducible and annotated pipelines.",
+  },
+];
+
+const publications = [
+  {
+    year: "2026",
+    title:
+      "Multilayer network approaches to omics data integration in Digital Twins for cancer research",
+    href: "https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2026.1776941/abstract",
+    label: "Preprint",
+    audio: "/assets/audio/DT_review.wav",
+  },
+  {
+    year: "2026",
+    title:
+      "Data driven network inference and longitudinal transcriptomics unveil dynamic regulation in Chronic Lymphocytic Leukaemia models",
+    href: "https://www.nature.com/articles/s41540-025-00645-4",
+    label: "Paper",
+    audio: "/assets/audio/CLL_net_paper.wav",
+  },
+  {
+    year: "2023",
+    title:
+      "Dissecting Cellular Phenotypes in the Tumour Microenvironment through Gene Regulatory Networks: Inference, Analysis and Dynamical Modelling",
+    href: "https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf",
+    label: "Book chapter",
+    audio: null,
+  },
+];
+
+const tutorials = [
+  {
+    category: "Bulk basics",
+    title: "Bulk RNA-seq analysis with DESeq2",
+    href: "/blog/bulk-rna-seq-analysis",
+    date: "March 2025",
+  },
+  {
+    category: "Single cell series",
+    title: "Preprocessing scRNA-seq data with Seurat",
+    href: "/blog/preprocessing-scrna-seq-data-with-Seurat",
+    date: "November 2024",
+  },
+  {
+    category: "Single cell series",
+    title: "Preprocessing scRNA-seq data with Scanpy",
+    href: "/blog/preprocessing-scrna-seq-data-with-Scanpy",
+    date: "June 2025",
+  },
+];
+
+const conferences = {
+  talks: [    
+    {
+      title: "Temporal dynamics of cellular interactions: Insights from gene regulatory network analysis",
+      event: "SSM15",
+      location: "Montreal, Canada",
+      date: "05 July – 11 July 2025",
+      award: null,
+      href: "https://summerschoolonmedicines7.wordpress.com/",
+    },
+    {
+      title: "Time series analysis of cellular interactions through gene regulatory network inference",
+      event: "Computational Systems Biology of Cancer 7th ed., Institut Curie",
+      location: "Paris, France",
+      date: "30 September – 04 October 2024",
+      award: "Best oral presentation",
+      href: "https://training.institut-curie.org/courses/sysbiocancer2024",
+    },
+    {
+      title: "Deciphering cellular interactions through gene regulatory network inference",
+      event: "EMBO Workshop — Computational models of life",
+      location: "Sant Feliu de Guíxols, Spain",
+      date: "26 November – 01 December 2023",
+      award: null,
+      href: "https://meetings.embo.org/event/23-comp-models-life",
+    },
+  ],
+  posters: [
+    {
+      title: "From Cells to Populations: A Variational Autoencoder Approach to Pseudo-Bulk Alignment",
+      event: "The 4th International Conference on Systems Medicine, Artificial Intelligence & Drug Repurposing (RExPO25)",
+      location: "Barcelona, Spain",
+      date: "24 September – 26 September 2025",
+      award: null,
+      href: "https://repo4.eu/rexpo25/",
+    },
+    {
+      title: "Temporal dynamics of cellular interactions: Insights from gene regulatory network analysis",
+      event: "ISMB/ECCB 2025",
+      location: "Liverpool, UK",
+      date: "20 July – 24 July 2025",
+      href: "https://www.iscb.org/ismbeccb2025/home",
+    },
+    {
+      title: "Temporal dynamics of cellular interactions: Insights from gene regulatory network analysis",
+      event: "SSM15",
+      location: "Montreal, Canada",
+      date: "05 July – 11 July 2025",
+      award: null,
+      href: "https://summerschoolonmedicines7.wordpress.com/",
+    },
+    {
+      title: "Integrating topological data analysis with time series gene expression in cellular systems",
+      event: "NetSci",
+      location: "Maastricht, Netherlands",
+      date: "2 June – 6 June 2025",
+      href: "https://netsci2025.github.io/",
+    },
+    {
+      title: "Integrating topological data analysis with time series gene expression in cellular systems",
+      event: "Qlife Spring School, ENS",
+      location: "Paris, France",
+      date: "31 March – 4 April 2025",
+      href: "https://www.edu.bio.ens.psl.eu/spip.php?article291&lang=fr",
+    },
+    {
+      title: "Integrating topological data analysis with time series gene expression in cellular systems",
+      event: "Toulouse Onco Week (TOW)",
+      location: "Toulouse, France",
+      date: "2 February – 7 February 2025",
+      href: "https://www.toulouse-onco-week.org/index.php?langue=en&acces=&idUser=&emailUser=",
+    },
+    {
+      title: "Time series analysis of cellular interactions through gene regulatory network inference",
+      event: "20th Annual Meeting, Canceropole GSO",
+      location: "Perpignan, France",
+      date: "20 November – 22 November 2024",
+      href: "https://kgso.fr/events/20th-annual-meeting-perpignan-2024",
+    },
+    {
+      title: "Time series analysis of cellular interactions through gene regulatory network inference",
+      event: "Computational Systems Biology of Cancer 7th ed., Institut Curie",
+      location: "Paris, France",
+      date: "30 September – 04 October 2024",
+      href: "https://training.institut-curie.org/courses/sysbiocancer2024",
+    },
+    {
+      title: "Time series analysis of cellular interactions through gene regulatory network inference",
+      event: "JOBIM",
+      location: "Toulouse, France",
+      date: "25 June – 28 June 2024",
+      href: "https://jobim2024.sciencesconf.org/",
+    },
+    {
+      title: "Deciphering cellular interactions through gene regulatory network inference",
+      event: "EMBO Workshop — Computational models of life",
+      location: "Sant Feliu de Guíxols, Spain",
+      date: "26 November – 01 December 2023",
+      href: "https://meetings.embo.org/event/23-comp-models-life",
+    },
+    {
+      title: "Dissecting cellular communication through gene regulatory network inference",
+      event: "19th Annual Meeting, Canceropole GSO",
+      location: "Arcachon, France",
+      date: "22 November – 24 November 2023",
+      href: "https://kgso.fr/events/19th-annual-meeting-arcachon-2023",
+    },
+    {
+      title: "Dissecting cellular communication through gene regulatory network inference",
+      event: "1st Young Scientist Cancer Congress (YS2C)",
+      location: "Toulouse, France",
+      date: "October 5th 2023",
+      href: "https://www.crct-inserm.fr/en/ys2c_gso/",
+    },
+    {
+      title: "Dissecting cellular communication through gene regulatory network inference",
+      event: "ISMB/ECCB 2023",
+      location: "Lyon, France",
+      date: "23 July – 27 July 2023",
+      href: "https://www.iscb.org/ismbeccb2023",
+    },
+  ],
+};
+
+const awards = [
+  {
+    date: "30 September – 04 October 2024",
+    event: "Computational Systems Biology of Cancer 7th ed., Institut Curie",
+    location: "Paris, France",
+    prize: "Best oral presentation",
+    href: "https://training.institut-curie.org/courses/sysbiocancer2024",
+  },
+];
+
+const experience = [
+  {
+    title: "PhD Student (CIFRE)",
+    org: "Toulouse Cancer Research Center (CRCT)",
+    orgHref: "https://www.crct-inserm.fr/en/",
+    logo: "/assets/images/science/crct.png",
+    location: "Toulouse, France",
+    period: "2023 – Present",
+    type: "academia",
+    description: "Thesis: Machine learning models of cancer dynamics based on transcriptomics data. Research conducted at UMR1037 – CRCT under co-supervision of Dr. Vera Pancaldi and Dr. Andrei Zinovyev.",
+  },
+  {
+    title: "Research Engineer",
+    org: "Evotec",
+    orgHref: "https://www.evotec.com/",
+    logo: "/assets/images/science/evotec.png",
+    location: "Toulouse, France",
+    period: "2023 – Present",
+    type: "industry",
+    description: "While conducting a PhD at CRCT, employed as a research associate in the In Silico R&D Data Science department. Evotec funded the PhD research.",
+  },
+  {
+    title: "Computational Biology Engineer",
+    org: "Toulouse Cancer Research Center (CRCT)",
+    orgHref: "https://www.crct-inserm.fr/en/",
+    logo: "/assets/images/science/crct.png",
+    location: "Toulouse, France",
+    period: "2022 – 2023",
+    type: "academia",
+    description: "Built and applied gene regulatory network inference tools to time-course RNA-seq data in the tumor microenvironment.",
+  },
+  {
+    title: "Data Scientist",
+    org: "Vaiomer",
+    orgHref: "https://www.vaiomer.com/",
+    logo: "/assets/images/science/vaiomer.png",
+    location: "Toulouse, France",
+    period: "2021",
+    type: "industry",
+    description: "Research and implementation of new analysis strategies for targeted metagenomic data on the 16S rRNA gene, particularly for projects with specific data characteristics (over-representation of zeros) or a specific experimental design, such as paired samples or time series.",
+  },
+  {
+    title: "Mathematics Teacher",
+    org: "Acadomia",
+    orgHref: "https://www.acadomia.fr/",
+    logo: "/assets/images/science/acadomia.jpg",
+    location: "Toulouse, France",
+    period: "2020 – 2021",
+    type: "industry",
+    description: "Taught mathematics (algebra, calculus, geometry) to high school students in the scientific stream.",
+  },
+];
+
+const education = [
+  {
+    degree: "PhD candidate in Computational Oncology",
+    institution: "University of Toulouse",
+    logo: "/assets/images/science/universite_toulouse.png",
+    year: "2026",
+    courses: [
+      "Thesis: Machine learning models of cancer dynamics based on transcriptomics data",
+      "Co-supervisors: Dr. Vera Pancaldi and Dr. Andrei Zinovyev",
+      "Committee: Dr. Manlio De Domenico and Dr. Manuel Diaz-Munoz",
+      "CIFRE funding",
+      "CARe labeling",
+      "Leader of COMET (Student Scientific Committee from Toulouse Cancer Research Center)",
+      "Representative of doctoral students, Doctoral school BSB (Biology, Health and Biotechnology)",
+    ],
+  },
+  {
+    degree: "MSc in Bioinformatics",
+    institution: "Paul Sabatier University",
+    logo: "/assets/images/science/Paul_sabatier.jpg",
+    year: "2022",
+    courses: [
+      "Graph processing",
+      "Data mining",
+      "Deep learning — Neural networks",
+      "Machine learning",
+      "Post-genomic data processing (NGS)",
+      "Integration of heterogeneous data",
+      "In silico annotation of genomic sequences — hidden Markov model",
+      "Systems biology",
+      "Multivariate data analysis",
+      "Advanced linear modeling",
+    ],
+  },
+  {
+    degree: "The Institute for Higher National Defence Studies (126th IHEDN-Youth cycle)",
+    institution: "ISAE Supaero",
+    logo: "/assets/images/science/IHEDN.png",
+    year: "2021",
+    courses: [
+      "Geopolitics",
+      "International relations",
+      "Multilateralism",
+      "Defence and security (cybersecurity and space defence)",
+      "Economic intelligence",
+    ],
+  },
+  {
+    degree: "BSc in Biochemistry, Molecular Biology and Microbiology",
+    institution: "Paul Sabatier University",
+    logo: "/assets/images/science/Paul_sabatier.jpg",
+    year: "2020",
+    courses: [
+      "Microbial cell structure and function, microbial genetics and related pathologies",
+      "Function, composition and structure of lipids, proteins and carbohydrates",
+      "Genomics and genetics, including eukaryotic and prokaryotic, and DNA repair",
+    ],
+  },
+  {
+    degree: "BSc in Mathematics",
+    institution: "Paul Sabatier University",
+    logo: "/assets/images/science/Paul_sabatier.jpg",
+    year: "2018",
+    courses: [
+      "Mathematical analysis: differentiation, integration and series",
+      "Algebra",
+      "Statistics and probability",
+    ],
+  },
+];
+
+const skills = [
+  { category: "Languages", tools: "R, Python, Bash" },
+  { category: "Bulk RNAseq", tools: "FastQC, MultiQC, Cutadapt, Trimmomatic, STAR, BWA, Bowtie, Salmon, DESeq2, edgeR" },
+  { category: "scRNAseq", tools: "Cell Ranger, Seurat, Harmony, SingleR, Monocle, Survival analysis" },
+  { category: "Exploratory analysis", tools: "PCA, t-SNE, Hierarchical clustering, Differential expression" },
+  { category: "Network inference", tools: "GENIE3, ARACNE" },
+  { category: "Network analysis", tools: "STRING, TCGA, iGraph, CINNA, Cytoscape, Gephi, WGCNA, MCODE" },
+  { category: "Functional enrichment", tools: "GSEA (MSigDB), ToppGene, Enrichr, clueGO, g:Profiler" },
+  { category: "Spatial transcriptomics", tools: "MERFISH, STARmap" },
+  { category: "Multi-omics integration", tools: "MultiAssayExperiment, MixOmics, DIABLO, OmicsIntegrator, iMOKA, IGV" },
+  { category: "Statistical tests", tools: "t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-Square, Pearson, Spearman" },
+  { category: "ML models", tools: "Regression, scikit-learn, XGBoost, LightGBM" },
+  { category: "Visualization", tools: "ggplot2, plotly, ComplexHeatmap, Cytoscape, OmicsNet" },
+];
+
+const languages = [
+  { name: "French", level: "Native · C2", note: "Certificat Voltaire — 802/1000 Niveau Affaires" },
+  { name: "English", level: "Professional · B2", note: "TOEIC — 895/990" },
+  { name: "Spanish", level: "Basic · A2", note: "" },
+];
+---
+
+<Layout
+  title="Science — Hugo Chenel"
+  description="Computational oncology, multi-omics integration and gene regulatory networks."
+>
+
+  <!-- ── Page hero ── -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <p class="eyebrow">Science</p>
+          <h1 class="page-title">Cancer research<br />&amp; Machine learning</h1>
+          <p class="page-lead">PhD research at the intersection of AI/ML, multi-omics data integration and gene regulatory networks, applied to cancer biology.<br><br>
+          Currently, I’m working as a research engineer at <a href="https://www.evotec.com/" target="_blank" rel="noopener" class="lead-link">Evotec</a> while pursuing my PhD at the <a href="https://www.crct-inserm.fr/en/" target="_blank" rel="noopener" class="lead-link">Cancer Research Center of Toulouse (CRCT)</a>. My research is supported by Evotec, allowing me to explore innovative approaches in cancer research and drug discovery.</p>
+        </div>
+        <aside class="hero-right">
+          <p class="hero-links-label">Profiles</p>
+          <div class="hero-links">
+            <a href="https://scholar.google.com/citations?user=ENlSzNUAAAAJ&hl=fr&oi=ao" target="_blank" rel="noopener" class="hero-ext-link">
+              <span class="hero-ext-label">Google Scholar</span>
+              <span class="hero-ext-arrow">&rarr;</span>
+            </a>
+            <a href="https://theses.fr/s385051" target="_blank" rel="noopener" class="hero-ext-link">
+              <span class="hero-ext-label">PhD Thesis</span>
+              <span class="hero-ext-arrow">&rarr;</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Research focus ── -->
+  <section class="focus-section">
+    <div class="container">
+      <div class="focus-grid">
+        <div class="focus-intro">
+          <p class="section-eyebrow">Research focus</p>
+          <p class="focus-para">My PhD research is centered on the development of computational models to decode the complexities of tumors, with a strong emphasis on multi-omics data integration and gene regulatory networks. I'm involved in the field of Digital Twins for cancer research, enabling a more personalized and predictive approach to oncology.</p>
+        </div>
+        <ul class="focus-pillars">
+          <li class="focus-pillar">
+            <span class="pillar-num">01</span>
+            <div>
+              <h3 class="pillar-title">Multi-omics integration</h3>
+              <p class="pillar-body">Combining transcriptomics, proteomics and clinical data to better explain cancer mechanisms, with a focus on Chronic Lymphocytic Leukaemia.</p>
+            </div>
+          </li>
+          <li class="focus-pillar">
+            <span class="pillar-num">02</span>
+            <div>
+              <h3 class="pillar-title">Gene regulatory networks</h3>
+              <p class="pillar-body">Single layer and multilayer network inference, from time-course RNA-seq data to dynamical models of cellular interactions.</p>
+            </div>
+          </li>
+          <li class="focus-pillar">
+            <span class="pillar-num">03</span>
+            <div>
+              <h3 class="pillar-title">Digital Twins for cancer</h3>
+              <p class="pillar-body">Building in-silico patient cohorts for virtual clinical trials and drug screening, with a personalized and predictive approach to oncology.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Publications ── -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Publications</h2>
+        <a href="https://scholar.google.com/citations?user=ENlSzNUAAAAJ&hl=fr&oi=ao" target="_blank" rel="noopener" class="section-link">Google Scholar &rarr;</a>
+      </div>
+      <ol class="pub-list" reversed>
+        {publications.map((p, i) => (
+          <li class="pub-item">
+            <div class="pub-index">{publications.length - i}</div>
+            <div class="pub-body">
+              <div class="pub-top">
+                <span class="pub-year">{p.year}</span>
+                <span class="pub-badge">{p.label}</span>
+              </div>
+              <p class="pub-title">{p.title}</p>
+              {p.audio && (
+                <audio class="pub-audio" controls>
+                  <source src={p.audio} type="audio/wav" />
+                </audio>
+              )}
+              <a href={p.href} target="_blank" rel="noopener" class="pub-link">Read {p.label} &rarr;</a>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Thesis ── -->
+  <section class="thesis-section">
+    <div class="container">
+      <h2 class="section-title">Thesis</h2>
+      <div class="thesis-card">
+        <div class="thesis-card-accent"></div>
+        <div class="thesis-card-inner">
+          <div class="thesis-meta-row">
+            <span class="thesis-eyebrow">PhD Thesis · 2026</span>
+            <div class="thesis-institution-wrap">
+              <img src="/assets/images/science/universite_toulouse.png" alt="University of Toulouse" class="thesis-logo" />
+            </div>
+          </div>
+          <h2 class="thesis-title">Machine learning models of cancer dynamics based on transcriptomics data</h2>
+          <div class="thesis-meta-details">
+            <div class="thesis-supervisors-row">
+              <span class="thesis-meta-label">Supervisors</span>
+              <span class="thesis-supervisor-names">Dr. Vera Pancaldi &amp; Dr. Andrei Zinovyev</span>
+            </div>
+            <div class="thesis-badges">
+              <span class="thesis-badge">CIFRE funding</span>
+              <span class="thesis-badge">CARe labeling</span>
+            </div>
+          </div>
+          <div class="thesis-actions">
+            <a href="https://theses.fr/s385051" target="_blank" rel="noopener" class="thesis-cta">View on theses.fr &rarr;</a>
+            <a href="/assets/images/PhD/hugo-chenel-thesis.pdf" target="_blank" rel="noopener" class="thesis-pdf">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tutorials ── -->
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section-title">Tutorials</h2>
+      <div class="tut-grid">
+        <div class="tut-group">
+          {tutorials.filter(t => t.category === "Bulk basics").map((t) => (
+            <a href={t.href} class="tut-card tut-card--wide">
+              <div class="tut-top">
+                <span class="tut-category">{t.category}</span>
+                <span class="tut-date">{t.date}</span>
+              </div>
+              <h3 class="tut-name">{t.title}</h3>
+              <span class="tut-arrow">&rarr;</span>
+            </a>
+          ))}
+        </div>
+        <div class="tut-group tut-group--below">
+          {tutorials.filter(t => t.category === "Single cell series").map((t) => (
+            <a href={t.href} class="tut-card">
+              <div class="tut-top">
+                <span class="tut-category">{t.category}</span>
+                <span class="tut-date">{t.date}</span>
+              </div>
+              <h3 class="tut-name">{t.title}</h3>
+              <span class="tut-arrow">&rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Conferences ── -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Conferences</h2>
+
+      <div class="conf-block">
+        <h3 class="conf-type-label">
+          <span class="conf-type-dot conf-type-dot--talk"></span>
+          Talks
+          <span class="conf-count">{conferences.talks.length}</span>
+        </h3>
+        <div class="conf-list-head">
+          <span>Date</span>
+          <span>Location</span>
+          <span>Event / Presentation</span>
+        </div>
+        <div class="conf-list">
+          {conferences.talks.map((c) => (
+            <div class="conf-row">
+              <span class="conf-date">{c.date}</span>
+              <span class="conf-location">{c.location}</span>
+              <div class="conf-body">
+                <p class="conf-event">
+                  <a href={c.href} target="_blank" rel="noopener" class="conf-link">{c.event}</a>
+                  {c.award && <span class="award-badge">🏆 {c.award}</span>}
+                </p>
+                <p class="conf-title">{c.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="conf-block">
+        <h3 class="conf-type-label">
+          <span class="conf-type-dot conf-type-dot--poster"></span>
+          Posters
+          <span class="conf-count">{conferences.posters.length}</span>
+        </h3>
+        <div class="conf-list-head">
+          <span>Date</span>
+          <span>Location</span>
+          <span>Event / Presentation</span>
+        </div>
+        <div class="conf-list">
+          {conferences.posters.map((c) => (
+            <div class="conf-row">
+              <span class="conf-date">{c.date}</span>
+              <span class="conf-location">{c.location}</span>
+              <div class="conf-body">
+                <p class="conf-event">
+                  <a href={c.href} target="_blank" rel="noopener" class="conf-link">{c.event}</a>
+                </p>
+                <p class="conf-title">{c.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Experience ── -->
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="exp-list">
+        {experience.map((e) => (
+          <div class:list={["exp-item", `exp-item--${e.type}`]}>
+            <div class="exp-left">
+              <div class="exp-logo-wrap">
+                <img src={e.logo} alt={e.org} class="exp-logo" />
+              </div>
+              <span class="exp-period">{e.period}</span>
+              <span class="exp-location">{e.location}</span>
+              <span class:list={["exp-type-badge", `exp-type-badge--${e.type}`]}>
+                {e.type === "academia" ? "Academia" : e.type === "industry" ? "Industry" : ""}
+              </span>
+            </div>
+            <div class="exp-right">
+              <p class="exp-role">{e.title}</p>
+              {e.orgHref
+                ? <a href={e.orgHref} target="_blank" rel="noopener" class="exp-org exp-org--link">{e.org}</a>
+                : <p class="exp-org">{e.org}</p>
+              }
+              <p class="exp-desc">{e.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Education ── -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-list">
+        {education.map((e) => (
+          <div class="edu-item">
+            <div class="edu-year-col">
+              <span class="edu-year">{e.year}</span>
+            </div>
+            <div class="edu-content">
+              <p class="edu-degree">{e.degree}</p>
+              <div class="edu-institution-row">
+                {e.logo && <img src={e.logo} alt={e.institution} class="edu-logo" />}
+                <p class="edu-institution">{e.institution}</p>
+              </div>
+              <ul class="edu-courses">
+                {e.courses.map((c) => <li>{c}</li>)}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills & Languages ── -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="bottom-stack">
+
+        <div class="skills-col">
+          <h2 class="section-title">Technical skills</h2>
+          <div class="skills-list">
+            {skills.map((s) => (
+              <div class="skill-row">
+                <span class="skill-cat">{s.category}</span>
+                <div class="skill-tags">
+                  {s.tools.split(", ").map((tool) => (
+                    <span class="skill-tag">{tool}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="lang-col">
+          <h2 class="section-title">Languages</h2>
+          <div class="lang-list">
+            {languages.map((l) => {
+              const bars = l.level.includes("Native") ? 5
+                : l.level.includes("B2") ? 4
+                : l.level.includes("B1") ? 3
+                : l.level.includes("A2") ? 2
+                : 1;
+              return (
+                <div class="lang-item">
+                  <div class="lang-header">
+                    <span class="lang-name">{l.name}</span>
+                    <span class="lang-badge">{l.level.split(" · ")[1]}</span>
+                  </div>
+                  <div class="lang-bars">
+                    {[1,2,3,4,5].map((n) => (
+                      <span class:list={["lang-bar", { "lang-bar--filled": n <= bars }]}></span>
+                    ))}
+                  </div>
+                  <span class="lang-sublabel">{l.level.split(" · ")[0]}</span>
+                  {l.note && (() => {
+                    const certName = l.note.split(" — ")[0];
+                    const rest = l.note.split(" — ")[1] ?? "";
+                    const scoreMatch = rest.match(/^([\d\/]+)\s+(.+)$/);
+                    return (
+                      <div class="lang-cert">
+                        <span class="lang-cert-name">{certName}</span>
+                        <div class="lang-cert-right">
+                          <span class="lang-cert-score">{scoreMatch ? scoreMatch[1] : rest}</span>
+                          {scoreMatch && <span class="lang-cert-divider">|</span>}
+                          {scoreMatch && <span class="lang-cert-level">{scoreMatch[2]}</span>}
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+
+<style>
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Shared ── */
+  .section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section--light {
+    background: var(--accent-light);
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2.5rem;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-head .section-title {
+    margin-bottom: 0;
+  }
+
+  .section-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .section-link:hover { color: var(--accent); }
+
+  /* ── Page hero ── */
+  .page-hero {
+    padding: 6rem 0 5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-right {
+    align-self: center;
+  }
+
+  .hero-links-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .eyebrow {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-lead {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 560px;
+  }
+
+  .lead-link {
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .lead-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .hero-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+  }
+
+  .hero-ext-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .hero-ext-link:last-child {
+    border-bottom: none;
+  }
+
+  .hero-ext-link:hover {
+    background: var(--accent-light);
+    color: var(--text);
+  }
+
+  .hero-ext-label {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  .hero-ext-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+    color: var(--accent);
+  }
+
+  .hero-ext-link:hover .hero-ext-arrow {
+    transform: translateX(3px);
+  }
+
+  /* ── Research focus ── */
+  .focus-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .focus-section--light {
+    background: var(--accent-light);
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .section-eyebrow {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .focus-para {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .focus-pillars {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .focus-pillar {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .focus-pillar:first-child { border-top: 1px solid var(--border); }
+
+  .pillar-num {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--accent);
+    font-style: italic;
+    flex-shrink: 0;
+    padding-top: 1px;
+    width: 28px;
+  }
+
+  .pillar-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+
+  .pillar-body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* ── Publications ── */
+  .pub-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+  }
+
+  .pub-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .pub-item:last-child { border-bottom: none; }
+
+  .pub-item:nth-child(even) {
+    background: rgba(0,0,0,0.015);
+  }
+
+  html.dark .pub-item:nth-child(even) {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .pub-item:hover {
+    background: var(--accent-light);
+  }
+
+  .pub-index {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1;
+    padding: 1.75rem 1rem 1.75rem 1.25rem;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    opacity: 0.65;
+  }
+
+  .pub-body {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .pub-top {
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    margin-bottom: 0.6rem;
+  }
+
+  .pub-year {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+  }
+
+  .pub-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid rgba(42,92,69,0.25);
+    padding: 0.18rem 0.55rem;
+    border-radius: 2px;
+  }
+
+  html.dark .pub-badge {
+    border-color: rgba(82,179,130,0.25);
+  }
+
+  .pub-title {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 0.85rem;
+  }
+
+  .pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s, transform 0.18s, box-shadow 0.18s;
+  }
+
+  .pub-link:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .pub-audio {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: 32px;
+    margin: 0.6rem 0;
+    accent-color: var(--accent);
+  }
+
+  /* ── Thesis ── */
+  .thesis-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .thesis-card {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .thesis-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 32px rgba(42,92,69,0.09);
+  }
+
+  .thesis-card-accent {
+    width: 5px;
+    flex-shrink: 0;
+    background: var(--accent);
+  }
+
+  .thesis-card-inner {
+    padding: 2.5rem 3rem;
+    flex: 1;
+  }
+
+  .thesis-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+  }
+
+  .thesis-eyebrow {
+    font-size: 0.925rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .thesis-institution {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  .thesis-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 0.85rem;
+  }
+
+  .thesis-institution-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .thesis-logo {
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+  }
+
+  html.dark .thesis-logo {
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+
+  .thesis-meta-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    background: var(--accent-light);
+  }
+
+  .thesis-supervisors-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .thesis-meta-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .thesis-supervisor-names {
+    font-size: 0.925rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .thesis-badges {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .thesis-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--bg);
+    border: 1px solid rgba(42,92,69,0.3);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  html.dark .thesis-badge {
+    border-color: rgba(82,179,130,0.3);
+    background: var(--bg-card);
+  }
+
+  .thesis-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .thesis-cta {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--accent);
+    padding: 0.5rem 1.25rem;
+    transition: opacity 0.2s;
+  }
+
+  .thesis-cta:hover { opacity: 0.85; }
+
+  .thesis-pdf {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1.25rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .thesis-pdf:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── Tutorials ── */
+  .tut-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .tut-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .tut-group--below {
+    margin-top: 0;
+  }
+
+  .tut-card--wide {
+    grid-column: 1 / -1;
+  }
+
+  .tut-card {
+    background: var(--bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .tut-card:hover { background: var(--bg-card); }
+
+  .tut-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tut-category {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .tut-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .tut-name {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .tut-arrow {
+    font-size: 1rem;
+    color: var(--accent);
+    align-self: flex-end;
+  }
+
+  /* ── Conferences ── */
+  .conf-block {
+    margin-bottom: 3rem;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .conf-block:last-child { margin-bottom: 0; }
+
+  .conf-type-label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.7rem 1.25rem;
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+
+  .conf-type-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .conf-type-dot--talk   { background: var(--accent); }
+  .conf-type-dot--poster { background: var(--text-muted); }
+  .conf-type-dot--award  { background: #c9a227; }
+
+  .conf-count {
+    margin-left: auto;
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0;
+    text-transform: none;
+    opacity: 0.7;
+  }
+
+  /* Table header row for conferences */
+  .conf-list-head {
+    display: grid;
+    grid-template-columns: 150px 150px 1fr;
+    gap: 0;
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border);
+  }
+
+  .conf-list-head span {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.6rem 1.25rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .conf-list-head span:last-child { border-right: none; }
+
+  .conf-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .conf-row {
+    display: grid;
+    grid-template-columns: 150px 150px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+    transition: background 0.15s;
+  }
+
+  .conf-row:last-child { border-bottom: none; }
+
+  .conf-row:nth-child(even) {
+    background: rgba(0,0,0,0.015);
+  }
+
+  html.dark .conf-row:nth-child(even) {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .conf-row:hover {
+    background: var(--accent-light);
+  }
+
+  .conf-row--award {
+    background: linear-gradient(to right, rgba(201,162,39,0.06), transparent) !important;
+    border-left: 2px solid #c9a227;
+  }
+
+  .conf-date {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    padding: 1rem 1.25rem;
+    border-right: 1px solid var(--border);
+    line-height: 1.5;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
+  .conf-body { display: flex; flex-direction: column; gap: 0.3rem; padding: 1rem 1.25rem; }
+
+  .conf-event {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .conf-location {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text);
+    padding: 1rem 1.25rem;
+    border-right: 1px solid var(--border);
+    line-height: 1.5;
+  }
+
+  .conf-title {
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .conf-link {
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .conf-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  .award-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #8a6800;
+    background: rgba(201,162,39,0.13);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  :global(html.dark) .conf-type-dot--award {
+    background: #d4a820;
+  }
+
+  :global(html.dark) .conf-row--award {
+    background: linear-gradient(to right, rgba(212,168,32,0.08), transparent) !important;
+    border-left-color: #d4a820;
+  }
+
+  :global(html.dark) .award-badge {
+    color: #d4a820;
+    background: rgba(212,168,32,0.12);
+  }
+
+  :global(html.dark) .thesis-card:hover {
+    box-shadow: 0 6px 32px rgba(82,179,130,0.08);
+  }
+
+  /* ── Experience ── */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    align-items: stretch;
+    transition: background 0.15s;
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-item:hover { background: var(--accent-light); }
+
+  /* Academia: green left accent bar */
+  .exp-item--academia {
+    border-left: 3px solid var(--accent);
+  }
+
+  /* Industry: neutral left accent bar */
+  .exp-item--industry {
+    border-left: 3px solid var(--text-muted);
+  }
+
+  .exp-item--other {
+    border-left: 3px solid var(--border);
+  }
+
+  .exp-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.75rem 1.5rem 1.75rem 1.25rem;
+    border-right: 1px solid var(--border);
+    background: rgba(0,0,0,0.015);
+  }
+
+  html.dark .exp-left {
+    background: rgba(255,255,255,0.02);
+  }
+
+  .exp-period {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1.2;
+  }
+
+  .exp-location {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .exp-type-badge {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.5rem;
+    border-radius: 2px;
+    align-self: flex-start;
+  }
+
+  .exp-type-badge--academia {
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid rgba(42,92,69,0.25);
+  }
+
+  html.dark .exp-type-badge--academia {
+    border-color: rgba(82,179,130,0.25);
+  }
+
+  .exp-type-badge--industry {
+    color: var(--text-muted);
+    background: rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+  }
+
+  html.dark .exp-type-badge--industry {
+    background: rgba(255,255,255,0.04);
+  }
+
+  .exp-logo-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    margin-bottom: 0.85rem;
+  }
+
+  .exp-logo {
+    max-height: 32px;
+    max-width: 120px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+  }
+
+  html.dark .exp-logo {
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+
+  .exp-right {
+    padding: 1.75rem 2rem;
+  }
+
+  .exp-role {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+  }
+
+  .exp-org {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.01em;
+    display: block;
+  }
+
+  .exp-org--link {
+    transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+  }
+
+  .exp-org--link:hover {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
+  .exp-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  /* ── Education ── */
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .edu-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    padding: 2.25rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .edu-item:first-child { border-top: 1px solid var(--border); }
+
+  .edu-year-col {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 3px;
+  }
+
+  .edu-year {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 0.2rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .edu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .edu-degree {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .edu-institution-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-logo {
+    height: 22px;
+    width: auto;
+    max-width: 80px;
+    object-fit: contain;
+    opacity: 0.9;
+    flex-shrink: 0;
+    mix-blend-mode: multiply;
+  }
+
+  html.dark .edu-logo {
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
+    opacity: 0.45;
+  }
+
+  .edu-institution {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+  }
+
+  .edu-courses {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-left: 0;
+    margin-top: 0.25rem;
+  }
+
+  .edu-courses li {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.55;
+    padding-left: 0.9rem;
+    position: relative;
+  }
+
+  .edu-courses li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--border);
+  }
+
+  /* ── Skills & Languages ── */
+  .bottom-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-row:first-child { border-top: 1px solid var(--border); }
+
+  .skill-cat {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-top: 3px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .skill-tag {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .lang-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .lang-item {
+    padding: 1.75rem 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .lang-item:hover {
+    border-color: var(--accent);
+  }
+
+  .lang-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .lang-name {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .lang-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+  }
+
+  .lang-bars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0.1rem;
+  }
+
+  .lang-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border);
+  }
+
+  .lang-bar--filled {
+    background: var(--accent);
+  }
+
+  .lang-sublabel {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .lang-cert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.6rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+  }
+
+  .lang-cert-name {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .lang-cert-right {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .lang-cert-score {
+    font-family: var(--font-serif);
+    font-size: 0.925rem;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .lang-cert-divider {
+    font-size: 0.7rem;
+    color: var(--border);
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .lang-cert-level {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid rgba(42,92,69,0.2);
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+  }
+
+  html.dark .lang-cert-level {
+    border-color: rgba(82,179,130,0.2);
+  }
+
+  .lang-note {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.1rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero-grid,
+    .focus-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .tut-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .conf-row {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+
+    .skill-row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .lang-list {
+      grid-template-columns: 1fr;
+    }
+
+    .edu-item {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .edu-year-col {
+      justify-content: flex-start;
+    }
+
+    .timeline {
+      padding-left: 1rem;
+    }
+
+    .timeline-item {
+      padding-left: 1.5rem;
+    }
+
+    .timeline-marker {
+      left: -1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pub-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .thesis-meta-row {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .timeline-head {
+      flex-direction: column;
+    }
+  }
+</style>

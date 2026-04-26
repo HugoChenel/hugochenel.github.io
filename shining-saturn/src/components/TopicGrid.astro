@@ -1,0 +1,69 @@
+---
+interface Topic {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  topics: Topic[];
+}
+
+const { topics } = Astro.props;
+---
+
+<section class="topics">
+  <h2 class="section-label">Focus Areas</h2>
+  <div class="topics-grid">
+    {
+      topics.map((t) => (
+        <div class="topic-card">
+          <h3 class="topic-title">{t.title}</h3>
+          <p class="topic-desc">{t.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .topics {
+    padding: 5rem 0;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 4rem;
+  }
+
+  .topic-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .topic-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .topics-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,270 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  frontmatter: {
+    title: string;
+    date: string;
+    tags?: string[];
+    excerpt?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+const dateStr = frontmatter.date
+  ? new Date(frontmatter.date).toLocaleDateString("en-GB", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : "";
+
+const tag = frontmatter.tags?.[0] ?? "";
+---
+
+<Layout title={`${frontmatter.title} — Hugo Chenel`} description={frontmatter.excerpt ?? frontmatter.title}>
+  <div class="post-container">
+    <div class="post-header">
+      <a href="/blog" class="back-link">&larr; All posts</a>
+      <div class="post-meta">
+        {tag && <span class="post-tag">{tag}</span>}
+        {dateStr && <span class="post-date">{dateStr}</span>}
+      </div>
+      <h1 class="post-title">{frontmatter.title}</h1>
+    </div>
+
+    <article class="post-body">
+      <slot />
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .post-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  .post-header {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: var(--tracking-widest, 0.13em);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--text);
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .post-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-widest, 0.13em);
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .post-date {
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-wide, 0.05em);
+    color: var(--text-muted);
+  }
+
+  .post-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 4.5vw, 3rem);
+    font-weight: 400;
+    line-height: var(--leading-display, 1.07);
+    letter-spacing: var(--tracking-display, -0.025em);
+    color: var(--text);
+  }
+
+  /* ── Prose styles ── */
+  .post-body {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text);
+    font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+  }
+
+  .post-body :global(h1) {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: var(--leading-heading, 1.22);
+    letter-spacing: var(--tracking-heading, -0.015em);
+    margin: 3.5rem 0 1.1rem;
+    color: var(--text);
+  }
+
+  .post-body :global(h2) {
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    line-height: var(--leading-heading, 1.22);
+    letter-spacing: var(--tracking-heading, -0.015em);
+    margin: 3rem 0 0.9rem;
+    color: var(--text);
+  }
+
+  .post-body :global(h3) {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: var(--leading-ui, 1.5);
+    letter-spacing: var(--tracking-wide, 0.05em);
+    text-transform: uppercase;
+    margin: 2.5rem 0 0.6rem;
+    color: var(--text);
+  }
+
+  .post-body :global(h4) {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: var(--leading-ui, 1.5);
+    margin: 2rem 0 0.5rem;
+    color: var(--text);
+  }
+
+  .post-body :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .post-body :global(a) {
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .post-body :global(a:hover) {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .post-body :global(strong) {
+    font-weight: 500;
+  }
+
+  .post-body :global(em) {
+    font-style: italic;
+  }
+
+  .post-body :global(ul),
+  .post-body :global(ol) {
+    margin: 0 0 1.25rem 1.5rem;
+  }
+
+  .post-body :global(ul) {
+    list-style: disc;
+  }
+
+  .post-body :global(ol) {
+    list-style: decimal;
+  }
+
+  .post-body :global(li) {
+    margin-bottom: 0.35rem;
+  }
+
+  .post-body :global(blockquote) {
+    border-left: 3px solid var(--border);
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+
+  .post-body :global(hr) {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  .post-body :global(img) {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 1.5rem auto;
+    display: block;
+  }
+
+  .post-body :global(pre) {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+
+  .post-body :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.15em 0.4em;
+  }
+
+  .post-body :global(pre code) {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .post-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.875rem;
+  }
+
+  .post-body :global(th),
+  .post-body :global(td) {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  .post-body :global(th) {
+    font-weight: 500;
+    background: var(--code-bg);
+  }
+
+  @media (max-width: 640px) {
+    .post-container {
+      padding: 0 1.25rem 4rem;
+    }
+
+    .post-header {
+      padding: 2.5rem 0 2rem;
+    }
+  }
+</style>

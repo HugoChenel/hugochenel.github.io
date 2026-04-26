@@ -1,0 +1,110 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Skydiving — Hugo Chenel" description="PAC — Aérodrome de Castelnau-Magnoac. Pilatus PC-6 Porter B2-H2 & ATR 72-500. Free fall.">
+  <div class="post-container">
+    <div class="post-header">
+      <a href="/blog" class="back-link">&larr; All posts</a>
+      <div class="post-meta">
+        <span class="post-tag">Adventures &amp; Extreme sports</span>
+        <span class="post-date">8 November 2024</span>
+      </div>
+      <h1 class="post-title">Skydiving</h1>
+    </div>
+
+    <article class="post-body">
+      <h2>Free fall</h2>
+      <div class="video-wrap">
+        <iframe
+          src="https://drive.google.com/file/d/1SNs__lmCfSQsDdpsxwSEUR1uu3CMrfXd/preview"
+          allow="autoplay"
+          allowfullscreen
+          title="Skydiving — free fall"
+        ></iframe>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .post-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  .post-header {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.775rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--text);
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .post-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .post-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .post-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  .post-body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  .video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>

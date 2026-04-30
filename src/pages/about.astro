@@ -5,33 +5,33 @@ const roles = ["PhD Candidate in STEM", "Hybrid Athlete", "Biohacker"];
 
 const currently = [
   { label: "PhD",      value: "Machine learning for genomics · CRCT, Toulouse" },
-  { label: "Engineer", value: "Evotec — multi-omics & clinical data modeling" },
+  { label: "Engineer", value: "Evotec · multi-omics & clinical data modeling" },
   { label: "Based in", value: "Toulouse, France" },
 ];
 
 const highlightRows = [
   {
-    category: "Biological age",
+    category: "Research",
     items: [
-      { value: "0.8",    label: "Pace of aging" },
-      { value: "—",      label: "HRV & RHR" },
-      { value: "Top 1%", label: "Biomarkers for age" },
+      { value: "PhD",    label: "ML for genomics" },
+      { value: "CRCT",   label: "Inserm, Toulouse" },
+      { value: "Evotec", label: "Research engineer" },
     ],
   },
   {
-    category: "Blood markers",
+    category: "Athletics",
     items: [
-      { value: "—", label: "ApoB" },
-      { value: "—", label: "HbA1c" },
-      { value: "—", label: "hs-CRP" },
+      { value: "sub-1h08", label: "Hyrox Open Solo" },
+      { value: "Level 8",  label: "CrossFit Open" },
+      { value: "62 ml/kg/min", label: "VO2max" },
     ],
   },
   {
-    category: "Performance",
+    category: "Biohacking",
     items: [
-      { value: "—",         label: "VO2max" },
-      { value: "72 kg",     label: "Grip strength" },
-      { value: "850 ng/dL", label: "Testosterone" },
+      { value: "0.82",    label: "Pace of aging" },
+      { value: "Top 1%",  label: "Biomarkers for age" },
+      { value: "Top ranking", label: "Rejuvenation Olympics" },
     ],
   },
 ];
@@ -57,10 +57,41 @@ const pages = [
   <div class="about-hero-wrap">
     <div class="container">
       <div class="about-hero">
-        <p class="about-eyebrow">About</p>
-        <h1 class="about-name">Hugo Chenel</h1>
-        <div class="role-tags">
-          {roles.map((r) => <span class="role-tag">{r}</span>)}
+        <div class="about-hero-left">
+          <p class="about-eyebrow">About</p>
+          <h1 class="about-name">Hugo Chenel</h1>
+          <div class="role-tags">
+            {roles.map((r) => <span class="role-tag">{r}</span>)}
+          </div>
+        </div>
+        <div class="about-hero-right">
+          <div class="aside-card aside-card--highlights">
+            <h2 class="aside-heading">Highlights</h2>
+            <div class="hl-section">
+              <p class="hl-category">Research</p>
+              <div class="hl-row">
+                <div class="hl-cell"><span class="hl-val">PhD</span><span class="hl-lbl">ML for genomics</span></div>
+                <div class="hl-cell"><span class="hl-val">CRCT</span><span class="hl-lbl">Inserm, Toulouse</span></div>
+                <div class="hl-cell"><span class="hl-val">Evotec</span><span class="hl-lbl">Research engineer</span></div>
+              </div>
+            </div>
+            <div class="hl-section">
+              <p class="hl-category">Biohacking</p>
+              <div class="hl-row">
+                <div class="hl-cell"><span class="hl-val" data-count-to="0.82" data-count-from="1.00" data-decimals="2">0.82</span><span class="hl-lbl">Pace of aging</span></div>
+                <div class="hl-cell"><span class="hl-val">Top ranking</span><span class="hl-lbl">Rejuvenation Olympics</span></div>
+                <div class="hl-cell"><span class="hl-val" data-count-to="1" data-count-from="100" data-prefix="Top " data-suffix="%">Top 1%</span><span class="hl-lbl">Biomarkers for age</span></div>
+              </div>
+            </div>
+            <div class="hl-section hl-section--last">
+              <p class="hl-category">Athletics</p>
+              <div class="hl-row">
+                <div class="hl-cell"><span class="hl-val" data-count-to="68" data-count-from="87" data-format="time">sub-1h08</span><span class="hl-lbl">Hyrox Open Solo</span></div>
+                <div class="hl-cell"><span class="hl-val" data-count-to="8" data-count-from="1" data-prefix="Level ">Level 8</span><span class="hl-lbl">CrossFit Open</span></div>
+                <div class="hl-cell"><span class="hl-val" data-count-to="62" data-count-from="0" data-suffix=" ml/kg/min">62 ml/kg/min</span><span class="hl-lbl">VO2max</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -73,13 +104,13 @@ const pages = [
       <!-- Left: bio -->
       <div class="bio-col">
         <p class="bio-text">
-          I'm a PhD candidate at the <a href="https://www.crct-inserm.fr/en/" target="_blank" rel="noopener" class="text-link">Cancer Research Center of Toulouse (CRCT)</a> and research engineer at <a href="https://www.evotec.com/" target="_blank" rel="noopener" class="text-link">Evotec</a>, working on computational models of tumor progression based on multi-omics and clinical data.
+          I'm a PhD candidate at the <a href="https://www.crct-inserm.fr/en/" target="_blank" rel="noopener" class="text-link">Cancer Research Center of Toulouse (CRCT)</a> and research engineer at <a href="https://www.evotec.com/" target="_blank" rel="noopener" class="text-link">Evotec</a>, building computational models of tumor progression from multi-omics data.
         </p>
         <p class="bio-text">
-          Outside of the lab, I train as a hybrid athlete — competing in Hyrox, CrossFit and road races — and document everything I do to optimize health, performance and longevity.
+          I also train as a hybrid athlete, competing in Hyrox, CrossFit and road races, and experiment extensively with health, performance and longevity.
         </p>
         <p class="bio-text">
-          This site is a transparent record of everything I work on: the research, the training and the self-experimentation. The rest is on the other pages.
+          This site is a transparent record of all of it: the research, the training and the self-experimentation.
         </p>
 
         <!-- Page nav -->
@@ -100,45 +131,12 @@ const pages = [
           <h2 class="aside-heading">Currently</h2>
           <dl class="currently-list">
             {currently.map((c) => (
-              <>
+              <div class="currently-item">
                 <dt class="curr-label">{c.label}</dt>
                 <dd class="curr-value">{c.value}</dd>
-              </>
+              </div>
             ))}
           </dl>
-        </div>
-
-        <!-- Highlights -->
-        <div class="aside-card aside-card--highlights">
-          <h2 class="aside-heading">Highlights</h2>
-
-          <div class="hl-section">
-            <p class="hl-category">Biological age</p>
-            <div class="hl-row">
-              <div class="hl-cell"><span class="hl-val">0.8</span><span class="hl-lbl">Pace of aging</span></div>
-              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">HRV &amp; RHR</span></div>
-              <div class="hl-cell"><span class="hl-val">Top 1%</span><span class="hl-lbl">Biomarkers for age</span></div>
-            </div>
-          </div>
-
-          <div class="hl-section">
-            <p class="hl-category">Blood markers</p>
-            <div class="hl-row">
-              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">ApoB</span></div>
-              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">HbA1c</span></div>
-              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">hs-CRP</span></div>
-            </div>
-          </div>
-
-          <div class="hl-section hl-section--last">
-            <p class="hl-category">Performance</p>
-            <div class="hl-row">
-              <div class="hl-cell"><span class="hl-val">--</span><span class="hl-lbl">VO2max</span></div>
-              <div class="hl-cell"><span class="hl-val">72 kg</span><span class="hl-lbl">Grip strength</span></div>
-              <div class="hl-cell"><span class="hl-val">850 ng/dL</span><span class="hl-lbl">Testosterone</span></div>
-            </div>
-          </div>
-
         </div>
       </aside>
     </div>
@@ -194,6 +192,46 @@ const pages = [
   </div>
 </Layout>
 
+<script>
+  function animateCounter(el) {
+    const from   = parseFloat(el.dataset.countFrom ?? '0');
+    const to     = parseFloat(el.dataset.countTo   ?? '0');
+    const dec    = parseInt(el.dataset.decimals    ?? '0');
+    const prefix = el.dataset.prefix ?? '';
+    const suffix = el.dataset.suffix ?? '';
+    const fmt    = el.dataset.format;
+    const dur    = 6000;
+    const t0     = performance.now();
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+    function formatTime(min) {
+      const h = Math.floor(min / 60);
+      const m = Math.floor(min % 60);
+      return `sub-${h}h${String(m).padStart(2, '0')}`;
+    }
+
+    (function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const v = from + (to - from) * easeOut(p);
+      el.textContent = fmt === 'time' ? formatTime(v) : prefix + v.toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  const card = document.querySelector('.aside-card--highlights');
+  if (card) {
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        setTimeout(() => {
+          e.target.querySelectorAll('[data-count-to]').forEach(animateCounter);
+        }, 200);
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.4 }).observe(card);
+  }
+</script>
+
 <style>
   .container {
     max-width: var(--max-w);
@@ -208,7 +246,22 @@ const pages = [
   }
 
   .about-hero {
-    padding: 5.5rem 0 4.5rem;
+    padding: 7.5rem 0 6rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+
+  .about-hero-left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .about-hero-right {
+    flex-shrink: 0;
+    width: 400px;
+    align-self: center;
   }
 
   .about-eyebrow {
@@ -233,17 +286,25 @@ const pages = [
   .role-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0;
   }
 
   .role-tag {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 400;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     color: var(--text-muted);
-    border: 1px solid var(--border);
-    padding: 0.3rem 0.85rem;
-    border-radius: var(--radius);
+    border: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .role-tag:not(:last-child)::after {
+    content: '·';
+    margin: 0 0.65rem;
+    color: var(--accent);
+    font-weight: 300;
   }
 
   /* ── Main grid ── */
@@ -265,7 +326,7 @@ const pages = [
     margin-bottom: 1.25rem;
   }
 
-  .bio-text:last-of-type {
+.bio-text:last-of-type {
     margin-bottom: 0;
   }
 
@@ -290,31 +351,39 @@ const pages = [
   .page-nav-item {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    padding: 1.1rem 0;
+    gap: 0.25rem;
+    padding: 1.25rem 0;
     border-bottom: 1px solid var(--border);
-    transition: padding-left 0.2s;
+    border-left: 2px solid transparent;
+    padding-left: 1rem;
+    margin-left: -1rem;
+    transition: border-left-color var(--transition), background var(--transition);
   }
 
   .page-nav-item:hover {
-    padding-left: 0.5rem;
+    border-left-color: var(--accent);
+    background: var(--accent-light);
   }
 
   .page-nav-label {
     font-size: 0.875rem;
     font-weight: 500;
+    letter-spacing: 0.01em;
     color: var(--text);
-    transition: color 0.2s;
+    display: inline-block;
+    transition: color var(--transition), transform var(--transition);
   }
 
   .page-nav-item:hover .page-nav-label {
     color: var(--accent);
+    transform: translateX(4px);
   }
 
   .page-nav-desc {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 300;
     color: var(--text-muted);
+    line-height: 1.5;
   }
 
   /* ── Aside ── */
@@ -327,6 +396,7 @@ const pages = [
   .aside-card {
     border: 1px solid var(--border);
     padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
   }
 
   .aside-heading {
@@ -340,26 +410,36 @@ const pages = [
 
   /* Currently */
   .currently-list {
-    display: grid;
-    grid-template-columns: 5rem 1fr;
-    gap: 0.6rem 1rem;
-    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .currently-item {
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .currently-item:last-child {
+    border-bottom: 1px solid var(--border);
   }
 
   .curr-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--accent);
-    padding-top: 0.1rem;
+    margin-bottom: 0.3rem;
   }
 
   .curr-value {
-    font-size: 0.825rem;
+    font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.55;
     color: var(--text);
+    margin: 0;
   }
 
   /* Highlights */
@@ -396,15 +476,15 @@ const pages = [
 
   .hl-cell {
     background: var(--bg);
-    padding: 0.8rem 1rem;
+    padding: 1.1rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.3rem;
   }
 
   .hl-val {
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: var(--text);
     line-height: 1;
@@ -448,7 +528,7 @@ const pages = [
     font-size: 0.825rem;
     font-weight: 400;
     color: var(--text-muted);
-    transition: border-color 0.2s, color 0.2s;
+    transition: border-color var(--transition), color var(--transition);
   }
 
   .link-card:hover {
@@ -458,7 +538,7 @@ const pages = [
 
   .link-arrow {
     font-size: 0.8rem;
-    transition: transform 0.2s;
+    transition: transform var(--transition);
   }
 
   .link-card:hover .link-arrow {
@@ -467,6 +547,17 @@ const pages = [
   }
 
   /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .about-hero {
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .about-hero-right {
+      width: 100%;
+    }
+  }
+
   @media (max-width: 840px) {
     .about-grid {
       grid-template-columns: 1fr;
@@ -566,7 +657,7 @@ const pages = [
     border-radius: var(--radius);
     padding: 0.75rem 1rem;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color var(--transition), box-shadow var(--transition);
     resize: none;
     width: 100%;
   }
@@ -574,12 +665,23 @@ const pages = [
   .form-input::placeholder,
   .form-textarea::placeholder {
     color: var(--text-muted);
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+
+  .form-input:hover,
+  .form-textarea:hover {
+    border-color: var(--text-muted);
   }
 
   .form-input:focus,
   .form-textarea:focus {
     border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(42, 92, 69, 0.1);
+  }
+
+  html.dark .form-input:focus,
+  html.dark .form-textarea:focus {
+    box-shadow: 0 0 0 3px rgba(82, 179, 130, 0.12);
   }
 
   .form-submit {
@@ -598,19 +700,27 @@ const pages = [
     text-transform: uppercase;
     cursor: pointer;
     border-radius: var(--radius);
-    transition: opacity 0.2s;
+    transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
   }
 
   .form-submit:hover {
-    opacity: 0.85;
+    opacity: 0.88;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .form-submit:active {
+    opacity: 1;
+    transform: translateY(1px);
+    box-shadow: var(--shadow-sm);
   }
 
   .submit-arrow {
-    transition: transform 0.2s;
+    transition: transform var(--transition);
   }
 
   .form-submit:hover .submit-arrow {
-    transform: translateX(3px);
+    transform: translateX(4px);
   }
 
   @media (max-width: 840px) {

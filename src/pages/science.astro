@@ -1248,10 +1248,19 @@ const languages = [
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    transition: background 0.2s;
+    transition: background var(--transition), transform var(--transition-slow), box-shadow var(--transition-slow);
   }
 
-  .tut-card:hover { background: var(--bg-card); }
+  .tut-card:hover {
+    background: var(--bg-card);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .tut-card:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
 
   .tut-top {
     display: flex;
@@ -1365,8 +1374,9 @@ const languages = [
     grid-template-columns: 150px 150px 1fr;
     gap: 0;
     border-bottom: 1px solid var(--border);
+    border-left: 2px solid transparent;
     align-items: start;
-    transition: background 0.15s;
+    transition: background var(--transition), border-left-color var(--transition);
   }
 
   .conf-row:last-child { border-bottom: none; }
@@ -1381,6 +1391,7 @@ const languages = [
 
   .conf-row:hover {
     background: var(--accent-light);
+    border-left-color: var(--accent);
   }
 
   .conf-row--award {
@@ -1484,7 +1495,10 @@ const languages = [
 
   .exp-item:last-child { border-bottom: none; }
 
-  .exp-item:hover { background: var(--accent-light); }
+  .exp-item:hover {
+    background: var(--accent-light);
+    box-shadow: var(--shadow-sm);
+  }
 
   /* Academia: green left accent bar */
   .exp-item--academia {
@@ -1631,12 +1645,20 @@ const languages = [
     display: grid;
     grid-template-columns: 80px 1fr;
     gap: 2rem;
-    padding: 2.25rem 0;
+    padding: 2.25rem 0.75rem 2.25rem 0;
     border-bottom: 1px solid var(--border);
+    border-left: 2px solid transparent;
+    margin-left: -0.75rem;
     align-items: start;
+    transition: background var(--transition), border-left-color var(--transition);
   }
 
   .edu-item:first-child { border-top: 1px solid var(--border); }
+
+  .edu-item:hover {
+    background: var(--accent-light);
+    border-left-color: var(--accent);
+  }
 
   .edu-year-col {
     display: flex;
@@ -1793,6 +1815,11 @@ const languages = [
 
   .lang-item:hover {
     border-color: var(--accent);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .lang-item:active {
+    box-shadow: var(--shadow-sm);
   }
 
   .lang-header {

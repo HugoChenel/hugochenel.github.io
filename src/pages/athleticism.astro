@@ -295,46 +295,89 @@ const trainingTools = [
     <section class="section">
       <h2 class="section-label">Competition results</h2>
       <div class="comp-groups">
-        {competitionGroups.map((g) => (
-          <div class="comp-group">
-            <div
-              class="comp-group-banner"
-              style={g.image ? `background-image: url('${g.image}')` : undefined}
-            >
-              <div class="comp-group-banner-inner">
-                <h3 class="comp-group-title">{g.group}</h3>
-                {g.link && (
-                  <a href={g.link.href} target="_blank" rel="noopener" class="comp-group-link">{g.link.label} &rarr;</a>
-                )}
+        {competitionGroups.map((g, i) => (
+          <>
+            <div class="comp-group">
+              <div
+                class="comp-group-banner"
+                style={g.image ? `background-image: url('${g.image}')` : undefined}
+              >
+                <div class="comp-group-banner-inner">
+                  <h3 class="comp-group-title">{g.group}</h3>
+                  {g.link && (
+                    <a href={g.link.href} target="_blank" rel="noopener" class="comp-group-link">{g.link.label} &rarr;</a>
+                  )}
+                </div>
+              </div>
+              <div class="results-list">
+                {g.races.map((c) => (
+                  <a href={c.href} target="_blank" rel="noopener" class="result-item">
+                    <div class="result-left">
+                      {c.flag ? (
+                        <>
+                          <span class="result-flag">{c.flag}</span>
+                          <div class="result-meta">
+                            <span class="result-event">{c.event}</span>
+                            <div class="result-sub">
+                              <span class="result-date">{c.date}</span>
+                              {c.category && <span class="result-category">{c.category}</span>}
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <span class="result-event">{c.event}</span>
+                          <span class="result-date">{c.date}</span>
+                        </>
+                      )}
+                    </div>
+                    <span class="result-value">{c.result}</span>
+                  </a>
+                ))}
               </div>
             </div>
-            <div class="results-list">
-              {g.races.map((c) => (
-                <a href={c.href} target="_blank" rel="noopener" class="result-item">
-                  <div class="result-left">
-                    {c.flag ? (
-                      <>
-                        <span class="result-flag">{c.flag}</span>
-                        <div class="result-meta">
-                          <span class="result-event">{c.event}</span>
-                          <div class="result-sub">
-                            <span class="result-date">{c.date}</span>
-                            {c.category && <span class="result-category">{c.category}</span>}
-                          </div>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <span class="result-event">{c.event}</span>
-                        <span class="result-date">{c.date}</span>
-                      </>
-                    )}
+            {i === 0 && (
+              <div class="pace-chart-wrap" id="hyroxChartWrap">
+                <p class="pace-chart-title">Hyrox Open Solo — time progression</p>
+                <div class="pace-chart-container">
+                  <svg viewBox="0 0 700 240" class="pace-chart-svg" role="img" aria-label="Hyrox race time progression">
+                    <line class="pchart-ref pchart-ref--avg" x1="65" y1="132" x2="670" y2="132"/>
+                    <line class="pchart-ref pchart-ref--opt" x1="65" y1="64"  x2="670" y2="64"/>
+                    <text class="pchart-lbl-y"                    x="60" y="136" text-anchor="end">1:20</text>
+                    <text class="pchart-lbl-y pchart-lbl-y--opt"  x="60" y="68"  text-anchor="end">1:10</text>
+                    <text class="pchart-tag pchart-tag--avg"       x="675" y="136">1:20</text>
+                    <text class="pchart-tag pchart-tag--opt"       x="675" y="68">1:10</text>
+                    <path class="pchart-area" d="M65,184 L216,97 L368,83 L519,76 L670,50 L670,200 L65,200 Z"/>
+                    <path class="pchart-line" d="M65,184 L216,97 L368,83 L519,76 L670,50" pathLength="1"/>
+                    <text class="pchart-val-lbl"        x="65"  y="172" text-anchor="middle">01:27:37</text>
+                    <text class="pchart-val-lbl"        x="216" y="85"  text-anchor="middle">01:14:49</text>
+                    <text class="pchart-val-lbl"        x="368" y="71"  text-anchor="middle">01:12:45</text>
+                    <text class="pchart-val-lbl"        x="519" y="96"  text-anchor="middle">01:11:47</text>
+                    <text class="pchart-val-lbl pchart-val-lbl--pr" x="670" y="38" text-anchor="middle">01:07:55</text>
+                    <circle class="pchart-hit" cx="65"  cy="184" r="20" data-race="Race 1" data-label="Marseille" data-val="01:27:37"/>
+                    <circle class="pchart-hit" cx="216" cy="97"  r="20" data-race="Race 2" data-label="Sharjah"   data-val="01:14:49"/>
+                    <circle class="pchart-hit" cx="368" cy="83"  r="20" data-race="Race 3" data-label="Paris"     data-val="01:12:45"/>
+                    <circle class="pchart-hit" cx="519" cy="76"  r="20" data-race="Race 4" data-label="Bordeaux"  data-val="01:11:47"/>
+                    <circle class="pchart-hit" cx="670" cy="50"  r="20" data-race="Race 5" data-label="Toulouse"  data-val="01:07:55"/>
+                    <circle class="pchart-dot" id="hdot0" cx="65"  cy="184" r="5"/>
+                    <circle class="pchart-dot" id="hdot1" cx="216" cy="97"  r="5"/>
+                    <circle class="pchart-dot" id="hdot2" cx="368" cy="83"  r="5"/>
+                    <circle class="pchart-dot" id="hdot3" cx="519" cy="76"  r="5"/>
+                    <circle class="pchart-dot pchart-dot--latest" id="hdot4" cx="670" cy="50" r="5"/>
+                    <text class="pchart-lbl-x" x="65"  y="225" text-anchor="middle">Race 1</text>
+                    <text class="pchart-lbl-x" x="216" y="225" text-anchor="middle">Race 2</text>
+                    <text class="pchart-lbl-x" x="368" y="225" text-anchor="middle">Race 3</text>
+                    <text class="pchart-lbl-x" x="519" y="225" text-anchor="middle">Race 4</text>
+                    <text class="pchart-lbl-x" x="670" y="225" text-anchor="middle">Race 5</text>
+                  </svg>
+                  <div class="pchart-tooltip" id="hyroxTooltip">
+                    <span class="pchart-tip-date"></span>
+                    <span class="pchart-tip-val"></span>
                   </div>
-                  <span class="result-value">{c.result}</span>
-                </a>
-              ))}
-            </div>
-          </div>
+                </div>
+              </div>
+            )}
+          </>
         ))}
       </div>
     </section>
@@ -513,6 +556,39 @@ const trainingTools = [
     });
     if (btn) btn.textContent = isMetric ? 'Switch to imperial' : 'Switch to metric';
   });
+
+  // Hyrox progression chart
+  const hyroxWrap = document.getElementById('hyroxChartWrap');
+  const hyroxTooltip = document.getElementById('hyroxTooltip');
+  if (hyroxWrap && hyroxTooltip) {
+    const dots = hyroxWrap.querySelectorAll('.pchart-dot');
+    dots.forEach((d, i) => { (d as HTMLElement).style.transitionDelay = (0.6 + i * 0.3) + 's'; });
+
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        hyroxWrap.classList.add('animated');
+        obs.unobserve(e.target);
+      });
+    }, { threshold: 0.4 }).observe(hyroxWrap);
+
+    const tipDate = hyroxTooltip.querySelector('.pchart-tip-date');
+    const tipVal  = hyroxTooltip.querySelector('.pchart-tip-val');
+    const container = hyroxWrap.querySelector('.pace-chart-container') as HTMLElement;
+    hyroxWrap.querySelectorAll('.pchart-hit').forEach(hit => {
+      const h = hit as SVGCircleElement;
+      h.addEventListener('mouseenter', () => {
+        tipDate!.textContent = `${h.dataset.race} · ${h.dataset.label}`;
+        tipVal!.textContent  = h.dataset.val!;
+        const hRect = h.getBoundingClientRect();
+        const cRect = container.getBoundingClientRect();
+        hyroxTooltip.style.left = (hRect.left + hRect.width / 2 - cRect.left) + 'px';
+        hyroxTooltip.style.top  = (hRect.top - cRect.top) + 'px';
+        hyroxTooltip.classList.add('visible');
+      });
+      h.addEventListener('mouseleave', () => hyroxTooltip.classList.remove('visible'));
+    });
+  }
 </script>
 
 <style>
@@ -1416,5 +1492,111 @@ const trainingTools = [
       grid-template-columns: 1fr;
       gap: 0.5rem;
     }
+  }
+
+  /* ── Hyrox progression chart ── */
+  .pace-chart-wrap {
+    margin-top: 0;
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 1.75rem 2rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .pace-chart-title {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  .pace-chart-container { position: relative; }
+  .pace-chart-svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+  .pchart-ref { stroke-width: 1; stroke-dasharray: 4 4; }
+  .pchart-ref--avg { stroke: var(--text-muted); opacity: 0.35; }
+  .pchart-ref--opt { stroke: var(--accent);     opacity: 0.5;  }
+
+  .pchart-lbl-y { font-size: 10px; fill: var(--text-muted); font-family: var(--font-sans); }
+  .pchart-lbl-y--opt { fill: var(--accent); }
+
+  .pchart-tag { font-size: 8px; letter-spacing: 0.07em; text-transform: uppercase; font-family: var(--font-sans); }
+  .pchart-tag--avg { fill: var(--text-muted); opacity: 0.55; }
+  .pchart-tag--opt { fill: var(--accent);     opacity: 0.75; }
+
+  .pchart-area {
+    fill: var(--accent);
+    opacity: 0;
+    transition: opacity 0.8s ease 1s;
+  }
+  .pace-chart-wrap.animated .pchart-area { opacity: 0.07; }
+
+  .pchart-line {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .pace-chart-wrap.animated .pchart-line { stroke-dashoffset: 0; }
+
+  .pchart-dot {
+    fill: var(--bg);
+    stroke: var(--accent);
+    stroke-width: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .pace-chart-wrap.animated .pchart-dot { opacity: 1; }
+  .pchart-dot--latest { fill: var(--accent); }
+
+  .pchart-hit { fill: transparent; cursor: crosshair; }
+  .pchart-lbl-x { font-size: 9px; fill: var(--text-muted); font-family: var(--font-sans); }
+
+  .pchart-val-lbl {
+    font-size: 8.5px;
+    fill: var(--text-muted);
+    font-family: var(--font-sans);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .pace-chart-wrap.animated .pchart-val-lbl { opacity: 1; transition-delay: 1.6s; }
+  .pchart-val-lbl--pr {
+    fill: var(--accent);
+    font-weight: 600;
+  }
+
+  .pchart-tooltip {
+    position: absolute;
+    transform: translate(-50%, calc(-100% - 10px));
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.85rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    white-space: nowrap;
+  }
+  .pchart-tooltip.visible { opacity: 1; }
+  .pchart-tip-date {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .pchart-tip-val {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1;
   }
 </style>

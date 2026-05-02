@@ -49,7 +49,7 @@ const featured = [
 
 <Layout>
   <!-- ── Hero ── -->
-  <section class="hero">
+  <section class="hero hero-bg hero-bg--home">
     <div class="container">
       <div class="hero-layout">
         <div class="hero-content">
@@ -75,7 +75,7 @@ const featured = [
       <div class="hero-id">
         <div class="hero-id-top">
           <p class="hero-name">Hugo Chenel</p>
-          <a href="/about" class="hero-cta">About me &rarr;</a>
+          <a href="/about" class="hero-cta">About me <span class="hero-cta-arrow">&rarr;</span></a>
         </div>
         <div class="hero-roles">
           <div class="hero-role">
@@ -198,9 +198,6 @@ const featured = [
   .hero {
     padding: 9rem 0 7rem;
     border-bottom: 1px solid var(--border);
-    background:
-      radial-gradient(ellipse 60% 70% at 18% 55%, var(--accent-light) 0%, transparent 72%),
-      var(--bg);
     overflow: hidden;
   }
 
@@ -247,11 +244,22 @@ const featured = [
     transform: scale(2.4);
     transform-origin: center 65%;
     filter: grayscale(20%);
-    transition: filter 0.25s ease;
+    transition: filter 0.5s var(--ease), transform 0.7s var(--ease);
+  }
+
+  /* Micro-delight 2: photo comes to life on hover */
+  .hero-photo-wrap:hover .hero-photo {
+    filter: grayscale(0%);
+    transform: scale(2.46);
   }
 
   :global(html.dark) .hero-photo {
     filter: grayscale(30%) brightness(0.78) contrast(1.05);
+  }
+
+  :global(html.dark) .hero-photo-wrap:hover .hero-photo {
+    filter: grayscale(5%) brightness(0.88) contrast(1.05);
+    transform: scale(2.46);
   }
 
   .hero-eyebrow {
@@ -297,6 +305,22 @@ const featured = [
   .hero-cta:hover {
     color: var(--accent);
     border-color: var(--accent);
+  }
+
+  /* Micro-delight 3: CTA arrow overshoots then settles */
+  @keyframes arrowForward {
+    0%   { transform: translateX(0);   }
+    55%  { transform: translateX(7px); }
+    100% { transform: translateX(4px); }
+  }
+
+  .hero-cta-arrow {
+    display: inline-block;
+    transition: transform 0.18s var(--ease);
+  }
+
+  .hero-cta:hover .hero-cta-arrow {
+    animation: arrowForward 0.32s cubic-bezier(0, 0, 0.2, 1) forwards;
   }
 
   /* ── Intro ── */

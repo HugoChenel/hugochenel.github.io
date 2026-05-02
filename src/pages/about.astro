@@ -54,15 +54,24 @@ const pages = [
 <Layout title="About — Hugo Chenel" description="PhD candidate in Machine learning for genomics, hybrid athlete and biohacker based in Toulouse.">
 
   <!-- Hero -->
-  <div class="about-hero-wrap">
+  <div class="about-hero-wrap hero-bg hero-bg--about">
     <div class="container">
       <div class="about-hero">
         <div class="about-hero-left">
           <p class="about-eyebrow">About</p>
           <h1 class="about-name">Hugo Chenel</h1>
-          <div class="role-tags">
-            {roles.map((r) => <span class="role-tag">{r}</span>)}
-          </div>
+          <p class="about-lead">
+            I'm a PhD candidate at the Cancer Research Center of Toulouse (CRCT) and a research engineer at Evotec, where I develop computational models of tumor progression from multi-omics data.
+          </p>
+          <p class="about-lead">
+            Alongside my research, I train as a hybrid athlete, competing in Hyrox, CrossFit, and road races.
+          </p>
+          <p class="about-lead">
+            I also explore biohacking, running structured experiments on health, performance, and longevity.
+          </p>
+          <p class="about-lead">
+            This site is a transparent record of all of it: the research, the training, and the self-experimentation.
+          </p>
         </div>
         <div class="about-hero-right">
           <div class="aside-card aside-card--highlights">
@@ -70,7 +79,7 @@ const pages = [
             <div class="hl-section">
               <p class="hl-category">Research</p>
               <div class="hl-row">
-                <div class="hl-cell"><span class="hl-val">PhD</span><span class="hl-lbl">ML for genomics</span></div>
+                <div class="hl-cell"><span class="hl-val">PhD</span><span class="hl-lbl">Bioinformatics<br>AI/ML x Cancer</span></div>
                 <div class="hl-cell"><span class="hl-val">CRCT</span><span class="hl-lbl">Inserm, Toulouse</span></div>
                 <div class="hl-cell"><span class="hl-val">Evotec</span><span class="hl-lbl">Research engineer</span></div>
               </div>
@@ -103,15 +112,6 @@ const pages = [
 
       <!-- Left: bio -->
       <div class="bio-col">
-        <p class="bio-text">
-          I'm a PhD candidate at the <a href="https://www.crct-inserm.fr/en/" target="_blank" rel="noopener" class="text-link">Cancer Research Center of Toulouse (CRCT)</a> and research engineer at <a href="https://www.evotec.com/" target="_blank" rel="noopener" class="text-link">Evotec</a>, building computational models of tumor progression from multi-omics data.
-        </p>
-        <p class="bio-text">
-          I also train as a hybrid athlete, competing in Hyrox, CrossFit and road races, and experiment extensively with health, performance and longevity.
-        </p>
-        <p class="bio-text">
-          This site is a transparent record of all of it: the research, the training and the self-experimentation.
-        </p>
 
         <!-- Page nav -->
         <div class="page-nav">
@@ -242,11 +242,10 @@ const pages = [
   /* ── Hero ── */
   .about-hero-wrap {
     border-bottom: 1px solid var(--border);
-    background: radial-gradient(ellipse 50% 90% at 95% 50%, var(--accent-light) 0%, transparent 65%), var(--bg);
   }
 
   .about-hero {
-    padding: 7.5rem 0 6rem;
+    padding: 5rem 0 4rem;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -260,7 +259,7 @@ const pages = [
 
   .about-hero-right {
     flex-shrink: 0;
-    width: 400px;
+    width: 450px;
     align-self: center;
   }
 
@@ -307,12 +306,30 @@ const pages = [
     font-weight: 300;
   }
 
+  .about-lead {
+    font-size: 0.975rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+  }
+
+  .about-lead:first-of-type {
+    margin-top: 1.5rem;
+  }
+
+  .about-lead:last-of-type {
+    margin-bottom: 0;
+  }
+
   /* ── Main grid ── */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 340px;
     gap: 5rem;
-    padding: 5rem 0 4rem;
+    padding: 3.5rem 0 3rem;
     border-bottom: 1px solid var(--border);
     align-items: start;
   }
@@ -476,10 +493,10 @@ const pages = [
 
   .hl-cell {
     background: var(--bg);
-    padding: 1.1rem 1rem;
+    padding: 1.25rem 1.1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.4rem;
   }
 
   .hl-val {
@@ -487,21 +504,22 @@ const pages = [
     font-size: 1.3rem;
     font-weight: 400;
     color: var(--text);
-    line-height: 1;
+    line-height: 1.1;
   }
 
   .hl-lbl {
-    font-size: 0.6rem;
+    font-size: 0.63rem;
     font-weight: 400;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--text-muted);
+    line-height: 1.5;
   }
 
 
   /* ── Links section ── */
   .links-section {
-    padding: 4rem 0 6rem;
+    padding: 3rem 0 4rem;
   }
 
   .links-heading {
@@ -555,6 +573,13 @@ const pages = [
 
     .about-hero-right {
       width: 100%;
+      max-width: 520px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hl-cell {
+      padding: 1rem 0.85rem;
     }
   }
 
@@ -584,7 +609,7 @@ const pages = [
   .contact-wrap {
     border-top: 1px solid var(--border);
     background: var(--bg-card);
-    padding: 6rem 0 7rem;
+    padding: 4rem 0 5rem;
   }
 
   .contact-inner {

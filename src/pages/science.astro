@@ -2,6 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
 import TopicGrid from "../components/TopicGrid.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+
+const tocSections = [
+  { id: "research-focus", label: "Research" },
+  { id: "publications",   label: "Publications" },
+  { id: "thesis",         label: "Thesis" },
+  { id: "tutorials",      label: "Tutorials" },
+  { id: "conferences",    label: "Conferences" },
+  { id: "experience",     label: "Experience" },
+  { id: "education",      label: "Education" },
+  { id: "skills",         label: "Skills" },
+];
 
 const topics = [
   {
@@ -333,18 +345,18 @@ const education = [
 ];
 
 const skills = [
-  { category: "Languages", tools: "R, Python, Bash" },
-  { category: "Bulk RNAseq", tools: "FastQC, MultiQC, Cutadapt, Trimmomatic, STAR, BWA, Bowtie, Salmon, DESeq2, edgeR" },
-  { category: "scRNAseq", tools: "Cell Ranger, Seurat, Harmony, SingleR, Monocle, Survival analysis" },
-  { category: "Exploratory analysis", tools: "PCA, t-SNE, Hierarchical clustering, Differential expression" },
-  { category: "Network inference", tools: "GENIE3, ARACNE" },
-  { category: "Network analysis", tools: "STRING, TCGA, iGraph, CINNA, Cytoscape, Gephi, WGCNA, MCODE" },
-  { category: "Functional enrichment", tools: "GSEA (MSigDB), ToppGene, Enrichr, clueGO, g:Profiler" },
+  { category: "Languages",              tools: "R, Python, Bash" },
+  { category: "Bulk RNAseq",            tools: "FastQC, MultiQC, Cutadapt, Trimmomatic, STAR, BWA, Bowtie, Salmon, Kallisto, DESeq2, edgeR, limma, ComBat" },
+  { category: "scRNAseq",               tools: "Cell Ranger, Seurat, Scanpy, SCTransform, Harmony, SingleR, Azimuth, DoubletFinder, Scrublet, Monocle, Survival analysis" },
+  { category: "Exploratory analysis",   tools: "PCA, t-SNE, UMAP, Hierarchical clustering, Differential expression" },
+  { category: "Network inference",      tools: "GENIE3, ARACNE" },
+  { category: "Network analysis",       tools: "STRING, STRINGdb, igraph, NetworkX, CINNA, TCGA, Cytoscape, Gephi, WGCNA, MCODE" },
+  { category: "Functional enrichment",  tools: "GSEA (MSigDB), clusterProfiler, ToppGene, Enrichr, clueGO, g:Profiler" },
   { category: "Spatial transcriptomics", tools: "MERFISH, STARmap" },
-  { category: "Multi-omics integration", tools: "MultiAssayExperiment, MixOmics, DIABLO, OmicsIntegrator, iMOKA, IGV" },
-  { category: "Statistical tests", tools: "t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-Square, Pearson, Spearman" },
-  { category: "ML models", tools: "Regression, scikit-learn, XGBoost, LightGBM" },
-  { category: "Visualization", tools: "ggplot2, plotly, ComplexHeatmap, Cytoscape, OmicsNet" },
+  { category: "Multi-omics integration", tools: "MultiAssayExperiment, MixOmics, DIABLO, MOFA+, TotalVI, OmicsIntegrator, iMOKA, IGV" },
+  { category: "Statistical tests",      tools: "t-test, ANOVA, Wilcoxon, Kruskal-Wallis, Chi-Square, Pearson, Spearman, Linear models, Mixed models, Bayesian stats, FDR / Benjamini-Hochberg" },
+  { category: "ML models",              tools: "Regression, scikit-learn, XGBoost, LightGBM, PyTorch, TensorFlow, Autoencoders, k-means, DBSCAN, Cross-validation, ROC-AUC" },
+  { category: "Visualization",          tools: "ggplot2, Seaborn, Matplotlib, plotly, ComplexHeatmap, Cytoscape, OmicsNet" },
 ];
 
 const languages = [
@@ -360,7 +372,7 @@ const languages = [
 >
 
   <!-- ── Page hero ── -->
-  <div class="page-hero">
+  <div class="page-hero hero-bg hero-bg--science">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
@@ -373,12 +385,34 @@ const languages = [
           <p class="hero-links-label">Profiles</p>
           <div class="hero-links">
             <a href="https://scholar.google.com/citations?user=ENlSzNUAAAAJ&hl=fr&oi=ao" target="_blank" rel="noopener" class="hero-ext-link">
-              <span class="hero-ext-label">Google Scholar</span>
-              <span class="hero-ext-arrow">&rarr;</span>
+              <span class="hero-ext-icon" aria-hidden="true">
+                <!-- graduation cap -->
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </span>
+              <span class="hero-ext-content">
+                <span class="hero-ext-label">Google Scholar</span>
+                <span class="hero-ext-sub">Publications &amp; citations</span>
+              </span>
+              <span class="hero-ext-arrow" aria-hidden="true">→</span>
             </a>
             <a href="https://theses.fr/s385051" target="_blank" rel="noopener" class="hero-ext-link">
-              <span class="hero-ext-label">PhD Thesis</span>
-              <span class="hero-ext-arrow">&rarr;</span>
+              <span class="hero-ext-icon" aria-hidden="true">
+                <!-- document -->
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </span>
+              <span class="hero-ext-content">
+                <span class="hero-ext-label">PhD Thesis</span>
+                <span class="hero-ext-sub">View on theses.fr</span>
+              </span>
+              <span class="hero-ext-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </aside>
@@ -386,8 +420,11 @@ const languages = [
     </div>
   </div>
 
+  <!-- ── Table of contents ── -->
+  <TableOfContents sections={tocSections} />
+
   <!-- ── Research focus ── -->
-  <section class="focus-section">
+  <section class="focus-section" id="research-focus">
     <div class="container">
       <div class="focus-grid">
         <div class="focus-intro">
@@ -422,7 +459,7 @@ const languages = [
   </section>
 
   <!-- ── Publications ── -->
-  <section class="section section--light">
+  <section class="section section--light" id="publications">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Publications</h2>
@@ -452,7 +489,7 @@ const languages = [
   </section>
 
   <!-- ── Thesis ── -->
-  <section class="thesis-section">
+  <section class="thesis-section" id="thesis">
     <div class="container">
       <h2 class="section-title">Thesis</h2>
       <div class="thesis-card">
@@ -485,7 +522,7 @@ const languages = [
   </section>
 
   <!-- ── Tutorials ── -->
-  <section class="section section--light">
+  <section class="section section--light" id="tutorials">
     <div class="container">
       <h2 class="section-title">Tutorials</h2>
       <div class="tut-grid">
@@ -518,7 +555,7 @@ const languages = [
   </section>
 
   <!-- ── Conferences ── -->
-  <section class="section">
+  <section class="section" id="conferences">
     <div class="container">
       <h2 class="section-title">Conferences</h2>
 
@@ -581,7 +618,7 @@ const languages = [
   </section>
 
   <!-- ── Experience ── -->
-  <section class="section section--light">
+  <section class="section section--light" id="experience">
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <div class="exp-list">
@@ -612,7 +649,7 @@ const languages = [
   </section>
 
   <!-- ── Education ── -->
-  <section class="section">
+  <section class="section" id="education">
     <div class="container">
       <h2 class="section-title">Education</h2>
       <div class="edu-list">
@@ -638,7 +675,7 @@ const languages = [
   </section>
 
   <!-- ── Skills & Languages ── -->
-  <section class="section section--light">
+  <section class="section section--light" id="skills">
     <div class="container">
       <div class="bottom-stack">
 
@@ -715,6 +752,13 @@ const languages = [
   }
 
   /* ── Shared ── */
+  .section,
+  .focus-section,
+  .thesis-section {
+    /* Offset for sticky nav (64px) + sticky TOC (~42px) + breathing room */
+    scroll-margin-top: 120px;
+  }
+
   .section {
     padding: 5rem 0;
     border-top: 1px solid var(--border);
@@ -772,16 +816,28 @@ const languages = [
   }
 
   .hero-links-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .hero-links-label::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background: var(--accent);
+    flex-shrink: 0;
   }
 
   .eyebrow {
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -821,43 +877,87 @@ const languages = [
   .hero-links {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    border: 1px solid var(--border);
-    border-top: 2px solid var(--accent);
+    gap: 0.5rem;
   }
 
   .hero-ext-link {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2.1rem 1fr auto;
     align-items: center;
-    padding: 0.9rem 1.1rem;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-muted);
-    transition: background 0.15s, color 0.15s;
-  }
-
-  .hero-ext-link:last-child {
-    border-bottom: none;
+    gap: 0.8rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    text-decoration: none;
+    transition:
+      border-color var(--transition),
+      box-shadow var(--transition),
+      transform var(--transition);
   }
 
   .hero-ext-link:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(42, 92, 69, 0.09);
+    transform: translateY(-1px);
+  }
+
+  html.dark .hero-ext-link:hover {
+    box-shadow: 0 4px 24px rgba(82, 179, 130, 0.11);
+  }
+
+  .hero-ext-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .hero-ext-icon {
+    width: 2.1rem;
+    height: 2.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--accent-light);
-    color: var(--text);
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: background var(--transition);
+  }
+
+  .hero-ext-link:hover .hero-ext-icon {
+    background: var(--accent-light);
+  }
+
+  .hero-ext-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
   }
 
   .hero-ext-label {
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .hero-ext-sub {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    white-space: nowrap;
   }
 
   .hero-ext-arrow {
-    font-size: 0.8rem;
-    transition: transform 0.2s;
+    font-size: 0.85rem;
     color: var(--accent);
+    flex-shrink: 0;
+    transition: transform var(--transition);
+    line-height: 1;
   }
 
   .hero-ext-link:hover .hero-ext-arrow {
-    transform: translateX(3px);
+    transform: translateX(4px);
   }
 
   /* ── Research focus ── */

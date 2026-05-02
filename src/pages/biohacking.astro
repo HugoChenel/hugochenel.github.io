@@ -1,5 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+
+const tocSections = [
+  { id: "basics",             label: "Basics",       fullLabel: "Master the basics" },
+  { id: "first-principles",   label: "Principles",   fullLabel: "First principles" },
+  { id: "advanced-protocol",  label: "Protocol",     fullLabel: "Advanced protocol" },
+  { id: "supplement-stack",   label: "Supplements",  fullLabel: "Daily supplement stack" },
+  { id: "advanced-biohacks",  label: "Biohacks",     fullLabel: "Advanced biohacks" },
+  { id: "biomarkers",         label: "Biomarkers",   fullLabel: "Current biomarkers" },
+  { id: "rejuvenation",       label: "Rejuvenation", fullLabel: "Rejuvenation Olympics" },
+  { id: "genetics",           label: "Genetics",     fullLabel: "Genetic test — Nebula Genomics" },
+];
 
 const topics = [
   {
@@ -496,12 +508,19 @@ const geneticTest = [
   title="Biohacking — Hugo Chenel"
   description="Systematic health optimization — sleep, diet, supplementation and advanced biohacking protocols."
 >
-  <div class="bio-hero-wrap">
+  <div id="toc-bar-wrap">
+    <TableOfContents sections={tocSections} />
+  </div>
+
+  <div class="bio-hero-wrap hero-bg hero-bg--bio">
     <div class="container">
       <div class="bio-hero">
-        <p class="bio-eyebrow">Biohacking</p>
-        <h1 class="bio-title">Optimizing the<br/>human system</h1>
-        <p class="bio-lead">After years of documentation and experimentation, my biomarkers sit in the top 1% for my age. This is a transparent record of the protocol; not a prescription, but a framework.</p>
+        <div class="bio-hero-text">
+          <p class="bio-eyebrow">Biohacking</p>
+          <h1 class="bio-title">Optimizing the<br/>human system</h1>
+          <p class="bio-lead">After years of documentation and experimentation, my biomarkers sit in the top 1% for my age. This is a transparent record of the protocol; not a prescription, but a framework.</p>
+        </div>
+        <TableOfContents sections={tocSections} variant="sidebar" />
       </div>
     </div>
     <div class="bio-stats-bar">
@@ -543,7 +562,7 @@ const geneticTest = [
       <p>This is a guide, take what works for you and personalize it. Remember, this protocol is adapted to my genetics and lifestyle, so it might not be ideal for everyone. Above all, perform regular blood tests to understand how any changes influence your biomarkers. Your data will be your best guide.</p>
     </div>
 
-    <section class="section">
+    <section class="section" id="focus-areas">
       <h2 class="section-label"><span class="section-num">00</span>Focus areas</h2>
       <div class="focus-grid">
         {topics.map((t, i) => (
@@ -557,7 +576,7 @@ const geneticTest = [
     </section>
 
     <!-- Master the Basics -->
-    <section class="section">
+    <section class="section" id="basics">
       <h2 class="section-label"><span class="section-num">01</span>Master the basics</h2>
       <p class="section-intro">Following the Pareto principle: 20% of actions lead to 80% of results. Sleep, diet and exercise yield maximum benefits with consistent, long-term impact, without overcomplicating the routine. These basics form a solid foundation that makes room for more advanced practices.</p>
       <div class="basics-grid">
@@ -572,7 +591,7 @@ const geneticTest = [
     </section>
 
     <!-- First Principles -->
-    <section class="section">
+    <section class="section" id="first-principles">
       <h2 class="section-label"><span class="section-num">02</span>First principles</h2>
       <p class="section-intro">Understanding the core biological processes behind aging is essential. By focusing on these key processes, you can create a biohacking strategy that targets the root causes of aging and not only treat symptoms. These foundational mechanisms can directly influence vitality, performance and longevity. Renowned biohackers and longevity researchers, including <em>Dr. David Sinclair</em>, <em>Dr. Valter Longo</em>, <em>Dr. Rhonda Patrick</em>, <em>Dr. Steven Gundry</em> and <em>Dr. Aubrey de Grey</em>, all emphasize targeting these processes to extend healthspan.</p>
       <div class="principles-list">
@@ -589,7 +608,7 @@ const geneticTest = [
     </section>
 
     <!-- Advanced Protocol -->
-    <section class="section">
+    <section class="section" id="advanced-protocol">
       <h2 class="section-label"><span class="section-num">03</span>Advanced protocol</h2>
 
       <!-- Sleep -->
@@ -712,22 +731,23 @@ const geneticTest = [
     </section>
 
     <!-- Supplement Stack -->
-    <section class="section">
+    <section class="section" id="supplement-stack">
       <h2 class="section-label"><span class="section-num">04</span>Daily supplement stack</h2>
       <p class="section-intro">
         Some compounds can provide an extra layer of support by targeting specific biological processes. Their high concentration makes them particularly effective but they can also be unsafe, so proceed with caution.
-        <br>
-        <br>
-        Here is my current stack:<br>
-        <strong>Basic stack</strong> — essential nutrients most people need.<br/>
-        Advanced stack — targets specific processes (hormonal support, cellular health, muscle performance, mental clarity).
+        <br /><br />
+        Two levels in this stack:<br />
+        <span class="tier-tag tier-tag--basic">Essential</span>&ensp;nutrients most people benefit from<br />
+        <span class="tier-tag tier-tag--advanced">Advanced</span>&ensp;targeted compounds for specific optimization.
       </p>
       <div class="stack-grid">
         {supplementStack.map((s) => (
           <div class="stack-block">
             <h3 class="stack-time">{s.time}</h3>
             <ul class="stack-list">
-              {s.items.map((item) => <li class:list={[{ "stack-basic": item.tier === "basic" }]}>{item.name}</li>)}
+              {s.items.map((item) => (
+                <li class:list={[item.tier === "basic" ? "stack-basic" : "stack-advanced"]}>{item.name}</li>
+              ))}
             </ul>
           </div>
         ))}
@@ -737,7 +757,7 @@ const geneticTest = [
     </section>
 
     <!-- Advanced Biohacks -->
-    <section class="section">
+    <section class="section" id="advanced-biohacks">
       <h2 class="section-label"><span class="section-num">05</span>Advanced biohacks</h2>
       <div class="hacks-grid">
         {advancedBiohacks.map((h) => (
@@ -758,7 +778,7 @@ const geneticTest = [
     </section>
 
     <!-- Biomarkers -->
-    <section class="section">
+    <section class="section" id="biomarkers">
       <h2 class="section-label"><span class="section-num">06</span>Current biomarkers</h2>
       <div class="biomarker-table-wrap">
         {biomarkers.map((b) => (
@@ -790,7 +810,7 @@ const geneticTest = [
     </section>
 
     <!-- Rejuvenation Olympics -->
-    <section class="section">
+    <section class="section" id="rejuvenation">
       <h2 class="section-label"><span class="section-num">07</span>Rejuvenation Olympics</h2>
       <p class="section-intro">The <a href="https://www.rejuvenationolympics.com/" target="_blank" rel="noopener noreferrer" class="inline-link">Rejuvenation Olympics</a> is a global leaderboard tracking biological age using the DunedinPACE epigenetic clock — a DNA methylation-based test that measures the speed at which someone is aging relative to the population average of 1.0. A score below 1.0 means aging slower than average; below 0.8 places you among the top performers worldwide.</p>
       <div class="rejo-card">
@@ -853,7 +873,7 @@ const geneticTest = [
     </section>
 
     <!-- Genetic test -->
-    <section class="section">
+    <section class="section" id="genetics">
       <h2 class="section-label"><span class="section-num">08</span>Genetic test — Nebula Genomics</h2>
       <p class="section-intro">Whole-genome sequencing across 8 categories — identifying variants that inform personalized interventions in longevity, performance and resilience.</p>
       <div class="genetic-tables">
@@ -887,6 +907,15 @@ const geneticTest = [
 </Layout>
 
 <script>
+  // ── Scroll-reveal TOC bar ──────────────────────────────────────
+  const tocBarWrap = document.getElementById('toc-bar-wrap');
+  const sidebarToc = document.querySelector<HTMLElement>('.sc-toc--sidebar');
+  if (sidebarToc && tocBarWrap) {
+    new IntersectionObserver(([e]) => {
+      tocBarWrap.classList.toggle('visible', !e.isIntersecting);
+    }, { threshold: 0 }).observe(sidebarToc);
+  }
+
   const wrap = document.getElementById('paceChartWrap');
   const tooltip = document.getElementById('pchartTooltip');
 
@@ -928,13 +957,19 @@ const geneticTest = [
 
   /* ── Hero ── */
   .bio-hero-wrap {
-    background: radial-gradient(ellipse 60% 80% at 80% 40%, var(--accent-light) 0%, transparent 70%), var(--bg);
     border-bottom: 1px solid var(--border);
   }
 
   .bio-hero {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 5rem;
+    align-items: start;
     padding: 5rem 0 3.5rem;
-    max-width: 780px;
+  }
+
+  .bio-hero-text {
+    max-width: 580px;
   }
 
   .bio-eyebrow {
@@ -1102,6 +1137,7 @@ const geneticTest = [
   .section {
     padding: 5rem 0;
     border-top: 1px solid var(--border);
+    scroll-margin-top: 120px;
   }
 
   .section-label {
@@ -1629,37 +1665,68 @@ const geneticTest = [
     background: var(--accent-light);
   }
 
+  /* Tier tags — inline legend in section intro */
+  .tier-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.5rem;
+    vertical-align: middle;
+    border-radius: var(--radius);
+  }
+
+  .tier-tag--basic {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 4%, var(--bg));
+    border-left: 2px solid var(--accent);
+    padding-left: calc(0.5rem - 2px);
+  }
+
+  .tier-tag--advanced {
+    color: var(--text-muted);
+    border-left: 2px solid var(--text-muted);
+    padding-left: calc(0.5rem - 2px);
+  }
+
+  /* Stack list */
   .stack-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    padding: 1.25rem 1.5rem;
-    gap: 0.6rem;
+    padding: 0.6rem 0;
+    gap: 0;
   }
 
   .stack-list li {
     font-size: 0.875rem;
-    font-weight: 300;
-    color: var(--text);
-    line-height: 1.45;
-    padding-left: 0.75rem;
-    position: relative;
+    line-height: 1.5;
+    padding: 0.45rem 1.25rem;
   }
 
-  .stack-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.5em;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--accent);
-    opacity: 0.5;
-  }
-
+  /* ── Basic tier: very light green highlight ── */
   .stack-list li.stack-basic {
+    background: color-mix(in srgb, var(--accent) 4%, var(--bg));
+    border-left: 2px solid var(--accent);
+    padding-left: calc(1.25rem - 2px);
     font-weight: 500;
+    color: var(--text);
+  }
+
+  /* ── Advanced tier: no background ── */
+  .stack-list li.stack-advanced {
+    border-left: 2px solid var(--text-muted);
+    padding-left: calc(1.25rem - 2px);
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  /* Separator between the two tiers within a time-block */
+  .stack-list li.stack-basic + li.stack-advanced {
+    margin-top: 0.4rem;
+    border-top: 1px dashed var(--border);
+    padding-top: 0.7rem;
   }
 
   /* Advanced Hacks */
@@ -2350,5 +2417,34 @@ const geneticTest = [
     font-size: 1.5rem;
     color: var(--text);
     line-height: 1;
+  }
+
+  /* ── Scroll-reveal TOC bar ── */
+  #toc-bar-wrap {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+
+  #toc-bar-wrap.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  :global(#toc-bar-wrap .sc-toc) {
+    position: static;
+  }
+
+  @media (max-width: 860px) {
+    .bio-hero {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

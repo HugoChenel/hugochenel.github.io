@@ -1,20 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TopicGrid from "../components/TopicGrid.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+
+const tocSections = [
+  { id: "foundations",  label: "Foundations",  fullLabel: "Foundations" },
+  { id: "profile",      label: "Profile",      fullLabel: "Physiological profile" },
+  { id: "competitions", label: "Competitions", fullLabel: "Competition results" },
+  { id: "records",      label: "Records",      fullLabel: "Personal records" },
+  { id: "schedule",     label: "Schedule",     fullLabel: "Weekly schedule" },
+  { id: "practices",    label: "Training",     fullLabel: "Training details & practices" },
+  { id: "tools",        label: "Tools",        fullLabel: "Tools" },
+  { id: "recovery",     label: "Recovery",     fullLabel: "Recovery monitoring" },
+];
 
 const heroStats = [
-  { label: "VO₂ max", value: "62 ml/kg/min" },
-  { label: "Hyrox PR", value: "1:14:49" },
-  { label: "5K", value: "19:06" },
-  { label: "Bench press", value: "102.5 kg" },
-  { label: "Dead hang", value: "2:13" },
-  { label: "CF Open", value: "Level 5" },
+  { label: "Hyrox PR",              value: "1:07:55" },
+  { label: "CrossFit Open",          value: "Level 8" },
+  { label: "Weighted dip\n(1RM)",    value: "80 kg" },
+  { label: "Dips",                   value: "52 reps" },
+  { label: "Weighted pull-up\n(1RM)", value: "55 kg" },
+  { label: "Pull-ups",              value: "27 reps" },
+  { label: "5K",                    value: "19:06" },
 ];
 
 const heroProfiles = [
-  { label: "Strava", href: "https://www.strava.com/athletes/125862142" },
-  { label: "CrossFit Games", href: "https://games.crossfit.com/athlete/2736016" },
-  { label: "Hyrox results", href: "https://www.hyresult.com/athlete/hugo-chenel?tab=races" },
+  { label: "Hyrox",          sub: "Race results",      href: "https://www.hyresult.com/athlete/hugo-chenel?tab=races", icon: "flag" },
+  { label: "CrossFit Games", sub: "Open leaderboard",  href: "https://games.crossfit.com/athlete/2736016",            icon: "target" },
+  { label: "Strava",         sub: "Training log",      href: "https://www.strava.com/athletes/125862142",             icon: "activity" },
 ];
 
 const topics = [
@@ -43,9 +56,9 @@ const topics = [
 const prs = {
   gymnastics: [
     { label: "Pull-ups (strict)", value: "27 reps" },
-    { label: "Weighted pull-up (1RM)", value: "45 kg" },
+    { label: "Weighted pull-up (1RM)", value: "55 kg" },
     { label: "Dips", value: "52 reps" },
-    { label: "Weighted dip (1RM)", value: "70 kg" },
+    { label: "Weighted dip (1RM)", value: "80 kg" },
     { label: "Muscle-ups", value: "16 reps" },
     { label: "Weighted muscle-up (1RM)", value: "15 kg" },
     { label: "Dead hang", value: "2:13" },
@@ -79,7 +92,7 @@ const competitionGroups = [
   {
     group: "Hyrox",
     image: "/assets/images/athleticism/Hyrox1.jpg",
-    link: { label: "All races", href: "https://www.hyresult.com/athlete/hugo-chenel?tab=races" },
+    links: [{ label: "All races", href: "https://www.hyresult.com/athlete/hugo-chenel?tab=races" }],
     races: [
       { event: "Toulouse, France", flag: "🇫🇷", date: "March 2026", category: "Open Solo", result: "01:07:55", href: "https://results.hyrox.com/season-8/?content=detail&fpid=search&pid=search&idp=LR3MS4JI491135&lang=EN_CAP&event=H_LR3MS4JI134E&pidp=ranking_nav&search%5Bname%5D=Chenel&search%5Bfirstname%5D=Hugo&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JI134E" },
       { event: "Bordeaux, France", flag: "🇫🇷", date: "November 2025", category: "Open Solo", result: "01:11:47", href: "https://results.hyrox.com/season-8/?content=detail&fpid=search&pid=search&idp=LR3MS4JI4154BA&lang=EN_CAP&event=H_LR3MS4JIFB6&pidp=ranking_nav&search%5Bname%5D=Chenel&search%5Bfirstname%5D=Hugo&search%5Bsex%5D=M&search%5Bage_class%5D=%25&search%5Bnation%5D=%25&search_event=H_LR3MS4JIFB6" },
@@ -91,7 +104,7 @@ const competitionGroups = [
   {
     group: "CrossFit",
     image: "/assets/images/athleticism/Hyrox_competition.png",
-    link: { label: "Games profile", href: "https://games.crossfit.com/athlete/2736016" },
+    links: [{ label: "Games profile", href: "https://games.crossfit.com/athlete/2736016" }],
     races: [
       { event: "CrossFit Open 2026", date: "2026", result: "Level 8 · 13–23% · Advanced", href: "https://games.crossfit.com/leaderboard/open/2026?view=0&division=1&region=0&athlete=2736016&scaled=0&sort=0" },
       { event: "CrossFit Open 2025", date: "2025", result: "Level 5 · 44–54% · Intermediate", href: "https://games.crossfit.com/leaderboard/open/2025?view=0&division=1&region=&country=FR&region_search_display=France&scaled=0&sort=0&athlete=2736016" },
@@ -100,7 +113,7 @@ const competitionGroups = [
   {
     group: "Red Bull 400",
     image: "/assets/images/athleticism/RedBull400.webp",
-    link: null,
+    links: [],
     races: [
       { event: "Courchevel, France", date: "2025", result: "05:22 · Semi-Final", href: "https://www.redbull.com/fr-fr/events/red-bull-400" },
     ],
@@ -108,7 +121,10 @@ const competitionGroups = [
   {
     group: "Races",
     image: "/assets/images/athleticism/Hyrox2.jpg",
-    link: { label: "Strava", href: "https://www.strava.com/athletes/125862142" },
+    links: [
+      { label: "Strava", href: "https://www.strava.com/athletes/125862142" },
+      { label: "FFA", href: "https://www.athle.fr/athletes/690124/resultats" },
+    ],
     races: [
       { event: "La Ronde du Printemps", date: "2026", result: "24th / 252", href: "https://resultat.chrono-start.net/static/race/5204/ranking+export=pdf" },
       { event: "La corrida de Noël de Toulouse", date: "2025", result: "20th / 784", href: "https://www.runningtrail.fr/resultats/2025/La-Corrida-De-Noel-2025-5km.pdf" },
@@ -198,12 +214,49 @@ const trainingTools = [
   title="Athleticism — Hugo Chenel"
   description="Hybrid athlete competing in Hyrox, CrossFit and running — backed by systematic training and biomarker tracking."
 >
-  <div class="container">
-    <div class="hero">
-      <div class="hero-left">
+  <div id="toc-bar-wrap">
+    <TableOfContents sections={tocSections} />
+  </div>
+
+  <div class="hero-bg hero-bg--athlete athlete-hero-wrap">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-left">
         <p class="page-eyebrow">Athleticism</p>
         <h1 class="page-title">Hybrid athlete</h1>
-        <p class="page-lead">Training across strength, endurance and explosiveness — competing in Hyrox, CrossFit and road races. Performance informed by physiology, not intuition.</p>
+        <p class="page-lead">Training across strength, endurance and explosiveness; competing in Hyrox, CrossFit and road races. Performance informed by physiology, not intuition.</p>
+        <TableOfContents sections={tocSections} variant="hero" />
+        <div class="hero-profiles">
+          <p class="hero-profiles-label">Profiles</p>
+          <div class="hero-profile-links">
+            {heroProfiles.map(p => (
+              <a href={p.href} target="_blank" rel="noopener" class="hero-profile-link">
+                <span class="hero-profile-icon" aria-hidden="true">
+                  {p.icon === 'flag' && (
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
+                    </svg>
+                  )}
+                  {p.icon === 'target' && (
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+                    </svg>
+                  )}
+                  {p.icon === 'activity' && (
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                  )}
+                </span>
+                <span class="hero-profile-content">
+                  <span class="hero-profile-name">{p.label}</span>
+                  <span class="hero-profile-sub">{p.sub}</span>
+                </span>
+                <span class="hero-profile-arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
       <aside class="athlete-card">
         <p class="athlete-card-label">Performance</p>
@@ -215,17 +268,12 @@ const trainingTools = [
             </div>
           ))}
         </div>
-        <div class="athlete-card-profiles">
-          {heroProfiles.map(p => (
-            <a href={p.href} target="_blank" rel="noopener" class="athlete-card-profile-link">
-              <span>{p.label}</span>
-              <span>&rarr;</span>
-            </a>
-          ))}
-        </div>
       </aside>
+      </div>
     </div>
+  </div>
 
+  <div class="container">
     <TopicGrid topics={topics} />
 
     <!-- Intro -->
@@ -235,7 +283,7 @@ const trainingTools = [
 
 
     <!-- Foundations -->
-    <section class="section">
+    <section class="section" id="foundations">
       <h2 class="section-label">Foundations</h2>
       <div class="foundations-list">
         {foundations.map((f) => (
@@ -251,7 +299,7 @@ const trainingTools = [
     </section>
 
     <!-- Physiological Profile -->
-    <section class="section">
+    <section class="section" id="profile">
       <h2 class="section-label">Physiological profile</h2>
 
       <!-- Physical attributes with unit toggle -->
@@ -292,7 +340,7 @@ const trainingTools = [
     </section>
 
     <!-- Competition Results -->
-    <section class="section">
+    <section class="section" id="competitions">
       <h2 class="section-label">Competition results</h2>
       <div class="comp-groups">
         {competitionGroups.map((g, i) => (
@@ -304,8 +352,15 @@ const trainingTools = [
               >
                 <div class="comp-group-banner-inner">
                   <h3 class="comp-group-title">{g.group}</h3>
-                  {g.link && (
-                    <a href={g.link.href} target="_blank" rel="noopener" class="comp-group-link">{g.link.label} &rarr;</a>
+                  {g.links && g.links.length > 0 && (
+                    <div class="comp-group-links">
+                      {g.links.map(l => (
+                        <a href={l.href} target="_blank" rel="noopener" class="comp-group-link">
+                          {l.label}
+                          <span class="comp-link-arrow" aria-hidden="true">→</span>
+                        </a>
+                      ))}
+                    </div>
                   )}
                 </div>
               </div>
@@ -383,7 +438,7 @@ const trainingTools = [
     </section>
 
     <!-- Personal Records -->
-    <section class="section">
+    <section class="section" id="records">
       <h2 class="section-label">Personal records</h2>
       <div class="pr-grid">
         <div class="pr-group">
@@ -426,7 +481,7 @@ const trainingTools = [
     </section>
 
     <!-- Weekly Schedule -->
-    <section class="section">
+    <section class="section" id="schedule">
       <h2 class="section-label">Weekly schedule</h2>
       <div class="schedule-list">
         {schedule.map((s) => (
@@ -461,7 +516,7 @@ const trainingTools = [
     </section>
 
     <!-- Training practices -->
-    <section class="section">
+    <section class="section" id="practices">
       <h2 class="section-label">Training details & practices</h2>
       <div class="practices-list">
         {trainingPractices.map((p) => (
@@ -474,7 +529,7 @@ const trainingTools = [
     </section>
 
     <!-- Training tools -->
-    <section class="section">
+    <section class="section" id="tools">
       <h2 class="section-label">Tools</h2>
       <div class="tools-grid">
         {trainingTools.map((t, i) => (
@@ -488,7 +543,7 @@ const trainingTools = [
     </section>
 
     <!-- Recovery -->
-    <section class="section">
+    <section class="section" id="recovery">
       <h2 class="section-label">Recovery monitoring</h2>
       <div class="recovery-grid">
 
@@ -544,6 +599,7 @@ const trainingTools = [
     </section>
 
   </div>
+
 </Layout>
 
 <script>
@@ -589,6 +645,15 @@ const trainingTools = [
       h.addEventListener('mouseleave', () => hyroxTooltip.classList.remove('visible'));
     });
   }
+
+  // ── Scroll-reveal TOC bar ──────────────────────────────────────
+  const tocBarWrap = document.getElementById('toc-bar-wrap');
+  const heroToc    = document.querySelector<HTMLElement>('.sc-toc--hero');
+  if (heroToc && tocBarWrap) {
+    new IntersectionObserver(([e]) => {
+      tocBarWrap.classList.toggle('visible', !e.isIntersecting);
+    }, { threshold: 0 }).observe(heroToc);
+  }
 </script>
 
 <style>
@@ -601,6 +666,7 @@ const trainingTools = [
   .section {
     padding: 4rem 0;
     border-top: 1px solid var(--border);
+    scroll-margin-top: 80px;
   }
 
   .section-label {
@@ -824,25 +890,52 @@ const trainingTools = [
     line-height: 1.1;
   }
 
-  .comp-group-link {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
-    border: 1px solid rgba(255,255,255,0.45);
-    padding: 0.35rem 0.85rem;
-    border-radius: var(--radius);
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-    white-space: nowrap;
+  .comp-group-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     flex-shrink: 0;
-    backdrop-filter: blur(4px);
+  }
+
+  .comp-group-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0f0f0f;
+    background: rgba(255,255,255,0.96);
+    border: none;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius);
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.28);
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
   }
 
   .comp-group-link:hover {
-    background: rgba(255,255,255,0.18);
-    border-color: rgba(255,255,255,0.8);
-    color: #fff;
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+  }
+
+  .comp-group-link:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.24);
+  }
+
+  .comp-link-arrow {
+    display: inline-block;
+    transition: transform var(--transition);
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .comp-group-link:hover .comp-link-arrow {
+    transform: translateX(3px);
   }
 
   /* Results area below banner */
@@ -1246,13 +1339,16 @@ const trainingTools = [
   .profile-link:hover { color: var(--accent); }
 
   /* ── Hero ── */
+  .athlete-hero-wrap {
+    border-bottom: 1px solid var(--border);
+  }
+
   .hero {
     display: grid;
     grid-template-columns: 1fr 268px;
     gap: 3.5rem;
     padding: 6rem 0 5rem;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
+    align-items: stretch;
   }
 
   .page-eyebrow {
@@ -1275,7 +1371,7 @@ const trainingTools = [
   }
 
   .page-lead {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.75;
     color: var(--text-muted);
@@ -1283,83 +1379,196 @@ const trainingTools = [
 
   /* ── Athlete card ── */
   .athlete-card {
-    border: 1px solid var(--border);
+    border: 1px solid rgba(42,92,69,0.18);
     border-top: 2px solid var(--accent);
-    padding: 1.5rem;
+    border-left: 2px solid var(--accent);
+    padding: 1.5rem 1.5rem 1.25rem;
     position: sticky;
     top: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--accent-light);
+  }
+
+  html.dark .athlete-card {
+    border-color: rgba(82,179,130,0.22);
+    border-top-color: var(--accent);
+    border-left-color: var(--accent);
   }
 
   .athlete-card-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .athlete-card-label::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 1px;
+    background: var(--accent);
+    flex-shrink: 0;
   }
 
   .athlete-card-stats {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
   }
 
   .athlete-card-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     gap: 1rem;
-    padding: 0.55rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 0 0.5rem;
+    margin: 0 -0.5rem;
+    min-height: 3.2rem;
+    border-bottom: 1px solid rgba(42,92,69,0.14);
+  }
+
+  html.dark .athlete-card-row {
+    border-bottom-color: rgba(82,179,130,0.16);
   }
 
   .athlete-card-row:first-child {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(42,92,69,0.14);
+  }
+
+  html.dark .athlete-card-row:first-child {
+    border-top-color: rgba(82,179,130,0.16);
   }
 
   .athlete-card-key {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 400;
     letter-spacing: 0.04em;
     color: var(--text-muted);
     text-transform: uppercase;
-    white-space: nowrap;
+    white-space: pre-line;
+    line-height: 1.4;
   }
 
   .athlete-card-val {
     font-family: var(--font-serif);
-    font-size: 1rem;
-    color: var(--text);
+    font-size: 1.05rem;
+    color: var(--accent);
     text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1;
   }
 
-  .athlete-card-profiles {
+  /* ── Hero profile links ── */
+  .hero-profiles {
+    margin-top: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-top: 1.1rem;
-    border-top: 1px solid var(--border);
-    padding-top: 1rem;
+    gap: 0.75rem;
   }
 
-  .athlete-card-profile-link {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
+  .hero-profiles-label {
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
     color: var(--accent);
-    padding: 0.35rem 0;
-    transition: color 0.2s;
-    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
   }
 
-  .athlete-card-profile-link:last-child {
-    border-bottom: none;
+  .hero-profiles-label::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background: var(--accent);
+    flex-shrink: 0;
   }
 
-  .athlete-card-profile-link:hover {
+  .hero-profile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .hero-profile-link {
+    display: grid;
+    grid-template-columns: 2.2rem 1fr auto;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
     color: var(--text);
+    text-decoration: none;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+
+  .hero-profile-link:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(42,92,69,0.09);
+    transform: translateY(-1px);
+  }
+
+  html.dark .hero-profile-link:hover {
+    box-shadow: 0 4px 20px rgba(82,179,130,0.11);
+  }
+
+  .hero-profile-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .hero-profile-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .hero-profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+
+  .hero-profile-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .hero-profile-sub {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  .hero-profile-arrow {
+    font-size: 0.85rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: transform var(--transition);
+    line-height: 1;
+  }
+
+  .hero-profile-link:hover .hero-profile-arrow {
+    transform: translateX(4px);
   }
 
   /* Intro */
@@ -1598,5 +1807,29 @@ const trainingTools = [
     font-size: 1.5rem;
     color: var(--text);
     line-height: 1;
+  }
+
+  /* ── Scroll-reveal TOC bar ── */
+  #toc-bar-wrap {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+
+  #toc-bar-wrap.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Override the component's own sticky so the fixed wrapper handles positioning */
+  :global(#toc-bar-wrap .sc-toc) {
+    position: static;
   }
 </style>

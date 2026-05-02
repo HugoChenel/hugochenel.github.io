@@ -358,6 +358,16 @@ const currentPath = Astro.url.pathname;
   html:not(.dark) .icon-sun { display: none; }
   html.dark .icon-moon { display: none; }
 
+  /* Micro-delight 1: theme toggle icon spins in on switch (not on page load) */
+  @keyframes iconSpin {
+    from { opacity: 0; transform: rotate(-50deg) scale(0.55); }
+    to   { opacity: 1; transform: rotate(0deg)   scale(1);    }
+  }
+  [data-theme-changed].dark .icon-sun,
+  [data-theme-changed]:not(.dark) .icon-moon {
+    animation: iconSpin 0.22s cubic-bezier(0, 0, 0.2, 1) both;
+  }
+
   /* ── Footer ── */
   .site-footer {
     border-top: 1px solid var(--border);
@@ -564,6 +574,116 @@ const currentPath = Astro.url.pathname;
   .reveal.is-visible {
     opacity: 1;
     transform: none;
+  }
+
+  /* ── Hero background system ── */
+  :root {
+    --hero-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+
+  .hero-bg { position: relative; }
+
+  /* Home — welcoming, modern */
+  .hero-bg--home {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 55% 65% at 15% 55%, rgba(42,92,69,0.065) 0%, transparent 68%),
+      radial-gradient(ellipse 30% 40% at 88% 18%, rgba(42,92,69,0.04)  0%, transparent 60%);
+    background-color: var(--bg);
+  }
+  html.dark .hero-bg--home {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 55% 65% at 15% 55%, rgba(82,179,130,0.07)  0%, transparent 68%),
+      radial-gradient(ellipse 30% 40% at 88% 18%, rgba(82,179,130,0.04)  0%, transparent 60%);
+  }
+
+  /* Science — clean academic, with faint ruled lines */
+  .hero-bg--science {
+    background-image:
+      var(--hero-noise),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent calc(3.5rem - 1px),
+        rgba(42,92,69,0.03) calc(3.5rem - 1px),
+        rgba(42,92,69,0.03) 3.5rem
+      ),
+      radial-gradient(ellipse 55% 75% at 92% 18%, rgba(42,92,69,0.055) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 40% at  6% 90%, rgba(42,92,69,0.035) 0%, transparent 55%);
+    background-color: var(--bg);
+  }
+  html.dark .hero-bg--science {
+    background-image:
+      var(--hero-noise),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent calc(3.5rem - 1px),
+        rgba(82,179,130,0.04) calc(3.5rem - 1px),
+        rgba(82,179,130,0.04) 3.5rem
+      ),
+      radial-gradient(ellipse 55% 75% at 92% 18%, rgba(82,179,130,0.06)  0%, transparent 65%),
+      radial-gradient(ellipse 30% 40% at  6% 90%, rgba(82,179,130,0.035) 0%, transparent 55%);
+  }
+
+  /* Biohacking — fresh, organic, three-point bloom */
+  .hero-bg--bio {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 65% 80% at 93% 32%, rgba(42,92,69,0.065) 0%, transparent 62%),
+      radial-gradient(ellipse 38% 45% at  4% 78%, rgba(42,92,69,0.04)  0%, transparent 56%),
+      radial-gradient(ellipse 22% 28% at 52% -8%, rgba(42,92,69,0.03)  0%, transparent 52%);
+    background-color: var(--bg);
+  }
+  html.dark .hero-bg--bio {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 65% 80% at 93% 32%, rgba(82,179,130,0.07)  0%, transparent 62%),
+      radial-gradient(ellipse 38% 45% at  4% 78%, rgba(82,179,130,0.045) 0%, transparent 56%),
+      radial-gradient(ellipse 22% 28% at 52% -8%, rgba(82,179,130,0.03)  0%, transparent 52%);
+  }
+
+  /* Athleticism — directional, kinetic */
+  .hero-bg--athlete {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 80% 60% at 102% 50%, rgba(42,92,69,0.055) 0%, transparent 58%),
+      radial-gradient(ellipse 35% 40% at   4% 18%, rgba(42,92,69,0.035) 0%, transparent 52%),
+      linear-gradient(135deg, transparent 62%, rgba(42,92,69,0.02) 100%);
+    background-color: var(--bg);
+  }
+  html.dark .hero-bg--athlete {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 80% 60% at 102% 50%, rgba(82,179,130,0.06)  0%, transparent 58%),
+      radial-gradient(ellipse 35% 40% at   4% 18%, rgba(82,179,130,0.035) 0%, transparent 52%),
+      linear-gradient(135deg, transparent 62%, rgba(82,179,130,0.025) 100%);
+  }
+
+  /* About — warm, personal, centred-right bloom */
+  .hero-bg--about {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 52% 88% at 97% 50%, rgba(42,92,69,0.06)  0%, transparent 65%),
+      radial-gradient(ellipse 28% 38% at  8% 14%, rgba(42,92,69,0.038) 0%, transparent 54%);
+    background-color: var(--bg);
+  }
+  html.dark .hero-bg--about {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 52% 88% at 97% 50%, rgba(82,179,130,0.065) 0%, transparent 65%),
+      radial-gradient(ellipse 28% 38% at  8% 14%, rgba(82,179,130,0.04)  0%, transparent 54%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-bg {
+      animation: heroBgFade 0.6s ease-out both;
+    }
+    @keyframes heroBgFade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
   }
 
   /* will-change hints — only on pointer devices, only while hovering */

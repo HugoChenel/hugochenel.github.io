@@ -569,6 +569,7 @@ const pages = [
     .about-hero {
       flex-direction: column;
       gap: 3rem;
+      padding: 3.5rem 0 3rem;
     }
 
     .about-hero-right {
@@ -577,9 +578,39 @@ const pages = [
     }
   }
 
+  @media (max-width: 540px) {
+    .hl-row {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hl-row .hl-cell:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
   @media (max-width: 480px) {
+    .about-hero {
+      padding: 2.5rem 0 2rem;
+    }
+
+    .hl-row {
+      grid-template-columns: 1fr;
+    }
+
+    .hl-row .hl-cell:last-child {
+      grid-column: auto;
+    }
+
     .hl-cell {
-      padding: 1rem 0.85rem;
+      padding: 1rem 1.1rem;
+    }
+
+    .hl-val {
+      font-size: 1.1rem;
+    }
+
+    .about-name {
+      font-size: clamp(1.9rem, 8vw, 3.75rem);
     }
   }
 

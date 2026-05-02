@@ -21,7 +21,7 @@ const heroStats = [
   { label: "Dips",                   value: "52 reps" },
   { label: "Weighted pull-up\n(1RM)", value: "55 kg" },
   { label: "Pull-ups",              value: "27 reps" },
-  { label: "5K",                    value: "19:06" },
+  { label: "5K",                    value: "18:26" },
 ];
 
 const heroProfiles = [
@@ -83,7 +83,7 @@ const prs = {
     { label: "800m", value: "2:32" },
     { label: "1600m", value: "5:32" },
     { label: "3200m", value: "11:38" },
-    { label: "5K", value: "19:06" },
+    { label: "5K", value: "18:26" },
     { label: "VMA", value: "18.2 km/h" },
   ],
 };
@@ -1382,18 +1382,21 @@ const trainingTools = [
     border: 1px solid rgba(42,92,69,0.18);
     border-top: 2px solid var(--accent);
     border-left: 2px solid var(--accent);
-    padding: 1.5rem 1.5rem 1.25rem;
+    padding: 1.25rem 1.5rem 1.25rem;
     position: sticky;
     top: 2rem;
     display: flex;
     flex-direction: column;
-    background: var(--accent-light);
+    background: rgba(42,92,69,0.04);
+    box-shadow: 0 4px 24px rgba(42,92,69,0.07), 0 1px 4px rgba(42,92,69,0.05);
   }
 
   html.dark .athlete-card {
     border-color: rgba(82,179,130,0.22);
     border-top-color: var(--accent);
     border-left-color: var(--accent);
+    background: rgba(82,179,130,0.04);
+    box-shadow: 0 4px 24px rgba(82,179,130,0.06), 0 1px 4px rgba(82,179,130,0.04);
   }
 
   .athlete-card-label {
@@ -1402,10 +1405,16 @@ const trainingTools = [
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding-bottom: 0.875rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(42,92,69,0.14);
+  }
+
+  html.dark .athlete-card-label {
+    border-bottom-color: rgba(82,179,130,0.16);
   }
 
   .athlete-card-label::before {
@@ -1421,7 +1430,6 @@ const trainingTools = [
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: space-between;
   }
 
   .athlete-card-row {
@@ -1431,7 +1439,7 @@ const trainingTools = [
     gap: 1rem;
     padding: 0 0.5rem;
     margin: 0 -0.5rem;
-    min-height: 3.2rem;
+    flex: 1;
     border-bottom: 1px solid rgba(42,92,69,0.14);
   }
 
@@ -1448,18 +1456,19 @@ const trainingTools = [
   }
 
   .athlete-card-key {
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.04em;
     color: var(--text-muted);
     text-transform: uppercase;
     white-space: pre-line;
     line-height: 1.4;
+    opacity: 0.8;
   }
 
   .athlete-card-val {
     font-family: var(--font-serif);
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--accent);
     text-align: right;
     white-space: nowrap;
@@ -1507,6 +1516,7 @@ const trainingTools = [
     align-items: center;
     gap: 0.85rem;
     padding: 0.85rem 1rem;
+    min-height: 4rem;
     border: 1px solid var(--border);
     background: var(--bg-card);
     color: var(--text);
@@ -1700,6 +1710,44 @@ const trainingTools = [
     .recovery-item {
       grid-template-columns: 1fr;
       gap: 0.5rem;
+    }
+
+    .tools-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .practices-list {
+      grid-template-columns: 1fr;
+    }
+
+    .section {
+      padding: 3rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-label {
+      font-size: 1.5rem;
+    }
+
+    .comp-group-banner {
+      height: 150px;
+    }
+
+    .pace-chart-wrap {
+      padding: 1.25rem 1rem 1rem;
     }
   }
 

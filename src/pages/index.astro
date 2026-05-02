@@ -59,8 +59,7 @@ const featured = [
             Athleticism.
           </h1>
           <p class="hero-sub">
-            Exploring performance and longevity at the intersection of<br />
-            rigorous science and lived experience.
+            Exploring performance and longevity at the intersection of rigorous science and lived experience.
           </p>
         </div>
         <div class="hero-photo-wrap">
@@ -692,6 +691,29 @@ const featured = [
 
     .pillar-card {
       padding: 2.5rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-role {
+      grid-template-columns: 75px 1fr;
+      gap: 0 1rem;
+    }
+
+    .writing-link {
+      padding: 1.5rem 0;
+    }
+
+    .pillar-card {
+      padding: 2rem 1.25rem;
+    }
+
+    .crypto-section {
+      padding: 3rem 0;
     }
   }
 

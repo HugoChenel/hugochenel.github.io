@@ -1,0 +1,478 @@
+---
+interface Section {
+  id: string;
+  label: string;
+  fullLabel?: string;
+}
+interface Props {
+  sections: Section[];
+  title?: string;
+  variant?: "bar" | "hero" | "sidebar";
+}
+const { sections, title = "Sommaire", variant = "bar" } = Astro.props;
+---
+
+<nav class:list={["sc-toc", variant === "hero" && "sc-toc--hero", variant === "sidebar" && "sc-toc--sidebar"]} id="sc-toc" aria-label="Page contents">
+  <div class="sc-toc-inner">
+
+    <!-- Mobile toggle -->
+    <button
+      class="sc-toc-toggle"
+      id="sc-toc-toggle"
+      aria-expanded="false"
+      aria-controls="sc-toc-links"
+      aria-label="Toggle table of contents"
+    >
+      <span class="sc-toc-toggle-label">{title}</span>
+      <svg class="sc-toc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="4 6 8 10 12 6"/>
+      </svg>
+    </button>
+
+    <!-- Links -->
+    <ol class="sc-toc-links" id="sc-toc-links" role="list">
+      {sections.map((s, i) => (
+        <li class="sc-toc-item">
+          <a href={`#${s.id}`} class="sc-toc-link" data-section={s.id}>
+            <span class="sc-toc-num">{String(i + 1).padStart(2, "0")}</span>
+            <span class="sc-toc-label">{(variant === 'hero' || variant === 'sidebar') ? (s.fullLabel ?? s.label) : s.label}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+
+  </div>
+</nav>
+
+<script>
+  // Scope each .sc-toc instance independently (supports multiple on one page)
+  document.querySelectorAll<HTMLElement>('.sc-toc').forEach(nav => {
+    const toggle  = nav.querySelector<HTMLButtonElement>('.sc-toc-toggle');
+    const linkBox = nav.querySelector<HTMLOListElement>('.sc-toc-links');
+    const links   = nav.querySelectorAll<HTMLAnchorElement>('.sc-toc-link[data-section]');
+
+    // ── Mobile toggle ──────────────────────────────────────────────
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      linkBox?.classList.toggle('sc-toc-links--open', !open);
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle?.setAttribute('aria-expanded', 'false');
+        linkBox?.classList.remove('sc-toc-links--open');
+      });
+    });
+
+    // Hero/sidebar variants: navigation only, no active tracking
+    if (nav.classList.contains('sc-toc--hero') || nav.classList.contains('sc-toc--sidebar')) return;
+
+    // ── Active section tracking via scroll ──────────────────────────
+    function setActive(id: string) {
+      links.forEach(l => l.classList.toggle('active', l.dataset.section === id));
+    }
+    function clearActive() {
+      links.forEach(l => l.classList.remove('active'));
+    }
+
+    const sections = Array.from(links)
+      .map(l => document.getElementById(l.dataset.section!))
+      .filter((s): s is HTMLElement => s !== null);
+
+    function updateActive() {
+      // Active when heading crosses ~130px from viewport top
+      // (covers 64px nav + 42px bar on Science/Biohacking, and 80px on Athleticism)
+      const threshold = 130;
+      let activeId = '';
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= threshold) activeId = s.id;
+      }
+      if (activeId) setActive(activeId);
+      else clearActive();
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => { updateActive(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+  });
+</script>
+
+<style>
+  /* ── Wrapper ── */
+  .sc-toc {
+    position: sticky;
+    top: 64px; /* site nav height */
+    z-index: 40;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
+  }
+
+  .sc-toc-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Mobile toggle (hidden on desktop) ── */
+  .sc-toc-toggle {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    padding: 0.9rem 0;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+
+  .sc-toc-toggle:hover {
+    color: var(--text);
+  }
+
+  .sc-toc-chevron {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    transition: transform 0.22s var(--ease);
+  }
+
+  .sc-toc-toggle[aria-expanded="true"] .sc-toc-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ── Links list — horizontal on desktop ── */
+  .sc-toc-links {
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .sc-toc-links::-webkit-scrollbar { display: none; }
+
+  .sc-toc-item {
+    flex-shrink: 0;
+  }
+
+  .sc-toc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.9rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: relative;
+    transition: color var(--transition);
+  }
+
+  /* Sliding underline — same pattern as site nav links */
+  .sc-toc-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+  }
+
+  .sc-toc-link:hover { color: var(--text); }
+
+  .sc-toc-link.active {
+    color: var(--accent);
+  }
+
+  .sc-toc-link.active::after,
+  .sc-toc-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Monospace section number — subtle technical accent */
+  .sc-toc-num {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    opacity: 0.55;
+    line-height: 1;
+    margin-top: 1px;
+    transition: opacity var(--transition);
+  }
+
+  .sc-toc-link.active .sc-toc-num {
+    opacity: 0.9;
+  }
+
+  /* ── Mobile (≤ 680px) ── */
+  @media (max-width: 680px) {
+    .sc-toc-toggle {
+      display: flex;
+    }
+
+    .sc-toc-links {
+      flex-direction: column;
+      align-items: stretch;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s var(--ease);
+    }
+
+    .sc-toc-links--open {
+      max-height: 540px;
+    }
+
+    .sc-toc-link {
+      padding: 0.8rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .sc-toc-link::after {
+      display: none;
+    }
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .sc-toc-chevron,
+    .sc-toc-links,
+    .sc-toc-link::after {
+      transition: none !important;
+    }
+  }
+
+  /* ── Hero variant ── */
+  .sc-toc--hero {
+    position: static;
+    background: none;
+    border-bottom: none;
+    z-index: auto;
+    margin-top: 1.75rem;
+    margin-bottom: 0;
+  }
+
+  .sc-toc--hero::before {
+    content: 'Table of contents';
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.7rem;
+  }
+
+  .sc-toc--hero .sc-toc-inner {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sc-toc--hero .sc-toc-toggle {
+    display: none !important;
+  }
+
+  .sc-toc--hero .sc-toc-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    overflow: visible;
+    max-height: none !important;
+    flex-direction: unset;
+    align-items: unset;
+  }
+
+  .sc-toc--hero .sc-toc-item {
+    display: flex;
+    background: var(--bg);
+    flex-shrink: unset;
+    transition: background var(--transition);
+  }
+
+  .sc-toc--hero .sc-toc-link {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.9rem calc(1.1rem - 2px);
+    font-size: 0.76rem;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    white-space: normal;
+    position: relative;
+    border-left: 2px solid transparent;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+  }
+
+  .sc-toc--hero .sc-toc-link::after {
+    display: none;
+  }
+
+  .sc-toc--hero .sc-toc-link:hover {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+    border-left-color: var(--accent);
+  }
+
+  .sc-toc--hero .sc-toc-link.active {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+    border-left-color: var(--accent);
+  }
+
+  .sc-toc--hero .sc-toc-num {
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    opacity: 0.45;
+    transition: opacity var(--transition);
+  }
+
+  .sc-toc--hero .sc-toc-link:hover .sc-toc-num,
+  .sc-toc--hero .sc-toc-link.active .sc-toc-num {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 680px) {
+    .sc-toc--hero .sc-toc-links {
+      grid-template-columns: repeat(2, 1fr);
+      flex-direction: unset;
+      max-height: none !important;
+    }
+
+    .sc-toc--hero .sc-toc-link {
+      padding: 0.8rem calc(0.9rem - 2px);
+      border-top: none;
+    }
+  }
+
+  /* ── Sidebar variant ── */
+  .sc-toc--sidebar {
+    position: static;
+    background: none;
+    border-bottom: none;
+    z-index: auto;
+    margin-top: 0;
+  }
+
+  .sc-toc--sidebar::before {
+    content: 'Table of contents';
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sc-toc--sidebar .sc-toc-inner {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sc-toc--sidebar .sc-toc-toggle { display: none !important; }
+
+  .sc-toc--sidebar .sc-toc-links {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    max-height: none !important;
+    align-items: unset;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sc-toc--sidebar .sc-toc-item {
+    border-top: 1px solid var(--border);
+    flex-shrink: unset;
+    display: flex;
+  }
+
+  .sc-toc--sidebar .sc-toc-link {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2.6rem 1fr;
+    align-items: center;
+    gap: 0;
+    padding: 0.8rem calc(0.6rem - 2px);
+    position: relative;
+    border-left: 2px solid transparent;
+    white-space: normal;
+    color: var(--text-muted);
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+  }
+
+  .sc-toc--sidebar .sc-toc-link::after { display: none; }
+
+  .sc-toc--sidebar .sc-toc-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    color: var(--accent);
+    opacity: 0.4;
+    line-height: 1;
+    margin-top: 0;
+    transition: opacity var(--transition);
+  }
+
+  .sc-toc--sidebar .sc-toc-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  .sc-toc--sidebar .sc-toc-link:hover {
+    color: var(--text);
+    border-left-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    background: color-mix(in srgb, var(--accent) 3%, var(--bg));
+  }
+
+  .sc-toc--sidebar .sc-toc-link:hover .sc-toc-num {
+    opacity: 0.75;
+  }
+
+  .sc-toc--sidebar .sc-toc-link.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+  }
+
+  .sc-toc--sidebar .sc-toc-link.active .sc-toc-num {
+    opacity: 1;
+  }
+
+  @media (max-width: 860px) {
+    .sc-toc--sidebar { display: none; }
+  }
+</style>

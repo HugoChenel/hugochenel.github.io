@@ -9,7 +9,7 @@ interface Props {
   title?: string;
   variant?: "bar" | "hero" | "sidebar";
 }
-const { sections, title = "Sommaire", variant = "bar" } = Astro.props;
+const { sections, title = "Table of contents", variant = "bar" } = Astro.props;
 ---
 
 <nav class:list={["sc-toc", variant === "hero" && "sc-toc--hero", variant === "sidebar" && "sc-toc--sidebar"]} id="sc-toc" aria-label="Page contents">
@@ -59,9 +59,35 @@ const { sections, title = "Sommaire", variant = "bar" } = Astro.props;
     });
 
     links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle?.setAttribute('aria-expanded', 'false');
-        linkBox?.classList.remove('sc-toc-links--open');
+      link.addEventListener('click', (e) => {
+        const isMobileToggleVisible = toggle && getComputedStyle(toggle).display !== 'none';
+        const isOpen = linkBox?.classList.contains('sc-toc-links--open');
+
+        // On mobile when dropdown is open: intercept and scroll manually so the
+        // expanded dropdown height doesn't throw off scroll-margin-top calculation.
+        if (isMobileToggleVisible && isOpen) {
+          e.preventDefault();
+          const sectionId = link.dataset.section!;
+          toggle!.setAttribute('aria-expanded', 'false');
+          // Instantly collapse without transition to avoid layout-height race
+          if (linkBox) {
+            linkBox.style.transition = 'none';
+            linkBox.classList.remove('sc-toc-links--open');
+          }
+          requestAnimationFrame(() => {
+            if (linkBox) linkBox.style.transition = '';
+            const target = document.getElementById(sectionId);
+            if (!target) return;
+            const headerEl = document.querySelector<HTMLElement>('.site-header');
+            const headerH = headerEl ? headerEl.offsetHeight : 64;
+            const tocH    = nav.offsetHeight; // now collapsed = toggle height only
+            const top = target.getBoundingClientRect().top + window.scrollY - headerH - tocH - 8;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+          });
+        } else {
+          toggle?.setAttribute('aria-expanded', 'false');
+          linkBox?.classList.remove('sc-toc-links--open');
+        }
       });
     });
 

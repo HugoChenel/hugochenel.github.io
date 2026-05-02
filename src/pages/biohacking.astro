@@ -738,7 +738,7 @@ const geneticTest = [
         <br /><br />
         Two levels in this stack:<br />
         <span class="tier-tag tier-tag--basic">Essential</span>&ensp;nutrients most people benefit from<br />
-        <span class="tier-tag tier-tag--advanced">Advanced</span>&ensp;targeted compounds for specific optimization.
+        <span class="tier-tag tier-tag--advanced">Advanced</span>&ensp;targeted compounds for specific optimization
       </p>
       <div class="stack-grid">
         {supplementStack.map((s) => (
@@ -2214,18 +2214,22 @@ const geneticTest = [
 
     .biomarker-row span {
       border-right: none;
-      padding: 0.15rem 0;
+      padding: 0.2rem 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
     }
 
     .biomarker-row span::before {
-      font-size: 0.65rem;
-      font-weight: 500;
+      font-size: 0.62rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
-      display: block;
+      opacity: 0.75;
     }
 
+    .biomarker-label::before { content: "Marker"; }
     .biomarker-normal::before { content: "Normal"; }
     .biomarker-optimal::before { content: "Optimal"; }
     .biomarker-value::before { content: "My value"; }
@@ -2236,23 +2240,27 @@ const geneticTest = [
 
     .genetic-row {
       grid-template-columns: 1fr;
-      padding: 0.75rem 0.75rem;
+      padding: 0.875rem 0.875rem;
     }
 
     .genetic-row span {
       border-right: none;
-      padding: 0.15rem 0;
+      padding: 0.2rem 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
     }
 
     .genetic-row span::before {
-      font-size: 0.65rem;
-      font-weight: 500;
+      font-size: 0.62rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
-      display: block;
+      opacity: 0.75;
     }
 
+    .genetic-gene::before { content: "Gene"; }
     .genetic-worst::before { content: "Worst"; }
     .genetic-common::before { content: "Common"; }
     .genetic-optimal::before { content: "Optimal"; }
@@ -2272,6 +2280,13 @@ const geneticTest = [
     .practice-item {
       grid-template-columns: 1fr;
       gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .protocol-block {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
     }
   }
 
@@ -2295,6 +2310,12 @@ const geneticTest = [
     .stack-grid {
       grid-template-columns: 1fr;
     }
+
+    /* Increase SVG chart text legibility on small screens */
+    .pchart-lbl-y,
+    .pchart-lbl-x { font-size: 15px; }
+    .pchart-val-lbl { font-size: 13px; }
+    .pchart-tag { font-size: 12px; }
   }
 
   /* ── Pace of aging chart ── */

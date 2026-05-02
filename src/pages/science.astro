@@ -1246,24 +1246,38 @@ const languages = [
 
   .thesis-supervisors-row {
     display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--accent-light);
+    border: 1px solid rgba(42,92,69,0.18);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    flex-wrap: wrap;
+  }
+
+  html.dark .thesis-supervisors-row {
+    background: rgba(82,179,130,0.06);
+    border-color: rgba(82,179,130,0.2);
+    border-left-color: var(--accent);
   }
 
   .thesis-meta-label {
-    font-size: 0.72rem;
+    font-size: 0.62rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--accent);
     flex-shrink: 0;
   }
 
   .thesis-supervisor-names {
-    font-size: 0.925rem;
+    font-family: var(--font-serif);
+    font-size: 1rem;
     font-weight: 400;
+    font-style: italic;
     color: var(--text);
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
   .thesis-badges {
@@ -2040,18 +2054,39 @@ const languages = [
     .exp-left {
       border-right: none;
       border-bottom: 1px solid var(--border);
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      grid-template-rows: auto auto auto;
+      column-gap: 1rem;
+      row-gap: 0.2rem;
+      align-items: start;
       padding: 1rem 1.25rem;
     }
     .exp-logo-wrap {
-      margin-bottom: 0;
+      grid-column: 1;
+      grid-row: 1 / span 3;
       height: auto;
+      margin-bottom: 0;
+      align-self: center;
+    }
+    .exp-logo {
+      max-width: 64px;
+    }
+    .exp-period {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .exp-location {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .exp-type-badge {
+      grid-column: 2;
+      grid-row: 3;
+      margin-top: 0.25rem;
     }
     .exp-right {
-      padding: 1.25rem;
+      padding: 1rem 1.25rem;
     }
   }
 

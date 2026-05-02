@@ -164,6 +164,17 @@ const currentPath = Astro.url.pathname;
     el.classList.add('reveal');
     observer.observe(el);
   });
+
+  // Reveal elements already in viewport on initial load (e.g. via anchor navigation)
+  requestAnimationFrame(() => {
+    document.querySelectorAll<HTMLElement>('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+        el.classList.add('is-visible');
+        observer.unobserve(el);
+      }
+    });
+  });
 </script>
 
 <style is:global>

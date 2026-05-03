@@ -493,6 +493,12 @@ const currentPath = Astro.url.pathname;
   .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 
   @media (max-width: 640px) {
+    /* Reveal animation is unreliable on mobile — show all sections immediately */
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
     .nav-burger { display: flex; }
 
     .nav-links {

@@ -648,11 +648,11 @@ const trainingTools = [
 
   // ── Scroll-reveal TOC bar ──────────────────────────────────────
   const tocBarWrap = document.getElementById('toc-bar-wrap');
-  const heroToc    = document.querySelector<HTMLElement>('.sc-toc--hero');
-  if (heroToc && tocBarWrap) {
+  const pageTitle  = document.querySelector<HTMLElement>('.page-title');
+  if (pageTitle && tocBarWrap) {
     new IntersectionObserver(([e]) => {
       tocBarWrap.classList.toggle('visible', !e.isIntersecting);
-    }, { threshold: 0 }).observe(heroToc);
+    }, { threshold: 0 }).observe(pageTitle);
   }
 </script>
 
@@ -1699,19 +1699,19 @@ const trainingTools = [
     }
 
     .result-item {
-      gap: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
     }
 
     .result-left {
-      flex-direction: column;
-      gap: 0.15rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
     }
 
     .result-value {
       font-size: 1rem;
-      white-space: normal;
-      text-align: right;
-      flex-shrink: 0;
     }
 
     /* Centre orphaned last card when grid has odd number of items */
@@ -1771,6 +1771,11 @@ const trainingTools = [
       grid-template-columns: 1fr;
     }
 
+    .metric-card {
+      align-items: center;
+      text-align: center;
+    }
+
     .section-label {
       font-size: 1.5rem;
     }
@@ -1785,9 +1790,9 @@ const trainingTools = [
 
     /* Increase SVG chart text legibility on small screens */
     .pchart-lbl-y,
-    .pchart-lbl-x { font-size: 15px; }
-    .pchart-val-lbl { font-size: 13px; }
-    .pchart-tag { font-size: 12px; }
+    .pchart-lbl-x { font-size: 20px; }
+    .pchart-val-lbl { font-size: 17px; }
+    .pchart-tag { font-size: 15px; }
   }
 
   /* ── Hyrox progression chart ── */

@@ -909,11 +909,11 @@ const geneticTest = [
 <script>
   // ── Scroll-reveal TOC bar ──────────────────────────────────────
   const tocBarWrap = document.getElementById('toc-bar-wrap');
-  const sidebarToc = document.querySelector<HTMLElement>('.sc-toc--sidebar');
-  if (sidebarToc && tocBarWrap) {
+  const bioTitle = document.querySelector<HTMLElement>('.bio-title');
+  if (bioTitle && tocBarWrap) {
     new IntersectionObserver(([e]) => {
       tocBarWrap.classList.toggle('visible', !e.isIntersecting);
-    }, { threshold: 0 }).observe(sidebarToc);
+    }, { threshold: 0 }).observe(bioTitle);
   }
 
   const wrap = document.getElementById('paceChartWrap');
@@ -2313,9 +2313,9 @@ const geneticTest = [
 
     /* Increase SVG chart text legibility on small screens */
     .pchart-lbl-y,
-    .pchart-lbl-x { font-size: 15px; }
-    .pchart-val-lbl { font-size: 13px; }
-    .pchart-tag { font-size: 12px; }
+    .pchart-lbl-x { font-size: 20px; }
+    .pchart-val-lbl { font-size: 17px; }
+    .pchart-tag { font-size: 15px; }
   }
 
   /* ── Pace of aging chart ── */

@@ -2048,8 +2048,25 @@ const languages = [
 
   /* ── Responsive ── */
   @media (max-width: 900px) {
+    /* Convert the bordered list into a stack of separate cards */
+    .exp-list {
+      border: none;
+      gap: 1rem;
+    }
     .exp-item {
       grid-template-columns: 1fr;
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      overflow: hidden;
+    }
+    .exp-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+    /* Academia items: green accent-light strip to visually distinguish type */
+    .exp-item--academia .exp-left {
+      background: var(--accent-light);
     }
     .exp-left {
       border-right: none;
@@ -2086,7 +2103,11 @@ const languages = [
       margin-top: 0.25rem;
     }
     .exp-right {
-      padding: 1rem 1.25rem;
+      padding: 1.25rem 1.25rem 1.5rem;
+    }
+    .exp-role {
+      font-size: 1.05rem;
+      font-weight: 600;
     }
   }
 

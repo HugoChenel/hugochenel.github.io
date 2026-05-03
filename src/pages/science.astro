@@ -493,14 +493,11 @@ const languages = [
     <div class="container">
       <h2 class="section-title">Thesis</h2>
       <div class="thesis-card">
-        <div class="thesis-card-accent"></div>
+        <aside class="thesis-card-accent">
+          <img src="/assets/images/science/universite_toulouse.png" alt="University of Toulouse" class="thesis-logo" />
+          <span class="thesis-eyebrow">PhD Thesis · 2026</span>
+        </aside>
         <div class="thesis-card-inner">
-          <div class="thesis-meta-row">
-            <span class="thesis-eyebrow">PhD Thesis · 2026</span>
-            <div class="thesis-institution-wrap">
-              <img src="/assets/images/science/universite_toulouse.png" alt="University of Toulouse" class="thesis-logo" />
-            </div>
-          </div>
           <h2 class="thesis-title">Machine learning models of cancer dynamics based on transcriptomics data</h2>
           <div class="thesis-meta-details">
             <div class="thesis-supervisors-row">
@@ -1159,113 +1156,124 @@ const languages = [
 
   .thesis-card {
     display: flex;
-    gap: 0;
+    flex-direction: row;
     border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
     background: var(--bg-card);
-    transition: border-color 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    transition: box-shadow 0.25s var(--ease);
   }
 
   .thesis-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 6px 32px rgba(42,92,69,0.09);
+    box-shadow: 0 8px 48px rgba(42,92,69,0.10), 0 2px 12px rgba(42,92,69,0.05);
   }
 
+  html.dark .thesis-card:hover {
+    box-shadow: 0 8px 48px rgba(82,179,130,0.08), 0 2px 12px rgba(82,179,130,0.04);
+  }
+
+  /* Left accent sidebar */
   .thesis-card-accent {
-    width: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.75rem;
+    background: var(--accent-light);
+    border-right: 1px solid var(--border);
+    width: 220px;
     flex-shrink: 0;
-    background: var(--accent);
+    padding: 2.5rem 1.75rem;
+  }
+
+  html.dark .thesis-card-accent {
+    background: rgba(82,179,130,0.05);
   }
 
   .thesis-card-inner {
-    padding: 2.5rem 3rem;
     flex: 1;
+    min-width: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .thesis-meta-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1.25rem;
-    gap: 1rem;
+    display: none;
   }
 
   .thesis-eyebrow {
-    font-size: 0.925rem;
+    font-size: 0.78rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent);
-  }
-
-  .thesis-institution {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: var(--text-muted);
-  }
-
-  .thesis-title {
-    font-family: var(--font-serif);
-    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
-    font-weight: 400;
-    color: var(--text);
-    line-height: 1.3;
-    margin-bottom: 0.85rem;
-  }
-
-  .thesis-institution-wrap {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    text-align: center;
+    line-height: 1.5;
   }
 
   .thesis-logo {
-    height: 40px;
-    width: auto;
-    max-width: 160px;
+    width: 150px;
+    height: auto;
     object-fit: contain;
     mix-blend-mode: multiply;
-    opacity: 0.9;
+    opacity: 0.88;
   }
 
   html.dark .thesis-logo {
     filter: brightness(0) invert(1);
     mix-blend-mode: normal;
-    opacity: 0.5;
+    opacity: 0.6;
   }
 
+  /* Main title */
+  .thesis-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.28;
+    padding: 2.25rem 2.5rem 2rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Metadata strip — supervisors | funding badges */
   .thesis-meta-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.75rem;
-    padding: 1rem 1.25rem;
-    border: 1px solid var(--border);
-    border-left: 2px solid var(--accent);
-    background: var(--accent-light);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    background: none;
   }
 
   .thesis-supervisors-row {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.6rem 0.9rem;
-    background: var(--accent-light);
-    border: 1px solid rgba(42,92,69,0.18);
-    border-left: 3px solid var(--accent);
-    border-radius: var(--radius);
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.5rem 2.5rem;
+    border-right: 1px solid var(--border);
+    border-radius: 0;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    background: none;
+    flex-wrap: nowrap;
   }
 
   html.dark .thesis-supervisors-row {
-    background: rgba(82,179,130,0.06);
-    border-color: rgba(82,179,130,0.2);
-    border-left-color: var(--accent);
+    background: none;
+    border-color: var(--border);
+    border-left-color: transparent;
   }
 
   .thesis-meta-label {
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     font-weight: 600;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent);
     flex-shrink: 0;
@@ -1273,7 +1281,7 @@ const languages = [
 
   .thesis-supervisor-names {
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 400;
     font-style: italic;
     color: var(--text);
@@ -1282,55 +1290,154 @@ const languages = [
 
   .thesis-badges {
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .thesis-badge {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
-    background: var(--bg);
-    border: 1px solid rgba(42,92,69,0.3);
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
+    background: var(--accent-light);
+    border: 1px solid rgba(42,92,69,0.25);
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--radius);
+    white-space: nowrap;
   }
 
   html.dark .thesis-badge {
-    border-color: rgba(82,179,130,0.3);
-    background: var(--bg-card);
+    border-color: rgba(82,179,130,0.25);
+    background: rgba(82,179,130,0.07);
   }
 
+  /* Actions footer */
   .thesis-actions {
     display: flex;
     gap: 0.75rem;
     align-items: center;
+    padding: 1.25rem 2.5rem;
+    background: var(--accent-light);
+  }
+
+  html.dark .thesis-actions {
+    background: rgba(82,179,130,0.05);
   }
 
   .thesis-cta {
-    font-size: 0.875rem;
-    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: #fff;
     background: var(--accent);
-    padding: 0.5rem 1.25rem;
-    transition: opacity 0.2s;
+    padding: 0.8rem 1.75rem;
+    border: 1px solid var(--accent);
+    transition: opacity 0.2s, transform 0.18s var(--ease);
   }
 
-  .thesis-cta:hover { opacity: 0.85; }
+  .thesis-cta:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
 
   .thesis-pdf {
-    font-size: 0.875rem;
-    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--text-muted);
+    background: var(--bg);
     border: 1px solid var(--border);
-    padding: 0.5rem 1.25rem;
-    transition: border-color 0.2s, color 0.2s;
+    padding: 0.8rem 1.75rem;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
   }
 
   .thesis-pdf:hover {
     border-color: var(--accent);
     color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  /* Thesis mobile */
+  @media (max-width: 640px) {
+    .thesis-card {
+      flex-direction: column;
+      border-top: none;
+    }
+
+    .thesis-card-accent {
+      width: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.5rem;
+      gap: 1rem;
+      background: var(--accent);
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .thesis-logo {
+      width: auto;
+      height: 36px;
+      mix-blend-mode: normal;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+
+    .thesis-eyebrow {
+      text-align: right;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+    }
+
+    .thesis-title {
+      font-size: 1.35rem;
+      padding: 1.5rem 1.5rem 1.25rem;
+      line-height: 1.32;
+    }
+
+    .thesis-meta-details {
+      grid-template-columns: 1fr;
+    }
+
+    .thesis-supervisors-row {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .thesis-badges {
+      padding: 1rem 1.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .thesis-actions {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1.25rem 1.5rem;
+      gap: 0.6rem;
+    }
+
+    .thesis-cta,
+    .thesis-pdf {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   /* ── Tutorials ── */
@@ -2188,25 +2295,6 @@ const languages = [
 
     .pub-body {
       padding: 1rem 1rem 1.25rem;
-    }
-
-    .thesis-card-inner {
-      padding: 1.5rem 1.25rem;
-    }
-
-    .thesis-meta-row {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .thesis-actions {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .thesis-cta,
-    .thesis-pdf {
-      text-align: center;
     }
 
     .pub-audio {

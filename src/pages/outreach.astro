@@ -287,7 +287,8 @@ const missionItems = [
     mix-blend-mode: multiply;
   }
 
-  :global([data-theme="dark"]) .source-logo {
+  :global([data-theme="dark"]) .source-logo,
+  :global(html.dark) .source-logo {
     filter: brightness(0) invert(1);
     mix-blend-mode: normal;
   }
@@ -377,7 +378,8 @@ const missionItems = [
     mix-blend-mode: multiply;
   }
 
-  :global([data-theme="dark"]) .org-logo-img {
+  :global([data-theme="dark"]) .org-logo-img,
+  :global(html.dark) .org-logo-img {
     filter: brightness(0) invert(1);
     mix-blend-mode: normal;
   }
@@ -528,6 +530,11 @@ const missionItems = [
       gap: 1.5rem;
     }
 
+    .media-year {
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
     .mission-grid {
       grid-template-columns: 1fr;
     }
@@ -548,14 +555,24 @@ const missionItems = [
 
     .ambassador-card {
       grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 2rem;
+      gap: 1.5rem;
+      padding: 1.75rem;
+      border: 1px solid var(--border);
     }
 
     .ambassador-card-left {
-      justify-content: flex-start;
+      justify-content: center;
     }
 
+    .org-logo-slot {
+      width: 200px;
+      height: 200px;
+    }
+
+    .media-entry-link {
+      padding: 1rem 1.25rem;
+      gap: 1rem;
+    }
   }
 
   @media (max-width: 640px) {
@@ -569,6 +586,32 @@ const missionItems = [
 
     .mission-block {
       padding: 1.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+    }
+
+    .media-entry {
+      padding: 1.5rem 0;
+    }
+
+    .media-entry-meta {
+      gap: 0.75rem;
+    }
+
+    .source-logo {
+      height: 48px;
+    }
+
+    .ambassador-cta {
+      padding: 0.9rem 1.25rem;
+      gap: 1rem;
+    }
+
+    .ambassador-cta-text {
+      font-size: 0.85rem;
     }
   }
 </style>

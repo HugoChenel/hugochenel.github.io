@@ -2214,10 +2214,18 @@ const geneticTest = [
 
     .biomarker-row span {
       border-right: none;
-      padding: 0.2rem 0;
+      padding: 0.25rem 0;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.1rem;
+      gap: 0.15rem;
+    }
+
+    .biomarker-value {
+      padding: 0.3rem 0.6rem !important;
+      background: var(--accent-light) !important;
+      border-left: 2px solid var(--accent) !important;
+      margin-top: 0.1rem;
+      font-size: 0.95rem !important;
     }
 
     .biomarker-row span::before {
@@ -2245,10 +2253,19 @@ const geneticTest = [
 
     .genetic-row span {
       border-right: none;
-      padding: 0.2rem 0;
+      padding: 0.25rem 0;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.1rem;
+      gap: 0.15rem;
+    }
+
+    .genetic-optimal {
+      padding: 0.25rem 0.6rem;
+      background: rgba(42,92,69,0.08);
+    }
+
+    html.dark .genetic-optimal {
+      background: rgba(82,179,130,0.1);
     }
 
     .genetic-row span::before {
@@ -2280,6 +2297,17 @@ const geneticTest = [
     .practice-item {
       grid-template-columns: 1fr;
       gap: 0.5rem;
+    }
+
+    .practice-subitem {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+
+    .practice-sublabel {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.8rem;
     }
   }
 
@@ -2316,6 +2344,16 @@ const geneticTest = [
     .pchart-lbl-x { font-size: 20px; }
     .pchart-val-lbl { font-size: 17px; }
     .pchart-tag { font-size: 15px; }
+
+    /* Horizontal scroll so chart renders at readable minimum width */
+    .pace-chart-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .pace-chart-svg {
+      min-width: 500px;
+      width: 500px;
+    }
   }
 
   /* ── Pace of aging chart ── */

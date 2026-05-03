@@ -1699,19 +1699,37 @@ const trainingTools = [
     }
 
     .result-item {
-      flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.6rem;
       align-items: flex-start;
     }
 
     .result-left {
-      flex-wrap: wrap;
+      flex: 1;
+      min-width: 0;
       gap: 0.5rem;
-      align-items: center;
+      align-items: flex-start;
+    }
+
+    .result-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .result-event {
+      font-size: 0.85rem;
+      line-height: 1.35;
+      white-space: normal;
+    }
+
+    .result-sub {
+      flex-wrap: wrap;
+      gap: 0.25rem;
     }
 
     .result-value {
+      flex-shrink: 0;
       font-size: 1rem;
+      padding-top: 2px;
     }
 
     /* Centre orphaned last card when grid has odd number of items */
@@ -1776,6 +1794,19 @@ const trainingTools = [
       text-align: center;
     }
 
+    .phys-attrs-wrap {
+      align-items: center;
+    }
+
+    .phys-attrs {
+      align-items: center;
+    }
+
+    .phys-attr {
+      align-items: center;
+      text-align: center;
+    }
+
     .section-label {
       font-size: 1.5rem;
     }
@@ -1793,6 +1824,16 @@ const trainingTools = [
     .pchart-lbl-x { font-size: 20px; }
     .pchart-val-lbl { font-size: 17px; }
     .pchart-tag { font-size: 15px; }
+
+    /* Horizontal scroll so chart renders at readable minimum width */
+    .pace-chart-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .pace-chart-svg {
+      min-width: 500px;
+      width: 500px;
+    }
   }
 
   /* ── Hyrox progression chart ── */

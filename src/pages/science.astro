@@ -1187,7 +1187,7 @@ const languages = [
   }
 
   html.dark .thesis-card-accent {
-    background: rgba(82,179,130,0.05);
+    background: rgba(255,255,255,0.88);
   }
 
   .thesis-card-inner {
@@ -1221,9 +1221,8 @@ const languages = [
   }
 
   html.dark .thesis-logo {
-    filter: brightness(0) invert(1);
-    mix-blend-mode: normal;
-    opacity: 0.6;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
   }
 
   /* Main title */
@@ -1372,7 +1371,6 @@ const languages = [
   @media (max-width: 640px) {
     .thesis-card {
       flex-direction: column;
-      border-top: none;
     }
 
     .thesis-card-accent {
@@ -1382,22 +1380,22 @@ const languages = [
       align-items: center;
       padding: 1.1rem 1.5rem;
       gap: 1rem;
-      background: var(--accent);
+      background: var(--accent-light);
       border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid var(--border);
     }
 
     .thesis-logo {
       width: auto;
       height: 36px;
-      mix-blend-mode: normal;
-      filter: brightness(0) invert(1);
-      opacity: 0.9;
+      mix-blend-mode: multiply;
+      filter: none;
+      opacity: 0.88;
     }
 
     .thesis-eyebrow {
       text-align: right;
-      color: rgba(255,255,255,0.85);
+      color: var(--accent);
       font-size: 0.72rem;
       letter-spacing: 0.12em;
     }

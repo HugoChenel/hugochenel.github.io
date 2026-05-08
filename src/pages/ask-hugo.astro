@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AskHugo from '../components/AskHugo.astro';
+import { buildBlogEntries, CURATED_PAGE_ENTRIES } from '../utils/buildMemoryIndex';
+import type { MemoryEntry } from '../utils/buildMemoryIndex';
+
+const blogModules = import.meta.glob('./blog/*.md', { eager: true });
+const blogEntries = buildBlogEntries(blogModules as Record<string, { frontmatter?: Record<string, unknown>; rawContent?: () => string }>);
+
+const index: MemoryEntry[] = [...CURATED_PAGE_ENTRIES, ...blogEntries];
+---
+
+<Layout
+  title="Ask — Hugo Chenel"
+  description="Ask questions about cancer research, athletic performance, and biohacking protocols. Answered from the content on this site."
+>
+  <AskHugo index={index} />
+</Layout>

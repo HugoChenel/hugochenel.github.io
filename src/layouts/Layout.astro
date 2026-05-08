@@ -16,6 +16,7 @@ const navLinks = [
   { href: "/blog", label: "Blog" },
   { href: "/outreach", label: "Outreach" },
   { href: "/about", label: "About" },
+  { href: "/ask-hugo", label: "Ask Hugo", special: true },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -57,7 +58,7 @@ const currentPath = Astro.url.pathname;
               <li>
                 <a
                   href={link.href}
-                  class:list={["nav-link", { active: currentPath.startsWith(link.href) }]}
+                  class:list={["nav-link", { active: currentPath.startsWith(link.href) }, { "nav-link--ask": link.special }]}
                 >
                   {link.label}
                 </a>
@@ -113,7 +114,7 @@ const currentPath = Astro.url.pathname;
             </svg>
           </a>
         </div>
-        <span class="footer-copy">&copy; {new Date().getFullYear()}</span>
+        <span class="footer-copy">&copy; 2022&ndash;{new Date().getFullYear()}</span>
       </div>
     </footer>
   </body>
@@ -352,6 +353,23 @@ const currentPath = Astro.url.pathname;
   .nav-link:hover::after,
   .nav-link.active::after {
     transform: scaleX(1);
+  }
+
+  .nav-link--ask {
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-radius: 99px;
+    padding: 0.3rem 0.75rem 0.35rem;
+    font-size: 0.68rem;
+  }
+
+  .nav-link--ask::after { display: none; }
+
+  .nav-link--ask:hover,
+  .nav-link--ask.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
   }
 
   .theme-toggle {

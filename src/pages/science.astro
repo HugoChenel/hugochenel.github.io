@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
 import TopicGrid from "../components/TopicGrid.astro";
 import TableOfContents from "../components/TableOfContents.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
 
 const tocSections = [
   { id: "research-focus", label: "Research" },
@@ -370,6 +371,7 @@ const languages = [
   title="Science — Hugo Chenel"
   description="Computational oncology, multi-omics integration and gene regulatory networks."
 >
+  <ScrollProgress />
 
   <!-- ── Page hero ── -->
   <div class="page-hero hero-bg hero-bg--science">

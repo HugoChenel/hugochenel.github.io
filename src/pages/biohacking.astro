@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TableOfContents from "../components/TableOfContents.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
 
 const tocSections = [
   { id: "basics",             label: "Basics",       fullLabel: "Master the basics" },
@@ -508,6 +509,7 @@ const geneticTest = [
   title="Biohacking — Hugo Chenel"
   description="Systematic health optimization — sleep, diet, supplementation and advanced biohacking protocols."
 >
+  <ScrollProgress />
   <div id="toc-bar-wrap">
     <TableOfContents sections={tocSections} />
   </div>

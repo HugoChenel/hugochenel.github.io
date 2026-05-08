@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import TopicGrid from "../components/TopicGrid.astro";
 import TableOfContents from "../components/TableOfContents.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
 
 const tocSections = [
   { id: "foundations",  label: "Foundations",  fullLabel: "Foundations" },
@@ -214,6 +215,7 @@ const trainingTools = [
   title="Athleticism — Hugo Chenel"
   description="Hybrid athlete competing in Hyrox, CrossFit and running — backed by systematic training and biomarker tracking."
 >
+  <ScrollProgress />
   <div id="toc-bar-wrap">
     <TableOfContents sections={tocSections} />
   </div>

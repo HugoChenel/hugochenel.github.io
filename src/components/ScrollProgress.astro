@@ -1,0 +1,128 @@
+<div id="sp-track" aria-hidden="true">
+  <div id="sp-fill"></div>
+  <div id="sp-dot"></div>
+</div>
+
+<script>
+  const track = document.getElementById('sp-track') as HTMLElement | null;
+  const fill  = document.getElementById('sp-fill')  as HTMLElement | null;
+  const dot   = document.getElementById('sp-dot')   as HTMLElement | null;
+
+  if (!track || !fill || !dot) throw new Error('ScrollProgress: elements not found');
+
+  // Read dot half-size from computed style so it matches the CSS (incl. mobile override)
+  let dotHalf = dot.offsetWidth / 2 || 2.5;
+  let ticking  = false;
+
+  function viewportHeight(): number {
+    // visualViewport is more accurate on mobile (accounts for address-bar collapse)
+    return window.visualViewport?.height ?? document.documentElement.clientHeight;
+  }
+
+  function update() {
+    const scrolled = window.scrollY;
+    const docH   = document.documentElement.scrollHeight;
+    const viewH  = viewportHeight();
+    const total  = Math.max(1, docH - viewH);
+    // Clamp [0,1]: Math.max(0,…) handles iOS rubber-band negative scrollY
+    const p = Math.max(0, Math.min(scrolled / total, 1));
+
+    // scaleY — GPU composited, no layout
+    fill.style.transform = `scaleY(${p})`;
+
+    // Move dot purely via transform (no top/left changes = no layout recalc)
+    // dot sits at top:0; left:50% in CSS; we shift it down by (p × trackH - dotHalf)
+    dot.style.transform = `translate(-50%, ${p * viewH - dotHalf}px)`;
+
+    track.classList.toggle('sp-visible', p > 0.005);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Re-measure on resize / orientation change
+  window.addEventListener('resize', () => {
+    dotHalf = dot.offsetWidth / 2 || dotHalf;
+    requestAnimationFrame(update);
+  }, { passive: true });
+
+  // visualViewport resize fires on iOS address-bar collapse
+  window.visualViewport?.addEventListener('resize', () => {
+    requestAnimationFrame(update);
+  });
+
+  update();
+</script>
+
+<style>
+  /* ── Track (the faint rail) ── */
+  #sp-track {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 2px;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 200;
+    pointer-events: none;
+    /* fallback for browsers without color-mix */
+    background: rgba(42, 92, 69, 0.15);
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  html.dark #sp-track {
+    background: rgba(82, 179, 130, 0.15);
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+  }
+
+  #sp-track.sp-visible { opacity: 1; }
+
+  /* ── Fill ── */
+  #sp-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top center;
+    will-change: transform;
+  }
+
+  /* ── Dot ── */
+  #sp-dot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+    /* initial position — JS overrides once scroll fires */
+    transform: translate(-50%, -2.5px);
+    will-change: transform;
+    /* fallback for browsers without color-mix */
+    box-shadow: 0 0 5px rgba(42, 92, 69, 0.55);
+    box-shadow: 0 0 5px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+
+  html.dark #sp-dot {
+    box-shadow: 0 0 5px rgba(82, 179, 130, 0.55);
+    box-shadow: 0 0 5px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+
+  /* ── Mobile: slightly thicker for visibility on high-DPI screens ── */
+  @media (max-width: 680px) {
+    #sp-track { width: 3px; }
+    #sp-dot   { width: 7px; height: 7px; transform: translate(-50%, -3.5px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #sp-track { display: none; }
+  }
+</style>

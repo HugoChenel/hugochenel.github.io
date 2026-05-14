@@ -137,6 +137,18 @@ const competitionGroups = [
   },
 ];
 
+const hyroxAlbum: { src: string; caption: string }[] = [
+  { src: "/assets/images/athleticism/Hyrox/Hyrox1.jpg",  caption: "" },
+  { src: "/assets/images/athleticism/Hyrox/Hyrox2.JPG",  caption: "" },
+  { src: "/assets/images/athleticism/Hyrox/Hyrox3.JPG",  caption: "" },
+];
+
+const racesAlbum: { src: string; caption: string }[] = [
+  { src: "/assets/images/athleticism/Race/Race1.jpg", caption: "" },
+  { src: "/assets/images/athleticism/Race/Race2.jpg", caption: "" },
+  { src: "/assets/images/athleticism/Race/Race3.jpg", caption: "" },
+];
+
 const physiologyCategories = [
   {
     category: "Cardiovascular & respiratory",
@@ -392,6 +404,64 @@ const trainingTools = [
                   </a>
                 ))}
               </div>
+              {i === 0 && hyroxAlbum.length > 0 && (
+                <div class="comp-album">
+                  <div class="ha-stage">
+                    <div class="ha-track">
+                      {hyroxAlbum.map((photo, j) => (
+                        <div class="ha-slide" data-caption={photo.caption} data-idx={String(j)} style={`--ha-bg: url('${photo.src}')`}>
+                          <img
+                            src={photo.src}
+                            alt={photo.caption || `Hyrox competition photo ${j + 1}`}
+                            class="ha-img"
+                            loading="lazy"
+                            decoding="async"
+                            draggable="false"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div class="ha-controls">
+                    <button class="ha-btn ha-btn--prev" aria-label="Previous photo" disabled>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <span class="ha-counter">1 / {hyroxAlbum.length}</span>
+                    <button class="ha-btn ha-btn--next" aria-label="Next photo">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              )}
+              {i === 3 && racesAlbum.length > 0 && (
+                <div class="comp-album">
+                  <div class="ha-stage">
+                    <div class="ha-track">
+                      {racesAlbum.map((photo, j) => (
+                        <div class="ha-slide" data-caption={photo.caption} data-idx={String(j)} style={`--ha-bg: url('${photo.src}')`}>
+                          <img
+                            src={photo.src}
+                            alt={photo.caption || `Race competition photo ${j + 1}`}
+                            class="ha-img"
+                            loading="lazy"
+                            decoding="async"
+                            draggable="false"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div class="ha-controls">
+                    <button class="ha-btn ha-btn--prev" aria-label="Previous photo" disabled>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <span class="ha-counter">1 / {racesAlbum.length}</span>
+                    <button class="ha-btn ha-btn--next" aria-label="Next photo">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
             {i === 0 && (
               <div class="pace-chart-wrap" id="hyroxChartWrap">
@@ -648,6 +718,84 @@ const trainingTools = [
     });
   }
 
+  // ── Competition albums ─────────────────────────────────────────
+  function initAlbum(album: HTMLElement): () => void {
+    const stage   = album.querySelector<HTMLElement>('.ha-stage')!;
+    const track   = album.querySelector<HTMLElement>('.ha-track')!;
+    const slides  = album.querySelectorAll<HTMLElement>('.ha-slide');
+    const counter = album.querySelector<HTMLElement>('.ha-counter')!;
+    const prevBtn = album.querySelector<HTMLButtonElement>('.ha-btn--prev')!;
+    const nextBtn = album.querySelector<HTMLButtonElement>('.ha-btn--next')!;
+    const total   = slides.length;
+    const imgs    = Array.from(slides).map(s => s.querySelector<HTMLImageElement>('.ha-img')!);
+    const MAX_H   = 480;
+    const MIN_H   = 160;
+    let current   = 0;
+
+    function idealHeight(img: HTMLImageElement): number {
+      const nw = img.naturalWidth, nh = img.naturalHeight;
+      if (!nw || !nh) return MAX_H;
+      return Math.max(MIN_H, Math.min(MAX_H, Math.round(stage.offsetWidth * nh / nw)));
+    }
+
+    function applyHeight(img: HTMLImageElement, animate: boolean): void {
+      if (!animate) {
+        stage.style.transition = 'none';
+        stage.style.height = idealHeight(img) + 'px';
+        void stage.offsetHeight;
+        stage.style.transition = '';
+      } else {
+        stage.style.height = idealHeight(img) + 'px';
+      }
+    }
+
+    function scheduleHeight(img: HTMLImageElement, animate: boolean): void {
+      if (img.complete && img.naturalWidth) applyHeight(img, animate);
+      else img.addEventListener('load', () => applyHeight(img, animate), { once: true });
+    }
+
+    function updateAlbum(idx: number, animate = true): void {
+      current = Math.max(0, Math.min(idx, total - 1));
+      counter.textContent = `${current + 1} / ${total}`;
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === total - 1;
+      scheduleHeight(imgs[current], animate);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollTo({ left: (current - 1) * track.offsetWidth, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      track.scrollTo({ left: (current + 1) * track.offsetWidth, behavior: 'smooth' });
+    });
+
+    let rafId = 0;
+    track.addEventListener('scroll', () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const w = track.offsetWidth;
+        if (!w) return;
+        const idx = Math.round(track.scrollLeft / w);
+        if (idx !== current) updateAlbum(idx);
+      });
+    }, { passive: true });
+
+    updateAlbum(0, false);
+
+    return () => scheduleHeight(imgs[current], false);
+  }
+
+  const resizeCallbacks: Array<() => void> = [];
+  document.querySelectorAll<HTMLElement>('.comp-album').forEach(album => {
+    resizeCallbacks.push(initAlbum(album));
+  });
+
+  let albumResizeTimer = 0;
+  window.addEventListener('resize', () => {
+    clearTimeout(albumResizeTimer);
+    albumResizeTimer = window.setTimeout(() => resizeCallbacks.forEach(fn => fn()), 80);
+  }, { passive: true });
+
   // ── Scroll-reveal TOC bar ──────────────────────────────────────
   const tocBarWrap = document.getElementById('toc-bar-wrap');
   const pageTitle  = document.querySelector<HTMLElement>('.page-title');
@@ -845,13 +993,24 @@ const trainingTools = [
   .comp-groups {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .comp-group {
     overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+    border-radius: var(--radius-lg);
+    background: color-mix(in srgb, var(--accent) 2.5%, var(--bg-card));
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.04),
+      0 4px 16px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+  }
+
+  .comp-group:hover {
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.04),
+      0 8px 28px rgba(0,0,0,0.09);
   }
 
   /* Image banner */
@@ -859,17 +1018,35 @@ const trainingTools = [
     position: relative;
     height: 200px;
     background-size: cover;
-    background-position: center;
-    background-color: var(--bg-card);
+    background-position: right center;
+    background-color: var(--accent-light);
     overflow: hidden;
   }
 
+  /* Left panel: accent-light background fading into the photo on the right */
   .comp-group-banner::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 55%, transparent 100%);
+    background: linear-gradient(
+      to right,
+      var(--accent-light) 0%,
+      var(--accent-light) 36%,
+      transparent 62%
+    );
     pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Thin accent rule at the very bottom */
+  .comp-group-banner::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent) 0%, color-mix(in srgb, var(--accent) 40%, transparent) 100%);
+    opacity: 0.85;
+    z-index: 3;
   }
 
   .comp-group-banner-inner {
@@ -882,14 +1059,16 @@ const trainingTools = [
     justify-content: space-between;
     align-items: flex-end;
     gap: 1rem;
+    z-index: 2;
   }
 
   .comp-group-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
     font-weight: 400;
-    color: #fff;
-    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    line-height: 1;
   }
 
   .comp-group-links {
@@ -904,35 +1083,32 @@ const trainingTools = [
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #0f0f0f;
-    background: rgba(255,255,255,0.96);
+    color: #fff;
+    background: var(--accent);
     border: none;
-    padding: 0.6rem 1.1rem;
-    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
     white-space: nowrap;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.28);
-    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    transition: background 0.18s, transform 0.18s;
   }
 
   .comp-group-link:hover {
-    background: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+    background: color-mix(in srgb, var(--accent) 80%, #000);
+    transform: translateY(-1px);
   }
 
   .comp-group-link:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.24);
   }
 
   .comp-link-arrow {
     display: inline-block;
     transition: transform var(--transition);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1;
   }
 
@@ -942,7 +1118,118 @@ const trainingTools = [
 
   /* Results area below banner */
   .comp-group > .results-list {
-    padding: 0.5rem 1.5rem 1.25rem;
+    padding: 0.25rem 1.5rem 1.25rem;
+  }
+
+  /* ── Competition albums ─────────────────────────────────────────── */
+  .comp-album {
+    padding: 1.25rem 1.5rem 1.5rem;
+    border-top: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+  }
+
+  .ha-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.6;
+    margin: 0 0 0.75rem;
+  }
+
+  .ha-stage {
+    border-radius: calc(var(--radius) - 2px);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+    box-shadow: 0 4px 28px rgba(0,0,0,0.22), 0 1px 4px rgba(0,0,0,0.12);
+    height: 340px;
+    transition: height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ha-track {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ha-track::-webkit-scrollbar { display: none; }
+
+  .ha-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .ha-slide::before {
+    content: '';
+    position: absolute;
+    inset: -10%;
+    background-image: var(--ha-bg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(18px) brightness(0.46) saturate(0.75);
+    transform: scale(1.04);
+    z-index: 0;
+  }
+
+  .ha-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+    z-index: 1;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  .ha-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 0.85rem;
+  }
+
+  .ha-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    flex-shrink: 0;
+    padding: 0;
+  }
+  .ha-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+  }
+  .ha-btn:disabled {
+    opacity: 0.22;
+    cursor: not-allowed;
+  }
+
+  .ha-counter {
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    min-width: 3.2rem;
+    text-align: center;
+    opacity: 0.6;
   }
 
   /* Competition Results */
@@ -956,18 +1243,26 @@ const trainingTools = [
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 0.85rem 0.75rem;
-    margin: 0 -0.75rem;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.15s;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+    transition: background 0.15s, padding 0.15s, margin 0.15s;
+    border-radius: calc(var(--radius-lg) - 2px);
   }
 
   .result-item:first-child {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  }
+
+  .result-item:last-child {
+    border-bottom: none;
   }
 
   .result-item:hover {
-    background: var(--accent-light);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
 
   .result-left {
@@ -1006,7 +1301,8 @@ const trainingTools = [
     font-weight: 400;
     letter-spacing: 0.04em;
     color: var(--text-muted);
-    background: var(--accent-light);
+    background: color-mix(in srgb, var(--accent) 9%, var(--bg-card));
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     padding: 0.15rem 0.5rem;
     border-radius: var(--radius);
     white-space: nowrap;

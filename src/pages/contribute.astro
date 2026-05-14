@@ -1,0 +1,51 @@
+---
+const destination = "https://nowpayments.io/donation?api_key=55111327-42a5-466f-9c42-2466e1fb717a";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting… — Hugo Chenel</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="refresh" content={`0; url=${destination}`} />
+    <link rel="canonical" href={destination} />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { background: #fafaf8; color: #0f0f0f; font-family: system-ui, sans-serif; }
+      body {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        padding: 2rem;
+        text-align: center;
+      }
+      .label {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #374151;
+        opacity: 0.6;
+      }
+      .link {
+        font-size: 0.9rem;
+        color: #2a5c45;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+    </style>
+    <script define:vars={{ destination }}>
+      window.location.replace(destination);
+    </script>
+  </head>
+  <body>
+    <p class="label">Redirecting…</p>
+    <a href={destination} class="link" rel="noreferrer noopener">
+      Click here if you are not redirected automatically.
+    </a>
+  </body>
+</html>

@@ -1,0 +1,738 @@
+---
+---
+
+<section class="sin-section" id="science-interest-network" aria-labelledby="sin-heading">
+  <div class="container">
+
+    <div class="sin-header">
+      <h2 class="sin-title" id="sin-heading">PhD Research Graph</h2>
+      <p class="sin-subtitle">A living map of the research domains, ideas, and systems currently shaping my scientific trajectory.</p>
+    </div>
+
+    <div class="sin-scroll-wrap">
+      <svg
+        class="sin-svg"
+        id="sin-svg"
+        viewBox="0 0 1000 580"
+        xmlns="http://www.w3.org/2000/svg"
+        focusable="false"
+        aria-hidden="true"
+      >
+        <defs>
+          <filter id="sin-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Pulse ring -->
+        <circle class="sin-pulse" cx="500" cy="290" r="52"/>
+
+        <!-- ── EDGES: center → primary ── -->
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="csb"   x1="500" y1="290" x2="500" y2="122"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="ml"    x1="500" y1="290" x2="599" y2="154"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="trans" x1="500" y1="290" x2="660" y2="238"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="bio"   x1="500" y1="290" x2="660" y2="342"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="math"  x1="500" y1="290" x2="599" y2="426"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="graph" x1="500" y1="290" x2="500" y2="458"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="dt"    x1="500" y1="290" x2="401" y2="426"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="comp"  x1="500" y1="290" x2="340" y2="342"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="multi" x1="500" y1="290" x2="340" y2="238"/>
+        <line class="sin-edge sin-edge--p" data-a="phd" data-b="grn"   x1="500" y1="290" x2="401" y2="154"/>
+
+        <!-- ── EDGES: cross-primary ── -->
+        <line class="sin-edge sin-edge--c" data-a="csb"   data-b="trans" x1="500" y1="122" x2="660" y2="238"/>
+        <line class="sin-edge sin-edge--c" data-a="csb"   data-b="ml"    x1="500" y1="122" x2="599" y2="154"/>
+        <line class="sin-edge sin-edge--c" data-a="trans" data-b="bio"   x1="660" y1="238" x2="660" y2="342"/>
+        <line class="sin-edge sin-edge--c" data-a="grn"   data-b="multi" x1="401" y1="154" x2="340" y2="238"/>
+        <line class="sin-edge sin-edge--c" data-a="grn"   data-b="graph" x1="401" y1="154" x2="500" y2="458"/>
+        <line class="sin-edge sin-edge--c" data-a="dt"    data-b="ml"    x1="401" y1="426" x2="599" y2="154"/>
+        <line class="sin-edge sin-edge--c" data-a="math"  data-b="graph" x1="599" y1="426" x2="500" y2="458"/>
+        <line class="sin-edge sin-edge--c" data-a="multi" data-b="comp"  x1="340" y1="238" x2="340" y2="342"/>
+
+        <!-- ── EDGES: secondary ── -->
+        <line class="sin-edge sin-edge--s" data-a="csb"   data-b="cll"    x1="500" y1="122" x2="500" y2="44"/>
+        <line class="sin-edge sin-edge--s" data-a="trans" data-b="rna"    x1="660" y1="238" x2="748" y2="210"/>
+        <line class="sin-edge sin-edge--s" data-a="trans" data-b="deseq"  x1="660" y1="238" x2="752" y2="328"/>
+        <line class="sin-edge sin-edge--s" data-a="bio"   data-b="scrna"  x1="660" y1="342" x2="736" y2="408"/>
+        <line class="sin-edge sin-edge--s" data-a="grn"   data-b="netinf" x1="401" y1="154" x2="310" y2="104"/>
+        <line class="sin-edge sin-edge--s" data-a="multi" data-b="mofa"   x1="340" y1="238" x2="250" y2="218"/>
+
+        <!-- ── NODES ── -->
+
+        <!-- CENTER -->
+        <g class="sin-node sin-node--center" data-id="phd" tabindex="0" role="button" aria-pressed="false" aria-label="PhD — click for details">
+          <circle class="sin-focus-ring" cx="500" cy="290" r="59"/>
+          <circle class="sin-nc" cx="500" cy="290" r="52"/>
+          <text class="sin-nt sin-nt--center" x="500" y="286" text-anchor="middle" dominant-baseline="middle">PhD</text>
+          <text class="sin-ns" x="500" y="302" text-anchor="middle" dominant-baseline="middle">Research</text>
+        </g>
+
+        <!-- PRIMARY -->
+        <g class="sin-node sin-node--p" data-id="csb" tabindex="0" role="button" aria-pressed="false" aria-label="Cancer Systems Biology — click for details">
+          <circle class="sin-focus-ring" cx="500" cy="122" r="40"/>
+          <circle class="sin-nc" cx="500" cy="122" r="33"/>
+          <text class="sin-nt" x="500" y="114" text-anchor="middle" dominant-baseline="middle">Cancer</text>
+          <text class="sin-nt" x="500" y="130" text-anchor="middle" dominant-baseline="middle">Sys. Bio.</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="ml" tabindex="0" role="button" aria-pressed="false" aria-label="Machine Learning — click for details">
+          <circle class="sin-focus-ring" cx="599" cy="154" r="40"/>
+          <circle class="sin-nc" cx="599" cy="154" r="33"/>
+          <text class="sin-nt" x="599" y="146" text-anchor="middle" dominant-baseline="middle">Machine</text>
+          <text class="sin-nt" x="599" y="162" text-anchor="middle" dominant-baseline="middle">Learning</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="trans" tabindex="0" role="button" aria-pressed="false" aria-label="Transcriptomics — click for details">
+          <circle class="sin-focus-ring" cx="660" cy="238" r="40"/>
+          <circle class="sin-nc" cx="660" cy="238" r="33"/>
+          <text class="sin-nt" x="660" y="230" text-anchor="middle" dominant-baseline="middle">Trans-</text>
+          <text class="sin-nt" x="660" y="246" text-anchor="middle" dominant-baseline="middle">criptomics</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="bio" tabindex="0" role="button" aria-pressed="false" aria-label="Bioinformatics — click for details">
+          <circle class="sin-focus-ring" cx="660" cy="342" r="40"/>
+          <circle class="sin-nc" cx="660" cy="342" r="33"/>
+          <text class="sin-nt" x="660" y="334" text-anchor="middle" dominant-baseline="middle">Bio-</text>
+          <text class="sin-nt" x="660" y="350" text-anchor="middle" dominant-baseline="middle">informatics</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="math" tabindex="0" role="button" aria-pressed="false" aria-label="Mathematical Modeling — click for details">
+          <circle class="sin-focus-ring" cx="599" cy="426" r="40"/>
+          <circle class="sin-nc" cx="599" cy="426" r="33"/>
+          <text class="sin-nt" x="599" y="418" text-anchor="middle" dominant-baseline="middle">Math.</text>
+          <text class="sin-nt" x="599" y="434" text-anchor="middle" dominant-baseline="middle">Modeling</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="graph" tabindex="0" role="button" aria-pressed="false" aria-label="Graph Theory — click for details">
+          <circle class="sin-focus-ring" cx="500" cy="458" r="40"/>
+          <circle class="sin-nc" cx="500" cy="458" r="33"/>
+          <text class="sin-nt" x="500" y="450" text-anchor="middle" dominant-baseline="middle">Graph</text>
+          <text class="sin-nt" x="500" y="466" text-anchor="middle" dominant-baseline="middle">Theory</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="dt" tabindex="0" role="button" aria-pressed="false" aria-label="Digital Twins — click for details">
+          <circle class="sin-focus-ring" cx="401" cy="426" r="40"/>
+          <circle class="sin-nc" cx="401" cy="426" r="33"/>
+          <text class="sin-nt" x="401" y="418" text-anchor="middle" dominant-baseline="middle">Digital</text>
+          <text class="sin-nt" x="401" y="434" text-anchor="middle" dominant-baseline="middle">Twins</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="comp" tabindex="0" role="button" aria-pressed="false" aria-label="Computational Biology — click for details">
+          <circle class="sin-focus-ring" cx="340" cy="342" r="40"/>
+          <circle class="sin-nc" cx="340" cy="342" r="33"/>
+          <text class="sin-nt" x="340" y="334" text-anchor="middle" dominant-baseline="middle">Comp.</text>
+          <text class="sin-nt" x="340" y="350" text-anchor="middle" dominant-baseline="middle">Biology</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="multi" tabindex="0" role="button" aria-pressed="false" aria-label="Multi-omics — click for details">
+          <circle class="sin-focus-ring" cx="340" cy="238" r="40"/>
+          <circle class="sin-nc" cx="340" cy="238" r="33"/>
+          <text class="sin-nt" x="340" y="230" text-anchor="middle" dominant-baseline="middle">Multi-</text>
+          <text class="sin-nt" x="340" y="246" text-anchor="middle" dominant-baseline="middle">omics</text>
+        </g>
+
+        <g class="sin-node sin-node--p" data-id="grn" tabindex="0" role="button" aria-pressed="false" aria-label="Gene Regulatory Networks — click for details">
+          <circle class="sin-focus-ring" cx="401" cy="154" r="40"/>
+          <circle class="sin-nc" cx="401" cy="154" r="33"/>
+          <text class="sin-nt" x="401" y="146" text-anchor="middle" dominant-baseline="middle">Gene Reg.</text>
+          <text class="sin-nt" x="401" y="162" text-anchor="middle" dominant-baseline="middle">Networks</text>
+        </g>
+
+        <!-- SECONDARY -->
+        <g class="sin-node sin-node--s" data-id="cll" tabindex="0" role="button" aria-pressed="false" aria-label="CLL — click for details">
+          <circle class="sin-focus-ring" cx="500" cy="44" r="30"/>
+          <circle class="sin-nc" cx="500" cy="44" r="23"/>
+          <text class="sin-nt sin-nt--s" x="500" y="44" text-anchor="middle" dominant-baseline="middle">CLL</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="rna" tabindex="0" role="button" aria-pressed="false" aria-label="RNA-seq — click for details">
+          <circle class="sin-focus-ring" cx="748" cy="210" r="30"/>
+          <circle class="sin-nc" cx="748" cy="210" r="23"/>
+          <text class="sin-nt sin-nt--s" x="748" y="210" text-anchor="middle" dominant-baseline="middle">RNA-seq</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="deseq" tabindex="0" role="button" aria-pressed="false" aria-label="DESeq2 — click for details">
+          <circle class="sin-focus-ring" cx="752" cy="328" r="30"/>
+          <circle class="sin-nc" cx="752" cy="328" r="23"/>
+          <text class="sin-nt sin-nt--s" x="752" y="328" text-anchor="middle" dominant-baseline="middle">DESeq2</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="scrna" tabindex="0" role="button" aria-pressed="false" aria-label="scRNA-seq — click for details">
+          <circle class="sin-focus-ring" cx="736" cy="408" r="30"/>
+          <circle class="sin-nc" cx="736" cy="408" r="23"/>
+          <text class="sin-nt sin-nt--s" x="736" y="408" text-anchor="middle" dominant-baseline="middle">scRNA-seq</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="netinf" tabindex="0" role="button" aria-pressed="false" aria-label="Network Inference — click for details">
+          <circle class="sin-focus-ring" cx="310" cy="104" r="30"/>
+          <circle class="sin-nc" cx="310" cy="104" r="23"/>
+          <text class="sin-nt sin-nt--s" x="310" y="98"  text-anchor="middle" dominant-baseline="middle">Network</text>
+          <text class="sin-nt sin-nt--s" x="310" y="112" text-anchor="middle" dominant-baseline="middle">Inf.</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="mofa" tabindex="0" role="button" aria-pressed="false" aria-label="MOFA+ — click for details">
+          <circle class="sin-focus-ring" cx="250" cy="218" r="30"/>
+          <circle class="sin-nc" cx="250" cy="218" r="23"/>
+          <text class="sin-nt sin-nt--s" x="250" y="218" text-anchor="middle" dominant-baseline="middle">MOFA+</text>
+        </g>
+
+      </svg>
+    </div>
+
+    <!-- Detail panel (hidden until a node is selected) -->
+    <div class="sin-panel" id="sin-panel" aria-live="polite" aria-atomic="true" hidden>
+      <div class="sin-panel-detail">
+        <div class="sin-panel-top">
+          <span class="sin-panel-tag" id="sin-panel-tag"></span>
+          <h3 class="sin-panel-title" id="sin-panel-title"></h3>
+        </div>
+        <p class="sin-panel-desc" id="sin-panel-desc"></p>
+        <div class="sin-panel-related">
+          <span class="sin-related-label">Connected to</span>
+          <div class="sin-chips" id="sin-chips"></div>
+        </div>
+        <a class="sin-panel-link" id="sin-panel-link" href="#" hidden>Explore →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .sin-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 120px;
+  }
+
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Header ── */
+  .sin-header { margin-bottom: 2.5rem; }
+
+  .sin-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .sin-subtitle {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* ── SVG scroll container ── */
+  .sin-scroll-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .sin-scroll-wrap::-webkit-scrollbar { height: 3px; }
+  .sin-scroll-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .sin-svg {
+    width: 100%;
+    min-width: 760px;
+    display: block;
+    height: auto;
+  }
+
+  /* ── Center pulse ── */
+  .sin-pulse {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.2;
+    transform-origin: 500px 290px;
+    animation: sin-pulse 3s ease-out infinite;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @keyframes sin-pulse {
+    0%   { transform: scale(1);   opacity: 0.4; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  /* ── Edges ── */
+  .sin-edge {
+    pointer-events: none;
+    transition: opacity 0.3s ease, stroke-width 0.3s ease;
+  }
+
+  .sin-edge--p {
+    stroke: var(--accent);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    opacity: 0.28;
+    stroke-dasharray: 3 8;
+    animation: sin-flow 2.8s linear infinite;
+  }
+
+  .sin-edge--c {
+    stroke: var(--accent);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+    opacity: 0.1;
+    stroke-dasharray: 2 10;
+    animation: sin-flow 5s linear infinite;
+  }
+
+  .sin-edge--s {
+    stroke: var(--border);
+    stroke-width: 0.9;
+    stroke-linecap: round;
+    opacity: 0.7;
+    stroke-dasharray: 1.5 5;
+  }
+
+  html.dark .sin-edge--s {
+    stroke: var(--accent);
+    opacity: 0.22;
+  }
+
+  @keyframes sin-flow { to { stroke-dashoffset: -44; } }
+
+  .sin-edge--active {
+    opacity: 0.85 !important;
+    stroke: var(--accent) !important;
+    stroke-width: 2.2 !important;
+    stroke-dasharray: none !important;
+    animation: none !important;
+  }
+
+  .sin-edge--dimmed {
+    opacity: 0.04 !important;
+    animation: none !important;
+  }
+
+  /* ── Nodes ── */
+  .sin-node {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .sin-node:focus { outline: none; }
+
+  .sin-focus-ring {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+  }
+
+  .sin-node:focus-visible .sin-focus-ring { opacity: 1; }
+
+  .sin-nc { transition: fill 0.25s ease, stroke 0.25s ease, filter 0.25s ease; }
+
+  .sin-node--center .sin-nc { fill: var(--accent); stroke: none; }
+
+  .sin-node--p .sin-nc {
+    fill: var(--bg-card);
+    stroke: var(--accent);
+    stroke-width: 1.5;
+  }
+
+  .sin-node--s .sin-nc {
+    fill: var(--bg);
+    stroke: var(--border);
+    stroke-width: 1;
+  }
+
+  html.dark .sin-node--s .sin-nc {
+    fill: var(--bg-card);
+    stroke: var(--accent);
+    stroke-width: 0.8;
+    opacity: 0.65;
+  }
+
+  /* ── SVG text ── */
+  .sin-nt {
+    fill: var(--text);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .sin-nt--center {
+    font-family: var(--font-serif);
+    fill: #fff;
+    font-size: 18px;
+  }
+
+  .sin-nt--s {
+    font-size: 9px;
+    fill: var(--text-muted);
+  }
+
+  .sin-ns {
+    fill: rgba(255,255,255,0.65);
+    font-family: var(--font-sans);
+    font-size: 7px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── Active / hover states ── */
+  .sin-node--active .sin-nc { filter: url(#sin-glow); }
+  .sin-node--p.sin-node--active .sin-nc  { fill: var(--accent); }
+  .sin-node--p.sin-node--active .sin-nt  { fill: #fff; }
+  .sin-node--s.sin-node--active .sin-nc  { stroke: var(--accent); stroke-width: 2; fill: var(--accent-light); }
+  .sin-node--s.sin-node--active .sin-nt--s { fill: var(--accent); }
+  .sin-node--dimmed { opacity: 0.14; }
+
+  @media (hover: hover) {
+    .sin-node--p:not(.sin-node--active):hover .sin-nc { fill: var(--accent-light); }
+    .sin-node--s:not(.sin-node--active):hover .sin-nc { stroke: var(--accent); }
+  }
+
+  /* ── Detail panel ── */
+  .sin-panel {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background: var(--bg-card);
+  }
+
+  .sin-panel-detail {
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .sin-panel-top { display: flex; flex-direction: column; gap: 0.3rem; }
+
+  .sin-panel-tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .sin-panel-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .sin-panel-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 680px;
+  }
+
+  .sin-panel-related {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sin-related-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .sin-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+  :global(.sin-chip) {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+
+  :global(.sin-chip:hover) {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  :global(.sin-chip:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .sin-panel-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.38rem 0.9rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+  }
+
+  .sin-panel-link:hover { background: var(--accent); color: #fff; }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .sin-section { padding: 3.5rem 0; }
+    .sin-panel-detail { padding: 1.25rem 1.25rem; }
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .sin-edge--p, .sin-edge--c { animation: none; stroke-dasharray: none; }
+    .sin-pulse { animation: none; }
+  }
+</style>
+
+<script>
+  const NODES: Record<string, {
+    label: string; tag: string; description: string;
+    related: string[]; link: string | null; linkLabel?: string;
+  }> = {
+    phd: {
+      label: "PhD in Computational Oncology",
+      tag: "Center",
+      description: "Thesis: Machine learning models of cancer dynamics based on transcriptomics data. CIFRE-funded research at the Cancer Research Center of Toulouse (CRCT), under Dr. Vera Pancaldi and Dr. Andrei Zinovyev.",
+      related: ["csb","ml","trans","bio","math","graph","dt","comp","multi","grn"],
+      link: "https://theses.fr/s385051", linkLabel: "View on theses.fr"
+    },
+    csb: {
+      label: "Cancer Systems Biology",
+      tag: "Primary Domain",
+      description: "Computational models of tumour dynamics and cellular interactions in the tumour microenvironment. Systems-level approach to decode cancer complexity, with a focus on Chronic Lymphocytic Leukaemia.",
+      related: ["phd","trans","ml","cll"], link: null
+    },
+    ml: {
+      label: "Machine Learning",
+      tag: "Primary Domain",
+      description: "Supervised, unsupervised and deep learning approaches — regression, autoencoders, variational autoencoders — applied to transcriptomics and multi-omics data in cancer research.",
+      related: ["phd","csb","dt"], link: null
+    },
+    trans: {
+      label: "Transcriptomics",
+      tag: "Primary Domain",
+      description: "Bulk RNA-seq and single-cell analysis to measure gene expression dynamics across cell types and conditions. Central to understanding the tumour microenvironment and GRN inference.",
+      related: ["phd","csb","bio","rna","deseq"], link: null
+    },
+    bio: {
+      label: "Bioinformatics",
+      tag: "Primary Domain",
+      description: "Pipelines and tools for genomic data processing, quality control, differential expression analysis, and functional enrichment across bulk and single-cell RNA-seq data.",
+      related: ["phd","trans","scrna"], link: null
+    },
+    math: {
+      label: "Mathematical Modeling",
+      tag: "Primary Domain",
+      description: "Dynamical systems and mathematical frameworks to model gene regulation and tumour evolution. Bridges graph-theoretic and statistical approaches with mechanistic biology.",
+      related: ["phd","graph"], link: null
+    },
+    graph: {
+      label: "Graph Theory",
+      tag: "Primary Domain",
+      description: "Network topology, centrality analysis and multilayer graph frameworks applied to biological interaction networks. Includes topological data analysis of time series gene expression.",
+      related: ["phd","grn","math"], link: null
+    },
+    dt: {
+      label: "Digital Twins",
+      tag: "Primary Domain",
+      description: "Building in-silico patient cohorts for virtual clinical trials and drug screening — a personalized, predictive approach to oncology. Reviewed in Frontiers in Systems Biology (2026).",
+      related: ["phd","ml"],
+      link: "https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2026.1776941/abstract",
+      linkLabel: "Read review"
+    },
+    comp: {
+      label: "Computational Biology",
+      tag: "Primary Domain",
+      description: "Integrating data-driven and mechanistic approaches to decode the biology of complex diseases, with emphasis on tumour microenvironment crosstalk and cellular phenotypes.",
+      related: ["phd","multi"], link: null
+    },
+    multi: {
+      label: "Multi-omics",
+      tag: "Primary Domain",
+      description: "Integration of transcriptomics, proteomics and clinical data to better explain cancer mechanisms, with a focus on CLL. Uses MOFA+, MixOmics, and related computational frameworks.",
+      related: ["phd","grn","comp","mofa"], link: null
+    },
+    grn: {
+      label: "Gene Regulatory Networks",
+      tag: "Primary Domain",
+      description: "Single-layer and multilayer network inference from time-course RNA-seq data to dynamical models of cellular interactions. Uses GENIE3 and ARACNE, published in npj Systems Biology.",
+      related: ["phd","graph","multi","netinf"],
+      link: "https://www.nature.com/articles/s41540-025-00645-4", linkLabel: "Read paper"
+    },
+    cll: {
+      label: "CLL",
+      tag: "Disease Model",
+      description: "Chronic Lymphocytic Leukaemia — the cancer model central to this PhD research. Time-course transcriptomics and network inference applied to CLL cellular interaction models.",
+      related: ["csb"],
+      link: "https://www.nature.com/articles/s41540-025-00645-4", linkLabel: "Read paper"
+    },
+    rna: {
+      label: "RNA-seq",
+      tag: "Method",
+      description: "Bulk RNA-seq analysis pipeline — FastQC, STAR, Salmon, DESeq2, edgeR — for quantification, quality control, and differential expression. Documented in a public tutorial.",
+      related: ["trans","deseq"],
+      link: "/blog/bulk-rna-seq-analysis", linkLabel: "Read tutorial"
+    },
+    deseq: {
+      label: "DESeq2",
+      tag: "Tool",
+      description: "Statistical framework for differential expression analysis of RNA-seq count data. Uses a negative binomial model and shrinkage estimation of fold changes.",
+      related: ["trans","rna"],
+      link: "/blog/bulk-rna-seq-analysis", linkLabel: "Read tutorial"
+    },
+    scrna: {
+      label: "scRNA-seq",
+      tag: "Method",
+      description: "Single-cell RNA-seq preprocessing with Seurat and Scanpy — clustering, cell-type annotation, pseudotime trajectory analysis. Covered in two public tutorials.",
+      related: ["bio"],
+      link: "/blog/preprocessing-scrna-seq-data-with-Seurat", linkLabel: "Read tutorial"
+    },
+    netinf: {
+      label: "Network Inference",
+      tag: "Method",
+      description: "Data-driven inference of gene regulatory networks using mutual information (ARACNE) and tree-based ensemble methods (GENIE3) on time-course RNA-seq data.",
+      related: ["grn"], link: null
+    },
+    mofa: {
+      label: "MOFA+",
+      tag: "Tool",
+      description: "Multi-Omics Factor Analysis: a probabilistic framework for unsupervised integration of heterogeneous high-dimensional datasets across multiple omics layers.",
+      related: ["multi"], link: null
+    }
+  };
+
+  let activeId: string | null = null;
+
+  function activateNode(id: string) {
+    if (activeId === id) { resetAll(); activeId = null; hidePanel(); return; }
+    activeId = id;
+    const node = NODES[id];
+    if (!node) return;
+    const connected = new Set([id, ...node.related]);
+
+    document.querySelectorAll<Element>('.sin-node').forEach(el => {
+      const elId = (el as HTMLElement).dataset.id!;
+      el.classList.remove('sin-node--active','sin-node--connected','sin-node--dimmed');
+      el.setAttribute('aria-pressed','false');
+      if (elId === id) { el.classList.add('sin-node--active'); el.setAttribute('aria-pressed','true'); }
+      else if (connected.has(elId)) { el.classList.add('sin-node--connected'); }
+      else { el.classList.add('sin-node--dimmed'); }
+    });
+
+    document.querySelectorAll<Element>('.sin-edge').forEach(el => {
+      const a = (el as HTMLElement).dataset.a!;
+      const b = (el as HTMLElement).dataset.b!;
+      el.classList.remove('sin-edge--active','sin-edge--dimmed');
+      if (a === id || b === id) { el.classList.add('sin-edge--active'); }
+      else { el.classList.add('sin-edge--dimmed'); }
+    });
+
+    showDetail(id);
+  }
+
+  function resetAll() {
+    document.querySelectorAll('.sin-node').forEach(el => {
+      el.classList.remove('sin-node--active','sin-node--connected','sin-node--dimmed');
+      el.setAttribute('aria-pressed','false');
+    });
+    document.querySelectorAll('.sin-edge').forEach(el => {
+      el.classList.remove('sin-edge--active','sin-edge--dimmed');
+    });
+  }
+
+  function hidePanel() {
+    const panel = document.getElementById('sin-panel');
+    if (panel) panel.hidden = true;
+  }
+
+  function showDetail(id: string) {
+    const node = NODES[id];
+    if (!node) return;
+    const panel = document.getElementById('sin-panel');
+    if (panel) panel.hidden = false;
+
+    const tagEl   = document.getElementById('sin-panel-tag');
+    const titleEl = document.getElementById('sin-panel-title');
+    const descEl  = document.getElementById('sin-panel-desc');
+    const chipsEl = document.getElementById('sin-chips');
+    const linkEl  = document.getElementById('sin-panel-link') as HTMLAnchorElement | null;
+
+    if (tagEl)   tagEl.textContent   = node.tag;
+    if (titleEl) titleEl.textContent = node.label;
+    if (descEl)  descEl.textContent  = node.description;
+
+    if (chipsEl) {
+      chipsEl.innerHTML = '';
+      node.related.forEach(relId => {
+        const rel = NODES[relId];
+        if (!rel) return;
+        const chip = document.createElement('button');
+        chip.className = 'sin-chip';
+        chip.setAttribute('type','button');
+        chip.textContent = rel.label;
+        chip.addEventListener('click', e => { e.stopPropagation(); activateNode(relId); });
+        chipsEl.appendChild(chip);
+      });
+    }
+
+    if (linkEl) {
+      if (node.link) {
+        linkEl.href = node.link;
+        linkEl.textContent = (node.linkLabel ?? 'Explore') + ' →';
+        linkEl.hidden = false;
+        if (node.link.startsWith('/')) { linkEl.removeAttribute('target'); linkEl.removeAttribute('rel'); }
+        else { linkEl.setAttribute('target','_blank'); linkEl.setAttribute('rel','noopener'); }
+      } else { linkEl.hidden = true; }
+    }
+  }
+
+  document.querySelectorAll<Element>('.sin-node').forEach(el => {
+    el.addEventListener('click', () => activateNode((el as HTMLElement).dataset.id!));
+    el.addEventListener('keydown', (e: Event) => {
+      const ke = e as KeyboardEvent;
+      if (ke.key === 'Enter' || ke.key === ' ') { ke.preventDefault(); activateNode((el as HTMLElement).dataset.id!); }
+    });
+  });
+
+  document.getElementById('sin-svg')?.addEventListener('click', e => {
+    if (!(e.target as Element).closest('.sin-node')) { resetAll(); activeId = null; hidePanel(); }
+  });
+</script>

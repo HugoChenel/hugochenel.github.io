@@ -4,9 +4,10 @@ import PageHeader from "../components/PageHeader.astro";
 import TopicGrid from "../components/TopicGrid.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import ScrollProgress from "../components/ScrollProgress.astro";
+import ScienceInterestNetwork from "../components/ScienceInterestNetwork.astro";
 
 const tocSections = [
-  { id: "research-focus", label: "Research" },
+  { id: "science-interest-network", label: "Research" },
   { id: "publications",   label: "Publications" },
   { id: "thesis",         label: "Thesis" },
   { id: "tutorials",      label: "Tutorials" },
@@ -424,6 +425,9 @@ const languages = [
 
   <!-- ── Table of contents ── -->
   <TableOfContents sections={tocSections} />
+
+  <!-- ── Science Interest Network ── -->
+  <ScienceInterestNetwork />
 
   <!-- ── Research focus ── -->
   <section class="focus-section" id="research-focus">

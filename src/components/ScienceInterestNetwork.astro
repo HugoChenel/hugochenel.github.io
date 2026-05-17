@@ -237,19 +237,11 @@
   /* ── SVG scroll container ── */
   .sin-scroll-wrap {
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     margin-bottom: 1.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
   }
-
-  .sin-scroll-wrap::-webkit-scrollbar { height: 3px; }
-  .sin-scroll-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
   .sin-svg {
     width: 100%;
-    min-width: 760px;
     display: block;
     height: auto;
   }
@@ -513,6 +505,12 @@
   @media (max-width: 768px) {
     .sin-section { padding: 3.5rem 0; }
     .sin-panel-detail { padding: 1.25rem 1.25rem; }
+  }
+
+  /* On small screens the SVG scales down and labels become illegible —
+     hide them so the graph reads as a clean tappable constellation. */
+  @media (max-width: 560px) {
+    .sin-nt, .sin-nt--s, .sin-ns { display: none; }
   }
 
   /* ── Reduced motion ── */

@@ -3,6 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import TopicGrid from "../components/TopicGrid.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import ScrollProgress from "../components/ScrollProgress.astro";
+import { readdirSync } from 'fs';
+import { join } from 'path';
+
+function buildAlbum(publicRelPath: string, prefix: string): { src: string; caption: string }[] {
+  const pattern = new RegExp(`^${prefix}\\d+\\.(jpe?g|png|webp)$`, 'i');
+  try {
+    return readdirSync(join(process.cwd(), 'public', publicRelPath))
+      .filter(f => pattern.test(f))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
+      .map(f => ({ src: `/${publicRelPath}/${f}`, caption: '' }));
+  } catch {
+    return [];
+  }
+}
 
 const tocSections = [
   { id: "foundations",  label: "Foundations",  fullLabel: "Foundations" },
@@ -137,17 +151,8 @@ const competitionGroups = [
   },
 ];
 
-const hyroxAlbum: { src: string; caption: string }[] = [
-  { src: "/assets/images/athleticism/Hyrox/Hyrox1.jpg",  caption: "" },
-  { src: "/assets/images/athleticism/Hyrox/Hyrox2.JPG",  caption: "" },
-  { src: "/assets/images/athleticism/Hyrox/Hyrox3.JPG",  caption: "" },
-];
-
-const racesAlbum: { src: string; caption: string }[] = [
-  { src: "/assets/images/athleticism/Race/Race1.jpg", caption: "" },
-  { src: "/assets/images/athleticism/Race/Race2.jpg", caption: "" },
-  { src: "/assets/images/athleticism/Race/Race3.jpg", caption: "" },
-];
+const hyroxAlbum = buildAlbum('assets/images/athleticism/Hyrox', 'Hyrox');
+const racesAlbum = buildAlbum('assets/images/athleticism/Race', 'Race');
 
 const physiologyCategories = [
   {

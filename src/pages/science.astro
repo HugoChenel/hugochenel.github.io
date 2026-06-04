@@ -48,6 +48,7 @@ const publications = [
     href: "https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2026.1776941/abstract",
     label: "Review Article",
     audio: "/assets/audio/DT_review.wav",
+    pdf: "/assets/images/science/Multilayer_network_approaches_to_omics_data_integration_in_digital_twins_for_cancer_research.pdf",
   },
   {
     year: "2026",
@@ -56,6 +57,7 @@ const publications = [
     href: "https://www.nature.com/articles/s41540-025-00645-4",
     label: "Paper",
     audio: "/assets/audio/CLL_net_paper.wav",
+    pdf: "/assets/images/science/Data_driven_network_inference_and_longitudinal_transcriptomics_unveil_dynamic_regulation_in_Chronic_Lymphocytic_Leukaemia_models.pdf",
   },
   {
     year: "2023",
@@ -64,6 +66,7 @@ const publications = [
     href: "https://www.researchgate.net/profile/Malvina-Marku-2/publication/376085417_Dissecting_Cellular_Phenotypes_in_the_Tumour_Microenvironment_through_Gene_Regulatory_Networks_Inference_Analysis_and_Dynamical_Modelling/links/6569a2fece88b87031260f18/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf",
     label: "Book chapter",
     audio: null,
+    pdf: "/assets/images/science/Dissecting-Cellular-Phenotypes-in-the-Tumour-Microenvironment-through-Gene-Regulatory-Networks-Inference-Analysis-and-Dynamical-Modelling.pdf",
   },
 ];
 
@@ -486,7 +489,12 @@ const languages = [
                   <source src={p.audio} type="audio/wav" />
                 </audio>
               )}
-              <a href={p.href} target="_blank" rel="noopener" class="pub-link">Read {p.label} &rarr;</a>
+              <div class="pub-actions">
+                <a href={p.href} target="_blank" rel="noopener" class="pub-link">Read {p.label} &rarr;</a>
+                {p.pdf && (
+                  <a href={p.pdf} download class="pub-link pub-link--pdf">Download PDF &darr;</a>
+                )}
+              </div>
             </div>
           </li>
         ))}
@@ -1142,6 +1150,23 @@ const languages = [
 
   .pub-link:hover {
     background: var(--accent);
+    color: #fff;
+  }
+
+  .pub-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+
+  .pub-link--pdf {
+    color: var(--text-muted);
+    border-color: var(--text-muted);
+  }
+
+  .pub-link--pdf:hover {
+    background: var(--text-muted);
     color: #fff;
   }
 

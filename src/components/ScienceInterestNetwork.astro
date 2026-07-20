@@ -54,12 +54,28 @@
         <line class="sin-edge sin-edge--c" data-a="multi" data-b="comp"  x1="340" y1="268" x2="340" y2="372"/>
 
         <!-- ── EDGES: secondary ── -->
-        <line class="sin-edge sin-edge--s" data-a="csb"   data-b="cll"    x1="500" y1="152" x2="500" y2="66"/>
-        <line class="sin-edge sin-edge--s" data-a="trans" data-b="rna"    x1="660" y1="268" x2="748" y2="240"/>
-        <line class="sin-edge sin-edge--s" data-a="trans" data-b="deseq"  x1="660" y1="268" x2="752" y2="358"/>
-        <line class="sin-edge sin-edge--s" data-a="bio"   data-b="scrna"  x1="660" y1="372" x2="736" y2="438"/>
-        <line class="sin-edge sin-edge--s" data-a="grn"   data-b="netinf" x1="401" y1="184" x2="310" y2="134"/>
-        <line class="sin-edge sin-edge--s" data-a="multi" data-b="mofa"   x1="340" y1="268" x2="250" y2="248"/>
+        <line class="sin-edge sin-edge--s" data-a="csb"   data-b="cll"      x1="500" y1="152" x2="500" y2="66"/>
+        <line class="sin-edge sin-edge--s" data-a="trans" data-b="rna"      x1="660" y1="268" x2="748" y2="240"/>
+        <line class="sin-edge sin-edge--s" data-a="trans" data-b="deseq"    x1="660" y1="268" x2="752" y2="358"/>
+        <line class="sin-edge sin-edge--s" data-a="bio"   data-b="scrna"    x1="660" y1="372" x2="736" y2="438"/>
+        <line class="sin-edge sin-edge--s" data-a="grn"   data-b="netinf"   x1="401" y1="184" x2="310" y2="134"/>
+        <line class="sin-edge sin-edge--s" data-a="multi" data-b="mofa"     x1="340" y1="268" x2="250" y2="248"/>
+        <line class="sin-edge sin-edge--s" data-a="ml"    data-b="vae"      x1="599" y1="184" x2="646" y2="119"/>
+        <line class="sin-edge sin-edge--s" data-a="math"  data-b="odes"     x1="599" y1="456" x2="646" y2="521"/>
+        <line class="sin-edge sin-edge--s" data-a="graph" data-b="tda"      x1="500" y1="488" x2="500" y2="563"/>
+        <line class="sin-edge sin-edge--s" data-a="comp"  data-b="tme"      x1="340" y1="372" x2="273" y2="394"/>
+        <line class="sin-edge sin-edge--s" data-a="dt"    data-b="insilico" x1="401" y1="456" x2="354" y2="521"/>
+        <!-- ── EDGES: secondary cross-connections ── -->
+        <line class="sin-edge sin-edge--s" data-a="scrna"   data-b="trans"  x1="736" y1="438" x2="660" y2="268"/>
+        <line class="sin-edge sin-edge--s" data-a="rna"     data-b="bio"    x1="748" y1="240" x2="660" y2="372"/>
+        <line class="sin-edge sin-edge--s" data-a="netinf"  data-b="ml"     x1="310" y1="134" x2="599" y2="184"/>
+        <line class="sin-edge sin-edge--s" data-a="tda"     data-b="math"   x1="500" y1="563" x2="599" y2="456"/>
+        <line class="sin-edge sin-edge--s" data-a="mofa"    data-b="comp"   x1="250" y1="248" x2="340" y2="372"/>
+        <line class="sin-edge sin-edge--s" data-a="tme"     data-b="multi"  x1="273" y1="394" x2="340" y2="268"/>
+        <line class="sin-edge sin-edge--s" data-a="insilico" data-b="comp"  x1="354" y1="521" x2="340" y2="372"/>
+        <line class="sin-edge sin-edge--s" data-a="cll"     data-b="grn"    x1="500" y1="66"  x2="401" y2="184"/>
+        <line class="sin-edge sin-edge--s" data-a="odes"    data-b="dt"     x1="646" y1="521" x2="401" y2="456"/>
+        <line class="sin-edge sin-edge--s" data-a="vae"     data-b="csb"    x1="646" y1="119" x2="500" y2="152"/>
 
         <!-- ── NODES ── -->
 
@@ -178,6 +194,37 @@
           <circle class="sin-focus-ring" cx="250" cy="248" r="36"/>
           <circle class="sin-nc" cx="250" cy="248" r="28"/>
           <text class="sin-nt sin-nt--s" x="250" y="248" text-anchor="middle" dominant-baseline="middle">MOFA+</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="vae" tabindex="0" role="button" aria-pressed="false" aria-label="VAE — click for details">
+          <circle class="sin-focus-ring" cx="646" cy="119" r="36"/>
+          <circle class="sin-nc" cx="646" cy="119" r="28"/>
+          <text class="sin-nt sin-nt--s" x="646" y="119" text-anchor="middle" dominant-baseline="middle">VAE</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="odes" tabindex="0" role="button" aria-pressed="false" aria-label="ODEs — click for details">
+          <circle class="sin-focus-ring" cx="646" cy="521" r="36"/>
+          <circle class="sin-nc" cx="646" cy="521" r="28"/>
+          <text class="sin-nt sin-nt--s" x="646" y="521" text-anchor="middle" dominant-baseline="middle">ODEs</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="tda" tabindex="0" role="button" aria-pressed="false" aria-label="TDA — click for details">
+          <circle class="sin-focus-ring" cx="500" cy="563" r="36"/>
+          <circle class="sin-nc" cx="500" cy="563" r="28"/>
+          <text class="sin-nt sin-nt--s" x="500" y="563" text-anchor="middle" dominant-baseline="middle">TDA</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="tme" tabindex="0" role="button" aria-pressed="false" aria-label="TME — click for details">
+          <circle class="sin-focus-ring" cx="273" cy="394" r="36"/>
+          <circle class="sin-nc" cx="273" cy="394" r="28"/>
+          <text class="sin-nt sin-nt--s" x="273" y="394" text-anchor="middle" dominant-baseline="middle">TME</text>
+        </g>
+
+        <g class="sin-node sin-node--s" data-id="insilico" tabindex="0" role="button" aria-pressed="false" aria-label="In Silico — click for details">
+          <circle class="sin-focus-ring" cx="354" cy="521" r="36"/>
+          <circle class="sin-nc" cx="354" cy="521" r="28"/>
+          <text class="sin-nt sin-nt--s" x="354" y="514" text-anchor="middle" dominant-baseline="middle">In</text>
+          <text class="sin-nt sin-nt--s" x="354" y="528" text-anchor="middle" dominant-baseline="middle">Silico</text>
         </g>
 
       </svg>
@@ -537,43 +584,43 @@
       label: "Cancer Systems Biology",
       tag: "Primary Domain",
       description: "Computational models of tumour dynamics and cellular interactions in the tumour microenvironment. Systems-level approach to decode cancer complexity, with a focus on Chronic Lymphocytic Leukaemia.",
-      related: ["phd","trans","ml","cll"], link: null
+      related: ["phd","trans","ml","cll","vae"], link: null
     },
     ml: {
       label: "Machine Learning",
       tag: "Primary Domain",
       description: "Supervised, unsupervised and deep learning approaches — regression, autoencoders, variational autoencoders — applied to transcriptomics and multi-omics data in cancer research.",
-      related: ["phd","csb","dt"], link: null
+      related: ["phd","csb","dt","vae","netinf"], link: null
     },
     trans: {
       label: "Transcriptomics",
       tag: "Primary Domain",
       description: "Bulk RNA-seq and single-cell analysis to measure gene expression dynamics across cell types and conditions. Central to understanding the tumour microenvironment and GRN inference.",
-      related: ["phd","csb","bio","rna","deseq"], link: null
+      related: ["phd","csb","bio","rna","deseq","scrna"], link: null
     },
     bio: {
       label: "Bioinformatics",
       tag: "Primary Domain",
       description: "Pipelines and tools for genomic data processing, quality control, differential expression analysis, and functional enrichment across bulk and single-cell RNA-seq data.",
-      related: ["phd","trans","scrna"], link: null
+      related: ["phd","trans","scrna","rna"], link: null
     },
     math: {
       label: "Mathematical Modeling",
       tag: "Primary Domain",
       description: "Dynamical systems and mathematical frameworks to model gene regulation and tumour evolution. Bridges graph-theoretic and statistical approaches with mechanistic biology.",
-      related: ["phd","graph"], link: null
+      related: ["phd","graph","odes","tda"], link: null
     },
     graph: {
       label: "Graph Theory",
       tag: "Primary Domain",
       description: "Network topology, centrality analysis and multilayer graph frameworks applied to biological interaction networks. Includes topological data analysis of time series gene expression.",
-      related: ["phd","grn","math"], link: null
+      related: ["phd","grn","math","tda"], link: null
     },
     dt: {
       label: "Digital Twins",
       tag: "Primary Domain",
       description: "Building in-silico patient cohorts for virtual clinical trials and drug screening — a personalized, predictive approach to oncology. Reviewed in Frontiers in Systems Biology (2026).",
-      related: ["phd","ml"],
+      related: ["phd","ml","insilico","odes"],
       link: "https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2026.1776941/abstract",
       linkLabel: "Read review"
     },
@@ -581,33 +628,33 @@
       label: "Computational Biology",
       tag: "Primary Domain",
       description: "Integrating data-driven and mechanistic approaches to decode the biology of complex diseases, with emphasis on tumour microenvironment crosstalk and cellular phenotypes.",
-      related: ["phd","multi"], link: null
+      related: ["phd","multi","tme","mofa","insilico"], link: null
     },
     multi: {
       label: "Multi-omics",
       tag: "Primary Domain",
       description: "Integration of transcriptomics, proteomics and clinical data to better explain cancer mechanisms, with a focus on CLL. Uses MOFA+, MixOmics, and related computational frameworks.",
-      related: ["phd","grn","comp","mofa"], link: null
+      related: ["phd","grn","comp","mofa","tme"], link: null
     },
     grn: {
       label: "Gene Regulatory Networks",
       tag: "Primary Domain",
       description: "Single-layer and multilayer network inference from time-course RNA-seq data to dynamical models of cellular interactions. Uses GENIE3 and ARACNE, published in npj Systems Biology.",
-      related: ["phd","graph","multi","netinf"],
+      related: ["phd","graph","multi","netinf","cll"],
       link: "https://www.nature.com/articles/s41540-025-00645-4", linkLabel: "Read paper"
     },
     cll: {
       label: "CLL",
       tag: "Disease Model",
       description: "Chronic Lymphocytic Leukaemia — the cancer model central to this PhD research. Time-course transcriptomics and network inference applied to CLL cellular interaction models.",
-      related: ["csb"],
+      related: ["csb","grn"],
       link: "https://www.nature.com/articles/s41540-025-00645-4", linkLabel: "Read paper"
     },
     rna: {
       label: "RNA-seq",
       tag: "Method",
       description: "Bulk RNA-seq analysis pipeline — FastQC, STAR, Salmon, DESeq2, edgeR — for quantification, quality control, and differential expression. Documented in a public tutorial.",
-      related: ["trans","deseq"],
+      related: ["trans","deseq","bio"],
       link: "/blog/bulk-rna-seq-analysis", linkLabel: "Read tutorial"
     },
     deseq: {
@@ -621,20 +668,50 @@
       label: "scRNA-seq",
       tag: "Method",
       description: "Single-cell RNA-seq preprocessing with Seurat and Scanpy — clustering, cell-type annotation, pseudotime trajectory analysis. Covered in two public tutorials.",
-      related: ["bio"],
+      related: ["bio","trans"],
       link: "/blog/preprocessing-scrna-seq-data-with-Seurat", linkLabel: "Read tutorial"
     },
     netinf: {
       label: "Network Inference",
       tag: "Method",
       description: "Data-driven inference of gene regulatory networks using mutual information (ARACNE) and tree-based ensemble methods (GENIE3) on time-course RNA-seq data.",
-      related: ["grn"], link: null
+      related: ["grn","ml"], link: null
     },
     mofa: {
       label: "MOFA+",
       tag: "Tool",
       description: "Multi-Omics Factor Analysis: a probabilistic framework for unsupervised integration of heterogeneous high-dimensional datasets across multiple omics layers.",
-      related: ["multi"], link: null
+      related: ["multi","comp"], link: null
+    },
+    vae: {
+      label: "Variational Autoencoders",
+      tag: "Method",
+      description: "Variational autoencoders for dimensionality reduction and latent representation of high-dimensional transcriptomics data. Applied to cancer gene expression profiles for generative modelling.",
+      related: ["ml","csb"], link: null
+    },
+    odes: {
+      label: "ODEs",
+      tag: "Framework",
+      description: "Ordinary differential equations as the mathematical backbone of mechanistic models for gene regulation and tumour dynamics. Enables simulation of cellular state transitions over time.",
+      related: ["math","dt"], link: null
+    },
+    tda: {
+      label: "Topological Data Analysis",
+      tag: "Method",
+      description: "Analysis of time-series gene expression using persistent homology and Mapper graphs. Uncovers shape-based, topology-driven features in high-dimensional omics data.",
+      related: ["graph","math"], link: null
+    },
+    tme: {
+      label: "Tumour Microenvironment",
+      tag: "Domain",
+      description: "The TME encompasses cancer cells, immune cells, stromal cells and cytokines. Modelling TME crosstalk is central to understanding tumour progression and drug response.",
+      related: ["comp","multi"], link: null
+    },
+    insilico: {
+      label: "In Silico Modelling",
+      tag: "Approach",
+      description: "Computational modelling of patient cohorts and virtual clinical trials to predict treatment outcomes before real-world validation — a core pillar of the digital twin approach.",
+      related: ["dt","comp"], link: null
     }
   };
 

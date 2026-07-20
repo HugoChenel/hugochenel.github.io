@@ -1,0 +1,1101 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+interface VideoItem {
+  id: string;
+  title: string;
+}
+
+interface Destination {
+  id: string;
+  num: number;
+  city: string;
+  country: string;
+  theme: string;
+  experiences: string[];
+  concepts: string[];
+  description: string;
+  videos: VideoItem[];
+  lat: number;
+  lng: number;
+  labelAnchor?: 'start' | 'middle' | 'end';
+  labelDy?: number;
+}
+
+const destinations: Destination[] = [
+  {
+    id: 'istanbul',
+    num: 1,
+    city: 'Istanbul',
+    country: 'Turquie',
+    theme: "L'architecture de la purification",
+    experiences: [
+      'Sauna',
+      'Hammam',
+      'Contraste chaud/froid',
+    ],
+    concepts: ['Hormèse', 'Récupération', 'Circulation', 'Stress thermique'],
+    description:
+      "Le sauna trouve son origine en Finlande, où il est pratiqué depuis des millénaires par les peuples nordiques comme rituel de chaleur sèche et de lien social. Le hammam, lui, est originaire de la tradition ottomane, une pratique de purification par la vapeur humide, vieille de plusieurs siècles et profondément ancrée dans la culture turque. Malgré leurs origines distinctes, les deux reposent sur le même principe : l'alternance entre chaleur intense et refroidissement brutal, que la physiologie appelle hormèse thermique. Cette exposition répétée à des stresseurs contrôlés stimule les protéines de choc thermique (HSP) et le BDNF, améliore la circulation sanguine et accélère la récupération musculaire. Istanbul est le premier laboratoire du projet : apprendre à utiliser la chaleur, sous ses différentes formes, comme outil de régulation du corps.",
+    videos: [
+      { id: '9RB3sgq3V7c', title: 'How Sauna Use Can Impact Brain Health and Longevity | Rhonda Patrick, Ph.D.' },
+      { id: 'EQ3GjpGq5Y8', title: 'The Science & Health Benefits of Deliberate Heat Exposure' },
+    ],
+    lat: 41.0082,
+    lng: 28.9784,
+    labelAnchor: 'start',
+    labelDy: -3,
+  },
+  {
+    id: 'buenos-aires',
+    num: 2,
+    city: 'Buenos Aires',
+    country: 'Argentine',
+    theme: "L'architecture de la respiration",
+    experiences: [
+      'Holotropic Breathing',
+    ],
+    concepts: [
+      'États modifiés de conscience',
+      'Respiration',
+      'Psychologie transpersonnelle',
+    ],
+    description:
+      "La respiration holotropique est une technique développée dans les années 1970 par le psychiatre Stanislav Grof, issue de ses recherches sur les états non ordinaires de conscience. Elle consiste en une respiration accélérée et soutenue, permettant d'accéder à des contenus psychiques profonds généralement inaccessibles à l'état ordinaire. Buenos Aires représente dans ce projet l'exploration du souffle comme porte d'entrée vers l'inconscient.",
+    videos: [
+      { id: 'kHfFz7Ci7vk', title: 'Holotropic Breathwork Founder Stan Grof on Birth, Life, Breath, and Death' },
+      { id: 'U5o9b2RVC2E', title: 'Joe Rogan Experience #1506 - James Nestor' },
+    ],
+    lat: -34.6037,
+    lng: -58.3816,
+    labelAnchor: 'start',
+    labelDy: -2,
+  },
+  {
+    id: 'medellin',
+    num: 3,
+    city: 'Medellín',
+    country: 'Colombie',
+    theme: "L'architecture du silence",
+    experiences: [
+      'Vipassana 10-day silent retreat',
+    ],
+    concepts: ['Observation', 'Attention', 'Souffrance'],
+    description:
+      "La Vipassana 10-day silent retreat est l'un des programmes de méditation les plus exigeants, transmis selon la tradition du maître birman S.N. Goenka. Pendant dix jours, les participants observent un silence total, sans parole, sans écran, sans lecture, et pratiquent jusqu'à dix heures de méditation quotidienne. La méthode repose sur l'observation systématique des sensations corporelles pour développer l'équanimité : la capacité à ne réagir ni à la douleur ni au plaisir. Medellín représente dans ce projet le passage intérieur le plus difficile : rester immobile face à soi-même.",
+    videos: [
+      { id: 'prt9D90BvFI', title: 'Questioning Sam Harris | Sam Harris | EP 224' },
+      { id: 'WdmvoX1RZWA', title: 'The Hidden Risks of Meditation — Dr. Willoughby Britton | The Tim Ferriss Show' },
+    ],
+    lat: 6.2442,
+    lng: -75.5812,
+    labelAnchor: 'start',
+  },
+  {
+    id: 'san-salvador',
+    num: 4,
+    city: 'San Salvador',
+    country: 'El Salvador',
+    theme: "L'architecture du flow",
+    experiences: [
+      'Sports extrêmes',
+      'Surf',
+    ],
+    concepts: ['Flow state', 'Gestion du risque', 'Adaptation'],
+    description:
+      "Le flow est un état de concentration optimale, décrit par le psychologue Mihaly Csikszentmihalyi comme un moment où l'action et l'attention fusionnent entièrement. Dans les sports extrêmes, et particulièrement le surf, cet état émerge à la limite du risque : une vague imprévisible, un timing parfait, une décision prise en une fraction de seconde. San Salvador est un terrain d'expérimentation du flow par le mouvement : apprendre à lire l'océan, gérer le risque et laisser le corps agir sans l'interférence du mental. San Salvador représente dans ce projet l'architecture du flow : la rencontre entre le courage et l'instant présent.",
+    videos: [
+      { id: 'RZIn9tfeQ2I', title: 'The science of effortlessness: How to activate flow | Steven Kotler: Full Interview' },
+      { id: 'oDyPOxxdjkE', title: "Kelly Slater: 11x World Surfing Champion's Diet Protocol, Training Routine & Recovery Tips | TUH #235" },
+    ],
+    lat: 13.6929,
+    lng: -89.2182,
+    labelAnchor: 'end',
+  },
+  {
+    id: 'tulum',
+    num: 5,
+    city: 'Tulum',
+    country: 'Mexique',
+    theme: "L'architecture de la conscience",
+    experiences: [
+      'Ayahuasca ceremony',
+    ],
+    concepts: [
+      'États modifiés de conscience',
+      'Neuroplasticité',
+      'Spiritualité',
+    ],
+    description:
+      "L'ayahuasca est une préparation végétale sacrée utilisée depuis des millénaires par les peuples autochtones d'Amazonie dans un cadre rituel et thérapeutique. Elle contient de la diméthyltryptamine (DMT), un composé psychoactif puissant, également la molécule libérée par le cerveau au moment de la mort, qui induit des états de conscience altérés associés à des visions, des émotions intenses et une introspection profonde. Elle réduit les frontières entre les réseaux cérébraux, permettant à des régions habituellement peu connectées de communiquer davantage. Des recherches récentes en neurosciences explorent son potentiel sur la dépression résistante et le PTSD. Dans ce projet, Tulum représente l'exploration des limites de la conscience : ce que le mental révèle quand ses mécanismes ordinaires de défense sont suspendus.",
+    videos: [
+      { id: 'r5KRnstXYUg', title: "Psychedelics Don't Distort Reality — They Reveal How Your Brain Constructs It" },
+      { id: 'tJE8HYFrkT4', title: 'Psychedelic Science | Dr. Dennis McKenna | EP 299' },
+      { id: '2tUiLxtrLxk', title: 'Rick Doblin: Psychedelics | Lex Fridman Podcast #202' },
+    ],
+    lat: 20.2114,
+    lng: -87.4654,
+    labelAnchor: 'start',
+    labelDy: 2,
+  },
+  {
+    id: 'stroe',
+    num: 6,
+    city: 'Stroe',
+    country: 'Pays-Bas',
+    theme: "L'architecture du froid",
+    experiences: [
+      'Wim Hof Method',
+      'Ice Bath',
+      'Breathwork',
+    ],
+    concepts: [
+      'Cold exposure',
+      'Breathwork',
+      'Nervous system',
+      'Resilience',
+    ],
+    description:
+      "La Wim Hof Method est une discipline développée par le Néerlandais Wim Hof, combinant une exposition progressive au froid, une technique de respiration spécifique et des pratiques de concentration mentale. Plusieurs études scientifiques ont montré qu'il est possible d'influencer volontairement le système nerveux autonome et la réponse immunitaire, deux processus longtemps considérés entièrement inconscients. Le Wim Hof Method Center, à Stroe, aux Pays-Bas, est le lieu d'enseignement officiel, dirigé par Wim Hof et son équipe. Stroe représente dans ce projet l'architecture du froid : utiliser l'inconfort extrême comme outil de résilience et de régulation.",
+    videos: [
+      { id: 'iZycKhRESB4', title: 'Wim Hof: On Breathwork Science, Cold Exposure, Immune Control, & Human Potential | TUH #263' },
+      { id: 'DfuGUjvEujQ', title: 'Wim Hof helps Eddie Hall lift 50% MORE weight!' },
+      { id: 'x3MgDtZovks', title: 'How to Use Cold & Heat Exposure to Improve Your Health | Dr. Susanna Søberg' },
+    ],
+    lat: 52.2167,
+    lng: 5.6167,
+    labelAnchor: 'start',
+  },
+  {
+    id: 'canggu',
+    num: 7,
+    city: 'Canggu, Bali',
+    country: 'Indonésie',
+    theme: "L'architecture du mouvement",
+    experiences: [
+      'Yoga Alliance 200-hour YTT',
+      'Ashtanga Yoga',
+    ],
+    concepts: ['Mobilité', 'Movement'],
+    description:
+      "La mobilité et la souplesse sont au cœur de cette étape du projet. La formation Yoga Alliance 200-hour YTT (Yoga Teacher Training) est la certification internationale de référence pour l'enseignement du yoga, reconnue dans plus de 100 pays. À Canggu, l'une des capitales mondiales du yoga, la formation est dispensée selon la tradition Ashtanga. L'entraînement intensif développe la mobilité, la proprioception et une relation de précision avec le corps en mouvement. Bali représente dans ce projet l'architecture du mouvement : construire le corps comme un système d'attention.",
+    videos: [
+      { id: 'bdAXVvUeNpo', title: 'Ido Portal Teaches Movement Intelligence: Why You Must Train, Not Exercise' },
+      { id: '8N7mdkrXgbc', title: 'How to Improve Your Mobility, Posture & Flexibility | Dr. Kelly Starrett' },
+      { id: 'jG4fV3R_A5c', title: 'A Masterclass On Movement & Mobility | Rich Roll Podcast' },
+      { id: 'qLr-UAtVJPw', title: 'How to Bulletproof Your Body & Live Pain Free - Knees Over Toes Guy' },
+    ],
+    lat: -8.6500,
+    lng: 115.1333,
+    labelAnchor: 'end',
+  },
+  {
+    id: 'chiang-mai',
+    num: 8,
+    city: 'Chiang Mai',
+    country: 'Thaïlande',
+    theme: "L'architecture de l'obscurité",
+    experiences: [
+      'Dark Room Retreat',
+    ],
+    concepts: [
+      'Privation sensorielle',
+      'Mélatonine',
+      'Introspection',
+    ],
+    description:
+      "Le Dark Room Retreat est une pratique de privation sensorielle prolongée pratiquée dans certains monastères bouddhistes d'Asie du Sud-Est, notamment en Thaïlande. Le participant vit plusieurs jours dans une obscurité totale et un silence quasi-complet, sans lumière artificielle ni contact extérieur. Cette privation modifie les rythmes circadiens, stimule la production de mélatonine et de composés endogènes psychoactifs, et confronte le mental à lui-même sans distraction. Chiang Mai représente dans ce projet l'architecture de l'obscurité : ce que l'esprit génère quand le monde extérieur disparaît.",
+    videos: [
+      { id: 'S7tz_HMEWkY', title: 'Awake In The Darkness | FULL Documentary by Aubrey Marcus' },
+      { id: '1uzgs2E4wqQ', title: 'Darkness as Medicine: My Experience at Sky Cave Retreats with Scott Berman' },
+    ],
+    lat: 18.7883,
+    lng: 98.9853,
+    labelAnchor: 'end',
+  },
+  {
+    id: 'cebu',
+    num: 9,
+    city: 'Cebu',
+    country: 'Philippines',
+    theme: "L'architecture du calme",
+    experiences: [
+      'AIDA Freediving',
+      'Molchanovs Wave 1',
+    ],
+    concepts: [
+      'Apnée',
+      'CO₂ tolerance',
+      'Nervous system',
+    ],
+    description:
+      "Le freediving est la pratique de la plongée en apnée, en retenant sa respiration sans équipement respiratoire. Les certifications AIDA et Molchanovs Wave sont les deux référentiels les plus reconnus mondialement pour la formation en plongée libre. La pratique repose sur l'activation du réflexe de plongée des mammifères, la gestion du CO₂ et une relaxation profonde du système nerveux, à l'opposé du contrôle musculaire volontaire. Cebu, aux Philippines, est l'une des destinations de formation en freediving en Asie.",
+    videos: [
+      { id: 'hhWJb0YbNrI', title: 'FREE TO DIVE – Full Documentary on Freediving' },
+      { id: 'OcGlfz2wpYQ', title: 'World Champion Freediver Alexey Molchanov - Fight Back Ep. 42' },
+    ],
+    lat: 10.3157,
+    lng: 123.8854,
+    labelAnchor: 'start',
+  },
+  {
+    id: 'taghazout',
+    num: 10,
+    city: 'Taghazout',
+    country: 'Maroc',
+    theme: "L'architecture de l'océan",
+    experiences: [
+      'ISA Surf Instructor',
+    ],
+    concepts: [
+      'Ocean awareness',
+      "Lecture de l'océan",
+      'Decision making',
+    ],
+    description:
+      "Taghazout est un village côtier marocain devenu l'une des destinations de surf les plus renommées d'Afrique, avec des spots internationaux comme Anchor Point et Hash Point. Le surf y exige une lecture constante de l'océan : anticiper les vagues, ajuster sa position, réagir en une fraction de seconde, dans des conditions puissantes et variables. C'est aussi ici que se déroule la certification ISA Surf Instructor, qui forme à la pédagogie et à la sécurité côtière. Au-delà de la technique, le surf devient un dialogue permanent entre le corps et l'esprit : rester lucide sous pression et laisser le mouvement précéder la pensée. Taghazout est l'architecture de l'océan : le lieu où la compétence rencontre la confiance.",
+    videos: [
+      { id: '6NDAABwlXCE', title: "Inside the Mind of The World's Most Fearless Surfer" },
+    ],
+    lat: 30.5332,
+    lng: -9.7069,
+    labelAnchor: 'end',
+  },
+];
+
+function toXY(lat: number, lng: number) {
+  return {
+    x: Math.round((lng + 180) / 360 * 1000),
+    y: Math.round((90 - lat) / 180 * 500),
+  };
+}
+
+const pts = destinations.map(d => toXY(d.lat, d.lng));
+const serialized = JSON.stringify(destinations);
+const first = destinations[0];
+---
+
+<Layout
+  title="Livre — Hugo Chenel"
+  description="Architecture du corps et de l'esprit — un voyage-laboratoire à travers dix destinations pour explorer comment le corps, l'environnement, la discipline, le risque et les pratiques intérieures façonnent l'esprit humain."
+>
+
+  <!-- Hero -->
+  <div class="book-hero hero-bg hero-bg--book">
+    <div class="container">
+      <p class="book-eyebrow">Livre en cours</p>
+      <h1 class="book-title">Architecture du corps<br class="title-br"/> et de l&rsquo;esprit</h1>
+      <p class="book-release">Parution pr&eacute;vue en 2027</p>
+      <p class="book-lead">
+        Un voyage-laboratoire &agrave; travers dix destinations, &agrave; la rencontre des pratiques et des traditions qui fa&ccedil;onnent le corps, transforment l&rsquo;esprit et repoussent les limites du potentiel humain.
+      </p>
+      <p class="book-lead">
+        &Agrave; travers des immersions, des retraites et des exp&eacute;riences de terrain, ce livre explore la science, la philosophie et les cultures qui influencent notre mani&egrave;re de vivre, d&rsquo;apprendre, de souffrir, et de nous transformer.
+      </p>
+    </div>
+  </div>
+
+  <!-- Map + panel -->
+  <section class="book-map-section">
+    <div class="container">
+      <div class="book-map-layout">
+
+        <!-- SVG World Map -->
+        <div class="book-map-wrap">
+          <svg
+            class="book-map-svg"
+            id="book-map"
+            viewBox="0 0 1000 500"
+            xmlns="http://www.w3.org/2000/svg"
+            focusable="false"
+            aria-label="Carte interactive des destinations"
+          >
+            <defs>
+              <filter id="land-shadow" x="-4%" y="-6%" width="108%" height="116%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#000" flood-opacity="0.10"/>
+              </filter>
+              <filter id="marker-glow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <rect class="map-ocean" x="0" y="0" width="1000" height="500"/>
+
+            <!-- Graticule -->
+            <g class="graticule">
+              <line class="g-line" x1="0" y1="83"  x2="1000" y2="83"/>
+              <line class="g-line g-equator" x1="0" y1="250" x2="1000" y2="250"/>
+              <line class="g-line" x1="0" y1="167" x2="1000" y2="167"/>
+              <line class="g-line" x1="0" y1="333" x2="1000" y2="333"/>
+              <line class="g-line" x1="0" y1="417" x2="1000" y2="417"/>
+              <line class="g-line" x1="167" y1="0" x2="167" y2="500"/>
+              <line class="g-line" x1="333" y1="0" x2="333" y2="500"/>
+              <line class="g-line" x1="500" y1="0" x2="500" y2="500"/>
+              <line class="g-line" x1="667" y1="0" x2="667" y2="500"/>
+              <line class="g-line" x1="833" y1="0" x2="833" y2="500"/>
+              <rect class="g-frame" x="0" y="0" width="1000" height="500"/>
+            </g>
+
+            <!-- Continents -->
+            <g class="continents" filter="url(#land-shadow)">
+              <path class="land" d="M 285,22 Q 297,11 310,0 L 360,0 Q 372,14 385,28 Q 376,42 368,56 Q 353,59 340,61 Q 320,55 305,50 Q 295,37 285,22 Z"/>
+              <path class="land" d="M 33,100 Q 55,94 77,89 Q 114,102 152,117 Q 153,125 155,133 Q 165,147 175,161 Q 184,174 194,186 Q 201,192 208,197 Q 229,202 250,208 Q 264,216 278,225 Q 268,221 265,216 Q 271,198 280,181 Q 283,167 286,155 Q 295,143 308,133 Q 330,125 352,118 Q 355,100 355,83 Q 335,71 315,60 Q 287,53 260,47 Q 241,40 222,33 Q 193,30 165,28 Q 136,34 108,42 Q 87,48 68,60 Q 50,80 33,100 Z"/>
+              <path class="land" d="M 278,225 Q 285,222 292,219 Q 310,218 330,218 Q 365,238 400,258 Q 396,272 392,287 Q 386,302 382,315 Q 366,329 350,344 Q 344,350 338,346 Q 334,352 327,361 Q 317,381 303,395 Q 313,404 310,406 Q 301,386 294,368 Q 289,348 290,328 Q 286,295 282,258 Q 280,241 282,228 Z"/>
+              <path class="land" d="M 476,143 Q 482,147 487,150 Q 507,148 527,147 Q 536,145 545,143 Q 559,143 572,143 Q 586,137 600,131 Q 605,124 610,118 Q 596,103 583,89 Q 576,76 569,64 Q 555,60 541,57 Q 527,67 514,78 Q 501,83 488,89 Q 485,94 484,100 Q 486,104 488,109 Q 493,113 498,118 Q 498,123 498,128 Q 487,135 476,143 Z"/>
+              <path class="land" d="M 476,143 Q 501,145 527,147 Q 547,155 568,164 Q 585,165 603,167 Q 622,192 641,217 Q 632,231 624,244 Q 617,261 611,278 Q 604,296 598,315 Q 574,330 550,344 Q 540,336 531,328 Q 526,314 522,300 Q 522,268 522,236 Q 507,236 492,236 Q 472,222 453,208 Q 457,189 462,172 Q 469,157 476,143 Z"/>
+              <path class="land" d="M 572,143 Q 586,137 600,131 Q 620,119 640,108 Q 641,162 641,217 Q 648,200 656,183 Q 685,205 714,228 Q 718,225 722,222 Q 739,205 756,189 Q 767,194 778,200 Q 793,209 808,219 Q 820,204 833,189 Q 836,168 839,147 Q 850,140 862,133 Q 861,120 860,107 Q 888,96 916,86 Q 944,73 972,61 L 1000,42 L 1000,0 Q 890,0 780,0 Q 690,0 600,0 Q 540,0 500,0 Q 490,11 480,22 Q 490,39 500,56 Q 521,56 542,57 Q 555,60 569,64 Q 576,76 583,89 Q 596,103 610,118 Q 591,130 572,143 Z"/>
+              <path class="land" d="M 775,200 Q 780,215 783,228 Q 786,238 788,247 Q 784,244 780,230 Q 777,217 775,200 Z"/>
+              <path class="land" d="M 800,278 Q 815,283 830,280 Q 838,277 840,273 Q 838,268 832,267 Q 820,267 808,271 Q 804,274 800,278 Z"/>
+              <path class="land" d="M 833,208 Q 843,204 853,210 Q 858,218 856,230 Q 853,239 847,244 Q 840,241 835,234 Q 829,222 833,208 Z"/>
+              <path class="land" d="M 817,311 Q 818,328 820,344 Q 830,344 840,344 Q 851,343 862,342 Q 871,344 880,347 Q 889,352 897,358 Q 906,356 916,353 Q 921,340 925,328 Q 925,321 925,314 Q 913,303 902,292 Q 890,287 878,283 Q 869,283 861,283 Q 850,291 839,300 Q 828,306 817,311 Z"/>
+            </g>
+
+            <!-- Travel route: itinerary order 1–10 -->
+            <path class="route-path" d="M 580,136 Q 440,260 338,346 Q 315,289 290,233 Q 271,222 252,212 Q 254,202 257,194 Q 385,150 515,105 Q 668,190 820,274 Q 797,236 775,198 Q 808,212 844,221 Q 658,193 473,165"/>
+
+            <!-- Destination markers -->
+            {destinations.map((d, i) => {
+              const { x, y } = pts[i];
+              const anchor = d.labelAnchor ?? 'middle';
+              const lx = anchor === 'start' ? x + 18 : anchor === 'end' ? x - 18 : x;
+              const ly = y - 14 + (d.labelDy ?? 0);
+              return (
+                <g
+                  class="book-marker"
+                  data-id={d.id}
+                  tabindex="0"
+                  role="button"
+                  aria-pressed="false"
+                  aria-label={`${d.city}, ${d.country}`}
+                >
+                  <circle class="marker-pulse" cx={x} cy={y} r="22"/>
+                  <circle class="marker-hit"   cx={x} cy={y} r="16"/>
+                  <circle class="marker-shadow" cx={x} cy={y + 1} r="11"/>
+                  <circle class="marker-badge"  cx={x} cy={y} r="11"/>
+                  <text class="marker-num" x={x} y={y} text-anchor="middle" dominant-baseline="central">{d.num}</text>
+                  <text class="marker-label" x={lx} y={ly} text-anchor={anchor} dominant-baseline="auto">{d.city}</text>
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+
+        <!-- Detail card (below map) -->
+        <div class="book-card" id="book-card">
+            <div class="book-card-inner">
+
+              <div class="book-card-head">
+                <p class="book-card-num" id="card-num">{String(first.num).padStart(2,'0')}</p>
+                <div>
+                  <p class="book-card-country" id="card-country">{first.country}</p>
+                  <h2 class="book-card-city" id="card-city">{first.city}</h2>
+                </div>
+              </div>
+
+              <p class="book-card-theme" id="card-theme">{first.theme}</p>
+
+              <div class="book-card-section">
+                <p class="book-card-section-label">Exp&eacute;riences</p>
+                <ul class="book-card-exp" id="card-exp">
+                  {first.experiences.map(e => <li>{e}</li>)}
+                </ul>
+              </div>
+
+              <div class="book-card-section">
+                <p class="book-card-section-label">Concepts cl&eacute;s</p>
+                <ul class="book-card-concepts" id="card-concepts">
+                  {first.concepts.map(c => <li>{c}</li>)}
+                </ul>
+              </div>
+
+              <div class="book-card-section">
+                <p class="book-card-section-label">&Agrave; propos</p>
+                <p class="book-card-desc" id="card-desc">{first.description}</p>
+              </div>
+
+
+            </div>
+          </div>
+
+          <nav class="book-itinerary" aria-label="Liste des destinations">
+            <p class="itinerary-heading">Itin&eacute;raire</p>
+            <ol class="itinerary-list" id="itinerary-list">
+              {destinations.map(d => (
+                <li>
+                  <button class="itinerary-item" data-id={d.id} type="button" aria-pressed="false">
+                    <span class="itin-num">{String(d.num).padStart(2,'0')}</span>
+                    <span class="itin-text">
+                      <span class="itin-city">{d.city}</span>
+                      <span class="itin-country">{d.country}</span>
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
+          <div class="book-card-video" id="card-video" style={first.videos.length ? '' : 'display:none'}>
+            <div class="video-thumb" id="video-thumb">
+              <img
+                id="video-img"
+                src={first.videos[0] ? `https://img.youtube.com/vi/${first.videos[0].id}/maxresdefault.jpg` : ''}
+                alt={first.videos[0]?.title}
+                loading="lazy"
+                onload={first.videos[0] ? `if(this.naturalWidth<=120){this.src='https://img.youtube.com/vi/${first.videos[0].id}/hqdefault.jpg'}` : undefined}
+                onerror={first.videos[0] ? `this.onerror=null;this.src='https://img.youtube.com/vi/${first.videos[0].id}/hqdefault.jpg'` : undefined}
+              />
+              <button class="video-play-btn" id="video-play-btn" aria-label="Lancer la vid&eacute;o">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5.14v14l11-7-11-7z"/>
+                </svg>
+              </button>
+              {first.videos.length > 1 && (
+                <>
+                  <button class="video-nav video-nav-prev" id="video-prev" type="button" aria-label="Vid&eacute;o pr&eacute;c&eacute;dente">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <button class="video-nav video-nav-next" id="video-next" type="button" aria-label="Vid&eacute;o suivante">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                  </button>
+                </>
+              )}
+            </div>
+            {first.videos.length > 1 && (
+              <div class="video-tabs" id="video-tabs">
+                {first.videos.map((_, i) => (
+                  <button class="video-tab" data-index={i} type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-label={`Vid&eacute;o ${i + 1}`}></button>
+                ))}
+              </div>
+            )}
+            {first.videos[0]?.title && <p class="video-title" id="video-title">{first.videos[0].title}</p>}
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ── Hero ── */
+  .book-hero {
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .book-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+  .book-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 400;
+    letter-spacing: var(--tracking-display);
+    color: var(--text);
+    line-height: var(--leading-display);
+    margin-bottom: 0.9rem;
+  }
+  .title-br { display: block; }
+  .book-release {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .book-release::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+  .book-lead {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: var(--leading-body);
+    max-width: 580px;
+  }
+  .book-lead + .book-lead { margin-top: 0.9rem; }
+
+  /* ── Hero bg ── */
+  .hero-bg--book {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 50% 80% at 100% 50%, rgba(42,92,69,0.06)  0%, transparent 65%),
+      radial-gradient(ellipse 35% 40% at  5% 20%, rgba(42,92,69,0.04)  0%, transparent 58%);
+    background-color: var(--bg);
+  }
+  html.dark .hero-bg--book {
+    background-image:
+      var(--hero-noise),
+      radial-gradient(ellipse 50% 80% at 100% 50%, rgba(82,179,130,0.065) 0%, transparent 65%),
+      radial-gradient(ellipse 35% 40% at  5% 20%, rgba(82,179,130,0.045) 0%, transparent 58%);
+  }
+
+  /* ── Map section ── */
+  .book-map-section { padding: 3.5rem 0 4rem; }
+  .book-map-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    grid-template-areas:
+      "map   itin"
+      "card  itin"
+      "video video";
+    column-gap: 2.5rem;
+    row-gap: 2rem;
+    align-items: start;
+  }
+  .book-map-wrap {
+    grid-area: map;
+  }
+  .book-map-svg {
+    width: 100%;
+    display: block;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    overflow: visible;
+  }
+
+  /* ── Map colours ── */
+  .map-ocean { fill: #a8ccd9; }
+  html.dark .map-ocean { fill: #071520; }
+
+  .g-frame { fill: none; stroke: rgba(0,60,100,0.35); stroke-width: 1; }
+  html.dark .g-frame { stroke: rgba(82,179,130,0.25); }
+
+  .g-line { stroke: rgba(0,60,100,0.12); stroke-width: 0.4; pointer-events: none; }
+  html.dark .g-line { stroke: rgba(82,179,130,0.09); }
+
+  .g-equator { stroke: rgba(0,60,100,0.22); stroke-width: 0.8; stroke-dasharray: 4 6; }
+  html.dark .g-equator { stroke: rgba(82,179,130,0.2); }
+
+  .land {
+    fill: #e6dac7;
+    stroke: rgba(100,80,50,0.4);
+    stroke-width: 0.7;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  html.dark .land { fill: #1a3022; stroke: rgba(82,179,130,0.28); }
+
+  /* ── Route ── */
+  .route-path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.6;
+    stroke-dasharray: 5 8;
+    stroke-linecap: round;
+    opacity: 0.85;
+    animation: routeFlow 5s linear infinite;
+    pointer-events: none;
+  }
+  html.dark .route-path { stroke: #52b382; opacity: 0.75; }
+  @keyframes routeFlow { to { stroke-dashoffset: -65; } }
+
+  /* ── Markers ── */
+  .book-marker { cursor: pointer; }
+  .book-marker:focus { outline: none; }
+
+  .marker-pulse {
+    fill: none; stroke: var(--accent); stroke-width: 1.2;
+    opacity: 0; transform-box: fill-box; transform-origin: center; pointer-events: none;
+  }
+  .book-marker.is-active .marker-pulse { animation: markerPulse 2.2s ease-out infinite; }
+  @keyframes markerPulse {
+    0%   { opacity: 0.55; transform: scale(1); }
+    100% { opacity: 0;    transform: scale(2.2); }
+  }
+  .marker-hit    { fill: transparent; stroke: none; pointer-events: all; }
+  .marker-shadow { fill: rgba(0,0,0,0.22); pointer-events: none; }
+  html.dark .marker-shadow { fill: rgba(0,0,0,0.4); }
+
+  .marker-badge {
+    fill: #fff; stroke: var(--accent); stroke-width: 2;
+    transition: fill 0.22s var(--ease), stroke-width 0.22s var(--ease); pointer-events: none;
+  }
+  html.dark .marker-badge { fill: #0e2030; stroke: #52b382; }
+  .book-marker.is-active .marker-badge { fill: var(--accent); stroke: var(--accent); filter: url(#marker-glow); }
+  html.dark .book-marker.is-active .marker-badge { fill: #52b382; stroke: #52b382; }
+  @media (hover: hover) {
+    .book-marker:hover:not(.is-active) .marker-badge { fill: #f0f8f4; stroke-width: 2.5; }
+  }
+
+  .marker-num {
+    fill: var(--accent); font-family: var(--font-sans); font-size: 8.5px; font-weight: 700;
+    pointer-events: none; user-select: none; transition: fill 0.22s var(--ease);
+  }
+  html.dark .marker-num { fill: #52b382; }
+  .book-marker.is-active .marker-num { fill: #fff; }
+  html.dark .book-marker.is-active .marker-num { fill: #071520; }
+
+  .marker-label {
+    fill: #1a1a1a; font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+    pointer-events: none; user-select: none; opacity: 0.75;
+    paint-order: stroke fill; stroke: rgba(255,255,255,0.88); stroke-width: 4px; stroke-linejoin: round;
+  }
+  html.dark .marker-label { fill: #c8e8d8; stroke: rgba(7,21,32,0.88); }
+  .book-marker.is-active .marker-label { opacity: 1; fill: var(--accent); font-weight: 700; }
+  html.dark .book-marker.is-active .marker-label { fill: #52b382; }
+
+  /* ── Detail card ── */
+  .book-card {
+    grid-area: card;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background: var(--bg-card);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+  .book-card-inner {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: opacity 0.18s var(--ease);
+  }
+  .book-card-inner.is-updating { opacity: 0; }
+
+  .book-card-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  .book-card-num {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
+  .book-card-country {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+  .book-card-city {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  .book-card-theme {
+    font-size: 0.88rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── Card sections ── */
+  .book-card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+  .book-card-section-label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* Experiences — inner elements use :global so JS-rebuilt <li>s (which lack
+     the Astro scope attribute) still get these styles. */
+  .book-card-exp { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  :global(.book-card-exp li) {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Concepts — same :global rationale as above */
+  .book-card-concepts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  :global(.book-card-concepts li) {
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    padding: 0.14rem 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    line-height: 1.4;
+  }
+
+  /* Description */
+  .book-card-desc {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* Video — outer wrapper is scoped (static), inner elements use :global so JS-rebuilt
+     HTML (which lacks the Astro scope attribute) still gets these styles. */
+  .book-card-video {
+    grid-area: video;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+  }
+  :global(.video-thumb) {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  :global(.video-thumb img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+  :global(.video-play-btn) {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    transition: background 0.18s, transform 0.18s;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.28);
+  }
+  :global(.video-play-btn:hover) {
+    background: #fff;
+    transform: scale(1.08);
+  }
+  :global(.video-title) {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    padding: 0.65rem 1rem;
+    line-height: 1.4;
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+
+  /* Video prev/next arrows */
+  :global(.video-nav) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(10,14,12,0.42);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+                opacity 0.2s var(--ease), transform 0.2s var(--ease);
+    opacity: 0;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.28);
+    z-index: 2;
+  }
+  :global(.video-thumb:hover .video-nav),
+  :global(.video-nav:focus-visible) {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  :global(.video-nav:hover) {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  :global(.video-nav:active) { transform: translateY(-50%) scale(0.92); }
+  :global(.video-nav-prev) { left: 12px; }
+  :global(.video-nav-next) { right: 12px; }
+  @media (hover: none) {
+    :global(.video-nav) { opacity: 1; transform: translateY(-50%) scale(1); }
+  }
+
+  /* Video tabs (dot switcher) */
+  :global(.video-tabs) {
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1rem 0;
+    background: var(--bg-card);
+  }
+  :global(.video-tabs + .video-title) { border-top: none; }
+  :global(.video-tab) {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    background: var(--border);
+    cursor: pointer;
+    transition: background 0.18s var(--ease), transform 0.18s var(--ease);
+  }
+  :global(.video-tab:hover) { background: var(--accent); opacity: 0.6; }
+  :global(.video-tab[aria-pressed="true"]) {
+    background: var(--accent);
+    transform: scale(1.3);
+  }
+
+  /* ── Itinerary ── */
+  .book-itinerary {
+    grid-area: itin;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .itinerary-heading {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.9rem 1.25rem 0.7rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .itinerary-list { list-style: none; }
+  .itinerary-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 0.65rem 1.25rem;
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+  .itinerary-list li:last-child .itinerary-item { border-bottom: none; }
+  .itinerary-item:hover,
+  .itinerary-item.is-active { background: var(--accent-light); }
+  .itin-num {
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+    color: var(--accent);
+    opacity: 0.45;
+    flex-shrink: 0;
+    width: 1.6rem;
+    line-height: 1;
+  }
+  .itinerary-item.is-active .itin-num { opacity: 1; }
+  .itin-text { display: flex; flex-direction: column; gap: 0.05rem; min-width: 0; }
+  .itin-city { font-size: 0.78rem; font-weight: 400; color: var(--text); line-height: 1.3; }
+  .itin-country { font-size: 0.65rem; font-weight: 300; color: var(--text-muted); letter-spacing: 0.04em; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .book-map-layout {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "map"
+        "card"
+        "itin"
+        "video";
+    }
+  }
+  @media (max-width: 600px) {
+    .book-hero        { padding: 3.5rem 0 3rem; }
+    .book-map-section { padding: 2.5rem 0 3rem; }
+    .book-card-inner  { padding: 1.25rem; }
+    .itinerary-item   { padding: 0.6rem 1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .book-marker.is-active .marker-pulse { animation: none; }
+    .route-path { animation: none; }
+  }
+</style>
+
+<script define:vars={{ destinations: serialized }}>
+  const DESTINATIONS = JSON.parse(destinations);
+  let activeId = DESTINATIONS[0].id;
+
+  function selectDestination(id) {
+    const d = DESTINATIONS.find(dest => dest.id === id);
+    if (!d) return;
+    activeId = id;
+
+    document.querySelectorAll('.book-marker').forEach(el => {
+      const on = el.dataset.id === id;
+      el.classList.toggle('is-active', on);
+      el.setAttribute('aria-pressed', String(on));
+    });
+
+    document.querySelectorAll('.itinerary-item').forEach(el => {
+      const on = el.dataset.id === id;
+      el.classList.toggle('is-active', on);
+      el.setAttribute('aria-pressed', String(on));
+    });
+
+    const inner = document.getElementById('book-card')?.querySelector('.book-card-inner');
+    if (inner) {
+      inner.classList.add('is-updating');
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        updateCard(d);
+        inner.classList.remove('is-updating');
+      }));
+    } else {
+      updateCard(d);
+    }
+  }
+
+  function setText(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  function rebuildList(id, items, className) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '';
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      if (className) li.className = className;
+      el.appendChild(li);
+    });
+  }
+
+  function updateCard(d) {
+    setText('card-num',     String(d.num).padStart(2, '0'));
+    setText('card-city',    d.city);
+    setText('card-country', d.country);
+    setText('card-theme',   d.theme);
+    setText('card-desc',    d.description);
+    rebuildList('card-exp',      d.experiences);
+    rebuildList('card-concepts', d.concepts);
+    renderVideo(d, 0);
+  }
+
+  function renderVideo(d, videoIndex) {
+    const wrap = document.getElementById('card-video');
+    if (!wrap) return;
+
+    const videos = d.videos || [];
+    if (!videos.length) {
+      wrap.style.display = 'none';
+      return;
+    }
+
+    wrap.style.display = '';
+    const video = videos[videoIndex];
+    const hasMultiple = videos.length > 1;
+
+    const navHTML = hasMultiple ? `
+        <button class="video-nav video-nav-prev" id="video-prev" type="button" aria-label="Vidéo précédente">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="video-nav video-nav-next" id="video-next" type="button" aria-label="Vidéo suivante">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>` : '';
+
+    const thumbHTML = `
+      <div class="video-thumb" id="video-thumb">
+        <img id="video-img" src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg" alt="" loading="lazy" onload="if(this.naturalWidth<=120){this.src='https://img.youtube.com/vi/${video.id}/hqdefault.jpg'}" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${video.id}/hqdefault.jpg'"/>
+        <button class="video-play-btn" id="video-play-btn" aria-label="Lancer la vidéo">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
+            <path d="M8 5.14v14l11-7-11-7z"/>
+          </svg>
+        </button>${navHTML}
+      </div>`;
+
+    const tabsHTML = hasMultiple ? `
+      <div class="video-tabs" id="video-tabs">
+        ${videos.map((_, i) => `<button class="video-tab" data-index="${i}" type="button" aria-pressed="${i === videoIndex ? 'true' : 'false'}" aria-label="Vidéo ${i + 1}"></button>`).join('')}
+      </div>` : '';
+
+    const titleHTML = video.title ? `<p class="video-title" id="video-title">${video.title}</p>` : '';
+
+    wrap.innerHTML = thumbHTML + tabsHTML + titleHTML;
+
+    attachPlayListener(video.id);
+
+    if (hasMultiple) {
+      document.getElementById('video-prev')?.addEventListener('click', () => {
+        renderVideo(d, (videoIndex - 1 + videos.length) % videos.length);
+      });
+      document.getElementById('video-next')?.addEventListener('click', () => {
+        renderVideo(d, (videoIndex + 1) % videos.length);
+      });
+      document.querySelectorAll('.video-tab').forEach(el => {
+        el.addEventListener('click', () => renderVideo(d, Number(el.dataset.index)));
+      });
+    }
+  }
+
+  function attachPlayListener(youtubeId) {
+    const btn = document.getElementById('video-play-btn');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const thumb = document.getElementById('video-thumb');
+      if (!thumb) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;';
+      thumb.innerHTML = '';
+      thumb.appendChild(iframe);
+    }, { once: true });
+  }
+
+  // Attach play button for first destination (if it has videos)
+  if (DESTINATIONS[0]?.videos?.length) {
+    attachPlayListener(DESTINATIONS[0].videos[0].id);
+  }
+
+  document.querySelectorAll('.book-marker').forEach(el => {
+    el.addEventListener('click', () => selectDestination(el.dataset.id));
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectDestination(el.dataset.id); }
+    });
+  });
+
+  document.querySelectorAll('.itinerary-item').forEach(el => {
+    el.addEventListener('click', () => selectDestination(el.dataset.id));
+  });
+
+  selectDestination(activeId);
+</script>

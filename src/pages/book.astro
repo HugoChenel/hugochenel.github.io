@@ -24,8 +24,31 @@ interface Destination {
 
 const destinations: Destination[] = [
   {
-    id: 'istanbul',
+    id: 'nice',
     num: 1,
+    city: 'Nice',
+    country: 'France',
+    theme: "L'architecture du métabolisme",
+    experiences: [
+      'Jeûne prolongé (water fasting)',
+      'Suivi métabolique (glycémie, cétones)',
+    ],
+    concepts: ['Autophagie', 'Cétose', 'Insuline', 'Flexibilité métabolique'],
+    description:
+      "Le jeûne prolongé est une pratique ancestrale, redécouverte par la science moderne à travers les travaux sur l'autophagie du biologiste japonais Yoshinori Ohsumi, lauréat du prix Nobel de médecine en 2016. En privant temporairement le corps de nourriture, l'organisme bascule vers la cétose : il puise dans ses réserves de graisse, recycle ses cellules endommagées par autophagie et redevient sensible à l'insuline. Nice, sur la Côte d'Azur, est le point de départ du projet : apprendre à écouter et réguler son métabolisme avant d'explorer les autres piliers du corps et de l'esprit.",
+    videos: [
+      { id: 'U0z4NvbZHm4', title: 'Fasting as a Path to Longevity: The Facts | Lifespan with Dr. David Sinclair - S2, Ep. 2' },
+      { id: 'qFTkuliescg', title: 'The Groundbreaking Science of Water Fasting w/ Valter Longo | EP #78' },
+      { id: 'KQNUfTyqDtI', title: 'Fasting: All the benefits, without the suffering | Ep157' },
+      { id: 'mYTx4pv5B8A', title: 'The Power of Fasting | Thomas DeLauer' },
+    ],
+    lat: 43.7102,
+    lng: 7.2620,
+    labelAnchor: 'end',
+  },
+  {
+    id: 'istanbul',
+    num: 2,
     city: 'Istanbul',
     country: 'Turquie',
     theme: "L'architecture de la purification",
@@ -40,6 +63,7 @@ const destinations: Destination[] = [
     videos: [
       { id: '9RB3sgq3V7c', title: 'How Sauna Use Can Impact Brain Health and Longevity | Rhonda Patrick, Ph.D.' },
       { id: 'EQ3GjpGq5Y8', title: 'The Science & Health Benefits of Deliberate Heat Exposure' },
+      { id: 'phN-O_59ib8', title: 'How Sauna Detoxified My Body | Bryan Johnson Podcast' },
     ],
     lat: 41.0082,
     lng: 28.9784,
@@ -48,7 +72,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'buenos-aires',
-    num: 2,
+    num: 3,
     city: 'Buenos Aires',
     country: 'Argentine',
     theme: "L'architecture de la respiration",
@@ -64,7 +88,8 @@ const destinations: Destination[] = [
       "La respiration holotropique est une technique développée dans les années 1970 par le psychiatre Stanislav Grof, issue de ses recherches sur les états non ordinaires de conscience. Elle consiste en une respiration accélérée et soutenue, permettant d'accéder à des contenus psychiques profonds généralement inaccessibles à l'état ordinaire. Buenos Aires représente dans ce projet l'exploration du souffle comme porte d'entrée vers l'inconscient.",
     videos: [
       { id: 'kHfFz7Ci7vk', title: 'Holotropic Breathwork Founder Stan Grof on Birth, Life, Breath, and Death' },
-      { id: 'U5o9b2RVC2E', title: 'Joe Rogan Experience #1506 - James Nestor' },
+      { id: '5VzOs0Zrf74', title: 'Breath: The New Science of a Lost Art' },
+      { id: 'x8psZawAfRc', title: 'Breath: The New Science of a Lost Art + James Nestor' },
     ],
     lat: -34.6037,
     lng: -58.3816,
@@ -73,7 +98,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'medellin',
-    num: 3,
+    num: 4,
     city: 'Medellín',
     country: 'Colombie',
     theme: "L'architecture du silence",
@@ -93,7 +118,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'san-salvador',
-    num: 4,
+    num: 5,
     city: 'San Salvador',
     country: 'El Salvador',
     theme: "L'architecture du flow",
@@ -106,7 +131,7 @@ const destinations: Destination[] = [
       "Le flow est un état de concentration optimale, décrit par le psychologue Mihaly Csikszentmihalyi comme un moment où l'action et l'attention fusionnent entièrement. Dans les sports extrêmes, et particulièrement le surf, cet état émerge à la limite du risque : une vague imprévisible, un timing parfait, une décision prise en une fraction de seconde. San Salvador est un terrain d'expérimentation du flow par le mouvement : apprendre à lire l'océan, gérer le risque et laisser le corps agir sans l'interférence du mental. San Salvador représente dans ce projet l'architecture du flow : la rencontre entre le courage et l'instant présent.",
     videos: [
       { id: 'RZIn9tfeQ2I', title: 'The science of effortlessness: How to activate flow | Steven Kotler: Full Interview' },
-      { id: 'oDyPOxxdjkE', title: "Kelly Slater: 11x World Surfing Champion's Diet Protocol, Training Routine & Recovery Tips | TUH #235" },
+      { id: '2K7HoGpHMJE', title: 'Dr. Sue Jackson: Flow State Explained' },
     ],
     lat: 13.6929,
     lng: -89.2182,
@@ -114,7 +139,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'tulum',
-    num: 5,
+    num: 6,
     city: 'Tulum',
     country: 'Mexique',
     theme: "L'architecture de la conscience",
@@ -131,7 +156,10 @@ const destinations: Destination[] = [
     videos: [
       { id: 'r5KRnstXYUg', title: "Psychedelics Don't Distort Reality — They Reveal How Your Brain Constructs It" },
       { id: 'tJE8HYFrkT4', title: 'Psychedelic Science | Dr. Dennis McKenna | EP 299' },
+      { id: 'U_sFWG5WFjo', title: 'How one psychedelic trip can alter an entire lifetime | Matthew Johnson: Full Interview' },
       { id: '2tUiLxtrLxk', title: 'Rick Doblin: Psychedelics | Lex Fridman Podcast #202' },
+      { id: 'XvMArmwI10Q', title: 'Hamilton Morris interviews Michael Pollan' },
+      { id: 'KtL5fafpRKc', title: 'Scientific Problem Solving with Psychedelics - James Fadiman' },
     ],
     lat: 20.2114,
     lng: -87.4654,
@@ -140,7 +168,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'stroe',
-    num: 6,
+    num: 7,
     city: 'Stroe',
     country: 'Pays-Bas',
     theme: "L'architecture du froid",
@@ -161,6 +189,7 @@ const destinations: Destination[] = [
       { id: 'iZycKhRESB4', title: 'Wim Hof: On Breathwork Science, Cold Exposure, Immune Control, & Human Potential | TUH #263' },
       { id: 'DfuGUjvEujQ', title: 'Wim Hof helps Eddie Hall lift 50% MORE weight!' },
       { id: 'x3MgDtZovks', title: 'How to Use Cold & Heat Exposure to Improve Your Health | Dr. Susanna Søberg' },
+      { id: 'i3d3bwzQFgk', title: "Breath Is Life & Cold Is God: 'The Iceman' Wim Hof" },
     ],
     lat: 52.2167,
     lng: 5.6167,
@@ -168,7 +197,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'canggu',
-    num: 7,
+    num: 8,
     city: 'Canggu, Bali',
     country: 'Indonésie',
     theme: "L'architecture du mouvement",
@@ -184,6 +213,8 @@ const destinations: Destination[] = [
       { id: '8N7mdkrXgbc', title: 'How to Improve Your Mobility, Posture & Flexibility | Dr. Kelly Starrett' },
       { id: 'jG4fV3R_A5c', title: 'A Masterclass On Movement & Mobility | Rich Roll Podcast' },
       { id: 'qLr-UAtVJPw', title: 'How to Bulletproof Your Body & Live Pain Free - Knees Over Toes Guy' },
+      { id: 'KZGK6f5KyCU', title: 'How Yoga Transforms Your Health & Well-being - with Jonah Kest | Nimai Delgado Podcast EP 8' },
+      { id: 'XPHta6uNhlw', title: 'David Swenson on Ashtanga Yoga & Life Beyond the Mat' },
     ],
     lat: -8.6500,
     lng: 115.1333,
@@ -191,7 +222,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'chiang-mai',
-    num: 8,
+    num: 9,
     city: 'Chiang Mai',
     country: 'Thaïlande',
     theme: "L'architecture de l'obscurité",
@@ -207,6 +238,7 @@ const destinations: Destination[] = [
       "Le Dark Room Retreat est une pratique de privation sensorielle prolongée pratiquée dans certains monastères bouddhistes d'Asie du Sud-Est, notamment en Thaïlande. Le participant vit plusieurs jours dans une obscurité totale et un silence quasi-complet, sans lumière artificielle ni contact extérieur. Cette privation modifie les rythmes circadiens, stimule la production de mélatonine et de composés endogènes psychoactifs, et confronte le mental à lui-même sans distraction. Chiang Mai représente dans ce projet l'architecture de l'obscurité : ce que l'esprit génère quand le monde extérieur disparaît.",
     videos: [
       { id: 'S7tz_HMEWkY', title: 'Awake In The Darkness | FULL Documentary by Aubrey Marcus' },
+      { id: 'Ewq7r1s535c', title: 'A Week In Darkness: The Purest Medicine | Aubrey Marcus Podcast' },
       { id: '1uzgs2E4wqQ', title: 'Darkness as Medicine: My Experience at Sky Cave Retreats with Scott Berman' },
     ],
     lat: 18.7883,
@@ -215,7 +247,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'cebu',
-    num: 9,
+    num: 10,
     city: 'Cebu',
     country: 'Philippines',
     theme: "L'architecture du calme",
@@ -232,7 +264,10 @@ const destinations: Destination[] = [
       "Le freediving est la pratique de la plongée en apnée, en retenant sa respiration sans équipement respiratoire. Les certifications AIDA et Molchanovs Wave sont les deux référentiels les plus reconnus mondialement pour la formation en plongée libre. La pratique repose sur l'activation du réflexe de plongée des mammifères, la gestion du CO₂ et une relaxation profonde du système nerveux, à l'opposé du contrôle musculaire volontaire. Cebu, aux Philippines, est l'une des destinations de formation en freediving en Asie.",
     videos: [
       { id: 'hhWJb0YbNrI', title: 'FREE TO DIVE – Full Documentary on Freediving' },
+      { id: 'YGbbM0E7yOU', title: 'How a World Champion Free Diver Trains For Elite Performance' },
       { id: 'OcGlfz2wpYQ', title: 'World Champion Freediver Alexey Molchanov - Fight Back Ep. 42' },
+      { id: 'Qpw_u9IJEeM', title: 'Freediving, Mental Strength & the Beauty of the Red Sea | Salma Shaker' },
+      { id: 'XTVo4o_TuVs', title: 'Build a Mental Immune System - Freediving & Mental Mastery with William Trubridge | FitMind Podcast' },
     ],
     lat: 10.3157,
     lng: 123.8854,
@@ -240,7 +275,7 @@ const destinations: Destination[] = [
   },
   {
     id: 'taghazout',
-    num: 10,
+    num: 11,
     city: 'Taghazout',
     country: 'Maroc',
     theme: "L'architecture de l'océan",
@@ -256,6 +291,8 @@ const destinations: Destination[] = [
       "Taghazout est un village côtier marocain devenu l'une des destinations de surf les plus renommées d'Afrique, avec des spots internationaux comme Anchor Point et Hash Point. Le surf y exige une lecture constante de l'océan : anticiper les vagues, ajuster sa position, réagir en une fraction de seconde, dans des conditions puissantes et variables. C'est aussi ici que se déroule la certification ISA Surf Instructor, qui forme à la pédagogie et à la sécurité côtière. Au-delà de la technique, le surf devient un dialogue permanent entre le corps et l'esprit : rester lucide sous pression et laisser le mouvement précéder la pensée. Taghazout est l'architecture de l'océan : le lieu où la compétence rencontre la confiance.",
     videos: [
       { id: '6NDAABwlXCE', title: "Inside the Mind of The World's Most Fearless Surfer" },
+      { id: 'oDyPOxxdjkE', title: "Kelly Slater: 11x World Surfing Champion's Diet Protocol, Training Routine & Recovery Tips | TUH #235" },
+      { id: '3RHdombW0n8', title: 'Gracie & John John on Pro Surfing, Pausing on the WSL Tour & Chasing the Next Best Wave | Ep 5' },
     ],
     lat: 30.5332,
     lng: -9.7069,
@@ -285,7 +322,7 @@ const first = destinations[0];
     <div class="container">
       <p class="book-eyebrow">Livre en cours</p>
       <h1 class="book-title">Architecture du corps<br class="title-br"/> et de l&rsquo;esprit</h1>
-      <p class="book-release">Parution pr&eacute;vue en 2027</p>
+      <p class="book-release">Parution pr&eacute;vue en 2028</p>
       <p class="book-lead">
         Un voyage-laboratoire &agrave; travers dix destinations, &agrave; la rencontre des pratiques et des traditions qui fa&ccedil;onnent le corps, transforment l&rsquo;esprit et repoussent les limites du potentiel humain.
       </p>
@@ -355,7 +392,7 @@ const first = destinations[0];
             </g>
 
             <!-- Travel route: itinerary order 1–10 -->
-            <path class="route-path" d="M 580,136 Q 440,260 338,346 Q 315,289 290,233 Q 271,222 252,212 Q 254,202 257,194 Q 385,150 515,105 Q 668,190 820,274 Q 797,236 775,198 Q 808,212 844,221 Q 658,193 473,165"/>
+            <path class="route-path" d="M 520,129 Q 550,131 580,136 Q 440,260 338,346 Q 315,289 290,233 Q 271,222 252,212 Q 254,202 257,194 Q 385,150 515,105 Q 668,190 820,274 Q 797,236 775,198 Q 808,212 844,221 Q 658,193 473,165"/>
 
             <!-- Destination markers -->
             {destinations.map((d, i) => {
